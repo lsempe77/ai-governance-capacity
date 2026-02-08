@@ -75,6 +75,29 @@ def detect_language(text):
         return 'unknown'
 
 
+# ─── Quality thresholds ───────────────────────────────────────────────────────
+QUALITY_THRESHOLDS = {
+    'good': 500,       # >500 words — suitable for deep AI analysis
+    'thin': 100,       # 100-500 words — usable but limited depth
+    'stub': 1,         # 1-99 words — too short, flag for review
+    'empty': 0,        # 0 words — extraction failed entirely
+}
+
+def classify_quality(word_count: int) -> str:
+    """Classify text quality based on word count."""
+    if word_count >= QUALITY_THRESHOLDS['good']:
+        return 'good'
+    elif word_count >= QUALITY_THRESHOLDS['thin']:
+        return 'thin'
+    elif word_count >= QUALITY_THRESHOLDS['stub']:
+        return 'stub'
+    return 'empty'
+
+def quality_usable(quality: str) -> bool:
+    """Return True if text quality is sufficient for deep analysis."""
+    return quality in ('good', 'thin')
+
+
 # ─── ID generation (must match scraper convention) ─────────────────────────────
 def entry_id(url: str) -> str:
     """Generate 12-char hex ID from URL, matching the scraper convention."""
@@ -150,6 +173,7 @@ def extract_pdf(filepath: Path) -> dict:
         fitz = get_fitz()
         doc = fitz.open(str(filepath))
         pages_text = []
+        page_count = len(doc)
         for page in doc:
             text = page.get_text('text')
             if text:
@@ -175,7 +199,7 @@ def extract_pdf(filepath: Path) -> dict:
             return {
                 'text': '',
                 'method': 'pdf_scanned',
-                'pages': doc.page_count if hasattr(doc, 'page_count') else 0,
+                'pages': page_count,
                 'note': 'Scanned PDF, needs OCR'
             }
     except Exception as e:
@@ -308,47 +332,72 @@ def run_pipeline(limit=None, resume=False):
         # Check if we have a file for this entry
         filepath = file_index.get(eid)
 
-        if filepath is None:
-            # No file — use OECD snippet as fallback
-            snippet = entry.get('content', '').strip()
-            result = {
-                'text': snippet,
-                'method': 'oecd_snippet_only',
-                'word_count_before': len(snippet.split()) if snippet else 0,
-                'word_count_after': len(snippet.split()) if snippet else 0,
-            }
-            stats['snippet_only'] += 1
-        else:
-            # Extract text from file
-            result = extract_file(filepath)
-            result['source_file'] = filepath.name
-            result['file_ext'] = filepath.suffix.lower()
-            result['file_size_kb'] = round(filepath.stat().st_size / 1024, 1)
-
-            # Word counts
-            snippet_wc = len(entry.get('content', '').split()) if entry.get('content') else 0
-            extracted_wc = len(result['text'].split()) if result['text'] else 0
-            result['word_count_before'] = snippet_wc
-            result['word_count_after'] = extracted_wc
-
-            # Detect language
-            if result['text'] and len(result['text']) > 100:
-                result['language'] = detect_language(result['text'])
-
-            # Classify outcome
-            if extracted_wc > 100:
-                stats['success'] += 1
-            elif extracted_wc > 0:
-                stats['partial'] += 1
+        try:
+            if filepath is None:
+                # No file — use OECD snippet as fallback
+                snippet = entry.get('content', '').strip()
+                wc = len(snippet.split()) if snippet else 0
+                result = {
+                    'text': snippet,
+                    'method': 'oecd_snippet_only',
+                    'word_count_before': wc,
+                    'word_count_after': wc,
+                    'text_quality': classify_quality(wc),
+                }
+                stats['snippet_only'] += 1
             else:
-                stats['failed'] += 1
-                errors.append({
-                    'entry_id': eid,
-                    'title': entry.get('title', ''),
-                    'file': filepath.name,
-                    'method': result.get('method', ''),
-                    'error': result.get('error', 'Empty extraction')
-                })
+                # Extract text from file
+                result = extract_file(filepath)
+                result['source_file'] = filepath.name
+                result['file_ext'] = filepath.suffix.lower()
+                try:
+                    result['file_size_kb'] = round(filepath.stat().st_size / 1024, 1)
+                except OSError:
+                    result['file_size_kb'] = 0
+
+                # Word counts
+                snippet_wc = len(entry.get('content', '').split()) if entry.get('content') else 0
+                extracted_wc = len(result['text'].split()) if result['text'] else 0
+                result['word_count_before'] = snippet_wc
+                result['word_count_after'] = extracted_wc
+
+                # Detect language
+                if result['text'] and len(result['text']) > 100:
+                    result['language'] = detect_language(result['text'])
+
+                # Classify quality
+                quality = classify_quality(extracted_wc)
+                result['text_quality'] = quality
+                stats[f'quality_{quality}'] += 1
+
+                # Classify outcome
+                if extracted_wc > 100:
+                    stats['success'] += 1
+                elif extracted_wc > 0:
+                    stats['partial'] += 1
+                else:
+                    stats['failed'] += 1
+                    errors.append({
+                        'entry_id': eid,
+                        'title': entry.get('title', ''),
+                        'file': filepath.name,
+                        'method': result.get('method', ''),
+                        'error': result.get('error', 'Empty extraction')
+                    })
+
+        except KeyboardInterrupt:
+            log.info(f"\n  Interrupted at entry {i+1}/{total}. Saving checkpoint...")
+            save_checkpoint(completed_ids, results)
+            raise
+        except Exception as exc:
+            log.warning(f"  Entry {eid} failed: {exc}")
+            result = {
+                'text': entry.get('content', '').strip(),
+                'method': 'exception_fallback',
+                'error': str(exc),
+                'text_quality': classify_quality(len(entry.get('content', '').split()) if entry.get('content') else 0),
+            }
+            stats['failed'] += 1
 
         method_counts[result.get('method', 'unknown')] += 1
         results[eid] = result
@@ -372,15 +421,25 @@ def run_pipeline(limit=None, resume=False):
             enriched['full_text'] = results[eid]['text']
             enriched['extraction_method'] = results[eid].get('method', '')
             enriched['extraction_word_count'] = results[eid].get('word_count_after', 0)
+            enriched['text_quality'] = results[eid].get('text_quality', classify_quality(results[eid].get('word_count_after', 0)))
+            enriched['analysis_ready'] = quality_usable(enriched['text_quality'])
             if 'language' in results[eid]:
                 enriched['detected_language'] = results[eid]['language']
         else:
             # Fallback to OECD snippet
-            enriched['full_text'] = entry.get('content', '')
+            snippet_text = entry.get('content', '')
+            snippet_wc = len(snippet_text.split()) if snippet_text else 0
+            enriched['full_text'] = snippet_text
             enriched['extraction_method'] = 'oecd_snippet_fallback'
-            enriched['extraction_word_count'] = len(entry.get('content', '').split()) if entry.get('content') else 0
+            enriched['extraction_word_count'] = snippet_wc
+            enriched['text_quality'] = classify_quality(snippet_wc)
+            enriched['analysis_ready'] = quality_usable(enriched['text_quality'])
 
         enriched_entries.append(enriched)
+
+    # Compute quality distribution across all enriched entries
+    quality_dist = Counter(e.get('text_quality', 'empty') for e in enriched_entries)
+    analysis_ready_count = sum(1 for e in enriched_entries if e.get('analysis_ready'))
 
     # Save enriched corpus
     OUTPUT_CORPUS.parent.mkdir(parents=True, exist_ok=True)
@@ -394,6 +453,13 @@ def run_pipeline(limit=None, resume=False):
             'partial_extraction': stats.get('partial', 0),
             'failed_extraction': stats.get('failed', 0),
             'snippet_only': stats.get('snippet_only', 0),
+            'analysis_ready': analysis_ready_count,
+            'quality_distribution': {
+                'good_gt500w': quality_dist.get('good', 0),
+                'thin_100_500w': quality_dist.get('thin', 0),
+                'stub_lt100w': quality_dist.get('stub', 0),
+                'empty_0w': quality_dist.get('empty', 0),
+            },
         },
         'entries': enriched_entries
     }
@@ -417,6 +483,14 @@ def run_pipeline(limit=None, resume=False):
             'failed_extractions': stats.get('failed', 0),
             'snippet_only': stats.get('snippet_only', 0),
             'coverage_pct': round(100 * (stats.get('success', 0) + stats.get('partial', 0)) / max(len(entries), 1), 1),
+        },
+        'quality_distribution': {
+            'good_gt500w': quality_dist.get('good', 0),
+            'thin_100_500w': quality_dist.get('thin', 0),
+            'stub_lt100w': quality_dist.get('stub', 0),
+            'empty_0w': quality_dist.get('empty', 0),
+            'analysis_ready': analysis_ready_count,
+            'analysis_ready_pct': round(100 * analysis_ready_count / max(len(entries), 1), 1),
         },
         'by_method': dict(method_counts.most_common()),
         'word_counts': {
@@ -450,7 +524,13 @@ def run_pipeline(limit=None, resume=False):
     log.info(f"  Failed (0w):          {stats.get('failed', 0)}")
     log.info(f"  Snippet-only:         {stats.get('snippet_only', 0)}")
     log.info(f"  Coverage:             {report['summary']['coverage_pct']}%")
-    log.info(f"  Avg word count:       {report['word_counts']['mean']}")
+    log.info(f"\n  Quality distribution:")
+    log.info(f"    Good  (>500w):      {quality_dist.get('good', 0)}")
+    log.info(f"    Thin  (100-500w):   {quality_dist.get('thin', 0)}")
+    log.info(f"    Stub  (<100w):      {quality_dist.get('stub', 0)}  ⚠ too small for analysis")
+    log.info(f"    Empty (0w):         {quality_dist.get('empty', 0)}  ⚠ extraction failed")
+    log.info(f"    Analysis-ready:     {analysis_ready_count} ({report['quality_distribution']['analysis_ready_pct']}%)")
+    log.info(f"\n  Avg word count:       {report['word_counts']['mean']}")
     log.info(f"  Total words:          {report['word_counts']['total']:,}")
     log.info(f"\n  Top methods:")
     for method, count in method_counts.most_common(10):

@@ -1,0 +1,218 @@
+{
+  "generated": "2026-02-08T13:40:58.340611",
+  "elapsed_seconds": 286.4,
+  "summary": {
+    "total_entries": 2216,
+    "files_found": 2061,
+    "successful_extractions": 1656,
+    "partial_extractions": 383,
+    "failed_extractions": 22,
+    "snippet_only": 155,
+    "coverage_pct": 92.0
+  },
+  "quality_distribution": {
+    "good_gt500w": 948,
+    "thin_100_500w": 806,
+    "stub_lt100w": 462,
+    "empty_0w": 0,
+    "analysis_ready": 1754,
+    "analysis_ready_pct": 79.2
+  },
+  "by_method": {
+    "html_trafilatura": 1060,
+    "pdf_pymupdf": 559,
+    "html_preextracted": 330,
+    "oecd_snippet_only": 155,
+    "html_raw_truncated": 60,
+    "html_beautifulsoup": 26,
+    "pdf_scanned": 21,
+    "docx_python_docx": 2,
+    "cfm_as_html_beautifulsoup": 2,
+    "docx_error": 1
+  },
+  "word_counts": {
+    "mean": 5209,
+    "median": 363,
+    "min": 3,
+    "max": 973418,
+    "total": 11428860
+  },
+  "languages": {
+    "en": 1415,
+    "es": 108,
+    "de": 68,
+    "fr": 51,
+    "pt": 50,
+    "sv": 28,
+    "sl": 26,
+    "nl": 23,
+    "uk": 22,
+    "hr": 19,
+    "pl": 18,
+    "el": 17,
+    "cs": 16,
+    "it": 16,
+    "ko": 13,
+    "ro": 10,
+    "bg": 10,
+    "lv": 9,
+    "ar": 9,
+    "lt": 8
+  },
+  "errors": [
+    {
+      "entry_id": "1c855b7da2c4",
+      "title": "OECD AI Capabilities Indicators",
+      "file": "1c855b7da2c4_OECD_AI_Capabilities_Indicators.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "225e5f83dcf6",
+      "title": "Common Reporting Framework of AI Incidents",
+      "file": "225e5f83dcf6_Common_Reporting_Framework_of_AI_Incidents.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "1292902990fd",
+      "title": "AI in social sciences",
+      "file": "1292902990fd_AI_in_social_sciences.docx",
+      "method": "docx_error",
+      "error": "file 'C:\\Users\\LucasSempe\\OneDrive - International Initiative for Impact Evaluation\\Desktop\\Gen AI tools\\AI_policies\\observatory\\data\\pdfs\\1292902990fd_AI_in_social_sciences.docx' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'"
+    },
+    {
+      "entry_id": "43affe1d7598",
+      "title": "Readiness Assessment Methodology (RAM) for the AI \"Ethical Framework\"",
+      "file": "43affe1d7598_Readiness_Assessment_Methodology_(RAM)_for_the_AI_Ethical_Fr.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "20c26bde82c6",
+      "title": "AfCFTA Digital Trade Protocol",
+      "file": "20c26bde82c6_AfCFTA_Digital_Trade_Protocol.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "11fb4560f18e",
+      "title": "Definition of AI Incidents",
+      "file": "11fb4560f18e_Definition_of_AI_Incidents.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "878ba252a29a",
+      "title": "The Guidelines on the Responsible Use of Artificial Intelligence in Advertising and Marketing",
+      "file": "878ba252a29a_The_Guidelines_on_the_Responsible_Use_of_Artificial_Intellig.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "ffb756e76c87",
+      "title": "Plan for new technology and automation of the public sector",
+      "file": "ffb756e76c87_Plan_for_new_technology_and_automation_of_the_public_sector.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "0043ffd2d195",
+      "title": "QUAD principles on Technology Design, Development, Governance, and Use",
+      "file": "0043ffd2d195_QUAD_principles_on_Technology_Design_Development_Governance_and_Use.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "db5789f3832f",
+      "title": "Quad Principles on Technology Design, Development, Governance, and Use",
+      "file": "db5789f3832f_Quad_Principles_on_Technology_Design_Development_Governance_and_Use.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "ac833f85556d",
+      "title": "Quad Principles on Technology Design, Development, Governance, and Use",
+      "file": "ac833f85556d_Quad_Principles_on_Technology_Design_Development_Governance_and_Use.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "939302cfd30d",
+      "title": "Strategy for Developing an AI Ecosystem",
+      "file": "939302cfd30d_Strategy_for_Developing_an_AI_Ecosystem.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "8a53a749930d",
+      "title": "Quad Principles on Technology Design, Development, Governance, and Use",
+      "file": "8a53a749930d_Quad_Principles_on_Technology_Design_Development_Governance_and_Use.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "e717a97b4fcb",
+      "title": "UK-U.S. Declaration on Co-operation in AI R&D",
+      "file": "e717a97b4fcb_UK-US_Declaration_on_Co-operation_in_AI_RD.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "41bbf6be5874",
+      "title": "Labour AI - Centre of Expertise of the Global Partnership on AI",
+      "file": "41bbf6be5874_Labour_AI_-_Centre_of_Expertise_of_the_Global_Partnership_on.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "e6acc1633751",
+      "title": "Government Technology Innovation Strategy",
+      "file": "e6acc1633751_Government_Technology_Innovation_Strategy.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "b6ceeb1764e8",
+      "title": "2023 Industry and Technology Strategy",
+      "file": "b6ceeb1764e8_2023_Industry_and_Technology_Strategy.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "8839c93a5b70",
+      "title": "Project Explain",
+      "file": "8839c93a5b70_Project_Explain.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "968c098d84aa",
+      "title": "Australia's AI Ethics Framework",
+      "file": "968c098d84aa_Australias_AI_Ethics_Framework.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "92fdc7440fec",
+      "title": "ML and AI Future Science Platform",
+      "file": "92fdc7440fec_ML_and_AI_Future_Science_Platform.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "05ed81ea6de9",
+      "title": "SAFIR Depo Cloud Storage Software",
+      "file": "05ed81ea6de9_SAFIR_Depo_Cloud_Storage_Software.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    },
+    {
+      "entry_id": "c93ab9196a78",
+      "title": "Centres for Doctoral Training",
+      "file": "c93ab9196a78_Centres_for_Doctoral_Training.pdf",
+      "method": "pdf_scanned",
+      "error": "Empty extraction"
+    }
+  ]
+}
