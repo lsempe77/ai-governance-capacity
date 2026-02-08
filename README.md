@@ -32,7 +32,10 @@ observatory/
 │   ├── analysis/                  # Analysis pipeline
 │   │   ├── extract_text.py        # Phase 1: text extraction + quality flags
 │   │   ├── score_policies.py      # Phase 2: 3-model LLM scoring (parallel)
-│   │   └── inter_rater.py         # Phase 2.3: inter-rater reliability
+│   │   ├── inter_rater.py         # Phase 2.3: inter-rater reliability
+│   │   ├── country_metadata.py    # Country → income/region/GDP mapping
+│   │   ├── sota_analysis.py       # Phase 3a: 10 core analyses (descriptive, regression, clustering)
+│   │   └── advanced_analysis.py   # Phase 3b: robustness, multilevel, PCA, convergence
 │   └── collectors/                # Corpus building (completed)
 │
 ├── data/
@@ -149,8 +152,36 @@ See [docs/PROJECT_PLAN.md](docs/PROJECT_PLAN.md) for full details.
 | **Phase 0** | ✅ Complete | Corpus construction & document download (2,216 policies) |
 | **Phase 1** | ✅ Complete | Text extraction — 1,754 analysis-ready (79.2%), 11.4M words |
 | **Phase 2** | ✅ Complete | LLM scoring — 3-model ensemble, 6,641 API calls, ICC=0.827 |
-| **Phase 3** | ⏳ Next | SOTA analysis — regression, clustering, temporal trends |
+| **Phase 3a** | ✅ Complete | SOTA analysis — 10 analyses, 53 outputs (regression, clustering, temporal trends) |
+| **Phase 3b** | ⏳ In progress | Advanced analysis — robustness, multilevel models, PCA, convergence |
 | **Phase 4** | ❌ Planned | Reporting & dissemination |
+
+## 📋 Phase 3b: Advanced Analysis Plan
+
+### 🔴 High Priority (analyses 1–4 — reviewer essentials)
+
+| # | Analysis | Purpose | Method |
+|---|----------|---------|--------|
+| 1 | **Robustness checks** | Verify key findings hold under alternative specifications | Rerun income-gap tests excluding stubs/thin texts; bootstrap 95% CIs (1,000 reps); cluster solutions k=3–6 with silhouette scores |
+| 2 | **Multilevel models** | Account for policies nested within countries | Random-intercepts model (country grouping); compare with pooled OLS; ICC for country-level variance |
+| 3 | **PCA / Factor analysis** | Validate the two-construct framework (capacity vs ethics) | PCA on 10 dimensions; scree plot; loadings matrix; do C1–C5 and E1–E5 form two distinct factors? |
+| 4 | **Convergence / divergence** | Are developing countries catching up or falling behind? | Income × year interaction; separate temporal slopes by income group; gap trajectory 2017–2025 |
+
+### 🟡 Medium Priority (analyses 5–8 — strengthen contribution)
+
+| # | Analysis | Purpose | Method |
+|---|----------|---------|--------|
+| 5 | **Inequality decomposition** | Between-group vs within-group inequality | Gini coefficient; Theil index decomposition (between income groups vs within) |
+| 6 | **Policy portfolio breadth** | Do countries cover all dimensions or concentrate on a few? | Per-country coverage index (how many dimensions scored ≥1); portfolio gap identification |
+| 7 | **Quantile regression** | Does GDP matter more at the bottom than the top? | Quantile regression at τ = 0.25, 0.50, 0.75 |
+| 8 | **Tobit regression** | Handle floor effects (64% score 0–0.9) | Tobit model for bounded dependent variable [0, 4] |
+
+### 🟢 Nice to Have (analyses 9–10 — differentiation)
+
+| # | Analysis | Purpose | Method |
+|---|----------|---------|--------|
+| 9 | **Policy diffusion patterns** | Which countries led in each dimension? | Temporal leader-follower analysis by region |
+| 10 | **Efficiency frontier** | Most governance capacity per GDP dollar | Score/GDP scatter with frontier envelope |
 
 ## 🛠️ Setup
 

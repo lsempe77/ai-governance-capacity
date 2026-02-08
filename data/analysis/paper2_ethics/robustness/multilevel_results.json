@@ -1,0 +1,97 @@
+{
+  "null_model": {
+    "var_country": 0.04796,
+    "var_residual": 0.33639,
+    "icc": 0.1248,
+    "n_obs": 1947,
+    "n_groups": 69,
+    "aic": NaN,
+    "bic": NaN
+  },
+  "mixed_model": {
+    "coefficients": {
+      "Intercept": {
+        "beta": -0.02017,
+        "se": 0.3477,
+        "z": -0.058,
+        "p": 0.953746
+      },
+      "log_gdp_pc": {
+        "beta": 0.0288,
+        "se": 0.03257,
+        "z": 0.8843,
+        "p": 0.376537
+      },
+      "year_c": {
+        "beta": 0.00176,
+        "se": 0.00527,
+        "z": 0.334,
+        "p": 0.738414
+      },
+      "is_binding": {
+        "beta": 0.15798,
+        "se": 0.05811,
+        "z": 2.7188,
+        "p": 0.006552
+      },
+      "is_good_text": {
+        "beta": 0.7178,
+        "se": 0.02281,
+        "z": 31.4691,
+        "p": 0.0
+      }
+    },
+    "var_country": 0.02388,
+    "var_residual": 0.2223,
+    "n_obs": 1947,
+    "n_groups": 69,
+    "converged": true,
+    "llf": -1352.24
+  },
+  "ols_model": {
+    "coefficients": {
+      "Intercept": {
+        "beta": -0.37072,
+        "se": 0.21078,
+        "t": -1.7588,
+        "p": 0.078775
+      },
+      "log_gdp_pc": {
+        "beta": 0.06095,
+        "se": 0.01948,
+        "t": 3.1294,
+        "p": 0.001778
+      },
+      "year_c": {
+        "beta": -0.00943,
+        "se": 0.00505,
+        "t": -1.8671,
+        "p": 0.062041
+      },
+      "is_binding": {
+        "beta": 0.19214,
+        "se": 0.05951,
+        "t": 3.2285,
+        "p": 0.001265
+      },
+      "is_good_text": {
+        "beta": 0.75127,
+        "se": 0.02291,
+        "t": 32.7973,
+        "p": 0.0
+      }
+    },
+    "r_squared": 0.373,
+    "adj_r_squared": 0.3717,
+    "aic": 2799.66,
+    "bic": 2827.53,
+    "llf": -1394.83,
+    "n_obs": 1947
+  },
+  "lr_test": {
+    "lr_statistic": 85.18,
+    "p_value": 0.0,
+    "df": 1,
+    "mixed_better": true
+  }
+}

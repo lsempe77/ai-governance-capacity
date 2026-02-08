@@ -1,0 +1,169 @@
+{
+  "interaction_model": {
+    "coefficients": {
+      "Intercept": {
+        "beta": 0.24009,
+        "se": 0.02699,
+        "t": 8.8944,
+        "p": 0.0
+      },
+      "year_c": {
+        "beta": 0.01435,
+        "se": 0.0113,
+        "t": 1.2699,
+        "p": 0.20427
+      },
+      "is_hi": {
+        "beta": 0.06322,
+        "se": 0.02899,
+        "t": 2.1806,
+        "p": 0.029332
+      },
+      "year_c:is_hi": {
+        "beta": -0.03091,
+        "se": 0.01263,
+        "t": -2.4464,
+        "p": 0.014519
+      },
+      "is_good_text": {
+        "beta": 0.75119,
+        "se": 0.02294,
+        "t": 32.7523,
+        "p": 0.0
+      },
+      "is_binding": {
+        "beta": 0.19327,
+        "se": 0.05953,
+        "t": 3.2467,
+        "p": 0.001187
+      }
+    },
+    "r_squared": 0.373,
+    "adj_r_squared": 0.3714,
+    "n_obs": 1949
+  },
+  "separate_slopes": {
+    "High income": {
+      "slope": -0.02332,
+      "intercept": 47.7831,
+      "r_squared": 0.0068,
+      "p": 0.001063,
+      "n": 1576
+    },
+    "Developing": {
+      "slope": 0.01571,
+      "intercept": -31.2502,
+      "r_squared": 0.0035,
+      "p": 0.257388,
+      "n": 373
+    }
+  },
+  "dimension_slopes": {
+    "e1_framework": {
+      "High income": -0.03447,
+      "Developing": 0.01007,
+      "converging": true
+    },
+    "e2_rights": {
+      "High income": -0.03149,
+      "Developing": 0.00935,
+      "converging": true
+    },
+    "e3_governance": {
+      "High income": -0.03031,
+      "Developing": -0.00278,
+      "converging": true
+    },
+    "e4_operationalisation": {
+      "High income": -0.00046,
+      "Developing": 0.02387,
+      "converging": true
+    },
+    "e5_inclusion": {
+      "High income": -0.01988,
+      "Developing": 0.03804,
+      "converging": true
+    }
+  },
+  "gap_trajectory": [
+    {
+      "year": 2017,
+      "hi_mean": 0.6588,
+      "dev_mean": 0.5091,
+      "gap": 0.1497,
+      "n_hi": 51,
+      "n_dev": 11
+    },
+    {
+      "year": 2018,
+      "hi_mean": 0.7016,
+      "dev_mean": 0.3676,
+      "gap": 0.3341,
+      "n_hi": 122,
+      "n_dev": 37
+    },
+    {
+      "year": 2019,
+      "hi_mean": 0.6734,
+      "dev_mean": 0.3609,
+      "gap": 0.3126,
+      "n_hi": 177,
+      "n_dev": 46
+    },
+    {
+      "year": 2020,
+      "hi_mean": 0.6971,
+      "dev_mean": 0.597,
+      "gap": 0.1001,
+      "n_hi": 171,
+      "n_dev": 67
+    },
+    {
+      "year": 2021,
+      "hi_mean": 0.7202,
+      "dev_mean": 0.5585,
+      "gap": 0.1617,
+      "n_hi": 213,
+      "n_dev": 53
+    },
+    {
+      "year": 2022,
+      "hi_mean": 0.5944,
+      "dev_mean": 0.4765,
+      "gap": 0.1179,
+      "n_hi": 177,
+      "n_dev": 34
+    },
+    {
+      "year": 2023,
+      "hi_mean": 0.6194,
+      "dev_mean": 0.5895,
+      "gap": 0.0299,
+      "n_hi": 268,
+      "n_dev": 38
+    },
+    {
+      "year": 2024,
+      "hi_mean": 0.5831,
+      "dev_mean": 0.4643,
+      "gap": 0.1188,
+      "n_hi": 308,
+      "n_dev": 56
+    },
+    {
+      "year": 2025,
+      "hi_mean": 0.4607,
+      "dev_mean": 0.5806,
+      "gap": -0.12,
+      "n_hi": 89,
+      "n_dev": 31
+    }
+  ],
+  "gap_trend": {
+    "slope": -0.03787,
+    "r_squared": 0.5739,
+    "p": 0.018051,
+    "direction": "narrowing",
+    "significant": true
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "components": [
+    {
+      "pc": 1,
+      "eigenvalue": 6.5916,
+      "variance_pct": 65.89,
+      "cumulative_pct": 65.89
+    },
+    {
+      "pc": 2,
+      "eigenvalue": 1.2758,
+      "variance_pct": 12.75,
+      "cumulative_pct": 78.64
+    },
+    {
+      "pc": 3,
+      "eigenvalue": 0.499,
+      "variance_pct": 4.99,
+      "cumulative_pct": 83.63
+    },
+    {
+      "pc": 4,
+      "eigenvalue": 0.3652,
+      "variance_pct": 3.65,
+      "cumulative_pct": 87.28
+    },
+    {
+      "pc": 5,
+      "eigenvalue": 0.3159,
+      "variance_pct": 3.16,
+      "cumulative_pct": 90.43
+    },
+    {
+      "pc": 6,
+      "eigenvalue": 0.2612,
+      "variance_pct": 2.61,
+      "cumulative_pct": 93.04
+    },
+    {
+      "pc": 7,
+      "eigenvalue": 0.2155,
+      "variance_pct": 2.15,
+      "cumulative_pct": 95.2
+    },
+    {
+      "pc": 8,
+      "eigenvalue": 0.1779,
+      "variance_pct": 1.78,
+      "cumulative_pct": 96.98
+    },
+    {
+      "pc": 9,
+      "eigenvalue": 0.1603,
+      "variance_pct": 1.6,
+      "cumulative_pct": 98.58
+    },
+    {
+      "pc": 10,
+      "eigenvalue": 0.1422,
+      "variance_pct": 1.42,
+      "cumulative_pct": 100.0
+    }
+  ],
+  "n_kaiser": 2,
+  "loadings": {
+    "PC1": {
+      "C1 Clarity": 0.331,
+      "C2 Resources": 0.261,
+      "C3 Authority": 0.33,
+      "C4 Accountability": 0.328,
+      "C5 Coherence": 0.348,
+      "E1 Framework": 0.306,
+      "E2 Rights": 0.292,
+      "E3 Governance": 0.327,
+      "E4 Operationalisation": 0.328,
+      "E5 Inclusion": 0.302
+    },
+    "PC2": {
+      "C1 Clarity": 0.262,
+      "C2 Resources": 0.505,
+      "C3 Authority": 0.291,
+      "C4 Accountability": 0.154,
+      "C5 Coherence": 0.058,
+      "E1 Framework": -0.449,
+      "E2 Rights": -0.481,
+      "E3 Governance": -0.343,
+      "E4 Operationalisation": 0.088,
+      "E5 Inclusion": -0.082
+    },
+    "PC3": {
+      "C1 Clarity": -0.072,
+      "C2 Resources": 0.193,
+      "C3 Authority": -0.094,
+      "C4 Accountability": -0.219,
+      "C5 Coherence": 0.196,
+      "E1 Framework": 0.11,
+      "E2 Rights": -0.182,
+      "E3 Governance": -0.111,
+      "E4 Operationalisation": -0.494,
+      "E5 Inclusion": 0.749
+    }
+  },
+  "two_factor_test": {
+    "pc1_cap_mean_abs_loading": 0.3199,
+    "pc1_eth_mean_abs_loading": 0.3108,
+    "pc2_cap_mean_loading": 0.254,
+    "pc2_eth_mean_loading": -0.2534,
+    "pc2_separation": 0.5074,
+    "supports_two_factors": true
+  },
+  "cronbach_alpha_capacity": 0.9198,
+  "cronbach_alpha_ethics": 0.9069,
+  "cronbach_alpha_all 10 dimensions": 0.9396
+}

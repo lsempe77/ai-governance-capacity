@@ -1,0 +1,70 @@
+jurisdiction,random_intercept,income
+United Kingdom,0.2818069780869974,High income
+United States,0.21970851255521454,High income
+Saudi Arabia,0.21079079450946595,High income
+Australia,0.20286603121380908,High income
+Germany,0.16844330701061747,High income
+Brazil,0.16465362793421454,Upper middle income
+Iceland,0.15074798821344107,High income
+Estonia,0.14116761376249654,High income
+Nigeria,0.13939687505842913,Lower middle income
+New Zealand,0.13783963803540947,High income
+Netherlands,0.1182466624179347,High income
+Singapore,0.11709109989477398,High income
+Ukraine,0.1168170566395108,Lower middle income
+Chile,0.11394874072755454,High income
+Japan,0.10885754759545074,High income
+Canada,0.10305547208426853,High income
+Egypt,0.10121002527835582,Lower middle income
+Israel,0.0886648044908645,High income
+Denmark,0.07790788390479474,High income
+Argentina,0.0776267589299839,Upper middle income
+Zambia,0.07393770699123138,Lower middle income
+Kenya,0.0716906422981598,Lower middle income
+Colombia,0.06189236608191349,Upper middle income
+Tunisia,0.055820767227671875,Lower middle income
+France,0.049274187314896405,High income
+Thailand,0.04041589045578453,Upper middle income
+Uruguay,0.03935218480015979,High income
+India,0.03662370615009336,Lower middle income
+Slovak Republic,0.030430322423551665,High income
+Italy,0.025615226890880187,High income
+Finland,0.022461054768672772,High income
+Austria,0.019157471757163647,High income
+United Arab Emirates,0.014394156494083486,High income
+Uganda,0.006226277392088165,Low income
+Greece,-0.00010909055498278866,High income
+Ireland,-0.0021577184312823474,High income
+Indonesia,-0.003749281267920555,Lower middle income
+Switzerland,-0.011986907336477386,High income
+Belgium,-0.012206547403151923,High income
+South Africa,-0.014280639101984188,Upper middle income
+Hungary,-0.019023592421988304,High income
+Rwanda,-0.019122218166926077,Low income
+Norway,-0.027666328089721148,High income
+Mauritius,-0.035222785509401666,Upper middle income
+Serbia,-0.03897060903794643,Upper middle income
+Costa Rica,-0.06444838673673221,Upper middle income
+Sweden,-0.06497406620508597,High income
+Uzbekistan,-0.07475158613523641,Lower middle income
+Cyprus,-0.08018245194999288,High income
+Mexico,-0.08148231466867503,Upper middle income
+Türkiye,-0.08393777544757232,Upper middle income
+Viet Nam,-0.08718705492755176,Lower middle income
+Malta,-0.09458882121770769,High income
+Kazakhstan,-0.09657632765004515,Upper middle income
+Peru,-0.09827244751741132,Upper middle income
+Romania,-0.1074073739667793,High income
+Slovenia,-0.10755163650244617,High income
+Luxembourg,-0.11891552408043114,High income
+Morocco,-0.12811423243753892,Lower middle income
+Bulgaria,-0.13256464952126415,Upper middle income
+Czech Republic,-0.1509023336925747,High income
+Portugal,-0.15259947260056836,High income
+Latvia,-0.16834716380897466,High income
+Malaysia,-0.17102139075155756,Upper middle income
+Lithuania,-0.17144805648301123,High income
+Korea,-0.1892279206404647,High income
+Poland,-0.20007500546297688,High income
+Croatia,-0.2192953040473428,High income
+Spain,-0.3597723656162101,High income
