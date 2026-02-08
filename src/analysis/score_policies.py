@@ -32,9 +32,10 @@ Usage:
   python src/analysis/score_policies.py                  # full run, model A
   python src/analysis/score_policies.py --limit 10       # test on 10 entries
   python src/analysis/score_policies.py --model B        # run model B only
-  python src/analysis/score_policies.py --model all      # run all 3 models
+  python src/analysis/score_policies.py --model all      # run all 3 models (parallel)
   python src/analysis/score_policies.py --merge          # merge existing scores
   python src/analysis/score_policies.py --resume         # resume from checkpoint
+  python src/analysis/score_policies.py --workers 10     # concurrent API calls
 """
 
 import json
@@ -45,9 +46,11 @@ import sys
 import time
 import argparse
 import logging
+import threading
 from pathlib import Path
 from datetime import datetime
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dotenv import load_dotenv
 
 # ─── Setup ─────────────────────────────────────────────────────────────────────
@@ -333,6 +336,10 @@ def score_entry(entry: dict, model_key: str) -> dict | None:
 
 # ─── Checkpoint Management ─────────────────────────────────────────────────────
 
+# Thread-safe lock for JSONL file writes
+_write_lock = threading.Lock()
+
+
 def load_completed_ids(model_key: str) -> set:
     """Load entry IDs already scored for a given model from the raw scores file."""
     completed = set()
@@ -349,10 +356,12 @@ def load_completed_ids(model_key: str) -> set:
 
 
 def append_result(result: dict):
-    """Append a single result to the raw scores file (JSONL)."""
+    """Append a single result to the raw scores file (JSONL). Thread-safe."""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with open(SCORES_RAW, 'a', encoding='utf-8') as f:
-        f.write(json.dumps(result, ensure_ascii=False) + '\n')
+    line = json.dumps(result, ensure_ascii=False) + '\n'
+    with _write_lock:
+        with open(SCORES_RAW, 'a', encoding='utf-8') as f:
+            f.write(line)
 
 
 # ─── Merge Ensemble ────────────────────────────────────────────────────────────
@@ -475,10 +484,35 @@ def merge_scores():
 
 # ─── Main Pipeline ─────────────────────────────────────────────────────────────
 
-def run_pipeline(model_key: str = 'A', limit: int | None = None, resume: bool = True):
-    """Score policies with a single model."""
+def _score_worker(entry: dict, model_key: str, idx: int, total: int) -> dict | None:
+    """Worker function for concurrent scoring. Returns result or None."""
+    eid = entry_id(entry['url'])
+    title = entry.get('title', 'Unknown')[:55]
+    quality = entry.get('text_quality', '?')
+
+    try:
+        result = score_entry(entry, model_key)
+    except Exception as exc:
+        log.warning(f"  [{model_key}] [{idx}/{total}] {title}... Exception: {exc}")
+        return None
+
+    if result:
+        append_result(result)
+        cap = result['scores']['capacity_score']
+        eth = result['scores']['ethics_score']
+        log.info(f"  [{model_key}] [{idx}/{total}] {title}... ✓ Cap={cap:.1f} Eth={eth:.1f}")
+    else:
+        log.warning(f"  [{model_key}] [{idx}/{total}] {title}... ✗ Failed")
+
+    return result
+
+
+def run_pipeline(model_key: str = 'A', limit: int | None = None,
+                 resume: bool = True, workers: int = 10):
+    """Score policies with a single model using concurrent API calls."""
     log.info("=" * 70)
     log.info(f"PHASE 2: POLICY SCORING — Model {model_key} ({MODELS[model_key]})")
+    log.info(f"  Concurrency: {workers} parallel workers")
     log.info("=" * 70)
 
     if not OPENROUTER_API_KEY:
@@ -508,58 +542,65 @@ def run_pipeline(model_key: str = 'A', limit: int | None = None, resume: bool = 
     if limit:
         to_process = to_process[:limit]
 
-    log.info(f"  To process: {len(to_process)} entries")
+    total = len(to_process)
+    log.info(f"  To process: {total} entries")
 
-    # Counters
+    if total == 0:
+        log.info("  Nothing to process — all entries already scored.")
+        return {'model': model_key, 'entries_processed': 0, 'successful': 0, 'failed': 0}
+
+    # Counters (thread-safe via lock)
+    stats_lock = threading.Lock()
     stats = Counter()
-    start_time = time.time()
     total_cost = 0.0
+    start_time = time.time()
 
-    for i, entry in enumerate(to_process):
-        eid = entry_id(entry['url'])
-        title = entry.get('title', 'Unknown')[:55]
-        quality = entry.get('text_quality', '?')
+    def on_result(result, idx):
+        nonlocal total_cost
+        with stats_lock:
+            if result:
+                stats['success'] += 1
+                usage = result.get('usage', {})
+                prompt_tokens = usage.get('prompt_tokens', 0)
+                completion_tokens = usage.get('completion_tokens', 0)
+                total_cost += (prompt_tokens * 0.003 + completion_tokens * 0.015) / 1000
+            else:
+                stats['failed'] += 1
 
-        log.info(f"  [{i+1}/{len(to_process)}] {title}... ({quality})")
+            done = stats['success'] + stats['failed']
+            if done % 50 == 0 and done > 0:
+                elapsed = time.time() - start_time
+                rate = done / elapsed * 3600
+                eta_hours = (total - done) / rate * 3600 / 3600 if rate > 0 else 0
+                log.info(f"\n  [{model_key}] Progress: {done}/{total} | "
+                         f"Success: {stats['success']} | Failed: {stats['failed']} | "
+                         f"Rate: {rate:.0f}/hr | ETA: {eta_hours:.1f}h | "
+                         f"Est. cost: ${total_cost:.2f}\n")
 
-        try:
-            result = score_entry(entry, model_key)
-        except KeyboardInterrupt:
-            log.info("\n  Interrupted. Progress saved (JSONL append-only).")
-            break
-        except Exception as exc:
-            log.warning(f"    Exception: {exc}")
-            result = None
+    # Submit all entries to thread pool
+    try:
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {}
+            for i, entry in enumerate(to_process):
+                future = executor.submit(_score_worker, entry, model_key, i + 1, total)
+                futures[future] = i
+                # Stagger submissions slightly to avoid burst rate limits
+                if (i + 1) % workers == 0:
+                    time.sleep(0.3)
 
-        if result:
-            append_result(result)
-            cap = result['scores']['capacity_score']
-            eth = result['scores']['ethics_score']
-            log.info(f"    ✓ Cap={cap:.1f} Eth={eth:.1f}")
-            stats['success'] += 1
+            for future in as_completed(futures):
+                idx = futures[future]
+                try:
+                    result = future.result()
+                    on_result(result, idx)
+                except KeyboardInterrupt:
+                    raise
+                except Exception as exc:
+                    log.warning(f"  [{model_key}] Worker exception: {exc}")
+                    on_result(None, idx)
 
-            # Estimate cost from usage
-            usage = result.get('usage', {})
-            prompt_tokens = usage.get('prompt_tokens', 0)
-            completion_tokens = usage.get('completion_tokens', 0)
-            # Rough cost estimate (varies by model)
-            total_cost += (prompt_tokens * 0.003 + completion_tokens * 0.015) / 1000
-        else:
-            log.warning(f"    ✗ Failed")
-            stats['failed'] += 1
-
-        # Rate limiting — be gentle
-        time.sleep(1.0)
-
-        # Progress report every 50
-        if (i + 1) % 50 == 0:
-            elapsed = time.time() - start_time
-            rate = (i + 1) / elapsed * 3600
-            eta_hours = (len(to_process) - i - 1) / rate * 3600 / 3600 if rate > 0 else 0
-            log.info(f"\n  Progress: {i+1}/{len(to_process)} | "
-                     f"Success: {stats['success']} | Failed: {stats['failed']} | "
-                     f"Rate: {rate:.0f}/hr | ETA: {eta_hours:.1f}h | "
-                     f"Est. cost: ${total_cost:.2f}\n")
+    except KeyboardInterrupt:
+        log.info(f"\n  [{model_key}] Interrupted. Progress saved (JSONL append-only).")
 
     elapsed = time.time() - start_time
 
@@ -573,6 +614,7 @@ def run_pipeline(model_key: str = 'A', limit: int | None = None, resume: bool = 
         'successful': stats['success'],
         'failed': stats['failed'],
         'estimated_cost_usd': round(total_cost, 2),
+        'workers': workers,
     }
 
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -580,9 +622,10 @@ def run_pipeline(model_key: str = 'A', limit: int | None = None, resume: bool = 
         json.dump(report, f, indent=2, ensure_ascii=False)
 
     log.info("\n" + "=" * 70)
-    log.info("SCORING COMPLETE")
+    log.info(f"SCORING COMPLETE — Model {model_key}")
     log.info("=" * 70)
     log.info(f"  Model:      {model_key} ({MODELS[model_key]})")
+    log.info(f"  Workers:    {workers}")
     log.info(f"  Processed:  {stats['success'] + stats['failed']}")
     log.info(f"  Success:    {stats['success']}")
     log.info(f"  Failed:     {stats['failed']}")
@@ -608,6 +651,8 @@ if __name__ == '__main__':
                         help='Start fresh, ignoring existing progress')
     parser.add_argument('--merge', action='store_true',
                         help='Only merge existing raw scores into ensemble')
+    parser.add_argument('--workers', type=int, default=10,
+                        help='Number of concurrent API calls per model (default: 10)')
     args = parser.parse_args()
 
     if args.merge:
@@ -617,15 +662,40 @@ if __name__ == '__main__':
     resume = not args.no_resume
 
     if args.model.lower() == 'all':
+        # Run all 3 models in parallel, each with its own thread pool
+        log.info("=" * 70)
+        log.info("RUNNING ALL 3 MODELS IN PARALLEL")
+        log.info(f"  Workers per model: {args.workers}")
+        log.info("=" * 70)
+
+        model_threads = []
+        model_reports = {}
+
+        def run_model(key):
+            report = run_pipeline(model_key=key, limit=args.limit,
+                                  resume=resume, workers=args.workers)
+            model_reports[key] = report
+
         for key in ['A', 'B', 'C']:
-            run_pipeline(model_key=key, limit=args.limit, resume=resume)
+            t = threading.Thread(target=run_model, args=(key,), name=f"Model-{key}")
+            t.start()
+            model_threads.append(t)
+            time.sleep(1)  # Stagger model starts slightly
+
+        for t in model_threads:
+            t.join()
+
+        log.info("\n" + "=" * 70)
+        log.info("ALL MODELS COMPLETE — Merging ensemble scores")
+        log.info("=" * 70)
         merge_scores()
     else:
         key = args.model.upper()
         if key not in MODELS:
             log.error(f"Unknown model key: {key}. Use A, B, C, or 'all'")
             sys.exit(1)
-        run_pipeline(model_key=key, limit=args.limit, resume=resume)
+        run_pipeline(model_key=key, limit=args.limit,
+                     resume=resume, workers=args.workers)
         # Auto-merge if we have scores from multiple models
         if SCORES_RAW.exists():
             models_present = set()

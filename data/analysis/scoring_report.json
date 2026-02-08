@@ -1,0 +1,11 @@
+{
+  "model": "C",
+  "model_name": "google/gemini-2.0-flash-001",
+  "completed": "2026-02-08T16:58:21.571546",
+  "elapsed_seconds": 7.5,
+  "entries_processed": 3,
+  "successful": 2,
+  "failed": 1,
+  "estimated_cost_usd": 0.06,
+  "workers": 3
+}

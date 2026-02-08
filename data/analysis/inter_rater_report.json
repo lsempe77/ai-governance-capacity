@@ -1,0 +1,433 @@
+{
+  "n_total": 2216,
+  "n_three_models": 2209,
+  "n_two_plus": 2216,
+  "icc": {
+    "c1_clarity": 0.72,
+    "c2_resources": 0.735,
+    "c3_authority": 0.751,
+    "c4_accountability": 0.753,
+    "c5_coherence": 0.804,
+    "e1_framework": 0.751,
+    "e2_rights": 0.785,
+    "e3_governance": 0.691,
+    "e4_operationalisation": 0.605,
+    "e5_inclusion": 0.746,
+    "capacity_score": 0.824,
+    "ethics_score": 0.791,
+    "overall_score": 0.827
+  },
+  "pairwise_correlations": {
+    "AvB": {
+      "c1_clarity": {
+        "pearson": 0.762,
+        "spearman": 0.783,
+        "n": 2210
+      },
+      "c2_resources": {
+        "pearson": 0.838,
+        "spearman": 0.801,
+        "n": 2210
+      },
+      "c3_authority": {
+        "pearson": 0.798,
+        "spearman": 0.803,
+        "n": 2210
+      },
+      "c4_accountability": {
+        "pearson": 0.796,
+        "spearman": 0.774,
+        "n": 2210
+      },
+      "c5_coherence": {
+        "pearson": 0.846,
+        "spearman": 0.844,
+        "n": 2210
+      },
+      "e1_framework": {
+        "pearson": 0.787,
+        "spearman": 0.761,
+        "n": 2210
+      },
+      "e2_rights": {
+        "pearson": 0.815,
+        "spearman": 0.8,
+        "n": 2210
+      },
+      "e3_governance": {
+        "pearson": 0.681,
+        "spearman": 0.661,
+        "n": 2210
+      },
+      "e4_operationalisation": {
+        "pearson": 0.598,
+        "spearman": 0.599,
+        "n": 2210
+      },
+      "e5_inclusion": {
+        "pearson": 0.768,
+        "spearman": 0.728,
+        "n": 2210
+      },
+      "capacity_score": {
+        "pearson": 0.862,
+        "spearman": 0.852,
+        "n": 2210
+      },
+      "ethics_score": {
+        "pearson": 0.808,
+        "spearman": 0.817,
+        "n": 2210
+      },
+      "overall_score": {
+        "pearson": 0.873,
+        "spearman": 0.87,
+        "n": 2210
+      }
+    },
+    "AvC": {
+      "c1_clarity": {
+        "pearson": 0.737,
+        "spearman": 0.737,
+        "n": 2209
+      },
+      "c2_resources": {
+        "pearson": 0.723,
+        "spearman": 0.668,
+        "n": 2209
+      },
+      "c3_authority": {
+        "pearson": 0.751,
+        "spearman": 0.766,
+        "n": 2209
+      },
+      "c4_accountability": {
+        "pearson": 0.732,
+        "spearman": 0.7,
+        "n": 2209
+      },
+      "c5_coherence": {
+        "pearson": 0.795,
+        "spearman": 0.799,
+        "n": 2209
+      },
+      "e1_framework": {
+        "pearson": 0.756,
+        "spearman": 0.77,
+        "n": 2209
+      },
+      "e2_rights": {
+        "pearson": 0.781,
+        "spearman": 0.754,
+        "n": 2209
+      },
+      "e3_governance": {
+        "pearson": 0.754,
+        "spearman": 0.732,
+        "n": 2209
+      },
+      "e4_operationalisation": {
+        "pearson": 0.59,
+        "spearman": 0.568,
+        "n": 2209
+      },
+      "e5_inclusion": {
+        "pearson": 0.713,
+        "spearman": 0.689,
+        "n": 2209
+      },
+      "capacity_score": {
+        "pearson": 0.819,
+        "spearman": 0.822,
+        "n": 2209
+      },
+      "ethics_score": {
+        "pearson": 0.812,
+        "spearman": 0.826,
+        "n": 2209
+      },
+      "overall_score": {
+        "pearson": 0.843,
+        "spearman": 0.848,
+        "n": 2209
+      }
+    },
+    "BvC": {
+      "c1_clarity": {
+        "pearson": 0.776,
+        "spearman": 0.779,
+        "n": 2215
+      },
+      "c2_resources": {
+        "pearson": 0.799,
+        "spearman": 0.762,
+        "n": 2215
+      },
+      "c3_authority": {
+        "pearson": 0.826,
+        "spearman": 0.831,
+        "n": 2215
+      },
+      "c4_accountability": {
+        "pearson": 0.795,
+        "spearman": 0.779,
+        "n": 2215
+      },
+      "c5_coherence": {
+        "pearson": 0.823,
+        "spearman": 0.832,
+        "n": 2215
+      },
+      "e1_framework": {
+        "pearson": 0.836,
+        "spearman": 0.843,
+        "n": 2215
+      },
+      "e2_rights": {
+        "pearson": 0.837,
+        "spearman": 0.833,
+        "n": 2215
+      },
+      "e3_governance": {
+        "pearson": 0.788,
+        "spearman": 0.784,
+        "n": 2215
+      },
+      "e4_operationalisation": {
+        "pearson": 0.71,
+        "spearman": 0.709,
+        "n": 2215
+      },
+      "e5_inclusion": {
+        "pearson": 0.781,
+        "spearman": 0.785,
+        "n": 2215
+      },
+      "capacity_score": {
+        "pearson": 0.893,
+        "spearman": 0.904,
+        "n": 2215
+      },
+      "ethics_score": {
+        "pearson": 0.871,
+        "spearman": 0.878,
+        "n": 2215
+      },
+      "overall_score": {
+        "pearson": 0.902,
+        "spearman": 0.911,
+        "n": 2215
+      }
+    }
+  },
+  "weighted_kappa": {
+    "AvB": {
+      "c1_clarity": 0.578,
+      "c2_resources": 0.677,
+      "c3_authority": 0.64,
+      "c4_accountability": 0.687,
+      "c5_coherence": 0.745,
+      "e1_framework": 0.604,
+      "e2_rights": 0.674,
+      "e3_governance": 0.483,
+      "e4_operationalisation": 0.505,
+      "e5_inclusion": 0.628
+    },
+    "AvC": {
+      "c1_clarity": 0.58,
+      "c2_resources": 0.477,
+      "c3_authority": 0.584,
+      "c4_accountability": 0.597,
+      "c5_coherence": 0.658,
+      "e1_framework": 0.579,
+      "e2_rights": 0.67,
+      "e3_governance": 0.597,
+      "e4_operationalisation": 0.47,
+      "e5_inclusion": 0.611
+    },
+    "BvC": {
+      "c1_clarity": 0.642,
+      "c2_resources": 0.609,
+      "c3_authority": 0.721,
+      "c4_accountability": 0.693,
+      "c5_coherence": 0.661,
+      "e1_framework": 0.752,
+      "e2_rights": 0.741,
+      "e3_governance": 0.687,
+      "e4_operationalisation": 0.587,
+      "e5_inclusion": 0.652
+    }
+  },
+  "fleiss_kappa": {
+    "c1_clarity": 0.468,
+    "c2_resources": 0.41,
+    "c3_authority": 0.512,
+    "c4_accountability": 0.571,
+    "c5_coherence": 0.558,
+    "e1_framework": 0.546,
+    "e2_rights": 0.615,
+    "e3_governance": 0.493,
+    "e4_operationalisation": 0.444,
+    "e5_inclusion": 0.521
+  },
+  "spread": {
+    "c1_clarity": {
+      "mean_spread": 0.571,
+      "median_spread": 1,
+      "mean_mad": 0.249,
+      "pct_exact_agree": 47.0,
+      "pct_within_1": 96.3
+    },
+    "c2_resources": {
+      "mean_spread": 0.573,
+      "median_spread": 1,
+      "mean_mad": 0.249,
+      "pct_exact_agree": 47.8,
+      "pct_within_1": 95.6
+    },
+    "c3_authority": {
+      "mean_spread": 0.588,
+      "median_spread": 0,
+      "mean_mad": 0.249,
+      "pct_exact_agree": 53.0,
+      "pct_within_1": 89.4
+    },
+    "c4_accountability": {
+      "mean_spread": 0.349,
+      "median_spread": 0,
+      "mean_mad": 0.152,
+      "pct_exact_agree": 67.6,
+      "pct_within_1": 97.7
+    },
+    "c5_coherence": {
+      "mean_spread": 0.502,
+      "median_spread": 0,
+      "mean_mad": 0.217,
+      "pct_exact_agree": 54.2,
+      "pct_within_1": 96.2
+    },
+    "e1_framework": {
+      "mean_spread": 0.434,
+      "median_spread": 0,
+      "mean_mad": 0.189,
+      "pct_exact_agree": 59.4,
+      "pct_within_1": 97.3
+    },
+    "e2_rights": {
+      "mean_spread": 0.336,
+      "median_spread": 0,
+      "mean_mad": 0.147,
+      "pct_exact_agree": 68.2,
+      "pct_within_1": 98.3
+    },
+    "e3_governance": {
+      "mean_spread": 0.482,
+      "median_spread": 0,
+      "mean_mad": 0.206,
+      "pct_exact_agree": 56.8,
+      "pct_within_1": 95.2
+    },
+    "e4_operationalisation": {
+      "mean_spread": 0.55,
+      "median_spread": 0,
+      "mean_mad": 0.232,
+      "pct_exact_agree": 54.6,
+      "pct_within_1": 91.4
+    },
+    "e5_inclusion": {
+      "mean_spread": 0.448,
+      "median_spread": 0,
+      "mean_mad": 0.195,
+      "pct_exact_agree": 57.6,
+      "pct_within_1": 97.6
+    },
+    "capacity_score": {
+      "mean_spread": 0.457,
+      "median_spread": 0.4,
+      "mean_mad": 0.18,
+      "pct_exact_agree": 21.5,
+      "pct_within_1": 93.8
+    },
+    "ethics_score": {
+      "mean_spread": 0.405,
+      "median_spread": 0.4,
+      "mean_mad": 0.16,
+      "pct_exact_agree": 30.4,
+      "pct_within_1": 93.4
+    },
+    "overall_score": {
+      "mean_spread": 0.396,
+      "median_spread": 0.3,
+      "mean_mad": 0.155,
+      "pct_exact_agree": 19.5,
+      "pct_within_1": 95.4
+    }
+  },
+  "model_bias": {
+    "A": {
+      "c1_clarity": 0.761,
+      "c2_resources": 0.457,
+      "c3_authority": 0.779,
+      "c4_accountability": 0.36,
+      "c5_coherence": 1.023,
+      "e1_framework": 0.468,
+      "e2_rights": 0.426,
+      "e3_governance": 0.407,
+      "e4_operationalisation": 0.418,
+      "e5_inclusion": 0.589,
+      "capacity_score": 0.676,
+      "ethics_score": 0.461,
+      "overall_score": 0.569
+    },
+    "B": {
+      "c1_clarity": 1.097,
+      "c2_resources": 0.707,
+      "c3_authority": 1.124,
+      "c4_accountability": 0.494,
+      "c5_coherence": 1.19,
+      "e1_framework": 0.763,
+      "e2_rights": 0.643,
+      "e3_governance": 0.78,
+      "e4_operationalisation": 0.656,
+      "e5_inclusion": 0.684,
+      "capacity_score": 0.922,
+      "ethics_score": 0.705,
+      "overall_score": 0.814
+    },
+    "C": {
+      "c1_clarity": 0.971,
+      "c2_resources": 0.885,
+      "c3_authority": 1.214,
+      "c4_accountability": 0.58,
+      "c5_coherence": 1.007,
+      "e1_framework": 0.775,
+      "e2_rights": 0.587,
+      "e3_governance": 0.666,
+      "e4_operationalisation": 0.7,
+      "e5_inclusion": 0.678,
+      "capacity_score": 0.931,
+      "ethics_score": 0.681,
+      "overall_score": 0.806
+    }
+  },
+  "agreement_by_quality": {
+    "good": {
+      "n": 942,
+      "mean_spread": 0.571,
+      "median_spread": 0.5,
+      "pct_within_1": 90.3
+    },
+    "thin": {
+      "n": 805,
+      "mean_spread": 0.342,
+      "median_spread": 0.3,
+      "pct_within_1": 98.9
+    },
+    "stub": {
+      "n": 462,
+      "mean_spread": 0.134,
+      "median_spread": 0.0,
+      "pct_within_1": 99.8
+    }
+  }
+}

@@ -19,24 +19,32 @@ observatory/
 │   ├── THEORETICAL_FRAMEWORK.md   # Theoretical underpinnings
 │   ├── INDICATOR_RUBRIC.md        # Capacity indicator definitions
 │   ├── VALIDATION_PROTOCOL.md     # Validation methodology
-│   └── MPHIL_MODULE.md            # Teaching module outline
+│   └── MPHIL_MODULE.md           # Teaching module outline
 │
 ├── src/
-│   ├── scrapers/                  # Data collection scripts (8 active)
+│   ├── scrapers/                  # Data collection scripts
 │   │   ├── retrieve_v3.py         # Final document retriever (+ Wayback Machine)
 │   │   ├── download_all_pdfs.py   # Phase 1 bulk downloader
 │   │   ├── find_pdfs_with_claude.py # Claude-assisted URL finder
 │   │   ├── integrate_content.py   # Content file → corpus matcher
 │   │   ├── audit_matching.py      # PDF-to-corpus matching audit
 │   │   └── ...                    # UNESCO/OECD specific scrapers
-│   ├── analysis/                  # Analysis scripts (Phase 2-3, TBD)
+│   ├── analysis/                  # Analysis pipeline
+│   │   ├── extract_text.py        # Phase 1: text extraction + quality flags
+│   │   ├── score_policies.py      # Phase 2: 3-model LLM scoring (parallel)
+│   │   └── inter_rater.py         # Phase 2.3: inter-rater reliability
 │   └── collectors/                # Corpus building (completed)
 │
 ├── data/
 │   ├── corpus/                    # Master corpus (2,216 entries)
-│   │   └── corpus_master_20260127.json
+│   │   └── corpus_enriched.json   # Enriched with full text + quality flags
 │   ├── pdfs/                      # Downloaded documents (~2,085 files)
-│   ├── analysis/                  # Analysis outputs (Phase 2+)
+│   ├── analysis/                  # Analysis outputs
+│   │   ├── scores_raw.jsonl       # Raw scores: 6,641 lines (entry × model)
+│   │   ├── scores_ensemble.json   # Merged median ensemble (2,216 entries)
+│   │   ├── inter_rater_report.json # ICC, kappa, correlations
+│   │   ├── extraction_report.json # Phase 1 quality metrics
+│   │   └── scoring_report.json    # Phase 2 run statistics
 │   └── _archive/                  # Archived raw/intermediate data
 ```
 
@@ -46,23 +54,91 @@ observatory/
 |--------|-------|
 | **Total policies** | 2,216 |
 | **Documents downloaded** | ~2,085 (94%) |
+| **Analysis-ready (full text)** | 1,754 (79.2%) |
+| **Total words extracted** | 11.4 million |
 | **Jurisdictions** | 70+ countries + EU/international |
 | **Time span** | 2017–2025 |
 | **Source** | OECD.AI Policy Observatory |
 
-## 🔬 Capacity Indicators
+### Text Quality Distribution
 
-We measure governance capacity across **5 dimensions**:
+| Quality | Count | % | Description |
+|---------|-------|---|-------------|
+| Good | 948 | 42.8% | ≥500 words, full analysis |
+| Thin | 806 | 36.4% | 100–499 words, usable |
+| Stub | 462 | 20.8% | <100 words, minimal text |
 
-| Dimension | Weight |
-|-----------|--------|
-| **Institutional Architecture** — Dedicated AI unit, coordination mechanisms | 20% |
-| **Legal Authority** — Enforcement powers, AI legislation, procurement rules | 25% |
-| **Technical Expertise** — Staff qualifications, standards, research | 20% |
-| **Resources** — Budget allocation, staffing levels | 15% |
-| **Implementation Evidence** — Enforcement actions, guidance, complaints | 20% |
+## 🔬 Scoring Framework
 
-Each indicator scored 0–3 with documented evidence and confidence levels.
+Each policy scored on **10 dimensions** (0–4 scale) by a **3-model LLM ensemble**:
+
+### Capacity Dimensions (Mazmanian-Sabatier / Lipsky / Grindle / Fukuyama)
+
+| Dim | Indicator | Mean Score |
+|-----|-----------|------------|
+| C1 | Clarity & Specificity | 0.94 |
+| C2 | Resources & Budget | 0.68 |
+| C3 | Authority & Enforcement | 1.04 |
+| C4 | Accountability & M&E | 0.48 |
+| C5 | Coherence & Coordination | 1.07 |
+| | **Capacity composite** | **0.83/4** |
+
+### Ethics Dimensions (Jobin / Floridi / OECD / UNESCO / EU AI Act)
+
+| Dim | Indicator | Mean Score |
+|-----|-----------|------------|
+| E1 | Ethical Framework Depth | 0.67 |
+| E2 | Rights Protection | 0.55 |
+| E3 | Governance Mechanisms | 0.62 |
+| E4 | Operationalisation | 0.59 |
+| E5 | Inclusion & Participation | 0.65 |
+| | **Ethics composite** | **0.61/4** |
+
+### LLM Ensemble
+
+| Model | Role | Entries Scored |
+|-------|------|---------------|
+| Claude Sonnet 4 (A) | Strictest scorer (mean 0.57) | 2,210/2,216 |
+| GPT-4o (B) | Moderate scorer (mean 0.81) | 2,216/2,216 |
+| Gemini Flash 2.0 (C) | Moderate scorer (mean 0.81) | 2,215/2,216 |
+
+Final scores = **median** across 3 models. 99.7% of entries scored by all 3 models.
+
+## 📐 Inter-Rater Reliability
+
+| Metric | Value | Interpretation |
+|--------|-------|----------------|
+| **ICC(2,1) overall** | **0.827** | Excellent |
+| ICC(2,1) capacity | 0.824 | Excellent |
+| ICC(2,1) ethics | 0.791 | Excellent |
+| Mean dimension ICC | 0.734 (0.605–0.804) | Good–Excellent |
+| Pairwise Pearson (avg) | 0.86 | Strong |
+| Pairwise Spearman (avg) | 0.88 | Strong |
+| Fleiss' κ (avg across dims) | 0.51 | Moderate |
+| Mean overall spread | 0.40/4 | Low disagreement |
+| Scores within 1 point | 95.4% | High consistency |
+
+## 🏆 Top-Scoring Policies
+
+| Score | Jurisdiction | Policy |
+|-------|-------------|--------|
+| 3.1 | European Union | General Data Protection Regulation (GDPR) |
+| 3.0 | European Union | Artificial Intelligence Act (AI Act) |
+| 2.7 | European Union | Digital Services Act Package |
+| 2.7 | United States | National AI Initiative Office |
+| 2.6 | Canada | Directive on Automated Decision-making |
+| 2.5 | Colombia | CONPES 4144 (National AI Policy) |
+
+### Score Distribution
+
+| Range | Count | % |
+|-------|-------|---|
+| 0.0–0.9 | 1,415 | 63.9% |
+| 1.0–1.9 | 722 | 32.6% |
+| 2.0–2.9 | 77 | 3.5% |
+| 3.0–4.0 | 2 | 0.1% |
+
+> **Key finding:** The vast majority of AI policies worldwide (96.5%) score below 2/4 on implementation capacity and ethics operationalisation.
 
 ## 🚀 Project Phases
 
@@ -70,10 +146,10 @@ See [docs/PROJECT_PLAN.md](docs/PROJECT_PLAN.md) for full details.
 
 | Phase | Status | Description |
 |-------|--------|-------------|
-| **Phase 0** | ✅ Complete | Corpus construction & document download |
-| **Phase 1** | ⏳ Next | Text extraction & parsing pipeline |
-| **Phase 2** | ❌ Planned | AI-powered classification & scoring |
-| **Phase 3** | ❌ Planned | SOTA analysis & validation |
+| **Phase 0** | ✅ Complete | Corpus construction & document download (2,216 policies) |
+| **Phase 1** | ✅ Complete | Text extraction — 1,754 analysis-ready (79.2%), 11.4M words |
+| **Phase 2** | ✅ Complete | LLM scoring — 3-model ensemble, 6,641 API calls, ICC=0.827 |
+| **Phase 3** | ⏳ Next | SOTA analysis — regression, clustering, temporal trends |
 | **Phase 4** | ❌ Planned | Reporting & dissemination |
 
 ## 🛠️ Setup
