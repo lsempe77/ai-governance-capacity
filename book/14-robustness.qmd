@@ -1,0 +1,88 @@
+---
+title: "Robustness Checks"
+---
+
+## How Robust Are the Findings? {#sec-robustness}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter subjects the core findings to multiple robustness checks: text quality restrictions, bootstrap confidence intervals, cluster stability analysis, and sensitivity tests. The central finding is that the income-group gap is not robust — it vanishes for good-quality texts.
+:::
+
+### The Text Quality Artefact {#sec-text-quality}
+
+Our most consequential robustness check examines whether the income-group gap survives when restricted to different text quality tiers:
+
+| Sample Restriction | N | Capacity $d$ | Ethics $d$ |
+|:---|---:|---:|---:|
+| All texts | 2,097 | **+0.30*** | **+0.20*** |
+| **Good-text only (≥500 words)** | 948 | **+0.04 (n.s.)** | **−0.09 (n.s.)** |
+| Good + thin | 1,754 | +0.23*** | +0.11 ($p$ = .08) |
+| Excluding stubs | 1,754 | +0.23*** | +0.11 ($p$ = .08) |
+
+: Income-group effect sizes by text quality restriction {#tbl-robustness-text}
+
+This is the single most important result in the book: **the income-group gap in AI governance scores largely vanishes when restricted to policies with adequate text**. For good-quality texts only:
+
+- Capacity: $d = +0.04$ (trivial, non-significant)
+- Ethics: $d = -0.09$ (trivial, non-significant, and *reversed* in sign)
+
+The implication is that much of the observed "governance gap" between high-income and developing countries may be a **measurement artefact** of text extraction quality. Developing countries' policies are more often available as short snippets (stubs) rather than full documents, which mechanically produces lower scores regardless of actual governance quality.
+
+::: {.callout-warning}
+**Interpretive caution.** The text quality finding does not prove that there is *no* capacity gap — it shows that our measurement cannot reliably detect one after controlling for document availability. The truth may lie between the full-sample estimate ($d = 0.30$) and the good-text estimate ($d = 0.04$).
+:::
+
+### Bootstrap Confidence Intervals {#sec-bootstrap}
+
+![Bootstrap distributions of the income-group effect size (Cohen's $d$) from 1,000 resamples.](../data/analysis/paper1_capacity/robustness/fig_bootstrap_ci.png){#fig-bootstrap}
+
+We compute bootstrap 95% confidence intervals using 1,000 resamples:
+
+| Metric | Point Estimate | 95% CI |
+|:---|---:|:---|
+| Capacity $d$ | 0.30 | [0.19, 0.41] |
+| Ethics $d$ | 0.20 | [0.09, 0.30] |
+
+: Bootstrap confidence intervals for income-group effects {#tbl-bootstrap}
+
+The CIs exclude zero for the full sample, but recall that the good-text restriction eliminates the effect entirely. The bootstrap CIs for the good-text sample would include zero.
+
+### Cluster Stability {#sec-cluster-stability}
+
+![Cluster stability analysis across different values of $k$. $k = 2$ achieves the highest silhouette score for both capacity and ethics.](../data/analysis/paper1_capacity/robustness/fig_cluster_stability.png){#fig-cluster-stability}
+
+| $k$ | Silhouette (Capacity) | Silhouette (Ethics) |
+|:---|---:|---:|
+| 2 | **0.41** | **0.42** |
+| 3 | 0.33 | 0.35 |
+| 4 | 0.28 | 0.30 |
+| 5 | 0.25 | 0.27 |
+
+: Cluster stability across $k$ values {#tbl-cluster-k}
+
+The two-cluster solution is the most stable for both constructs. Solutions with $k > 2$ show diminishing silhouette scores, suggesting that the dominant structure in the data is a binary split between low-scoring and moderate-scoring policies.
+
+### Sensitivity Analysis {#sec-sensitivity}
+
+We test sensitivity of the regression results to several alternative specifications:
+
+1. **Excluding international organisations** — results unchanged
+2. **Using ordinal regression** instead of OLS — rank ordering preserved
+3. **Winsorising extreme scores** (top/bottom 5%) — coefficients stable
+4. **Alternative income classifications** — results robust to three-group (HI/MI/LI) and four-group splits
+
+### Summary of Robustness Findings
+
+| Finding | Robust? | Key Caveat |
+|:---|:---|:---|
+| Income-group gap exists | ⚠️ **Partially** | Vanishes for good-quality texts |
+| GDP has modest capacity effect | ✅ Yes | Consistent across OLS, multilevel, Tobit |
+| GDP has zero ethics effect | ✅ Yes | Confirmed by quantile regression |
+| Two-factor PCA structure | ✅ Yes | Stable across subsamples |
+| Within-group inequality dominates | ✅ Yes | 98–99% in all specifications |
+| Horizontal diffusion pattern | ✅ Yes | Consistent across capacity and ethics |
+| Efficiency frontier countries | ✅ Yes | Same core countries across both constructs |
+
+: Summary of robustness checks {#tbl-robustness-summary}
+
+The core analytical findings (GDP effects, inequality structure, diffusion patterns, frontier countries) are highly robust. The one finding that is **not robust** is the income-group gap itself — our single most important caveat for policy interpretation.

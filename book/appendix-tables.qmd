@@ -1,0 +1,55 @@
+---
+title: "Full Regression Tables"
+---
+
+## Detailed Regression Output {#sec-appendix-tables}
+
+This appendix provides full regression tables for all models estimated in the book.
+
+### Capacity Models
+
+#### OLS (Model 2 — Full Controls)
+
+See @tbl-cap-ols in @sec-cap-ols for the main results. Full model diagnostics:
+
+- $R^2 = 0.436$, Adjusted $R^2 = 0.434$
+- $N = 1{,}949$
+- $F$-statistic significant ($p < .001$)
+- Residual SE = 0.581
+
+#### Multilevel Random-Intercept Model
+
+See @tbl-cap-multilevel in @sec-cap-multilevel. Additional details:
+
+- Country ICC = 0.091
+- Between-country variance ($\sigma^2_u$) = 0.051
+- Within-country variance ($\sigma^2_\varepsilon$) = 0.510
+- LR test vs. OLS: $\chi^2(1) = 7.30$, $p = .007$
+
+#### Quantile Regression
+
+See @tbl-cap-qr in @sec-cap-quantile. Full coefficient tables available in `data/analysis/paper1_capacity/extended/quantile_results.json`.
+
+#### Tobit Model (Left-Censored at 0)
+
+See @tbl-cap-tobit in @sec-cap-tobit. Additional details:
+
+- Log-likelihood: reported in `tobit_results.json`
+- $\sigma = 0.742$
+- Censored observations: 27.6%
+- Optimiser: multi-method (L-BFGS-B primary)
+
+### Ethics Models
+
+Parallel regression tables for ethics are available in the corresponding JSON files:
+
+- `data/analysis/paper2_ethics/regression_results.json`
+- `data/analysis/paper2_ethics/robustness/multilevel_results.json`
+- `data/analysis/paper2_ethics/extended/quantile_results.json`
+- `data/analysis/paper2_ethics/extended/tobit_results.json`
+
+### Sensitivity Table
+
+The full sensitivity analysis table comparing coefficients across specifications:
+
+See [sensitivity_table.csv](../data/analysis/paper1_capacity/robustness/sensitivity_table.csv) for capacity and [sensitivity_table.csv](../data/analysis/paper2_ethics/robustness/sensitivity_table.csv) for ethics.

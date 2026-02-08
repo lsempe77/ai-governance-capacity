@@ -1,0 +1,70 @@
+---
+title: "Capacity Inequality & Clusters"
+---
+
+## Within vs. Between: Decomposing the Governance Gap {#sec-cap-inequality}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter moves beyond mean comparisons to examine the *structure* of governance inequality. Using Gini coefficients, Theil decomposition, policy portfolio analysis, and K-means clustering, we show that within-group inequality overwhelmingly dominates the between-group income gap.
+:::
+
+### Inequality Decomposition {#sec-cap-gini}
+
+![Lorenz curves for capacity scores, by income group and overall. Both groups exhibit substantial inequality, with developing countries showing slightly more concentration.](../data/analysis/paper1_capacity/extended/fig_lorenz.png){#fig-cap-lorenz}
+
+The Gini coefficient for capacity scores across all countries is **0.518** — substantial inequality. But how much of this is attributable to the income divide?
+
+| Metric | Value |
+|:---|---:|
+| Gini (all countries) | 0.518 |
+| Gini (HI only) | 0.499 |
+| Gini (Developing) | 0.593 |
+| Gini (country means) | 0.235 |
+
+: Gini coefficients for capacity scores {#tbl-cap-gini}
+
+Developing countries have *higher* within-group inequality (Gini = 0.593) than high-income countries (0.499), meaning the variation among developing countries is larger than the gap between groups.
+
+#### Theil Decomposition
+
+![Theil decomposition of capacity inequality: 98.8% within groups, only 1.2% between income groups.](../data/analysis/paper1_capacity/extended/fig_theil_decomposition.png){#fig-cap-theil}
+
+The Theil T index allows exact additive decomposition of total inequality into between-group and within-group components:
+
+| Component | Share |
+|:---|---:|
+| **Between** income groups | **1.2%** |
+| **Within** income groups | **98.8%** |
+
+: Theil decomposition of capacity inequality {#tbl-cap-theil}
+
+This is the chapter's central finding: **the income-group label explains only 1.2% of total capacity inequality**. The variation within high-income countries (from Luxembourg to Portugal) and within developing countries (from Brazil to Afghanistan) dwarfs the gap between the two groups.
+
+### Policy Portfolio Breadth {#sec-cap-portfolio}
+
+Do developing countries simply *miss* certain governance dimensions, or do they cover all dimensions but at lower depth?
+
+![Heatmap of policy portfolio coverage by country and dimension. Most countries cover all five dimensions in at least one policy.](../data/analysis/paper1_capacity/extended/fig_portfolio_heatmap.png){#fig-cap-portfolio-heatmap}
+
+![Portfolio breadth gap between income groups, by dimension. C4 Accountability shows the largest coverage gap.](../data/analysis/paper1_capacity/extended/fig_portfolio_gaps.png){#fig-cap-portfolio-gaps}
+
+| Metric | HI | Developing | $p$ |
+|:---|---:|---:|:---|
+| Mean breadth (out of 5) | 4.95 | 4.52 | .137 |
+| Countries with 5/5 coverage | 93% | — | — |
+| Least covered dimension | C4 (92.6%) | C4 (92.6%) | — |
+
+: Policy portfolio breadth by income group {#tbl-cap-portfolio}
+
+The breadth gap is **not statistically significant** ($p = .137$). Most countries, regardless of income, cover all five dimensions in at least one policy. The gap is in **depth** (score levels), not breadth. C4 Accountability is the most commonly missing dimension across both groups.
+
+### K-Means Clustering {#sec-cap-clusters}
+
+![Radar chart of capacity dimension profiles for the two identified clusters. Cluster 1 ("Low Capacity") shows uniformly low scores; Cluster 2 ("Moderate Capacity") shows elevation across all dimensions.](../data/analysis/paper1_capacity/fig_cluster_radar.png){#fig-cap-cluster-radar}
+
+K-means clustering ($k = 2$, optimal by silhouette score = 0.41) reveals two distinct governance profiles:
+
+- **Cluster 1 ("Low Capacity")**: ~60% of policies, uniformly low scores across all dimensions
+- **Cluster 2 ("Moderate Capacity")**: ~40% of policies, elevated scores particularly on C1 Clarity, C3 Authority, and C5 Coherence
+
+Both clusters contain policies from both income groups, reinforcing the finding that within-group variation exceeds between-group differences. Cluster stability analysis (see @sec-robustness) confirms that $k = 2$ is the most robust solution.

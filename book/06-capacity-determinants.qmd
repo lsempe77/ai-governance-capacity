@@ -1,0 +1,107 @@
+---
+title: "Capacity Determinants"
+---
+
+## What Explains Governance Capacity? {#sec-cap-determinants}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter examines the determinants of AI governance capacity through four complementary regression approaches: OLS, multilevel models, quantile regression, and Tobit models. The central finding is that GDP per capita explains remarkably little variation — text quality dominates.
+:::
+
+### OLS Regression {#sec-cap-ols}
+
+![Scatter plot of capacity scores against log GDP per capita, with regression line. The relationship is positive but weak.](../data/analysis/paper1_capacity/fig_gdp_scatter.png){#fig-cap-gdp-scatter}
+
+We begin with a standard OLS model predicting the capacity composite:
+
+$$\text{Capacity}_i = \beta_0 + \beta_1 \ln(\text{GDP}_{pc}) + \beta_2 \text{Year} + \beta_3 \text{Binding} + \beta_4 \text{GoodText} + \varepsilon_i$$
+
+| Variable | $\beta$ | SE | $t$ | $p$ |
+|:---|---:|---:|---:|:---|
+| Intercept | −0.536 | 0.245 | −2.19 | .029 |
+| log(GDP pc) | **0.086** | 0.023 | 3.81 | < .001 |
+| Year (centred) | 0.010 | 0.006 | 1.75 | .081 |
+| Binding regulation | **0.190** | 0.069 | 2.73 | .006 |
+| Good text quality | **1.004** | 0.027 | 37.64 | < .001 |
+
+: OLS regression: capacity determinants ($R^2 = 0.436$, $N = 1{,}949$) {#tbl-cap-ols}
+
+Three findings stand out:
+
+1. **Text quality dominates**: `is_good_text` ($\beta = 1.00$) dwarfs all other predictors. Policies with ≥500 words of extracted text score a full point higher — this is a measurement artefact, not a governance difference.
+2. **GDP matters but modestly**: A one-unit increase in log GDP per capita ($\approx$ tripling GDP) raises capacity by only 0.086 points on a 4-point scale.
+3. **Binding regulation adds capacity**: Laws and executive orders score 0.19 points higher than soft-law instruments, reflecting their inherently more operational character.
+
+The overall $R^2 = 0.436$, but this is almost entirely driven by text quality. Without the text quality control, $R^2$ drops to 0.012.
+
+### Multilevel Models {#sec-cap-multilevel}
+
+Policies are nested within countries, violating the OLS independence assumption. We estimate a random-intercept multilevel model:
+
+$$\text{Capacity}_{ij} = \gamma_0 + \gamma_1 \ln(\text{GDP}_{pc,j}) + u_j + \varepsilon_{ij}$$
+
+where $u_j \sim N(0, \sigma^2_u)$ is the country random effect.
+
+![Country random effects from the multilevel capacity model. Most countries cluster near zero, with a few notable over- and under-performers.](../data/analysis/paper1_capacity/robustness/fig_country_random_effects.png){#fig-cap-re}
+
+| Metric | OLS | Mixed |
+|:---|---:|---:|
+| GDP $\beta$ | 0.088 | **0.066** |
+| GDP $p$ | < .001 | .038 |
+| Country ICC | — | **0.091** |
+| LR test vs OLS | — | $p = .007$ |
+
+: OLS vs. multilevel model comparison {#tbl-cap-multilevel}
+
+Key insights:
+
+- **Country-level ICC = 0.091**: Only 9.1% of variance is between countries; 90.9% is between policies within countries.
+- **OLS inflates the GDP effect**: The mixed-model GDP coefficient (0.066) is 25% smaller than the OLS estimate (0.088), because OLS double-counts country-level variation.
+- **The multilevel model is the correct specification** (LR test $p = .007$), though the practical difference is modest.
+
+### Quantile Regression {#sec-cap-quantile}
+
+OLS estimates the *mean* effect of GDP on capacity. But does GDP matter equally for low-scoring and high-scoring policies? Quantile regression [@koenker1978] allows us to estimate effects at different points of the distribution.
+
+![Quantile regression coefficients for GDP across the capacity distribution. GDP matters at the median but not at the extremes — an inverted-U pattern.](../data/analysis/paper1_capacity/extended/fig_quantile_regression.png){#fig-cap-qr}
+
+| Quantile ($\tau$) | GDP $\beta$ | SE | $p$ |
+|:---|---:|---:|:---|
+| 0.25 (positive subset) | 0.068 | 0.024 | .005 |
+| 0.50 | **0.098** | 0.019 | < .001 |
+| 0.75 | 0.064 | 0.029 | .028 |
+| OLS (reference) | 0.086 | 0.023 | < .001 |
+
+: Quantile regression: GDP effect across the capacity distribution {#tbl-cap-qr}
+
+The GDP effect follows an **inverted-U pattern**: strongest at the median ($\beta = 0.098$) and weaker at both tails. At the lowest quantiles, many policies score zero regardless of GDP; at the highest quantiles, top policies achieve high scores regardless of national wealth.
+
+### Tobit Regression {#sec-cap-tobit}
+
+The strong floor effect (27.6% of policies score exactly zero) motivates a Tobit model [@tobin1958] with left-censoring at zero:
+
+$$\text{Capacity}_i^* = \mathbf{x}_i' \boldsymbol{\beta} + \varepsilon_i, \quad \text{Capacity}_i = \max(0, \text{Capacity}_i^*)$$
+
+![Comparison of OLS and Tobit coefficients for the capacity model. Tobit coefficients are systematically larger, reflecting correction for censoring.](../data/analysis/paper1_capacity/extended/fig_tobit_comparison.png){#fig-cap-tobit}
+
+| Variable | OLS $\beta$ | Tobit $\beta$ | Ratio |
+|:---|---:|---:|---:|
+| log(GDP pc) | 0.086 | **0.121** | 1.41× |
+| Year | 0.010 | 0.008 | 0.80× |
+| Binding regulation | 0.190 | **0.174** | 0.92× |
+| Good text quality | 1.004 | **1.193** | 1.19× |
+| $\sigma$ | — | 0.742 | — |
+
+: OLS vs. Tobit comparison {#tbl-cap-tobit}
+
+The Tobit GDP coefficient (0.121) is **41% larger** than the OLS estimate (0.086), confirming that OLS attenuates the true effect when floor effects are present. The estimated $\sigma = 0.742$ and the probability of being uncensored at the mean is 82.7%.
+
+### Synthesis {#sec-cap-determinants-synthesis}
+
+Across all four estimation strategies, three consistent findings emerge:
+
+1. **Text quality is the dominant predictor** — it accounts for more variance than all substantive predictors combined.
+2. **GDP matters, but modestly** — even after correcting for censoring (Tobit), the GDP effect explains only a small share of variation. GDP is not destiny.
+3. **Binding regulation adds capacity** — the legal form of a policy matters for its operational content.
+
+The multilevel model reveals that 91% of variance is *within* countries, suggesting that country-level characteristics (income, institutions) are far less important than policy-level features (document type, text quality, sector). This finding is explored further through inequality decomposition in @sec-cap-inequality.

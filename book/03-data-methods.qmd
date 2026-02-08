@@ -1,0 +1,120 @@
+---
+title: "Data & Methods"
+---
+
+## The OECD.AI Corpus {#sec-data-methods}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter describes the data collection pipeline: from the OECD.AI Policy Observatory through document retrieval, text extraction, and quality classification. We detail the construction of a 2,216-policy corpus with 11.4 million words of analysis-ready text across 70+ jurisdictions.
+:::
+
+### Data Source {#sec-data-source}
+
+Our data come from the **OECD.AI Policy Observatory** [@oecdai2024], the most comprehensive international tracker of AI policy initiatives. The Observatory catalogues government actions related to AI — including national strategies, legislation, executive orders, guidelines, and programmes — with structured metadata on jurisdiction, year, policy type, target sectors, and responsible organisations.
+
+We scraped the complete Observatory as of January 2026, obtaining **2,216 policy entries** spanning **70+ jurisdictions** and the years **2017–2025** (with a small number of legacy entries dating to 1956).
+
+| Metric | Value |
+|:---|---:|
+| Total policy entries | 2,216 |
+| Unique jurisdictions | 70+ |
+| Time span | 2017–2025 |
+| Policy types | Strategies, laws, guidelines, executive orders, programmes |
+| Source | OECD.AI Policy Observatory |
+
+: Corpus overview {#tbl-corpus-overview}
+
+### Document Retrieval {#sec-retrieval}
+
+The OECD.AI Observatory provides brief descriptions (typically <500 words) and links to source documents, but does not host full texts. We implemented a **five-strategy retrieval pipeline** to download the original documents:
+
+1. **Direct download** from the `source_url` field in the corpus
+2. **OECD.AI page scraping** for embedded source links
+3. **Internet Archive Wayback Machine** for URLs that had moved or expired
+4. **DuckDuckGo search** using `title + jurisdiction filetype:pdf`
+5. **Claude API** to locate official document URLs through web search
+
+This pipeline achieved **~94% coverage** (~2,085 documents on disk), with the remaining entries available only as OECD snippets.
+
+### Text Extraction {#sec-extraction}
+
+We extracted clean text from the downloaded documents using format-specific parsers:
+
+- **PDF documents**: PyMuPDF (`fitz`) for text-based PDFs
+- **HTML documents**: `trafilatura` for content extraction, stripping navigation and boilerplate
+- **Fallback**: OECD snippet text for entries without downloadable sources
+
+Each document was classified into one of three quality tiers based on extracted word count:
+
+| Quality Tier | Word Count | N | % | Description |
+|:---|:---|---:|---:|:---|
+| Good | ≥500 words | 948 | 42.8% | Full analysis possible |
+| Thin | 100–499 words | 806 | 36.4% | Usable with caveats |
+| Stub | <100 words | 462 | 20.8% | Minimal text only |
+| | **Analysis-ready** | **1,754** | **79.2%** | Good + Thin |
+
+: Text quality distribution {#tbl-text-quality}
+
+The total extracted corpus contains **11.4 million words**, with a median document length of 1,247 words (IQR: 318–4,892).
+
+### Enriched Corpus {#sec-enriched-corpus}
+
+We constructed an enriched corpus file (`corpus_enriched.json`) containing, for each of the 2,216 entries:
+
+- Original OECD metadata (title, jurisdiction, year, URL, policy type, sectors)
+- Extracted full text (or OECD snippet as fallback)
+- Text quality flag (good / thin / stub)
+- Word count
+- Extraction method (PDF / HTML / snippet)
+
+### Country Metadata {#sec-country-metadata}
+
+Each jurisdiction was mapped to standardised metadata using World Bank classifications:
+
+- **Income group**: High Income (HI), Upper Middle Income (UMI), Lower Middle Income (LMI), Low Income (LI)
+- **Binary classification**: High Income vs. Developing (UMI + LMI + LI)
+- **Region**: East Asia & Pacific (EAP), Europe & Central Asia (ECA), Latin America & Caribbean (LAC), Middle East & North Africa (MENA), North America (NAM), South Asia (SA), Sub-Saharan Africa (SSA)
+- **GDP per capita** (current US$, 2023)
+
+International organisations (OECD, EU, United Nations, etc.) were flagged and excluded from country-level analyses where appropriate.
+
+### Sample Composition {#sec-sample}
+
+The final analytical sample reflects the OECD.AI Observatory's coverage, which skews toward high-income countries:
+
+| Income Group | N Policies | % | N Countries |
+|:---|---:|---:|---:|
+| High Income | 1,700 | 76.7% | ~40 |
+| Developing | 397 | 17.9% | ~30 |
+| International | 119 | 5.4% | — |
+| **Total** | **2,216** | **100%** | **70+** |
+
+: Sample by income group {#tbl-sample-income}
+
+This compositional imbalance is inherent to the source data and should be borne in mind when interpreting results. We address potential selection effects through robustness checks in @sec-robustness.
+
+### Analytical Pipeline Overview {#sec-pipeline-overview}
+
+The full analytical pipeline proceeds in four phases:
+
+```{mermaid}
+%%| label: fig-pipeline
+%%| fig-cap: "Analytical pipeline from corpus to results"
+%%| fig-width: 8
+
+graph LR
+    A[OECD.AI<br/>2,216 entries] --> B[Document<br/>Retrieval<br/>94% coverage]
+    B --> C[Text<br/>Extraction<br/>1,754 ready]
+    C --> D[LLM Scoring<br/>3-model ensemble<br/>6,641 calls]
+    D --> E[20 Analyses<br/>120 outputs]
+    
+    style A fill:#e1f5fe
+    style B fill:#e8f5e9
+    style C fill:#fff3e0
+    style D fill:#fce4ec
+    style E fill:#f3e5f5
+```
+
+### Reproducibility {#sec-reproducibility}
+
+All code is available at <https://github.com/lsempe77/ai-governance-capacity>. The pipeline uses deterministic document IDs (`MD5(url)[:12]`) to ensure reproducibility of the corpus-to-analysis link. API calls to LLM providers used fixed model identifiers and structured JSON output schemas.

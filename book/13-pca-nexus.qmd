@@ -1,0 +1,108 @@
+---
+title: "PCA & the Capacity–Ethics Nexus"
+---
+
+## Two Constructs, One Governance Challenge {#sec-pca-nexus}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** Principal component analysis confirms that capacity and ethics are empirically separable but related constructs (two-factor structure, $\alpha$ = 0.92 and 0.91). The capacity–ethics nexus reveals four governance typologies: countries that "walk the walk," those that "talk the talk," and everything in between.
+:::
+
+### PCA: Two-Factor Structure {#sec-pca}
+
+We subject all 10 dimension scores (C1–C5, E1–E5) to principal component analysis to test whether capacity and ethics are empirically distinct.
+
+![Scree plot with Kaiser criterion line. Exactly two components have eigenvalues > 1.](../data/analysis/shared/advanced/fig_pca_scree.png){#fig-pca-scree}
+
+| Component | Eigenvalue | Variance | Cumulative |
+|:---|---:|---:|---:|
+| **PC1** | **6.59** | **65.9%** | 65.9% |
+| **PC2** | **1.28** | **12.8%** | 78.6% |
+| PC3 | 0.50 | 5.0% | 83.6% |
+| PC4 | 0.37 | 3.7% | 87.3% |
+
+: PCA eigenvalues (first 4 of 10 components) {#tbl-pca-eigen}
+
+The Kaiser criterion ($\lambda > 1$) identifies **exactly two components**, explaining 78.6% of total variance.
+
+#### Component Loadings
+
+![PCA biplot showing the two-component structure. PC1 is a general governance factor; PC2 separates capacity from ethics.](../data/analysis/shared/advanced/fig_pca_biplot.png){#fig-pca-biplot}
+
+![Loading patterns for the first two components.](../data/analysis/shared/advanced/fig_pca_loadings.png){#fig-pca-loadings}
+
+| Dimension | PC1 Loading | PC2 Loading |
+|:---|---:|---:|
+| C1 Clarity | 0.331 | **+0.262** |
+| C2 Resources | 0.261 | **+0.505** |
+| C3 Authority | 0.330 | **+0.291** |
+| C4 Accountability | 0.328 | +0.154 |
+| C5 Coherence | 0.348 | +0.058 |
+| E1 Framework | 0.306 | **−0.449** |
+| E2 Rights | 0.292 | **−0.481** |
+| E3 Governance | 0.327 | **−0.343** |
+| E4 Operationalisation | 0.328 | +0.088 |
+| E5 Inclusion | 0.302 | −0.082 |
+
+: PCA loadings for the first two components {#tbl-pca-loadings}
+
+The loading pattern is clear:
+
+- **PC1 (65.9%)** is a **general governance factor** — all 10 dimensions load positively and roughly equally (range: 0.26–0.35). This captures overall policy quality.
+- **PC2 (12.8%)** **separates capacity from ethics** — capacity dimensions (especially C2 Resources) load positively, while ethics dimensions (especially E1 Framework and E2 Rights) load negatively. The separation between capacity and ethics mean loadings is **0.507**.
+
+This two-factor structure empirically validates our theoretical framework: capacity and ethics are related (they share 66% of variance through PC1) but distinct (PC2 captures their divergence).
+
+#### Internal Consistency
+
+| Scale | Cronbach's $\alpha$ | Interpretation |
+|:---|---:|:---|
+| Capacity (C1–C5) | **0.920** | Excellent |
+| Ethics (E1–E5) | **0.907** | Excellent |
+| All 10 dimensions | **0.940** | Excellent |
+
+: Cronbach's alpha for the scoring scales {#tbl-cronbach}
+
+Both subscales exhibit excellent internal consistency ($\alpha > 0.90$), confirming that each set of five dimensions reliably measures a coherent construct.
+
+### The Capacity–Ethics Nexus {#sec-nexus}
+
+How do capacity and ethics relate at the policy and country level?
+
+![Scatter plot of capacity vs. ethics composite scores. The correlation is strong ($r = 0.75$) but with meaningful dispersion around the diagonal.](../data/analysis/shared/fig_capacity_ethics_scatter.png){#fig-nexus-scatter}
+
+| Metric | Value |
+|:---|:---|
+| Pearson $r$ | **0.745** |
+| Spearman $\rho$ | **0.790** |
+| Mean gap (capacity − ethics) | 0.233 |
+| % capacity > ethics | 45.5% |
+| % ethics > capacity | 20.0% |
+| % equal | 34.5% |
+
+: Capacity–ethics correlation and gap {#tbl-nexus}
+
+Capacity scores exceed ethics scores for 45.5% of policies, while only 20.0% show the reverse. On average, policies score 0.23 points higher on capacity than on ethics — suggesting a systematic tendency to prioritise institutional architecture over ethical substance.
+
+#### Four Quadrants of AI Governance {#sec-quadrants}
+
+![The capacity–ethics gap across jurisdictions.](../data/analysis/shared/fig_capacity_ethics_gap.png){#fig-nexus-gap}
+
+Dividing policies at their respective medians produces four governance typologies:
+
+| Quadrant | N | % | Description |
+|:---|---:|---:|:---|
+| **High–High** | 964 | 45.5% | Walk the walk — strong on both |
+| **Low–Low** | 699 | 33.0% | Neither capacity nor ethics |
+| **High Cap / Low Eth** | 231 | 10.9% | Operationally capable but ethically thin |
+| **Low Cap / High Eth** | 225 | 10.6% | Ethically aspirational but lacking capacity |
+
+: Four quadrants of AI governance {#tbl-quadrants}
+
+The "High Cap / Low Eth" and "Low Cap / High Eth" quadrants are nearly equal in size (~11% each), suggesting no systematic tendency for one to precede the other. Countries can build ethics or capacity first — there is no universal sequencing.
+
+### Summary Dashboard
+
+![Summary dashboard for capacity dimensions.](../data/analysis/shared/fig_summary_capacity.png){#fig-summary-cap}
+
+![Summary dashboard for ethics dimensions.](../data/analysis/shared/fig_summary_ethics.png){#fig-summary-eth}

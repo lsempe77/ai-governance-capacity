@@ -1,0 +1,91 @@
+---
+title: "Discussion"
+---
+
+## Implications for Policy and Research {#sec-discussion}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** We discuss five implications of our findings: (1) the governance gap is universal, not just a developing-country problem; (2) GDP is not destiny; (3) text quality confounds everything; (4) ethics governance needs a different policy model than capacity building; and (5) peer-to-peer learning beats top-down technical assistance.
+:::
+
+### Implication 1: The Universal Governance Deficit
+
+The most basic finding of this study is that **96.5% of AI policies worldwide score below 2/4** on implementation readiness. This is not a North–South divide — it is a universal governance deficit. High-income countries produce more policies, and their policies score modestly higher on average, but the modal policy in *any* income group is aspirational rather than operational.
+
+Accountability (C4) — the dimension measuring monitoring, evaluation, and enforcement mechanisms — is the weakest globally (mean 0.48/4). This means that even policies with clear objectives (C1), designated authorities (C3), and coordination mechanisms (C5) typically lack the feedback loops needed to ensure implementation and enable course correction.
+
+**Policy recommendation**: AI governance reforms should prioritise M&E infrastructure — annual reviews, published KPIs, independent evaluation — rather than producing more strategy documents.
+
+### Implication 2: GDP Is Not Destiny
+
+Across all our analyses, GDP per capita explains between **1.5% and 3.5%** of country-level governance variation. The efficiency frontier is anchored by countries with modest GDP but focused governance efforts: Rwanda, Kenya, Uganda, Brazil. Conversely, several wealthy countries (Kazakhstan, Korea, Portugal) significantly underperform their GDP-predicted levels.
+
+This finding directly challenges the "development first, governance later" sequencing implicit in much international development practice. If GDP is not destiny, then governance capacity-building is a *complement* to economic development, not a *consequence* of it.
+
+**Policy recommendation**: Development agencies should fund AI governance capacity regardless of recipient-country income levels, targeting dimension-specific gaps (particularly Resources and Accountability) rather than general "capacity building."
+
+### Implication 3: The Measurement Problem
+
+Perhaps our most unsettling finding is that the income-group gap **vanishes** when restricted to good-quality texts. This means that at least part of the observed "governance divide" may be a measurement artefact: developing countries' policies are more often available as short snippets, and shorter texts mechanically receive lower scores.
+
+This has implications far beyond our study. Any text-based analysis of governance — whether using LLMs, NLP, or human coding — is vulnerable to the same confound. Countries that invest in producing detailed, publicly accessible policy documents will always *look* more capable, regardless of actual implementation.
+
+**Methodological recommendation**: Future comparative governance research must control for document availability and quality. At minimum, studies should report results stratified by text length and quality tiers.
+
+### Implication 4: Ethics ≠ Capacity
+
+The two-factor PCA structure confirms that capacity and ethics are related but distinct constructs ($r = 0.75$). More importantly, they respond differently to economic development:
+
+| | Capacity | Ethics |
+|:---|:---|:---|
+| GDP effect (OLS) | Modest ($\beta = 0.09$*) | Illusory ($\beta = 0.06$*) |
+| GDP effect (quantile) | Inverted-U | **Zero at all quantiles** |
+| Convergence | Stable gap | Gap narrowing (HI declining) |
+| Adoption gap | Small (86% vs 98%) | Large (72% vs 100%) |
+
+: Capacity vs. ethics: asymmetric patterns {#tbl-cap-eth-contrast}
+
+The practical implication is that **capacity and ethics require different policy interventions**:
+
+- **Capacity building** benefits from targeted resource allocation (budgets, staff, legal mandates) — areas where fiscal capacity matters.
+- **Ethics governance** is independent of income — it requires political will, stakeholder engagement, and institutional design rather than money.
+
+**Policy recommendation**: International AI governance initiatives should treat ethics and capacity as separate work streams with different theories of change.
+
+### Implication 5: Peer-to-Peer Learning
+
+Our diffusion analysis shows that **98% of policy diffusion is horizontal** — within income groups, not from rich to poor countries. This finding contradicts the "Brussels Effect" hypothesis [@bradford2020] that EU regulation cascades downward to developing countries, and supports a model of peer-to-peer policy learning.
+
+The practical implication is that South–South cooperation may be more effective than traditional North–South technical assistance for AI governance. Countries learn from peers facing similar institutional constraints, not from exemplars with fundamentally different state capacity.
+
+**Policy recommendation**: International organisations should facilitate regional peer-learning networks rather than promoting universal "best practice" models.
+
+### Limitations {#sec-limitations}
+
+Several limitations constrain our conclusions:
+
+1. **Selection bias**: The OECD.AI Observatory may over-represent certain policy types and jurisdictions. Countries with more international engagement are better covered.
+
+2. **Text-as-proxy**: We measure governance capacity through *policy text*, not through *implementation outcomes*. A policy that scores high on our framework may still fail in practice.
+
+3. **LLM reliability**: While our ICC is excellent (0.827), LLMs may share biases from overlapping training data. Human validation on a larger sample would strengthen confidence.
+
+4. **Static snapshot**: Governance capacity evolves rapidly. Our scores reflect documents available as of early 2026 and may already be outdated.
+
+5. **English language bias**: Non-English policies may be underrepresented or analysed through machine translation, potentially affecting scores.
+
+6. **Endogeneity**: We cannot identify causal effects — GDP, governance capacity, and AI policy production are jointly determined.
+
+### Future Research {#sec-future-research}
+
+Five directions for future work:
+
+1. **Outcome validation**: Correlate our capacity scores with external measures of AI governance effectiveness (e.g., AI adoption rates, regulatory enforcement actions).
+
+2. **Panel analysis**: Repeat the scoring at annual intervals to track governance evolution and test causal hypotheses.
+
+3. **Human validation**: Conduct a large-scale human coding exercise (N ≥ 200 policies) to establish ground truth against which LLM scores can be validated.
+
+4. **Sector-specific analysis**: Disaggregate by target sector (health, finance, defence) to identify sector-specific governance patterns.
+
+5. **Qualitative deep dives**: Case studies of frontier countries (Rwanda, Brazil, Kazakhstan) to understand the mechanisms behind over- and under-performance.

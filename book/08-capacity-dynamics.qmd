@@ -1,0 +1,97 @@
+---
+title: "Capacity Dynamics"
+---
+
+## Temporal Trends, Diffusion, and the Efficiency Frontier {#sec-cap-dynamics}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter examines how governance capacity evolves over time, how policies diffuse across jurisdictions, and which countries achieve the most governance capacity per unit of GDP — the efficiency frontier.
+:::
+
+### Temporal Trends {#sec-cap-temporal}
+
+![Capacity dimension scores over time (2017–2025). Most dimensions show modest upward trends.](../data/analysis/paper1_capacity/fig_temporal_dimensions.png){#fig-cap-temporal-dims}
+
+![Capacity trends by income group over time. The gap between HI and developing countries remains stable.](../data/analysis/paper1_capacity/fig_temporal_income.png){#fig-cap-temporal-income}
+
+The temporal trend in capacity scores shows **no significant convergence** between income groups:
+
+| Metric | Capacity |
+|:---|:---|
+| Income × Year interaction | $\beta = +0.0003$, $p = .98$ |
+| HI temporal slope | −0.0001/yr (n.s.) |
+| Developing temporal slope | +0.010/yr (n.s.) |
+| Gap trend | Stable |
+
+: Convergence test for capacity scores {#tbl-cap-convergence}
+
+Unlike ethics scores (see @sec-eth-dynamics), the capacity gap between income groups is **stable over time** — neither widening nor narrowing. High-income countries maintain a consistent advantage in implementation architecture.
+
+### Convergence Trends {#sec-cap-convergence}
+
+![Detailed convergence analysis showing income-group trends and gap evolution for capacity dimensions.](../data/analysis/paper1_capacity/robustness/fig_convergence.png){#fig-cap-convergence}
+
+![Dimension-level convergence patterns. No dimension shows statistically significant convergence.](../data/analysis/paper1_capacity/robustness/fig_dimension_convergence.png){#fig-cap-dim-convergence}
+
+### Policy Diffusion Patterns {#sec-cap-diffusion}
+
+How do AI governance policies spread across countries? We model diffusion using adoption timing analysis.
+
+![Cumulative adoption curves by income group and region. HI countries adopted ~1.3 years earlier, but diffusion is overwhelmingly horizontal.](../data/analysis/paper1_capacity/frontier/fig_diffusion_curves.png){#fig-cap-diffusion}
+
+![First movers in AI governance capacity, plotted by adoption year and income group.](../data/analysis/paper1_capacity/frontier/fig_first_movers.png){#fig-cap-first-movers}
+
+![Regional diffusion heatmap showing the spread of AI governance policies across regions and years.](../data/analysis/paper1_capacity/frontier/fig_diffusion_heatmap.png){#fig-cap-diffusion-heatmap}
+
+| Metric | Value |
+|:---|:---|
+| HI median first adoption | 2018 |
+| Developing median first adoption | 2019 |
+| Adoption lag (HI earlier by) | **1.3 years** ($p = .030$) |
+| HI adoption by 2025 | 98% |
+| Developing adoption by 2025 | 86% |
+| Diffusion direction | **98% horizontal** |
+
+: Policy diffusion patterns for capacity {#tbl-cap-diffusion}
+
+The diffusion analysis reveals two key findings:
+
+1. **HI countries are early adopters** by about 1.3 years — they reach critical mass by 2018, while developing countries reach it by 2019–2020.
+2. **Diffusion is overwhelmingly horizontal** (98%): countries adopt policies from peers within their income group, not in a top-down cascade from rich to poor. This challenges the "Brussels Effect" [@bradford2020] hypothesis of vertical regulatory diffusion and supports a model of peer-to-peer policy learning.
+
+The regions with the largest adoption lag are **SSA and MENA** (14–29% adoption by 2019 vs. 100% in NAM).
+
+### Governance Efficiency Frontier {#sec-cap-frontier}
+
+Which countries get the most governance capacity per dollar of GDP? We construct an efficiency frontier using Free Disposable Hull (FDH) analysis, plotting governance scores against GDP per capita.
+
+![Efficiency frontier for capacity scores. Countries above the line outperform their GDP-predicted governance level; those below underperform.](../data/analysis/paper1_capacity/frontier/fig_efficiency_frontier.png){#fig-cap-frontier}
+
+![Residual ranking: countries sorted by their distance from GDP-predicted capacity. Brazil, Kenya, and Rwanda are the top overperformers.](../data/analysis/paper1_capacity/frontier/fig_residual_ranking.png){#fig-cap-residual}
+
+![Profile comparison of the most notable over- and under-performers.](../data/analysis/paper1_capacity/frontier/fig_overunder_profile.png){#fig-cap-overunder}
+
+| Metric | Value |
+|:---|:---|
+| OLS $R^2$ (score ~ GDP) | **0.035** |
+| Top overperformer | 🇧🇷 Brazil (+0.69) |
+| Top underperformer | 🇰🇿 Kazakhstan (−0.75) |
+| Frontier countries (FDH) | Uganda → Rwanda → Kenya → Brazil |
+| Most efficient (score/$10k GDP) | Rwanda (3.10), Kenya (1.91) |
+| Mean distance to frontier | 0.588 |
+
+: Efficiency frontier results for capacity {#tbl-cap-frontier}
+
+The efficiency frontier analysis delivers the chapter's headline finding: **GDP explains only 3.5% of country-level capacity variation** ($R^2 = 0.035$). The frontier is anchored by African countries — Rwanda, Kenya, Uganda — with modest GDP but focused governance efforts. Brazil, with its comprehensive AI governance framework, is the top overall overperformer.
+
+On the other side, **Kazakhstan** ($-0.75$ residual) and **Korea** underperform most dramatically relative to their GDP levels — countries with substantial resources but governance scores well below what their wealth would predict.
+
+### Chapter Summary {#sec-cap-dynamics-summary}
+
+The dynamic analyses paint a consistent picture:
+
+- **No convergence**: The capacity gap is stable over time.
+- **Horizontal diffusion**: Countries learn from peers, not from wealthy exemplars.
+- **GDP is not destiny**: National wealth explains a trivial share of governance capacity. What matters is *how* countries deploy their resources, not *how much* they have.
+
+These findings have direct implications for development policy: capacity-building interventions should facilitate peer-to-peer learning within income groups rather than transplanting "best practice" models from high-income countries.

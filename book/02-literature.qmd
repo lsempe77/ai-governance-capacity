@@ -1,0 +1,105 @@
+---
+title: "Literature Review"
+---
+
+## Theoretical Foundations {#sec-literature}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** We situate our framework at the intersection of three literatures: (1) implementation science and state capacity theory, (2) the rapidly growing AI governance scholarship, and (3) regulatory capacity in the Global South. From these, we derive the Implementation Capacity–Equity (ICE) framework and our core hypotheses.
+:::
+
+### Implementation Science {#sec-lit-implementation}
+
+The study of policy implementation has a long and contentious history. Beginning with Pressman and Wildavsky's [-@pressman1973] seminal observation that even well-designed programmes routinely fail to achieve their objectives, a half-century of research has sought to identify the conditions under which policies translate into practice.
+
+#### Top-Down Approaches
+
+The dominant strand in early implementation research took a top-down perspective. @mazmanian1983 identified six conditions for effective implementation:
+
+1. Clear and consistent policy objectives
+2. Adequate causal theory linking intervention to outcomes
+3. Legal structuring of the implementation process
+4. Committed and skilled implementing officials
+5. Support of organised interest groups
+6. Stable socioeconomic conditions
+
+These conditions map directly onto our measurement framework. Clarity of objectives (Condition 1) corresponds to our *Clarity & Specificity* dimension; legal structuring (Condition 3) to *Authority & Enforcement*; and socioeconomic conditions (Condition 6) to *Resources & Budget*.
+
+@sabatier1986 later synthesised top-down and bottom-up perspectives, arguing that both the formal structure of implementation and the strategies of implementing actors must be considered. This synthesis informs our dual attention to formal policy architecture (capacity dimensions) and substantive commitments (ethics dimensions).
+
+#### Bottom-Up Approaches
+
+@lipsky1980 fundamentally reoriented implementation research by focusing on "street-level bureaucrats" — the frontline workers who, through their discretionary decisions, effectively *make* policy. In the AI governance context, Lipsky's insight implies that even comprehensive legislation may fail if regulators lack the expertise, resources, or mandate to exercise oversight.
+
+Our *Accountability & M&E* dimension captures this concern: policies that specify monitoring mechanisms, evaluation requirements, and feedback loops constrain discretion and create accountability pressure on implementing agents.
+
+@hjern1982 extended the bottom-up critique by arguing that implementation structures rarely correspond to formal organisational charts. Instead, they emerge from networks of actors operating across institutional boundaries — a particularly relevant observation for AI governance, where responsibilities typically span multiple ministries, regulators, and international bodies.
+
+#### State Capacity
+
+A third stream, rooted in comparative political economy, examines the broader institutional conditions that determine implementation success. @grindle1996 identified four types of state capacity:
+
+| Capacity Type | Our Dimension | Indicators |
+|:---|:---|:---|
+| Technical | Resources | Expertise, training, technology |
+| Administrative | Authority | Organisational structures, legal mandate |
+| Political | Coherence | Cross-ministry coordination |
+| Fiscal | Resources | Budget allocation |
+
+: Mapping state capacity types to our framework {#tbl-capacity-mapping}
+
+@fukuyama2013 argued that governance quality is conceptually distinct from both democracy and state capacity, and proposed measuring it through the quality of government outputs. Our scoring framework operationalises precisely this idea — measuring not *inputs* (e.g., GDP) but *outputs* (the quality of policy documents as indicators of institutional readiness).
+
+More recently, @andrews2017 introduced the concept of "building state capability" through iterative adaptation, arguing against the imposition of "best practice" models from high-income countries. Their framework resonates with our finding that developing countries often achieve governance quality through different pathways than those taken by wealthy nations.
+
+### AI Governance {#sec-lit-aigovernance}
+
+The AI governance literature has experienced explosive growth since 2018, but remains predominantly descriptive and normative rather than analytical.
+
+#### The Ethics Mapping Wave
+
+@jobin2019 conducted the foundational mapping exercise, analysing 84 AI ethics guidelines and identifying convergence around five principles: transparency, justice/fairness, non-maleficence, responsibility, and privacy. @floridi2018 proposed the AI4People framework, adding beneficence and autonomy. @fjeld2020 extended the mapping to 36 documents from the Berkman Klein Center.
+
+These studies established *what* principles appear in AI governance documents but did not assess *whether* the policies containing these principles can be implemented. As @hagendorff2020 observed, "the ethics of AI ethics" — the gap between principles and practice — remains the field's most pressing challenge.
+
+#### Regulatory Approaches
+
+A second strand examines the regulatory strategies adopted by different jurisdictions. @radu2021 mapped national AI strategies and identified four governance approaches: rights-based (EU), innovation-led (US), state-directed (China), and adaptive (UK). @bradford2020 theorised the "Brussels Effect" — the tendency for EU regulations to diffuse globally through market power — which we test empirically through our diffusion analysis.
+
+@smuha2021 framed the current landscape as a "race to AI regulation," arguing that the proliferation of national approaches risks fragmentation. @stix2021 proposed "actionable principles" as a bridge between high-level ethics and concrete regulation, a concept closely aligned with our operationalisation dimension.
+
+#### The Missing Implementation Dimension
+
+What the AI governance literature conspicuously lacks is any systematic measurement of *implementation readiness*. Studies describe regulatory architectures but do not assess whether they can function. They catalogue principles but do not examine whether institutions exist to enforce them.
+
+This gap is remarkable given that implementation science — a well-established field with decades of theory and evidence — provides ready-made frameworks for exactly this analysis. Our study bridges this disciplinary gap.
+
+### Regulatory Capacity in the Global South {#sec-lit-globalsouth}
+
+The development literature offers a critical corrective to the AI governance field's implicit assumption that "more regulation = better governance." In contexts of limited state capacity, regulatory ambition can outstrip institutional reality — what @grindle2004 termed the need for "good enough governance."
+
+@andrews2017 documented how developing countries often adopt "best practice" institutions that look impressive on paper but lack the implementing infrastructure to function — a phenomenon they call "isomorphic mimicry." Our scoring framework is designed to detect exactly this pattern: policies that score high on formal architecture (Clarity, Coherence) but low on operational dimensions (Resources, Accountability).
+
+The question of whether developing countries are "copying" high-income regulatory models or developing indigenous approaches is central to our diffusion analysis (see @sec-cap-dynamics). If policy diffusion is primarily vertical (rich → poor), this supports the mimicry hypothesis. If horizontal (peer-to-peer), it suggests more organic adaptation.
+
+### The ICE Framework {#sec-ice-framework}
+
+Drawing on these three literatures, we propose the **Implementation Capacity–Equity (ICE) framework**, which links policy formulation quality to implementation outcomes through five capacity dimensions and five ethics dimensions, moderated by country-level contextual factors.
+
+The framework generates five testable hypotheses:
+
+::: {#hyp-panel}
+
+**H1 (Capacity-Development).** Countries with higher implementation capacity scores will demonstrate higher rates of AI technology adoption.
+
+**H2 (Capacity Gap).** Developing countries will show lower implementation capacity scores than high-income countries, even controlling for policy quantity.
+
+**H3 (Dimension Heterogeneity).** The capacity gap will be largest in the Resources dimension and smallest in the Clarity dimension.
+
+**H4 (Sectoral Variation).** Implementation capacity gaps will vary by policy type, with larger gaps in resource-intensive binding regulation than in soft-law guidelines.
+
+**H5 (Regional Clustering).** Implementation capacity will cluster by region, reflecting shared institutional legacies and policy diffusion networks.
+
+:::
+
+We test these hypotheses in Parts I and II using 20 complementary analytical approaches spanning descriptive, inferential, and frontier methods.

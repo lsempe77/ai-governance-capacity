@@ -1,0 +1,39 @@
+---
+title: "Country Scorecards"
+---
+
+## Country-Level Results {#sec-appendix-countries}
+
+This appendix provides country-level summary statistics, rankings, and cluster assignments.
+
+::: {.callout-tip}
+The full country dataset is available at `data/analysis/shared/master_dataset.csv` and on the project GitHub repository.
+:::
+
+### Country Rankings — Capacity
+
+See [country_rankings.csv](../data/analysis/paper1_capacity/country_rankings.csv) for the full ranking.
+
+The top 10 jurisdictions by mean capacity score are listed in @sec-cap-rankings.
+
+### Country Rankings — Ethics
+
+See [country_rankings.csv](../data/analysis/paper2_ethics/country_rankings.csv) for the full ranking.
+
+### Cluster Assignments
+
+Each country is assigned to one of two clusters based on K-means analysis of their mean dimension scores:
+
+- **Cluster 1 ("Low")**: Countries whose average policy scores cluster in the lower range
+- **Cluster 2 ("Moderate")**: Countries with above-average governance scores
+
+See [country_clusters.csv](../data/analysis/paper1_capacity/country_clusters.csv) for capacity cluster assignments and [country_clusters.csv](../data/analysis/paper2_ethics/country_clusters.csv) for ethics cluster assignments.
+
+### Efficiency Frontier Rankings
+
+The efficiency ranking measures how far above or below the GDP-predicted governance score each country falls. See @sec-cap-frontier and @sec-eth-frontier for discussion.
+
+Full rankings are available at:
+
+- [efficiency_ranking.csv](../data/analysis/paper1_capacity/frontier/efficiency_ranking.csv) (capacity)
+- [efficiency_ranking.csv](../data/analysis/paper2_ethics/frontier/efficiency_ranking.csv) (ethics)

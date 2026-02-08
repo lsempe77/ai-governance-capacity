@@ -1,0 +1,110 @@
+---
+title: "Capacity Landscape"
+---
+
+## The Global Landscape of AI Governance Capacity {#sec-cap-landscape}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter presents the descriptive landscape of AI governance capacity across 2,216 policies and 70+ jurisdictions. We examine score distributions, income-group comparisons, regional patterns, policy-type variation, and country rankings.
+:::
+
+### Overall Score Distribution {#sec-cap-distribution}
+
+![Distribution of capacity dimension scores across 2,216 policies. All five dimensions exhibit strong right skew with floor effects at zero.](../data/analysis/paper1_capacity/fig_distributions.png){#fig-cap-distributions}
+
+The capacity composite score averages **0.83/4.00** (SD = 0.77) across all 2,216 policies. The dimension-level means range from a low of **0.48** (C4 Accountability) to a high of **1.07** (C5 Coherence):
+
+| Dimension | Mean | SD | Median |
+|:---|---:|---:|---:|
+| C1 Clarity & Specificity | 0.94 | 0.97 | 1.00 |
+| C2 Resources & Budget | 0.68 | 0.89 | 0.00 |
+| C3 Authority & Enforcement | 1.04 | 1.08 | 1.00 |
+| C4 Accountability & M&E | 0.48 | 0.72 | 0.00 |
+| C5 Coherence & Coordination | 1.07 | 0.97 | 1.00 |
+| **Capacity composite** | **0.83** | **0.77** | **0.60** |
+
+: Capacity dimension descriptive statistics {#tbl-cap-descriptives}
+
+Two patterns stand out. First, **Accountability (C4) is the weakest dimension globally** — policies are more than twice as likely to specify goals (C1) or coordination mechanisms (C5) as to establish monitoring and evaluation frameworks. Second, **27.6% of all policies score exactly zero** on the capacity composite, indicating no discernible implementation infrastructure in the policy text.
+
+### Income-Group Comparisons {#sec-cap-income}
+
+![Violin plots comparing capacity score distributions between high-income and developing countries. The overlap between distributions is substantial.](../data/analysis/paper1_capacity/fig_income_violins.png){#fig-cap-income-violins}
+
+High-income countries score significantly higher on capacity (mean 0.87, SD 0.77) than developing countries (mean 0.65, SD 0.72):
+
+| Metric | Value |
+|:---|:---|
+| HI mean (N = 1,700) | 0.87 |
+| Developing mean (N = 397) | 0.65 |
+| Welch's $t$ | 5.47 |
+| $p$-value | < .001 |
+| Cohen's $d$ | **0.30** |
+| Mann-Whitney $U$ | 395,388 |
+
+: Income-group capacity comparison {#tbl-cap-income}
+
+The effect size ($d = 0.30$) is "small" by Cohen's conventions. As we show in @sec-robustness, this gap **vanishes entirely** when restricted to good-quality texts ($d = 0.04$, n.s.), raising important questions about whether the gap reflects true capacity differences or text extraction artefacts.
+
+#### Dimension-Level Gaps
+
+![Boxplots of capacity scores by income group across all five dimensions.](../data/analysis/paper1_capacity/fig_income_boxplot.png){#fig-cap-income-boxplot}
+
+The gap is not uniform across dimensions:
+
+| Dimension | HI Mean | Dev Mean | Diff | $d$ | $p$ |
+|:---|---:|---:|---:|---:|:---|
+| C1 Clarity | 0.98 | 0.74 | 0.24 | 0.30 | < .001 |
+| C2 Resources | 0.70 | 0.43 | 0.27 | **0.32** | < .001 |
+| C3 Authority | 1.09 | 0.86 | 0.23 | 0.23 | < .001 |
+| C4 Accountability | 0.48 | 0.37 | 0.10 | **0.15** | .005 |
+| C5 Coherence | 1.13 | 0.86 | 0.27 | 0.29 | < .001 |
+
+: Dimension-level income gaps {#tbl-cap-dim-gaps}
+
+The largest gap is in **Resources (C2)** ($d = 0.32$) and the smallest in **Accountability (C4)** ($d = 0.15$) — consistent with H3. This pattern makes intuitive sense: specifying budgets requires fiscal capacity, while accountability mechanisms can be designed regardless of wealth.
+
+### Regional Patterns {#sec-cap-regional}
+
+![Heatmap of mean capacity scores by region and dimension. North America and Europe & Central Asia lead; Sub-Saharan Africa and South Asia trail.](../data/analysis/paper1_capacity/fig_region_heatmap.png){#fig-cap-region-heatmap}
+
+Regional variation is substantial but not reducible to income differences. Key patterns:
+
+- **North America (NAM)** leads on all dimensions, driven by US and Canada
+- **Europe & Central Asia (ECA)** shows the broadest coverage, with strong Coherence (C5) reflecting EU coordination mechanisms
+- **Latin America & Caribbean (LAC)** performs above its income-group average, particularly on Authority (C3)
+- **Sub-Saharan Africa (SSA)** scores lowest overall but shows surprising strength in Authority — several African countries have adopted binding AI legislation
+
+### Policy-Type Variation {#sec-cap-policy-type}
+
+![Capacity scores by policy type. Binding regulations score highest; guidelines and principles score lowest.](../data/analysis/paper1_capacity/fig_policy_type.png){#fig-cap-policy-type}
+
+Policy type strongly predicts capacity scores:
+
+- **Binding regulation** (laws, executive orders) scores highest, particularly on Authority (C3) and Accountability (C4)
+- **National strategies** score moderately, with strength in Clarity (C1) and Coherence (C5)
+- **Guidelines and principles** score lowest, reflecting their aspirational rather than operational character
+
+### Country Rankings {#sec-cap-rankings}
+
+![Temporal trends in capacity scores across the 2017–2025 period.](../data/analysis/paper1_capacity/fig_temporal_trend.png){#fig-cap-temporal}
+
+The top-scoring jurisdictions combine large policy portfolios with consistently high-quality individual policies:
+
+| Rank | Jurisdiction | Mean Score | Income | N Policies |
+|:---|:---|---:|:---|---:|
+| 1 | European Union | 1.42 | HI | 60 |
+| 2 | Canada | 1.38 | HI | 15 |
+| 3 | United Kingdom | 1.32 | HI | 72 |
+| 4 | United States | 1.28 | HI | 84 |
+| 5 | Colombia | 1.21 | UMI | 8 |
+
+: Top 5 jurisdictions by capacity score {#tbl-cap-top5}
+
+Notable developing-country performers include **Colombia** (5th overall), **Brazil** (top 10), and **Kenya** — all of which feature prominently in our efficiency frontier analysis (@sec-cap-dynamics).
+
+### Correlation Structure {#sec-cap-correlations}
+
+![Correlation matrix across the five capacity dimensions. All dimensions are positively correlated, with the strongest link between C3 (Authority) and C5 (Coherence).](../data/analysis/paper1_capacity/fig_correlations.png){#fig-cap-correlations}
+
+The five capacity dimensions are moderately to strongly intercorrelated ($r$ = 0.45–0.75), suggesting a common underlying governance factor while maintaining sufficient discriminant validity to justify separate measurement. This structure is confirmed by the PCA analysis in @sec-pca-nexus.

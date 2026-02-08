@@ -1,0 +1,85 @@
+---
+title: "Validation Protocol"
+---
+
+## LLM Validation & Inter-Rater Reliability {#sec-appendix-validation}
+
+This appendix provides full details of the validation methodology, expanding on the summary in @sec-scoring.
+
+### Validation Design
+
+The three-model LLM ensemble was validated using:
+
+1. **Internal consistency**: ICC(2,1) across the three LLM "raters"
+2. **Pairwise agreement**: Pearson, Spearman, and weighted Cohen's kappa for each model pair
+3. **Spread analysis**: Mean and median score spread per dimension
+4. **Quality stratification**: Agreement metrics by text quality tier
+
+### Detailed ICC Results
+
+See @tbl-irr-dims in @sec-irr for the dimension-level ICC values.
+
+Interpretation guidelines (Cicchetti, 1994):
+
+| ICC Range | Interpretation |
+|:---|:---|
+| < 0.40 | Poor |
+| 0.40–0.59 | Fair |
+| 0.60–0.74 | Good |
+| 0.75–1.00 | Excellent |
+
+All 10 dimensions achieve "Good" or "Excellent" reliability. The overall ICC(2,1) = 0.827 places our LLM ensemble in the "Excellent" range.
+
+### Pairwise Weighted Kappa
+
+| Pair | Mean κ (Capacity) | Mean κ (Ethics) |
+|:---|---:|---:|
+| A × B | 0.665 | 0.579 |
+| A × C | 0.579 | 0.585 |
+| B × C | 0.665 | 0.695 |
+
+: Mean weighted kappa by model pair {#tbl-kappa}
+
+Models B (GPT-4o) and C (Gemini) agree most closely with each other ($\bar{\kappa} = 0.68$), while Model A (Claude) is systematically stricter. The median-based ensemble ensures that Claude's conservative tendency does not bias the final scores downward.
+
+### Fleiss' Kappa (Three-Rater Agreement)
+
+| Dimension | Fleiss' κ |
+|:---|---:|
+| C1 Clarity | 0.468 |
+| C2 Resources | 0.410 |
+| C3 Authority | 0.512 |
+| C4 Accountability | 0.571 |
+| C5 Coherence | 0.558 |
+| E1 Framework | 0.546 |
+| E2 Rights | 0.615 |
+| E3 Governance | 0.493 |
+| E4 Operationalisation | 0.444 |
+| E5 Inclusion | 0.521 |
+
+: Fleiss' kappa by dimension {#tbl-fleiss}
+
+Fleiss' kappa values are lower than ICC because kappa penalises chance agreement more heavily and treats scores as categorical. The mean Fleiss' κ = 0.514 indicates "Moderate" agreement, which is typical for complex coding tasks even among human coders.
+
+### Score Spread Analysis
+
+| Dimension | Mean Spread | % Exact | % Within 1 |
+|:---|---:|---:|---:|
+| C1 Clarity | 0.57 | 47.0% | 96.3% |
+| C2 Resources | 0.57 | 47.8% | 95.6% |
+| C3 Authority | 0.59 | 53.0% | 89.4% |
+| C4 Accountability | 0.35 | 67.6% | 97.7% |
+| C5 Coherence | 0.50 | 54.2% | 96.2% |
+| E1 Framework | 0.43 | 59.4% | 97.3% |
+| E2 Rights | 0.34 | 68.2% | 98.3% |
+| E3 Governance | 0.48 | 56.8% | 95.2% |
+| E4 Operationalisation | 0.55 | 54.6% | 91.4% |
+| E5 Inclusion | 0.45 | 57.6% | 97.6% |
+
+: Score spread statistics by dimension {#tbl-spread}
+
+**95.4%** of all overall scores are within 1 point across the three models, indicating high consistency. The mean overall spread is 0.40 on a 4-point scale.
+
+### Human Validation (Future Work)
+
+A stratified human validation sample of 50 policies was generated and is available at `data/analysis/rigorous_capacity/validation_sample.json`. Full human coding using the protocol described in this appendix is planned as a follow-up study. See the [Validation Protocol](../docs/VALIDATION_PROTOCOL.md) for the complete coding instructions.

@@ -1,0 +1,77 @@
+---
+title: "Ethics Determinants"
+---
+
+## GDP Has Zero Effect on Ethics {#sec-eth-determinants}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter presents the most striking asymmetry between capacity and ethics: while GDP has a modest positive effect on capacity, it has **zero effect on ethics scores across all quantiles**. The OLS significance is entirely driven by the extensive margin (whether any policy exists).
+:::
+
+### OLS Regression {#sec-eth-ols}
+
+![Scatter plot of ethics scores against log GDP per capita.](../data/analysis/paper2_ethics/fig_gdp_scatter.png){#fig-eth-gdp-scatter}
+
+The OLS model for ethics produces a nominally significant GDP coefficient:
+
+| Variable | $\beta$ | SE | $t$ | $p$ |
+|:---|---:|---:|---:|:---|
+| log(GDP pc) | 0.061 | 0.020 | 3.05 | .002 |
+| Good text quality | 1.014 | — | — | < .001 |
+
+: OLS regression for ethics (selected coefficients) {#tbl-eth-ols}
+
+However, the quantile regression results below reveal that this significance is illusory.
+
+### Quantile Regression: The Zero-Effect Finding {#sec-eth-quantile}
+
+![Quantile regression coefficients for GDP across the ethics distribution. GDP has **zero effect** at every quantile — a flat line at $\beta = 0$.](../data/analysis/paper2_ethics/extended/fig_quantile_regression.png){#fig-eth-qr}
+
+| Quantile ($\tau$) | GDP $\beta$ | SE | $p$ |
+|:---|---:|---:|:---|
+| 0.25 (positive subset) | 0.000 | — | n.s. |
+| 0.50 | 0.000 | — | n.s. |
+| 0.75 | 0.000 | — | n.s. |
+| OLS (reference) | 0.061 | 0.020 | .002 |
+
+: Quantile regression: GDP effect across the ethics distribution {#tbl-eth-qr}
+
+This is the chapter's central finding: **GDP has exactly zero effect on ethics scores at every quantile**. The OLS significance ($\beta = 0.061$, $p = .002$) is entirely an artefact of the *extensive margin* — richer countries produce more policies, and more policies means a higher chance of at least one scoring above zero. But *conditional on having a non-zero score*, GDP adds nothing.
+
+This finding has profound implications: ethical governance is not a luxury good. Countries at any income level can — and do — produce policies with substantive ethics content.
+
+### Multilevel Model {#sec-eth-multilevel}
+
+![Country random effects from the multilevel ethics model.](../data/analysis/paper2_ethics/robustness/fig_country_random_effects.png){#fig-eth-re}
+
+| Metric | OLS | Mixed |
+|:---|---:|---:|
+| GDP $\beta$ | 0.061 | 0.029 |
+| GDP $p$ | .002 | .38 |
+| Country ICC | — | **0.125** |
+
+: Multilevel model comparison for ethics {#tbl-eth-multilevel}
+
+The multilevel model reinforces the quantile regression finding: once country-level nesting is properly accounted for, the GDP coefficient drops to 0.029 and becomes **non-significant** ($p = .38$). The country ICC is 12.5% — modestly higher than for capacity (9.1%), suggesting that country-level factors explain more variation in ethics than in capacity.
+
+### Tobit Regression {#sec-eth-tobit}
+
+![Comparison of OLS and Tobit coefficients for the ethics model.](../data/analysis/paper2_ethics/extended/fig_tobit_comparison.png){#fig-eth-tobit}
+
+| Variable | OLS $\beta$ | Tobit $\beta$ |
+|:---|---:|---:|
+| log(GDP pc) | 0.061 | 0.100 |
+| Good text quality | — | 1.014 |
+| $\sigma$ | — | 0.700 |
+| P(uncensored at mean) | — | 0.725 |
+| Floor: score = 0 | 36.3% | — |
+
+: Tobit model for ethics {#tbl-eth-tobit}
+
+The Tobit model corrects for the more severe floor effect in ethics (36.3% vs. 27.6% for capacity). The censoring-corrected GDP coefficient (0.100) is larger than OLS (0.061), but recall that the quantile regression shows this entire effect operates through the extensive margin — it reflects the higher probability of producing *any* ethics content, not higher scores conditional on content.
+
+### Synthesis {#sec-eth-determinants-synthesis}
+
+The ethics determinants analysis yields a clear headline: **GDP does not buy better ethics governance**. This contrasts sharply with capacity, where GDP has a modest but genuine effect (particularly on Resources). The distinction is theoretically coherent: implementation infrastructure (budgets, agencies, legal mandates) scales with fiscal capacity, while ethical commitment (rights language, stakeholder inclusion, accountability norms) does not.
+
+This finding also undercuts a common narrative that developing countries should first build economic capacity before investing in AI ethics governance. The evidence says otherwise: ethical governance frameworks are achievable at any income level, and several developing countries — including Colombia, Kenya, and Brazil — demonstrate this in practice.

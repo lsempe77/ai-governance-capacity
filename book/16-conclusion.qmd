@@ -1,0 +1,41 @@
+---
+title: "Conclusion"
+---
+
+## Toward a Living Observatory {#sec-conclusion}
+
+This study set out to answer a simple question: *Do countries have the capacity to implement their AI policies?* The answer, based on 2,216 policies across 70+ jurisdictions, is sobering: **overwhelmingly, no.** The global modal AI policy is aspirational rather than operational, scoring below 2/4 on both implementation capacity and ethics operationalisation.
+
+But the richer finding is how this deficit is distributed. Contrary to the prevailing narrative of a stark North–South governance divide:
+
+- The income-group gap is **small** ($d = 0.20$–$0.30$) and **fragile** — it vanishes when controlling for text quality.
+- **Within-group inequality dominates** (98–99%) — the variation among developing countries, and among high-income countries, vastly exceeds the gap between them.
+- **GDP explains almost nothing** (1.5–3.5%) — Rwanda, Kenya, and Brazil achieve governance quality that many wealthy nations do not.
+- **Policy diffusion is horizontal** — countries learn from peers, not from wealthy exemplars.
+
+### Five Takeaways
+
+1. **The governance gap is universal.** Every country — rich and poor alike — needs to strengthen its AI governance infrastructure, particularly on accountability and monitoring.
+
+2. **GDP is not destiny.** Governance quality is a choice, not a consequence of economic development. The efficiency frontier demonstrates that focused effort matters more than fiscal capacity.
+
+3. **Ethics is not a luxury good.** GDP has zero effect on ethics scores across all quantiles. Developing countries can and do build meaningful ethical governance frameworks.
+
+4. **Measurement matters.** The text quality confound is a cautionary tale for all comparative governance research: what we measure may reflect document availability more than institutional reality.
+
+5. **Peer learning beats transplantation.** The horizontal diffusion pattern supports South–South cooperation and regional networks over top-down technical assistance.
+
+### The Observatory Vision
+
+We envision this work as the foundation for a **living observatory** — a continuously updated dataset that tracks AI governance capacity over time, enabling:
+
+- **Annual scoring rounds** to detect trends and convergence
+- **Country scorecards** providing actionable diagnostics for policymakers
+- **Benchmarking tools** for international organisations and civil society
+- **Research infrastructure** for the growing community of AI governance scholars
+
+The code, data, and methods are fully open-source at <https://github.com/lsempe77/ai-governance-capacity>, designed for replication and extension.
+
+---
+
+*The question is not whether AI will be governed, but whether it will be governed well. The evidence in this book suggests that the capacity to govern well is neither automatic nor impossible — it is built, one dimension at a time, by countries willing to invest in the institutional infrastructure that turns aspiration into action.*

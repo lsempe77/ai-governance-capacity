@@ -1,0 +1,131 @@
+---
+title: "Scoring Rubric"
+---
+
+## Full Indicator Rubric {#sec-appendix-rubric}
+
+This appendix provides the complete scoring rubric used by the LLM ensemble to code each policy on 10 dimensions.
+
+### Capacity Dimensions (0–4 Scale)
+
+#### C1: Clarity & Specificity
+
+*The degree to which policy objectives, targets, scope, and definitions are precisely specified.*
+
+| Score | Criteria | Example Indicators |
+|:---|:---|:---|
+| 0 | No clear objectives stated | Vague aspirational language only |
+| 1 | General objectives without specifics | "Promote AI development" |
+| 2 | Specific objectives but no measurable targets | "Increase AI adoption in healthcare" |
+| 3 | Measurable targets for some objectives | "Train 10,000 AI specialists by 2025" |
+| 4 | Comprehensive targets with timelines | Multiple quantified goals with dates |
+
+#### C2: Resources & Budget
+
+*The degree to which financial, human, and technical resources are specified.*
+
+| Score | Criteria | Example Indicators |
+|:---|:---|:---|
+| 0 | No resources mentioned | — |
+| 1 | General statement about need for resources | "Adequate resources will be provided" |
+| 2 | Commitment to allocate without specifics | "Government will fund implementation" |
+| 3 | Specific amounts for some resource types | "€50M allocated for AI research" |
+| 4 | Comprehensive allocation with funding sources | Multi-year budget, staff numbers, infrastructure |
+
+#### C3: Authority & Enforcement
+
+*The degree to which legal mandate, enforcement powers, and responsibilities are specified.*
+
+| Score | Criteria | Example Indicators |
+|:---|:---|:---|
+| 0 | No authority structures mentioned | — |
+| 1 | General reference to government responsibility | "Government will oversee" |
+| 2 | Named agency without specific powers | "Ministry of Digital Affairs responsible" |
+| 3 | Named agency with some defined powers | "Agency may issue guidance and conduct reviews" |
+| 4 | Clear authority with enforcement and sanctions | Named body + investigation powers + penalties |
+
+#### C4: Accountability & M&E
+
+*The degree to which monitoring, evaluation, and reporting mechanisms are specified.*
+
+| Score | Criteria | Example Indicators |
+|:---|:---|:---|
+| 0 | No accountability mechanisms | — |
+| 1 | General commitment to monitoring | "Progress will be tracked" |
+| 2 | Monitoring mentioned without specifics | "Regular reviews will be conducted" |
+| 3 | Specific monitoring with some reporting | "Annual report to Parliament" |
+| 4 | Comprehensive M&E framework | KPIs + review cycles + evaluation methodology |
+
+#### C5: Coherence & Coordination
+
+*The degree to which the policy is internally consistent and aligned with other policies.*
+
+| Score | Criteria | Example Indicators |
+|:---|:---|:---|
+| 0 | Isolated policy with no references | — |
+| 1 | Mentions other policies without integration | "Consistent with national strategy" |
+| 2 | Some coordination mechanisms mentioned | "Inter-ministerial working group" |
+| 3 | Explicit alignment with specific policies | "Implements Article 5 of EU AI Act" |
+| 4 | Comprehensive coherence framework | Cross-references + coordination body + intl. alignment |
+
+### Ethics Dimensions (0–4 Scale)
+
+#### E1: Ethical Framework Depth
+
+*Grounding in ethical principles and coherence of ethical vision.*
+
+| Score | Criteria |
+|:---|:---|
+| 0 | No ethics content |
+| 1 | Mentions ethics keywords without elaboration |
+| 2 | References established ethical frameworks (OECD, UNESCO) |
+| 3 | Articulates coherent ethical vision with multiple principles |
+| 4 | Comprehensive ethical framework with theoretical grounding |
+
+#### E2: Rights Protection
+
+*Coverage of privacy, non-discrimination, human oversight, and transparency.*
+
+| Score | Criteria |
+|:---|:---|
+| 0 | No rights mentioned |
+| 1 | One right mentioned briefly |
+| 2 | Multiple rights discussed |
+| 3 | Comprehensive rights framework with mechanisms |
+| 4 | Full rights catalogue with enforcement provisions |
+
+#### E3: Governance Mechanisms
+
+*Ethics boards, impact assessments, auditing requirements.*
+
+| Score | Criteria |
+|:---|:---|
+| 0 | No governance mechanisms |
+| 1 | General reference to oversight |
+| 2 | Specific mechanism mentioned (e.g., impact assessment) |
+| 3 | Multiple mechanisms with institutional support |
+| 4 | Comprehensive governance architecture |
+
+#### E4: Operationalisation
+
+*Concrete requirements, standards, certification processes.*
+
+| Score | Criteria |
+|:---|:---|
+| 0 | No operational requirements |
+| 1 | General aspirational statements |
+| 2 | Some concrete requirements specified |
+| 3 | Detailed standards or certification processes |
+| 4 | Comprehensive operationalisation with compliance mechanisms |
+
+#### E5: Inclusion & Participation
+
+*Stakeholder processes, marginalised group representation.*
+
+| Score | Criteria |
+|:---|:---|
+| 0 | No stakeholder engagement |
+| 1 | General reference to public participation |
+| 2 | Named stakeholder groups identified |
+| 3 | Structured participation mechanisms |
+| 4 | Inclusive governance with marginalised group representation |

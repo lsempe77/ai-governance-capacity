@@ -1,0 +1,39 @@
+---
+title: "Preface"
+---
+
+## About This Book {.unnumbered}
+
+This book presents the first systematic, large-scale measurement of AI governance **implementation capacity** — the gap between policy aspiration and institutional readiness. Using 2,216 policy documents from the OECD.AI Policy Observatory, spanning 70+ jurisdictions and scored by a three-model LLM ensemble, we ask a deceptively simple question:
+
+> *Do countries have the capacity to implement their AI policies, and how does this vary between high-income and developing countries?*
+
+The answer, it turns out, is more nuanced than the question suggests.
+
+### Structure {.unnumbered}
+
+The book is organised in three parts:
+
+**Part I — AI Governance Capacity** analyses the five implementation dimensions (Clarity, Resources, Authority, Accountability, Coherence) grounded in Mazmanian–Sabatier implementation theory.
+
+**Part II — AI Ethics Governance** examines the five ethics dimensions (Framework Depth, Rights Protection, Governance Mechanisms, Operationalisation, Inclusion) grounded in Jobin et al., UNESCO, and OECD AI Principles.
+
+**Part III — Cross-Cutting Analysis** explores the two-factor structure linking capacity and ethics, and presents comprehensive robustness checks.
+
+### Key Findings at a Glance {.unnumbered}
+
+- **96.5%** of AI policies worldwide score below 2/4 on implementation readiness
+- The income-group gap ($d = 0.30$) **vanishes** when controlling for text quality ($d = 0.04$, n.s.)
+- Within-group inequality dominates: **98–99%** of variation is *within* income groups, not between them
+- GDP explains only **1.5–3.5%** of country-level score variation — GDP is not destiny
+- Brazil, Kenya, Rwanda, and Tunisia consistently outperform their GDP-predicted governance levels
+- Ethics scores are **converging** across income groups — but driven by high-income countries *declining*, not developing countries improving
+- Policy diffusion is **98% horizontal** — peer-to-peer within income groups, not top-down from rich to poor
+
+### Replication {.unnumbered}
+
+All code, data, and analysis outputs are available at: <https://github.com/lsempe77/ai-governance-capacity>
+
+---
+
+*"The question is not whether AI will be governed, but whether it will be governed well. That depends on the capacity we build today."*

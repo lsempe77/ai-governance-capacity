@@ -1,0 +1,64 @@
+---
+title: "Ethics Inequality & Clusters"
+---
+
+## Ethics Inequality and Governance Profiles {#sec-eth-inequality}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** Inequality decomposition for ethics mirrors the capacity findings: 99.5% of variation is within income groups. Portfolio breadth is near-universal, but E2 Rights and E5 Inclusion show the largest coverage gaps.
+:::
+
+### Inequality Decomposition {#sec-eth-gini}
+
+![Lorenz curves for ethics scores. Developing countries show higher within-group inequality than HI countries.](../data/analysis/paper2_ethics/extended/fig_lorenz.png){#fig-eth-lorenz}
+
+| Metric | Value |
+|:---|---:|
+| Gini (all countries) | 0.569 |
+| Gini (HI only) | 0.553 |
+| Gini (Developing) | 0.638 |
+| Gini (country means) | 0.273 |
+
+: Gini coefficients for ethics scores {#tbl-eth-gini}
+
+Ethics inequality is higher than capacity inequality across all metrics (Gini 0.569 vs. 0.518), reflecting the more pronounced floor effect.
+
+#### Theil Decomposition
+
+![Theil decomposition: 99.5% of ethics inequality is within income groups.](../data/analysis/paper2_ethics/extended/fig_theil_decomposition.png){#fig-eth-theil}
+
+| Component | Share |
+|:---|---:|
+| Between income groups | **0.5%** |
+| Within income groups | **99.5%** |
+
+: Theil decomposition for ethics {#tbl-eth-theil}
+
+The between-group component is even smaller for ethics (0.5%) than for capacity (1.2%). Income group membership is virtually irrelevant for predicting ethics governance quality.
+
+### Policy Portfolio Breadth {#sec-eth-portfolio}
+
+![Policy portfolio coverage for ethics dimensions.](../data/analysis/paper2_ethics/extended/fig_portfolio_heatmap.png){#fig-eth-portfolio-heatmap}
+
+![Ethics portfolio gap analysis.](../data/analysis/paper2_ethics/extended/fig_portfolio_gaps.png){#fig-eth-portfolio-gaps}
+
+| Metric | HI | Developing | $p$ |
+|:---|---:|---:|:---|
+| Mean breadth (out of 5) | 5.00 | 4.36 | .054 |
+| Countries with 5/5 coverage | 94% | — | — |
+| Least covered dimensions | E2 Rights (94.1%) | E5 Inclusion (94.1%) | — |
+
+: Ethics portfolio breadth {#tbl-eth-portfolio}
+
+The ethics portfolio gap is *marginally significant* ($p = .054$) — HI countries are slightly more likely to cover all five dimensions. The dimensions most commonly absent are **E2 Rights Protection** and **E5 Inclusion** — precisely the dimensions most relevant to the Global South's specific governance challenges.
+
+### K-Means Clustering {#sec-eth-clusters}
+
+![Cluster profiles for ethics dimensions. Two-cluster solution mirrors the capacity pattern.](../data/analysis/paper2_ethics/fig_cluster_radar.png){#fig-eth-cluster-radar}
+
+The two-cluster solution for ethics (silhouette = 0.42) mirrors the capacity pattern:
+
+- **Cluster 1 ("Ethics-Light")**: ~65% of policies, near-zero scores across all dimensions
+- **Cluster 2 ("Ethics-Engaged")**: ~35% of policies, moderate scores with emphasis on E1 Framework and E3 Governance
+
+The cluster composition by income group reveals that both clusters contain substantial proportions of both HI and developing-country policies, confirming the within-group heterogeneity finding.

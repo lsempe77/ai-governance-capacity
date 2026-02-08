@@ -1,0 +1,78 @@
+---
+title: "Ethics Landscape"
+---
+
+## The Global Landscape of AI Ethics Governance {#sec-eth-landscape}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter mirrors the capacity landscape analysis for the five ethics dimensions. Ethics governance lags behind implementation capacity (mean 0.61 vs. 0.83), and 36.3% of all policies score exactly zero on ethics operationalisation.
+:::
+
+### Overall Score Distribution {#sec-eth-distribution}
+
+![Distribution of ethics dimension scores across 2,216 policies. Floor effects are even more pronounced than for capacity.](../data/analysis/paper2_ethics/fig_distributions.png){#fig-eth-distributions}
+
+The ethics composite score averages **0.61/4.00** (SD = 0.62) — meaningfully lower than the capacity composite (0.83):
+
+| Dimension | Mean | SD | Median |
+|:---|---:|---:|---:|
+| E1 Ethical Framework Depth | 0.67 | 0.75 | 0.00 |
+| E2 Rights Protection | 0.55 | 0.66 | 0.00 |
+| E3 Governance Mechanisms | 0.62 | 0.74 | 0.00 |
+| E4 Operationalisation | 0.59 | 0.73 | 0.00 |
+| E5 Inclusion & Participation | 0.65 | 0.73 | 0.00 |
+| **Ethics composite** | **0.61** | **0.62** | **0.40** |
+
+: Ethics dimension descriptive statistics {#tbl-eth-descriptives}
+
+The median score is **0.40** — well below the midpoint of the scale. More strikingly, **36.3% of all policies score exactly zero** on ethics, compared to 27.6% for capacity. The global AI policy landscape is, on average, better at specifying *how* to implement governance than at articulating *what ethical standards* to govern by.
+
+### Income-Group Comparisons {#sec-eth-income}
+
+![Violin plots of ethics scores by income group. The distributions overlap even more than for capacity.](../data/analysis/paper2_ethics/fig_income_violins.png){#fig-eth-income-violins}
+
+| Metric | Value |
+|:---|:---|
+| HI mean (N = 1,700) | 0.62 |
+| Developing mean (N = 397) | 0.50 |
+| Welch's $t$ | 3.55 |
+| $p$-value | < .001 |
+| Cohen's $d$ | **0.20** |
+
+: Income-group ethics comparison {#tbl-eth-income}
+
+The ethics gap ($d = 0.20$) is even smaller than the capacity gap ($d = 0.30$), and well within the "small effect" range. As with capacity, this gap **vanishes** when restricted to good-quality texts ($d = -0.09$, n.s.; see @sec-robustness).
+
+#### Dimension-Level Gaps
+
+![Boxplots of ethics scores by income group across all five dimensions.](../data/analysis/paper2_ethics/fig_income_boxplot.png){#fig-eth-income-boxplot}
+
+| Dimension | HI Mean | Dev Mean | Diff | $d$ | $p$ |
+|:---|---:|---:|---:|---:|:---|
+| E1 Framework | 0.68 | 0.58 | 0.10 | 0.13 | .024 |
+| E2 Rights | 0.55 | 0.47 | 0.08 | 0.11 | .053 |
+| E3 Governance | 0.63 | 0.50 | 0.13 | **0.19** | < .001 |
+| E4 Operationalisation | 0.61 | 0.43 | 0.17 | **0.25** | < .001 |
+| E5 Inclusion | 0.64 | 0.51 | 0.13 | 0.18 | .002 |
+
+: Dimension-level income gaps for ethics {#tbl-eth-dim-gaps}
+
+The largest gap is in **Operationalisation (E4)** ($d = 0.25$) — translating ethical principles into concrete requirements. The smallest gap is in **Rights Protection (E2)** ($d = 0.11$, marginally significant), suggesting that rights language is relatively universally adopted across income levels.
+
+### Regional Patterns {#sec-eth-regional}
+
+![Regional heatmap for ethics scores. Regional variation is less pronounced than for capacity.](../data/analysis/paper2_ethics/fig_region_heatmap.png){#fig-eth-region-heatmap}
+
+### Policy-Type Variation {#sec-eth-policy-type}
+
+![Ethics scores by policy type.](../data/analysis/paper2_ethics/fig_policy_type.png){#fig-eth-policy-type}
+
+### Temporal Trends {#sec-eth-temporal}
+
+![Temporal trend in ethics scores (2017–2025).](../data/analysis/paper2_ethics/fig_temporal_trend.png){#fig-eth-temporal}
+
+### Correlation Structure {#sec-eth-correlations}
+
+![Correlation matrix for the five ethics dimensions.](../data/analysis/paper2_ethics/fig_correlations.png){#fig-eth-correlations}
+
+The ethics dimensions show a similar intercorrelation structure to capacity, with all pairwise $r > 0.40$. The PCA analysis in @sec-pca-nexus confirms that capacity and ethics, while correlated ($r = 0.75$), are empirically separable constructs.
