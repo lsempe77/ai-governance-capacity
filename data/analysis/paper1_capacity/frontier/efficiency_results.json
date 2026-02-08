@@ -1,0 +1,242 @@
+{
+  "ols": {
+    "beta": 0.06674,
+    "p": 0.13004,
+    "r_squared": 0.0349
+  },
+  "overperformers": [
+    {
+      "country": "Brazil",
+      "score": 1.4,
+      "predicted": 0.714,
+      "residual": 0.686,
+      "gdp_pc": 20800,
+      "income": "Developing"
+    },
+    {
+      "country": "Kenya",
+      "score": 1.22,
+      "predicted": 0.635,
+      "residual": 0.585,
+      "gdp_pc": 6400,
+      "income": "Developing"
+    },
+    {
+      "country": "Saudi Arabia",
+      "score": 1.206,
+      "predicted": 0.791,
+      "residual": 0.416,
+      "gdp_pc": 65600,
+      "income": "High income"
+    },
+    {
+      "country": "United States",
+      "score": 1.205,
+      "predicted": 0.808,
+      "residual": 0.397,
+      "gdp_pc": 85300,
+      "income": "High income"
+    },
+    {
+      "country": "Germany",
+      "score": 1.148,
+      "predicted": 0.793,
+      "residual": 0.355,
+      "gdp_pc": 68200,
+      "income": "High income"
+    },
+    {
+      "country": "Australia",
+      "score": 1.144,
+      "predicted": 0.791,
+      "residual": 0.354,
+      "gdp_pc": 65400,
+      "income": "High income"
+    },
+    {
+      "country": "Tunisia",
+      "score": 1.029,
+      "predicted": 0.685,
+      "residual": 0.343,
+      "gdp_pc": 13500,
+      "income": "Developing"
+    },
+    {
+      "country": "Romania",
+      "score": 1.103,
+      "predicted": 0.764,
+      "residual": 0.339,
+      "gdp_pc": 43800,
+      "income": "High income"
+    },
+    {
+      "country": "Finland",
+      "score": 1.111,
+      "predicted": 0.787,
+      "residual": 0.324,
+      "gdp_pc": 62200,
+      "income": "High income"
+    },
+    {
+      "country": "Rwanda",
+      "score": 0.9,
+      "predicted": 0.583,
+      "residual": 0.317,
+      "gdp_pc": 2900,
+      "income": "Developing"
+    }
+  ],
+  "underperformers": [
+    {
+      "country": "Kazakhstan",
+      "score": 0.0,
+      "predicted": 0.75,
+      "residual": -0.75,
+      "gdp_pc": 35600,
+      "income": "Developing"
+    },
+    {
+      "country": "Uzbekistan",
+      "score": 0.0,
+      "predicted": 0.672,
+      "residual": -0.672,
+      "gdp_pc": 11000,
+      "income": "Developing"
+    },
+    {
+      "country": "Korea",
+      "score": 0.143,
+      "predicted": 0.781,
+      "residual": -0.638,
+      "gdp_pc": 56700,
+      "income": "High income"
+    },
+    {
+      "country": "Mexico",
+      "score": 0.162,
+      "predicted": 0.725,
+      "residual": -0.563,
+      "gdp_pc": 24500,
+      "income": "Developing"
+    },
+    {
+      "country": "Portugal",
+      "score": 0.416,
+      "predicted": 0.768,
+      "residual": -0.352,
+      "gdp_pc": 46500,
+      "income": "High income"
+    },
+    {
+      "country": "Lithuania",
+      "score": 0.442,
+      "predicted": 0.774,
+      "residual": -0.331,
+      "gdp_pc": 51000,
+      "income": "High income"
+    },
+    {
+      "country": "Cyprus",
+      "score": 0.467,
+      "predicted": 0.776,
+      "residual": -0.31,
+      "gdp_pc": 52800,
+      "income": "High income"
+    },
+    {
+      "country": "Chile",
+      "score": 0.436,
+      "predicted": 0.745,
+      "residual": -0.309,
+      "gdp_pc": 33300,
+      "income": "High income"
+    },
+    {
+      "country": "Peru",
+      "score": 0.4,
+      "predicted": 0.7,
+      "residual": -0.3,
+      "gdp_pc": 16900,
+      "income": "Developing"
+    },
+    {
+      "country": "Malaysia",
+      "score": 0.467,
+      "predicted": 0.755,
+      "residual": -0.288,
+      "gdp_pc": 38500,
+      "income": "Developing"
+    }
+  ],
+  "frontier_countries": [
+    "Uganda",
+    "Rwanda",
+    "Kenya",
+    "Brazil"
+  ],
+  "mean_dist_to_frontier": 0.5879,
+  "dist_frontier_high_income": 0.5858,
+  "dist_frontier_developing": 0.5914,
+  "most_efficient": [
+    {
+      "country": "Rwanda",
+      "score": 0.9,
+      "gdp_pc": 2900,
+      "efficiency": 3.1034
+    },
+    {
+      "country": "Kenya",
+      "score": 1.22,
+      "gdp_pc": 6400,
+      "efficiency": 1.9062
+    },
+    {
+      "country": "Nigeria",
+      "score": 0.88,
+      "gdp_pc": 6100,
+      "efficiency": 1.4426
+    },
+    {
+      "country": "Uganda",
+      "score": 0.4,
+      "gdp_pc": 2900,
+      "efficiency": 1.3793
+    },
+    {
+      "country": "Tunisia",
+      "score": 1.029,
+      "gdp_pc": 13500,
+      "efficiency": 0.7619
+    },
+    {
+      "country": "Brazil",
+      "score": 1.4,
+      "gdp_pc": 20800,
+      "efficiency": 0.6731
+    },
+    {
+      "country": "India",
+      "score": 0.672,
+      "gdp_pc": 10100,
+      "efficiency": 0.6651
+    },
+    {
+      "country": "Morocco",
+      "score": 0.667,
+      "gdp_pc": 10500,
+      "efficiency": 0.6349
+    },
+    {
+      "country": "Egypt",
+      "score": 0.829,
+      "gdp_pc": 16000,
+      "efficiency": 0.5179
+    },
+    {
+      "country": "Viet Nam",
+      "score": 0.771,
+      "gdp_pc": 15500,
+      "efficiency": 0.4977
+    }
+  ]
+}

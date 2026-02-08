@@ -1,0 +1,375 @@
+{
+  "first_movers": {
+    "c1_clarity": {
+      "country": "Türkiye",
+      "year": 2017,
+      "title": "SAFIR Depo Cloud Storage Software",
+      "score": 1.0
+    },
+    "c2_resources": {
+      "country": "Belgium",
+      "year": 2017,
+      "title": "Prospective Research Programme",
+      "score": 2.0
+    },
+    "c3_authority": {
+      "country": "Czech Republic",
+      "year": 2017,
+      "title": "Operation Programme Research, Development and Educ",
+      "score": 1.0
+    },
+    "c4_accountability": {
+      "country": "Singapore",
+      "year": 2017,
+      "title": "SMES Go Digital",
+      "score": 1.0
+    },
+    "c5_coherence": {
+      "country": "United States",
+      "year": 2017,
+      "title": "Unmanned Aircraft Systems Integration Pilot Progra",
+      "score": 3.0
+    }
+  },
+  "top_adopters": {
+    "c1_clarity": [
+      {
+        "country": "Australia",
+        "year": 2017
+      },
+      {
+        "country": "Belgium",
+        "year": 2017
+      },
+      {
+        "country": "Canada",
+        "year": 2017
+      },
+      {
+        "country": "Croatia",
+        "year": 2017
+      },
+      {
+        "country": "Finland",
+        "year": 2017
+      }
+    ],
+    "c2_resources": [
+      {
+        "country": "Belgium",
+        "year": 2017
+      },
+      {
+        "country": "Canada",
+        "year": 2017
+      },
+      {
+        "country": "Croatia",
+        "year": 2017
+      },
+      {
+        "country": "Finland",
+        "year": 2017
+      },
+      {
+        "country": "France",
+        "year": 2017
+      }
+    ],
+    "c3_authority": [
+      {
+        "country": "Australia",
+        "year": 2017
+      },
+      {
+        "country": "Belgium",
+        "year": 2017
+      },
+      {
+        "country": "Canada",
+        "year": 2017
+      },
+      {
+        "country": "Croatia",
+        "year": 2017
+      },
+      {
+        "country": "Czech Republic",
+        "year": 2017
+      }
+    ],
+    "c4_accountability": [
+      {
+        "country": "Australia",
+        "year": 2017
+      },
+      {
+        "country": "Belgium",
+        "year": 2017
+      },
+      {
+        "country": "Canada",
+        "year": 2017
+      },
+      {
+        "country": "Croatia",
+        "year": 2017
+      },
+      {
+        "country": "Finland",
+        "year": 2017
+      }
+    ],
+    "c5_coherence": [
+      {
+        "country": "Australia",
+        "year": 2017
+      },
+      {
+        "country": "Belgium",
+        "year": 2017
+      },
+      {
+        "country": "Canada",
+        "year": 2017
+      },
+      {
+        "country": "Croatia",
+        "year": 2017
+      },
+      {
+        "country": "Czech Republic",
+        "year": 2017
+      }
+    ]
+  },
+  "adoption_curves_income": {
+    "High income": {
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "cumulative_share": [
+        0.3571,
+        0.5952,
+        0.7381,
+        0.881,
+        0.9524,
+        0.9524,
+        0.9762,
+        0.9762,
+        0.9762
+      ],
+      "n_countries": 42
+    },
+    "Developing": {
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "cumulative_share": [
+        0.1034,
+        0.4138,
+        0.5172,
+        0.6552,
+        0.6897,
+        0.6897,
+        0.7241,
+        0.7931,
+        0.8621
+      ],
+      "n_countries": 29
+    }
+  },
+  "adoption_curves_region": {
+    "EAP": {
+      "label": "East Asia & Pacific",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "cumulative_share": [
+        0.4444,
+        0.6667,
+        0.6667,
+        0.7778,
+        0.7778,
+        0.7778,
+        0.7778,
+        0.7778,
+        0.8889
+      ],
+      "n_countries": 9
+    },
+    "ECA": {
+      "label": "Europe & Central Asia",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "cumulative_share": [
+        0.2973,
+        0.5405,
+        0.7027,
+        0.8108,
+        0.8919,
+        0.8919,
+        0.9189,
+        0.9189,
+        0.9189
+      ],
+      "n_countries": 37
+    },
+    "LAC": {
+      "label": "Latin America & Caribbean",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "cumulative_share": [
+        0.0,
+        0.625,
+        0.625,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "n_countries": 8
+    },
+    "MENA": {
+      "label": "Middle East & North Africa",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "cumulative_share": [
+        0.0,
+        0.2857,
+        0.5714,
+        0.7143,
+        0.7143,
+        0.7143,
+        0.7143,
+        0.8571,
+        1.0
+      ],
+      "n_countries": 7
+    },
+    "NAM": {
+      "label": "North America",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "cumulative_share": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "n_countries": 2
+    },
+    "SSA": {
+      "label": "Sub-Saharan Africa",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "cumulative_share": [
+        0.0,
+        0.1429,
+        0.2857,
+        0.4286,
+        0.5714,
+        0.5714,
+        0.7143,
+        0.8571,
+        0.8571
+      ],
+      "n_countries": 7
+    }
+  },
+  "adoption_lag_high_income": {
+    "median": 2018,
+    "mean": 2018.4,
+    "n": 41
+  },
+  "adoption_lag_developing": {
+    "median": 2019,
+    "mean": 2019.7,
+    "n": 25
+  },
+  "adoption_ttest": {
+    "t": -2.258,
+    "p": 0.030385
+  },
+  "diffusion_direction": {
+    "horizontal": 327,
+    "vertical": 5,
+    "horizontal_share": 0.985
+  }
+}

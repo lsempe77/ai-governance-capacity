@@ -36,7 +36,8 @@ observatory/
 │   │   ├── country_metadata.py    # Country → income/region/GDP mapping
 │   │   ├── sota_analysis.py       # Phase 3a: 10 core analyses (descriptive, regression, clustering)
 │   │   ├── advanced_analysis.py   # Phase 3b: robustness, multilevel, PCA, convergence
-│   │   └── extended_analysis.py   # Phase 3c: inequality, portfolio, quantile & Tobit regression
+│   │   ├── extended_analysis.py   # Phase 3c: inequality, portfolio, quantile & Tobit regression
+│   │   └── diffusion_frontier.py  # Phase 3d: policy diffusion patterns & efficiency frontier
 │   └── collectors/                # Corpus building (completed)
 │
 ├── data/
@@ -156,6 +157,7 @@ See [docs/PROJECT_PLAN.md](docs/PROJECT_PLAN.md) for full details.
 | **Phase 3a** | ✅ Complete | SOTA analysis — 10 analyses, 53 outputs (regression, clustering, temporal trends) |
 | **Phase 3b** | ✅ Complete | Advanced analysis — robustness, multilevel models, PCA, convergence |
 | **Phase 3c** | ✅ Complete | Extended analysis — inequality decomposition, portfolio breadth, quantile & Tobit regression (24 outputs) |
+| **Phase 3d** | ✅ Complete | Diffusion & frontier — policy diffusion patterns, efficiency frontier (18 outputs) |
 | **Phase 4** | ❌ Planned | Reporting & dissemination |
 
 ## 📋 Phase 3b: Advanced Analysis Results
@@ -264,12 +266,33 @@ See [docs/PROJECT_PLAN.md](docs/PROJECT_PLAN.md) for full details.
 
 > **Key finding:** Tobit coefficients are ~40% larger than OLS for GDP (capacity: 0.121 vs 0.086; ethics: 0.100 vs 0.061), confirming OLS attenuates effects when floor effects are present. Text quality remains the dominant predictor in both models.
 
-### 🟢 Nice to Have (analyses 9–10 — differentiation)
+## 📋 Phase 3d: Diffusion & Efficiency Frontier Results
 
-| # | Analysis | Purpose | Method |
-|---|----------|---------|--------|
-| 9 | **Policy diffusion patterns** | Which countries led in each dimension? | Temporal leader-follower analysis by region |
-| 10 | **Efficiency frontier** | Most governance capacity per GDP dollar | Score/GDP scatter with frontier envelope |
+### 🔴 9. Policy Diffusion Patterns
+
+| Metric | Capacity | Ethics |
+|---|---|---|
+| HI median first adoption | 2018 | 2018 |
+| Developing median first adoption | 2019 | 2020 |
+| Adoption lag (HI earlier by) | **1.3 yrs** ($p = .030$*) | **1.2 yrs** ($p = .021$*) |
+| HI adoption by 2025 | 98% | 100% |
+| Developing adoption by 2025 | 86% | 72% |
+| Diffusion direction | 98% horizontal | 98% horizontal |
+
+> **Key finding:** HI countries adopted ~1 year earlier, but diffusion is overwhelmingly **horizontal** (peer-to-peer within income groups, not top-down from rich to poor). SSA and MENA lag most — 14–29% adoption by 2019 vs 100% in NAM. Ethics adoption gap (72% developing vs 100% HI by 2025) is larger than capacity gap (86% vs 98%).
+
+### 🔴 10. Governance Efficiency Frontier
+
+| Metric | Capacity | Ethics |
+|---|---|---|
+| OLS R² (score ~ GDP) | 0.035 | 0.015 |
+| Top overperformer | 🇧🇷 Brazil (+0.69) | 🇮🇸 Iceland (+0.61) |
+| Top underperformer | 🇰🇿 Kazakhstan (−0.75) | 🇰🇿 Kazakhstan (−0.56) |
+| Frontier countries (FDH) | Uganda → Rwanda → Kenya → Brazil | Uganda → Rwanda → Nigeria → Brazil → Iceland |
+| Most efficient (score/$10k) | Rwanda (3.10), Kenya (1.91) | Rwanda (2.30), Nigeria (1.51) |
+| Mean dist to frontier | 0.588 | 0.517 |
+
+> **Key finding:** GDP explains only 1.5–3.5% of country-level score variation (R² ≈ 0.02–0.04). **GDP is not destiny** — Brazil, Kenya, Rwanda, and Tunisia punch far above their weight, while Korea, Portugal, and Kazakhstan underperform relative to resources. The efficiency frontier is anchored by African countries (Rwanda, Kenya, Uganda) with modest GDP but focused governance efforts.
 
 ## 🛠️ Setup
 
