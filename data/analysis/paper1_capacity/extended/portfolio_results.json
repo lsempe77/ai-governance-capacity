@@ -1,0 +1,19 @@
+{
+  "n_countries": 68,
+  "mean_breadth": 4.79,
+  "median_breadth": 5,
+  "breadth_high_income": 4.95,
+  "breadth_developing": 4.52,
+  "breadth_ttest": {
+    "t": 1.535,
+    "p": 0.137114,
+    "d": 0.439
+  },
+  "dimension_coverage_rate": {
+    "c1_clarity": 0.9706,
+    "c2_resources": 0.9559,
+    "c3_authority": 0.9706,
+    "c4_accountability": 0.9265,
+    "c5_coherence": 0.9706
+  }
+}

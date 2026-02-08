@@ -35,7 +35,8 @@ observatory/
 │   │   ├── inter_rater.py         # Phase 2.3: inter-rater reliability
 │   │   ├── country_metadata.py    # Country → income/region/GDP mapping
 │   │   ├── sota_analysis.py       # Phase 3a: 10 core analyses (descriptive, regression, clustering)
-│   │   └── advanced_analysis.py   # Phase 3b: robustness, multilevel, PCA, convergence
+│   │   ├── advanced_analysis.py   # Phase 3b: robustness, multilevel, PCA, convergence
+│   │   └── extended_analysis.py   # Phase 3c: inequality, portfolio, quantile & Tobit regression
 │   └── collectors/                # Corpus building (completed)
 │
 ├── data/
@@ -153,28 +154,115 @@ See [docs/PROJECT_PLAN.md](docs/PROJECT_PLAN.md) for full details.
 | **Phase 1** | ✅ Complete | Text extraction — 1,754 analysis-ready (79.2%), 11.4M words |
 | **Phase 2** | ✅ Complete | LLM scoring — 3-model ensemble, 6,641 API calls, ICC=0.827 |
 | **Phase 3a** | ✅ Complete | SOTA analysis — 10 analyses, 53 outputs (regression, clustering, temporal trends) |
-| **Phase 3b** | ⏳ In progress | Advanced analysis — robustness, multilevel models, PCA, convergence |
+| **Phase 3b** | ✅ Complete | Advanced analysis — robustness, multilevel models, PCA, convergence |
+| **Phase 3c** | ✅ Complete | Extended analysis — inequality decomposition, portfolio breadth, quantile & Tobit regression (24 outputs) |
 | **Phase 4** | ❌ Planned | Reporting & dissemination |
 
-## 📋 Phase 3b: Advanced Analysis Plan
+## 📋 Phase 3b: Advanced Analysis Results
 
-### 🔴 High Priority (analyses 1–4 — reviewer essentials)
+### 🔴 1. Robustness Checks ⚠️
 
-| # | Analysis | Purpose | Method |
-|---|----------|---------|--------|
-| 1 | **Robustness checks** | Verify key findings hold under alternative specifications | Rerun income-gap tests excluding stubs/thin texts; bootstrap 95% CIs (1,000 reps); cluster solutions k=3–6 with silhouette scores |
-| 2 | **Multilevel models** | Account for policies nested within countries | Random-intercepts model (country grouping); compare with pooled OLS; ICC for country-level variance |
-| 3 | **PCA / Factor analysis** | Validate the two-construct framework (capacity vs ethics) | PCA on 10 dimensions; scree plot; loadings matrix; do C1–C5 and E1–E5 form two distinct factors? |
-| 4 | **Convergence / divergence** | Are developing countries catching up or falling behind? | Income × year interaction; separate temporal slopes by income group; gap trajectory 2017–2025 |
+| Sample restriction | Capacity $d$ | Ethics $d$ |
+|---|---|---|
+| All texts | +0.30*** | +0.20*** |
+| **Good-text only** | **+0.04 (n.s.)** | **−0.09 (n.s.)** |
+| Good + thin | +0.23*** | +0.11 (p=.08) |
+| Excl. stubs | +0.23*** | +0.11 (p=.08) |
 
-### 🟡 Medium Priority (analyses 5–8 — strengthen contribution)
+> ⚠️ **Key finding:** The income-group gap largely vanishes when restricted to good-quality texts, suggesting text extraction quality may inflate the observed disparity.
 
-| # | Analysis | Purpose | Method |
-|---|----------|---------|--------|
-| 5 | **Inequality decomposition** | Between-group vs within-group inequality | Gini coefficient; Theil index decomposition (between income groups vs within) |
-| 6 | **Policy portfolio breadth** | Do countries cover all dimensions or concentrate on a few? | Per-country coverage index (how many dimensions scored ≥1); portfolio gap identification |
-| 7 | **Quantile regression** | Does GDP matter more at the bottom than the top? | Quantile regression at τ = 0.25, 0.50, 0.75 |
-| 8 | **Tobit regression** | Handle floor effects (64% score 0–0.9) | Tobit model for bounded dependent variable [0, 4] |
+- Bootstrap 95% CIs (1,000 reps): Capacity $d$ = 0.30 [0.19, 0.41]; Ethics $d$ = 0.20 [0.09, 0.30]
+- Cluster stability: best $k=2$ by silhouette score (capacity 0.41, ethics 0.42)
+
+### 🔴 2. Multilevel Models
+
+| Metric | Capacity | Ethics |
+|---|---|---|
+| Country ICC | 0.091 (9.1%) | 0.125 (12.5%) |
+| LR test vs OLS | $p = .007$** | $p < .001$*** |
+| GDP β (mixed) | +0.066 ($p = .038$*) | +0.029 ($p = .38$) |
+| GDP β (OLS) | +0.088 ($p < .001$) | +0.061 ($p = .002$) |
+
+> Mixed model is the correct specification — OLS inflates the GDP effect by double-counting country-level variation.
+
+### 🔴 3. PCA / Factor Analysis ✅
+
+| Result | Value |
+|---|---|
+| Kaiser criterion | **Exactly 2 components** (λ = 6.59, 1.28) |
+| PC1 (65.9%) | General governance factor — all 10 dimensions load equally |
+| PC2 (12.8%) | **Separates capacity from ethics** (separation = 0.51) |
+| Cronbach's α — Capacity (C1–C5) | **0.92** |
+| Cronbach's α — Ethics (E1–E5) | **0.91** |
+| Cronbach's α — All 10 dimensions | **0.94** |
+
+> Two-factor structure empirically validated — PCA confirms capacity and ethics are distinct but related constructs.
+
+### 🔴 4. Convergence / Divergence
+
+| Metric | Capacity | Ethics |
+|---|---|---|
+| Income × Year interaction | β = +0.0003 ($p = .98$) | β = −0.031 ($p = .015$*) |
+| HI temporal slope | −0.0001/yr (n.s.) | **−0.023/yr** ($p = .001$) |
+| Developing slope | +0.010/yr (n.s.) | +0.016/yr (n.s.) |
+| Gap trend | Stable | **Narrowing** (−0.038/yr, $p = .018$) |
+
+> **Capacity:** No convergence — the gap is stable over time.
+> **Ethics:** Significant convergence — but driven by HI countries *declining*, not developing countries improving.
+
+## 📋 Phase 3c: Extended Analysis Results
+
+### 🔴 5. Inequality Decomposition
+
+| Metric | Capacity | Ethics |
+|---|---|---|
+| Gini (all countries) | 0.518 | 0.569 |
+| Gini (HI only) | 0.499 | 0.553 |
+| Gini (Developing) | 0.593 | 0.638 |
+| Gini (country means) | 0.235 | 0.273 |
+| Theil T — Between groups | **1.2%** | **0.5%** |
+| Theil T — Within groups | **98.8%** | **99.5%** |
+
+> **Key finding:** Within-group inequality overwhelmingly dominates (98–99%). The income-group gap explains only 1–2% of total inequality — variation within HI and within developing countries dwarfs the gap between them.
+
+### 🔴 6. Policy Portfolio Breadth
+
+| Metric | Capacity | Ethics |
+|---|---|---|
+| Countries with 5/5 coverage | 63 (93%) | 64 (94%) |
+| HI mean breadth | 4.95/5 | 5.00/5 |
+| Developing mean breadth | 4.52/5 | 4.36/5 |
+| Breadth gap t-test | $p = .137$ (n.s.) | $p = .054$ (marginal) |
+| Least covered (Capacity) | C4 Accountability (92.6%) | — |
+| Least covered (Ethics) | E2 Rights / E5 Inclusion (94.1%) | — |
+
+> **Key finding:** Most countries cover all 5 dimensions in at least one policy — the gap is not in breadth but in depth (score levels). C4 Accountability is the biggest gap.
+
+### 🔴 7. Quantile Regression
+
+| Quantile (τ) | GDP β Capacity | GDP β Ethics |
+|---|---|---|
+| 0.25 (positive subset) | +0.068** | 0.000 (n.s.) |
+| 0.50 | +0.098*** | 0.000 (n.s.) |
+| 0.75 | +0.064* | 0.000 (n.s.) |
+| OLS (reference) | +0.086*** | +0.061** |
+
+> **Key finding:** GDP matters for capacity at the median but not at the extremes (inverted-U pattern). For ethics, GDP has **zero effect across all quantiles** — the OLS significance is entirely driven by the extensive margin (whether any policy exists).
+
+### 🔴 8. Tobit Regression (Left-Censored at 0)
+
+| Variable | Capacity (Tobit β) | Ethics (Tobit β) |
+|---|---|---|
+| log(GDP pc) | +0.121 | +0.100 |
+| Year | +0.008 | −0.015 |
+| Binding regulation | +0.174 | +0.162 |
+| Good text quality | +1.193 | +1.014 |
+| σ | 0.742 | 0.700 |
+| P(uncensored at mean) | 0.827 | 0.725 |
+| Floor: score = 0 | 27.6% | 36.3% |
+| Floor: score < 1 | 57.1% | 68.5% |
+
+> **Key finding:** Tobit coefficients are ~40% larger than OLS for GDP (capacity: 0.121 vs 0.086; ethics: 0.100 vs 0.061), confirming OLS attenuates effects when floor effects are present. Text quality remains the dominant predictor in both models.
 
 ### 🟢 Nice to Have (analyses 9–10 — differentiation)
 

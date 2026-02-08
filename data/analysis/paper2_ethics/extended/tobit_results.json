@@ -1,0 +1,73 @@
+{
+  "floor_effects": {
+    "n_zero": 707,
+    "pct_zero": 36.3,
+    "n_below_0.5": 965,
+    "pct_below_0.5": 49.5,
+    "n_below_1.0": 1335,
+    "pct_below_1.0": 68.5
+  },
+  "tobit": {
+    "coefficients": {
+      "(Intercept)": {
+        "beta": -1.09028,
+        "se": 26.28489,
+        "z": -0.0415,
+        "p": 0.966914
+      },
+      "log_gdp_pc": {
+        "beta": 0.09966,
+        "se": 2.48722,
+        "z": 0.0401,
+        "p": 0.968039
+      },
+      "year_c": {
+        "beta": -0.01463,
+        "se": 0.2701,
+        "z": -0.0542,
+        "p": 0.956814
+      },
+      "is_binding": {
+        "beta": 0.16206,
+        "se": 8.80961,
+        "z": 0.0184,
+        "p": 0.985323
+      },
+      "is_good_text": {
+        "beta": 1.01394,
+        "se": 2.6569,
+        "z": 0.3816,
+        "p": 0.70274
+      },
+      "log(σ)": {
+        "beta": -0.35672,
+        "se": 2.58068,
+        "z": -0.1382,
+        "p": 0.890061
+      }
+    },
+    "sigma": 0.7,
+    "log_likelihood": -1857.34,
+    "n_obs": 1949,
+    "n_censored": 707,
+    "converged": true
+  },
+  "ols_comparison": {
+    "coefficients": {
+      "(Intercept)": -0.37394,
+      "log_gdp_pc": 0.06124,
+      "year_c": -0.00947,
+      "is_binding": 0.19223,
+      "is_good_text": 0.75112
+    },
+    "r_squared": 0.3731,
+    "log_likelihood": -1395.29
+  },
+  "marginal_effects": {
+    "(Intercept)": -0.79055,
+    "log_gdp_pc": 0.07226,
+    "year_c": -0.01061,
+    "is_binding": 0.11751,
+    "is_good_text": 0.7352
+  }
+}

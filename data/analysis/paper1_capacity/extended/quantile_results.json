@@ -1,0 +1,97 @@
+{
+  "ols": {
+    "gdp_beta": 0.08613,
+    "gdp_p": 0.000146,
+    "r_squared": 0.4356
+  },
+  "quantile_regressions": {
+    "0.1": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.02029,
+      "gdp_p": 0.999998,
+      "text_beta": 0.4,
+      "binding_beta": -0.0,
+      "intercept": -0.0,
+      "year_beta": -0.0,
+      "pseudo_r2": 0.0059
+    },
+    "0.25": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.01856,
+      "gdp_p": 0.99999,
+      "text_beta": 1.0,
+      "binding_beta": 0.0,
+      "intercept": -0.0,
+      "year_beta": -0.0,
+      "pseudo_r2": 0.2261
+    },
+    "0.5": {
+      "gdp_beta": 0.13272,
+      "gdp_se": 0.02648,
+      "gdp_p": 1e-06,
+      "text_beta": 1.29067,
+      "binding_beta": 0.20381,
+      "intercept": -1.21258,
+      "year_beta": 0.01117,
+      "pseudo_r2": 0.332
+    },
+    "0.75": {
+      "gdp_beta": 0.11534,
+      "gdp_se": 0.03206,
+      "gdp_p": 0.000329,
+      "text_beta": 1.22626,
+      "binding_beta": 0.20597,
+      "intercept": -0.59473,
+      "year_beta": 0.03501,
+      "pseudo_r2": 0.323
+    },
+    "0.9": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.04391,
+      "gdp_p": 0.999939,
+      "text_beta": 1.0,
+      "binding_beta": 0.2,
+      "intercept": 1.19996,
+      "year_beta": 0.0,
+      "pseudo_r2": 0.2669
+    }
+  },
+  "quantile_regressions_positive": {
+    "0.1": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.02872,
+      "gdp_p": 0.999994,
+      "pseudo_r2": 0.2122
+    },
+    "0.25": {
+      "gdp_beta": 0.06844,
+      "gdp_se": 0.02282,
+      "gdp_p": 0.002758,
+      "pseudo_r2": 0.2708
+    },
+    "0.5": {
+      "gdp_beta": 0.09834,
+      "gdp_se": 0.02963,
+      "gdp_p": 0.000926,
+      "pseudo_r2": 0.3105
+    },
+    "0.75": {
+      "gdp_beta": 0.06429,
+      "gdp_se": 0.03006,
+      "gdp_p": 0.032596,
+      "pseudo_r2": 0.2844
+    },
+    "0.9": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.03393,
+      "gdp_p": 0.999988,
+      "pseudo_r2": 0.2383
+    }
+  },
+  "interpretation": {
+    "bottom_beta": 0.0,
+    "top_beta": 0.0,
+    "ratio": 0.42,
+    "source": "positive_subset"
+  }
+}

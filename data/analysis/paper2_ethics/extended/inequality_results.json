@@ -1,0 +1,75 @@
+{
+  "gini": {
+    "All countries": {
+      "composite": 0.5686,
+      "dimensions": {
+        "e1_framework": 0.5931,
+        "e2_rights": 0.656,
+        "e3_governance": 0.6114,
+        "e4_operationalisation": 0.6202,
+        "e5_inclusion": 0.6224
+      },
+      "n": 2119
+    },
+    "High income": {
+      "composite": 0.5528,
+      "dimensions": {
+        "e1_framework": 0.5821,
+        "e2_rights": 0.6472,
+        "e3_governance": 0.6005,
+        "e4_operationalisation": 0.6013,
+        "e5_inclusion": 0.6035
+      },
+      "n": 1700
+    },
+    "Developing": {
+      "composite": 0.638,
+      "dimensions": {
+        "e1_framework": 0.6468,
+        "e2_rights": 0.6952,
+        "e3_governance": 0.6654,
+        "e4_operationalisation": 0.6979,
+        "e5_inclusion": 0.6955
+      },
+      "n": 397
+    },
+    "country_level": {
+      "composite": 0.2727,
+      "n": 72
+    }
+  },
+  "theil_binary": {
+    "total": 0.5845,
+    "between": 0.0032,
+    "within": 0.5813,
+    "between_share": 0.0055
+  },
+  "theil_4group": {
+    "total": 0.58359,
+    "between": 0.00593,
+    "within": 0.57767,
+    "between_share": 0.0102
+  },
+  "theil_dimensions": {
+    "e1_framework": {
+      "total": 0.72859,
+      "between_share": 0.0022
+    },
+    "e2_rights": {
+      "total": 0.88441,
+      "between_share": 0.0017
+    },
+    "e3_governance": {
+      "total": 0.77646,
+      "between_share": 0.0048
+    },
+    "e4_operationalisation": {
+      "total": 0.79989,
+      "between_share": 0.0091
+    },
+    "e5_inclusion": {
+      "total": 0.79042,
+      "between_share": 0.0044
+    }
+  }
+}

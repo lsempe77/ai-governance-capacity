@@ -1,0 +1,69 @@
+jurisdiction,c1_clarity,c2_resources,c3_authority,c4_accountability,c5_coherence,breadth,n_policies,income,income_binary
+Argentina,1,1,1,1,1,5,16,Upper middle income,Developing
+Australia,1,1,1,1,1,5,43,High income,High income
+Austria,1,1,1,1,1,5,76,High income,High income
+Belgium,1,1,1,1,1,5,94,High income,High income
+Brazil,1,1,1,1,1,5,14,Upper middle income,Developing
+Bulgaria,1,1,1,1,1,5,43,Upper middle income,Developing
+Canada,1,1,1,1,1,5,15,High income,High income
+Chile,1,1,1,1,1,5,11,High income,High income
+China (People’s Republic of),1,1,1,1,1,5,22,Unknown,
+Colombia,1,1,1,1,1,5,40,Upper middle income,Developing
+Costa Rica,1,1,1,1,1,5,18,Upper middle income,Developing
+Croatia,1,1,1,1,1,5,32,High income,High income
+Cyprus,1,1,1,1,1,5,9,High income,High income
+Czech Republic,1,1,1,1,1,5,34,High income,High income
+Denmark,1,1,1,1,1,5,42,High income,High income
+Egypt,1,1,1,1,1,5,7,Lower middle income,Developing
+Estonia,1,1,1,1,1,5,17,High income,High income
+Finland,1,1,1,1,1,5,36,High income,High income
+France,1,1,1,1,1,5,68,High income,High income
+Germany,1,1,1,1,1,5,93,High income,High income
+Greece,1,1,1,1,1,5,48,High income,High income
+Hungary,1,1,1,1,1,5,28,High income,High income
+Iceland,1,1,1,1,1,5,4,High income,High income
+India,1,1,1,1,1,5,39,Lower middle income,Developing
+Ireland,1,1,1,1,1,5,41,High income,High income
+Israel,1,1,1,1,1,5,19,High income,High income
+Italy,1,1,1,1,1,5,38,High income,High income
+Japan,1,1,1,1,1,5,29,High income,High income
+Kazakhstan,0,0,0,0,0,0,8,Upper middle income,Developing
+Kenya,1,1,1,1,1,5,10,Lower middle income,Developing
+Korea,1,0,1,0,1,3,21,High income,High income
+Latvia,1,1,1,1,1,5,50,High income,High income
+Lithuania,1,1,1,1,1,5,33,High income,High income
+Luxembourg,1,1,1,1,1,5,25,High income,High income
+Malaysia,1,1,1,1,1,5,3,Upper middle income,Developing
+Malta,1,1,1,1,1,5,50,High income,High income
+Mauritius,1,1,1,1,1,5,5,Upper middle income,Developing
+Mexico,1,1,1,1,1,5,21,Upper middle income,Developing
+Morocco,1,1,1,0,1,4,3,Lower middle income,Developing
+Netherlands,1,1,1,1,1,5,47,High income,High income
+New Zealand,1,1,1,1,1,5,11,High income,High income
+Nigeria,1,1,1,1,1,5,5,Lower middle income,Developing
+Norway,1,1,1,1,1,5,20,High income,High income
+Peru,1,1,1,1,1,5,18,Upper middle income,Developing
+Poland,1,1,1,1,1,5,39,High income,High income
+Portugal,1,1,1,1,1,5,75,High income,High income
+Romania,1,1,1,1,1,5,39,High income,High income
+Rwanda,1,1,1,1,1,5,6,Low income,Developing
+Saudi Arabia,1,1,1,1,1,5,64,High income,High income
+Serbia,1,1,1,1,1,5,21,Upper middle income,Developing
+Singapore,1,1,1,1,1,5,61,High income,High income
+Slovak Republic,1,1,1,1,1,5,25,High income,High income
+Slovenia,1,1,1,1,1,5,76,High income,High income
+South Africa,1,1,1,1,1,5,5,Upper middle income,Developing
+Spain,1,1,1,1,1,5,56,High income,High income
+Sweden,1,1,1,1,1,5,54,High income,High income
+Switzerland,1,1,1,1,1,5,6,High income,High income
+Thailand,1,1,1,1,1,5,10,Upper middle income,Developing
+Tunisia,1,1,1,1,1,5,7,Lower middle income,Developing
+Türkiye,1,1,1,1,1,5,38,Upper middle income,Developing
+Uganda,1,1,1,0,1,4,3,Low income,Developing
+Ukraine,1,1,1,1,1,5,39,Lower middle income,Developing
+United Arab Emirates,1,1,1,1,1,5,8,High income,High income
+United Kingdom,1,1,1,1,1,5,72,High income,High income
+United States,1,1,1,1,1,5,84,High income,High income
+Uruguay,1,1,1,1,1,5,7,High income,High income
+Uzbekistan,0,0,0,0,0,0,4,Lower middle income,Developing
+Viet Nam,1,1,1,1,1,5,7,Lower middle income,Developing

@@ -1,0 +1,97 @@
+{
+  "ols": {
+    "gdp_beta": 0.06124,
+    "gdp_p": 0.001643,
+    "r_squared": 0.3731
+  },
+  "quantile_regressions": {
+    "0.1": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.01364,
+      "gdp_p": 0.999996,
+      "text_beta": 0.0,
+      "binding_beta": -0.0,
+      "intercept": -0.0,
+      "year_beta": -0.0,
+      "pseudo_r2": -0.0
+    },
+    "0.25": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.01169,
+      "gdp_p": 0.999988,
+      "text_beta": 0.6,
+      "binding_beta": -0.0,
+      "intercept": -0.0,
+      "year_beta": -0.0,
+      "pseudo_r2": 0.1288
+    },
+    "0.5": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.00815,
+      "gdp_p": 0.99961,
+      "text_beta": 1.19999,
+      "binding_beta": 0.0,
+      "intercept": -4e-05,
+      "year_beta": -0.0,
+      "pseudo_r2": 0.2793
+    },
+    "0.75": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.02718,
+      "gdp_p": 0.999975,
+      "text_beta": 0.8,
+      "binding_beta": 0.4,
+      "intercept": 0.59999,
+      "year_beta": -0.0,
+      "pseudo_r2": 0.2945
+    },
+    "0.9": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.03447,
+      "gdp_p": 0.999994,
+      "text_beta": 1.0,
+      "binding_beta": 0.59999,
+      "intercept": 0.8,
+      "year_beta": 0.0,
+      "pseudo_r2": 0.2966
+    }
+  },
+  "quantile_regressions_positive": {
+    "0.1": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.02803,
+      "gdp_p": 0.999998,
+      "pseudo_r2": 0.0811
+    },
+    "0.25": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.04055,
+      "gdp_p": 0.999994,
+      "pseudo_r2": 0.1134
+    },
+    "0.5": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.01774,
+      "gdp_p": 0.999995,
+      "pseudo_r2": 0.2555
+    },
+    "0.75": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.03833,
+      "gdp_p": 0.99999,
+      "pseudo_r2": 0.2546
+    },
+    "0.9": {
+      "gdp_beta": 0.0,
+      "gdp_se": 0.04598,
+      "gdp_p": 1.0,
+      "pseudo_r2": 0.2378
+    }
+  },
+  "interpretation": {
+    "bottom_beta": 0.0,
+    "top_beta": 0.0,
+    "ratio": 2.98,
+    "source": "positive_subset"
+  }
+}
