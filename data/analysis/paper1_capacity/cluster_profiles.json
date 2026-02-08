@@ -1,0 +1,144 @@
+{
+  "cluster_0": {
+    "n_countries": 28,
+    "mean_scores": {
+      "c1_clarity": 0.892,
+      "c2_resources": 0.587,
+      "c3_authority": 1.038,
+      "c4_accountability": 0.392,
+      "c5_coherence": 1.051
+    },
+    "composite_mean": 0.792,
+    "income_distribution": {
+      "High income": 16,
+      "Upper middle income": 4,
+      "Unknown": 1,
+      "Lower middle income": 6,
+      "Low income": 1
+    },
+    "countries": [
+      "Belgium",
+      "Bulgaria",
+      "China (People’s Republic of)",
+      "Colombia",
+      "Czech Republic",
+      "Denmark",
+      "Egypt",
+      "Estonia",
+      "Greece",
+      "Hungary",
+      "Iceland",
+      "India",
+      "Israel",
+      "Japan",
+      "Latvia",
+      "Luxembourg",
+      "Mauritius",
+      "Morocco",
+      "Nigeria",
+      "Norway",
+      "Poland",
+      "Rwanda",
+      "Singapore",
+      "Slovenia",
+      "South Africa",
+      "Sweden",
+      "Ukraine",
+      "Viet Nam"
+    ]
+  },
+  "cluster_1": {
+    "n_countries": 19,
+    "mean_scores": {
+      "c1_clarity": 0.575,
+      "c2_resources": 0.325,
+      "c3_authority": 0.655,
+      "c4_accountability": 0.259,
+      "c5_coherence": 0.739
+    },
+    "composite_mean": 0.511,
+    "income_distribution": {
+      "Upper middle income": 7,
+      "High income": 11,
+      "Low income": 1
+    },
+    "countries": [
+      "Argentina",
+      "Austria",
+      "Chile",
+      "Costa Rica",
+      "Croatia",
+      "Cyprus",
+      "Lithuania",
+      "Malaysia",
+      "New Zealand",
+      "Peru",
+      "Portugal",
+      "Serbia",
+      "Spain",
+      "Switzerland",
+      "Thailand",
+      "Türkiye",
+      "Uganda",
+      "United Arab Emirates",
+      "Uruguay"
+    ]
+  },
+  "cluster_2": {
+    "n_countries": 17,
+    "mean_scores": {
+      "c1_clarity": 1.226,
+      "c2_resources": 0.864,
+      "c3_authority": 1.381,
+      "c4_accountability": 0.702,
+      "c5_coherence": 1.409
+    },
+    "composite_mean": 1.116,
+    "income_distribution": {
+      "High income": 14,
+      "Upper middle income": 1,
+      "Lower middle income": 2
+    },
+    "countries": [
+      "Australia",
+      "Brazil",
+      "Canada",
+      "Finland",
+      "France",
+      "Germany",
+      "Ireland",
+      "Italy",
+      "Kenya",
+      "Malta",
+      "Netherlands",
+      "Romania",
+      "Saudi Arabia",
+      "Slovak Republic",
+      "Tunisia",
+      "United Kingdom",
+      "United States"
+    ]
+  },
+  "cluster_3": {
+    "n_countries": 4,
+    "mean_scores": {
+      "c1_clarity": 0.095,
+      "c2_resources": 0.012,
+      "c3_authority": 0.107,
+      "c4_accountability": 0.024,
+      "c5_coherence": 0.143
+    },
+    "composite_mean": 0.076,
+    "income_distribution": {
+      "Upper middle income": 2,
+      "High income": 1,
+      "Lower middle income": 1
+    },
+    "countries": [
+      "Kazakhstan",
+      "Korea",
+      "Mexico",
+      "Uzbekistan"
+    ]
+  }
+}

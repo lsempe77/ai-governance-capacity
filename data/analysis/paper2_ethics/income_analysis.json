@@ -1,0 +1,61 @@
+{
+  "binary": {
+    "high_income": {
+      "n": 1700,
+      "mean": 0.6194,
+      "std": 0.6231
+    },
+    "developing": {
+      "n": 397,
+      "mean": 0.4982,
+      "std": 0.6091
+    },
+    "welch_t": 3.5533,
+    "welch_p": 0.00041,
+    "cohens_d": 0.1967,
+    "mann_whitney_u": 380165.5,
+    "mann_whitney_p": 5.3e-05
+  },
+  "dimension_tests": {
+    "e1_framework": {
+      "hi_mean": 0.677,
+      "dev_mean": 0.582,
+      "diff": 0.095,
+      "t": 2.264,
+      "p": 0.023924,
+      "d": 0.126
+    },
+    "e2_rights": {
+      "hi_mean": 0.546,
+      "dev_mean": 0.471,
+      "diff": 0.075,
+      "t": 1.94,
+      "p": 0.052892,
+      "d": 0.107
+    },
+    "e3_governance": {
+      "hi_mean": 0.628,
+      "dev_mean": 0.496,
+      "diff": 0.132,
+      "t": 3.439,
+      "p": 0.000623,
+      "d": 0.186
+    },
+    "e4_operationalisation": {
+      "hi_mean": 0.607,
+      "dev_mean": 0.433,
+      "diff": 0.174,
+      "t": 4.682,
+      "p": 3e-06,
+      "d": 0.252
+    },
+    "e5_inclusion": {
+      "hi_mean": 0.639,
+      "dev_mean": 0.509,
+      "diff": 0.13,
+      "t": 3.152,
+      "p": 0.001699,
+      "d": 0.175
+    }
+  }
+}

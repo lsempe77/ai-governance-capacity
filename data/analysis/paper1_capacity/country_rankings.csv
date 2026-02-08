@@ -1,0 +1,73 @@
+jurisdiction,capacity_score,c1_clarity,c2_resources,c3_authority,c4_accountability,c5_coherence,n_policies,income_group,region,gdp_pc
+Algeria,1.8,2.0,2.0,2.0,1.0,2.0,1,Lower middle income,Middle East & North Africa,13500.0
+Zambia,1.7,2.0,1.0,2.5,1.0,2.0,2,Lower middle income,Sub-Saharan Africa,4000.0
+Brazil,1.4,1.286,0.929,1.857,1.0,1.929,14,Upper middle income,Latin America & Caribbean,20800.0
+Kenya,1.22,1.3,0.7,1.7,0.7,1.7,10,Lower middle income,Sub-Saharan Africa,6400.0
+Saudi Arabia,1.206,1.484,0.484,1.609,1.047,1.406,64,High income,Middle East & North Africa,65600.0
+United States,1.205,1.286,0.857,1.56,0.81,1.512,84,High income,North America,85300.0
+Germany,1.148,1.194,1.022,1.441,0.602,1.484,93,High income,Europe & Central Asia,68200.0
+Australia,1.144,1.279,0.837,1.279,0.791,1.535,43,High income,East Asia & Pacific,65400.0
+Ireland,1.117,1.268,0.927,1.268,0.659,1.463,41,High income,Europe & Central Asia,118000.0
+Finland,1.111,1.278,0.833,1.333,0.583,1.528,36,High income,Europe & Central Asia,62200.0
+Romania,1.103,1.256,1.051,1.282,0.513,1.41,39,High income,Europe & Central Asia,43800.0
+Italy,1.095,1.184,1.053,1.263,0.711,1.263,38,High income,Europe & Central Asia,57200.0
+France,1.082,1.176,1.029,1.265,0.544,1.397,68,High income,Europe & Central Asia,63000.0
+Netherlands,1.06,1.191,0.979,1.255,0.596,1.277,47,High income,Europe & Central Asia,74000.0
+United Kingdom,1.056,1.194,0.736,1.347,0.597,1.403,72,High income,Europe & Central Asia,62400.0
+Tunisia,1.029,1.286,0.571,1.429,0.857,1.0,7,Lower middle income,Middle East & North Africa,13500.0
+Malta,1.02,1.22,0.9,1.34,0.56,1.08,50,High income,Europe & Central Asia,61000.0
+Canada,1.013,1.0,0.733,1.2,0.8,1.333,15,High income,North America,60200.0
+Slovak Republic,0.968,0.96,1.04,1.04,0.56,1.24,25,High income,Europe & Central Asia,43100.0
+Singapore,0.951,1.082,0.607,1.164,0.492,1.41,61,High income,East Asia & Pacific,133700.0
+Iceland,0.95,1.0,0.25,1.5,0.5,1.5,4,High income,Europe & Central Asia,75200.0
+Slovenia,0.921,1.066,0.921,1.066,0.461,1.092,76,High income,Europe & Central Asia,55600.0
+Rwanda,0.9,0.833,0.833,1.167,0.5,1.167,6,Low income,Sub-Saharan Africa,2900.0
+Poland,0.897,0.974,0.846,1.154,0.513,1.0,39,High income,Europe & Central Asia,47200.0
+Nigeria,0.88,1.0,0.8,1.2,0.2,1.2,5,Lower middle income,Sub-Saharan Africa,6100.0
+Estonia,0.859,0.941,0.647,0.941,0.412,1.353,17,High income,Europe & Central Asia,51500.0
+Denmark,0.852,0.976,0.786,1.048,0.333,1.119,42,High income,Europe & Central Asia,77600.0
+Mauritius,0.84,0.8,0.6,1.0,0.6,1.2,5,Upper middle income,Sub-Saharan Africa,30800.0
+Egypt,0.829,0.857,0.429,1.0,0.571,1.286,7,Lower middle income,Middle East & North Africa,16000.0
+Sweden,0.822,0.815,0.685,1.222,0.426,0.963,54,High income,Europe & Central Asia,72500.0
+Latvia,0.816,0.96,0.8,0.98,0.36,0.98,50,High income,Europe & Central Asia,43400.0
+Israel,0.811,1.053,0.632,0.947,0.421,1.0,19,High income,Middle East & North Africa,58000.0
+Japan,0.807,0.931,0.552,1.034,0.379,1.138,29,High income,East Asia & Pacific,52100.0
+Indonesia,0.8,0.5,0.5,1.0,0.5,1.5,2,Lower middle income,East Asia & Pacific,16600.0
+Viet Nam,0.771,1.0,0.571,1.0,0.429,0.857,7,Lower middle income,East Asia & Pacific,15500.0
+Norway,0.77,0.85,0.4,1.1,0.55,0.95,20,High income,Europe & Central Asia,87900.0
+Czech Republic,0.753,0.882,0.618,1.029,0.294,0.941,34,High income,Europe & Central Asia,54200.0
+Belgium,0.73,0.872,0.564,0.936,0.298,0.979,94,High income,Europe & Central Asia,68500.0
+Hungary,0.729,0.75,0.607,0.893,0.357,1.036,28,High income,Europe & Central Asia,44600.0
+China (People’s Republic of),0.727,0.818,0.364,0.955,0.364,1.136,22,Unknown,Unknown,
+Ukraine,0.723,0.872,0.462,1.128,0.333,0.821,39,Lower middle income,Europe & Central Asia,16400.0
+South Africa,0.72,0.8,0.2,1.2,0.4,1.0,5,Upper middle income,Sub-Saharan Africa,17000.0
+Luxembourg,0.72,0.8,0.52,1.0,0.24,1.04,25,High income,Europe & Central Asia,141000.0
+Colombia,0.715,0.775,0.475,0.9,0.45,0.975,40,Upper middle income,Latin America & Caribbean,19700.0
+Greece,0.683,0.771,0.562,0.833,0.312,0.938,48,High income,Europe & Central Asia,42700.0
+India,0.672,0.744,0.462,0.872,0.359,0.923,39,Lower middle income,South Asia,10100.0
+Morocco,0.667,1.0,0.667,1.0,0.0,0.667,3,Lower middle income,Middle East & North Africa,10500.0
+Bulgaria,0.665,0.767,0.581,0.791,0.419,0.767,43,Upper middle income,Europe & Central Asia,35600.0
+Croatia,0.619,0.562,0.594,0.812,0.438,0.688,32,High income,Europe & Central Asia,42500.0
+Spain,0.604,0.607,0.536,0.804,0.339,0.732,56,High income,Europe & Central Asia,55000.0
+Thailand,0.6,0.7,0.3,0.7,0.2,1.1,10,Upper middle income,East Asia & Pacific,21800.0
+Serbia,0.6,0.857,0.238,0.952,0.238,0.714,21,Upper middle income,Europe & Central Asia,26900.0
+New Zealand,0.564,0.545,0.182,0.727,0.455,0.909,11,High income,East Asia & Pacific,52200.0
+United Arab Emirates,0.55,0.5,0.375,0.875,0.25,0.75,8,High income,Middle East & North Africa,88200.0
+Costa Rica,0.533,0.611,0.222,0.667,0.444,0.722,18,Upper middle income,Latin America & Caribbean,25600.0
+Switzerland,0.533,0.667,0.167,0.5,0.333,1.0,6,High income,Europe & Central Asia,91900.0
+Türkiye,0.532,0.684,0.368,0.658,0.316,0.632,38,Upper middle income,Europe & Central Asia,41900.0
+Uruguay,0.514,0.429,0.143,0.714,0.286,1.0,7,High income,Latin America & Caribbean,29200.0
+Argentina,0.512,0.5,0.25,0.625,0.25,0.938,16,Upper middle income,Latin America & Caribbean,28800.0
+Austria,0.511,0.658,0.276,0.513,0.237,0.868,76,High income,Europe & Central Asia,72000.0
+Cyprus,0.467,0.667,0.333,0.556,0.222,0.556,9,High income,Europe & Central Asia,52800.0
+Malaysia,0.467,0.667,0.667,0.333,0.333,0.333,3,Upper middle income,East Asia & Pacific,38500.0
+Lithuania,0.442,0.606,0.394,0.667,0.121,0.424,33,High income,Europe & Central Asia,51000.0
+Chile,0.436,0.364,0.273,0.636,0.091,0.818,11,High income,Latin America & Caribbean,33300.0
+Portugal,0.416,0.52,0.293,0.547,0.147,0.573,75,High income,Europe & Central Asia,46500.0
+Uganda,0.4,0.333,0.333,0.667,0.0,0.667,3,Low income,Sub-Saharan Africa,2900.0
+Peru,0.4,0.444,0.222,0.5,0.222,0.611,18,Upper middle income,Latin America & Caribbean,16900.0
+Armenia,0.3,0.5,0.5,0.5,0.0,0.0,2,Upper middle income,Europe & Central Asia,20100.0
+Mexico,0.162,0.143,0.048,0.19,0.095,0.333,21,Upper middle income,Latin America & Caribbean,24500.0
+Korea,0.143,0.238,0.0,0.238,0.0,0.238,21,High income,East Asia & Pacific,56700.0
+Kazakhstan,0.0,0.0,0.0,0.0,0.0,0.0,8,Upper middle income,Europe & Central Asia,35600.0
+Uzbekistan,0.0,0.0,0.0,0.0,0.0,0.0,4,Lower middle income,Europe & Central Asia,11000.0

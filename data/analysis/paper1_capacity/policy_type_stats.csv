@@ -1,0 +1,12 @@
+policy_type,n,mean,median
+Action Plan,95,1.522,1.6
+Regulation,38,1.421,1.7
+Executive Order,13,1.308,2.0
+Strategy,235,1.149,1.2
+Program,657,1.13,1.0
+Legislation,63,0.994,1.0
+Guideline,199,0.892,1.0
+Framework,238,0.876,0.6
+Resolution,11,0.873,1.0
+Report,13,0.662,0.6
+Other,578,0.118,0.0

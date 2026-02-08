@@ -1,0 +1,19 @@
+{
+  "pearson_r": 0.7454,
+  "pearson_p": 0.0,
+  "spearman_rho": 0.79,
+  "spearman_p": 0.0,
+  "gap_analysis": {
+    "mean_gap": 0.2332,
+    "median_gap": 0.0,
+    "pct_capacity_higher": 45.5,
+    "pct_ethics_higher": 20.0,
+    "pct_equal": 34.5
+  },
+  "quadrant_distribution": {
+    "High-High": 964,
+    "Low-Low": 699,
+    "High Cap / Low Eth": 231,
+    "Low Cap / High Eth": 225
+  }
+}

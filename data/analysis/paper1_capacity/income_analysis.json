@@ -1,0 +1,61 @@
+{
+  "binary": {
+    "high_income": {
+      "n": 1700,
+      "mean": 0.8731,
+      "std": 0.7727
+    },
+    "developing": {
+      "n": 397,
+      "mean": 0.6514,
+      "std": 0.7155
+    },
+    "welch_t": 5.4728,
+    "welch_p": 0.0,
+    "cohens_d": 0.2977,
+    "mann_whitney_u": 395388.0,
+    "mann_whitney_p": 0.0
+  },
+  "dimension_tests": {
+    "c1_clarity": {
+      "hi_mean": 0.981,
+      "dev_mean": 0.738,
+      "diff": 0.243,
+      "t": 5.373,
+      "p": 0.0,
+      "d": 0.296
+    },
+    "c2_resources": {
+      "hi_mean": 0.695,
+      "dev_mean": 0.428,
+      "diff": 0.266,
+      "t": 6.394,
+      "p": 0.0,
+      "d": 0.324
+    },
+    "c3_authority": {
+      "hi_mean": 1.087,
+      "dev_mean": 0.861,
+      "diff": 0.226,
+      "t": 4.141,
+      "p": 3.9e-05,
+      "d": 0.229
+    },
+    "c4_accountability": {
+      "hi_mean": 0.476,
+      "dev_mean": 0.373,
+      "diff": 0.104,
+      "t": 2.831,
+      "p": 0.00478,
+      "d": 0.153
+    },
+    "c5_coherence": {
+      "hi_mean": 1.126,
+      "dev_mean": 0.856,
+      "diff": 0.269,
+      "t": 5.235,
+      "p": 0.0,
+      "d": 0.287
+    }
+  }
+}

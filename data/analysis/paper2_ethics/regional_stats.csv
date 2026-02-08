@@ -1,0 +1,9 @@
+region,n_policies,n_countries,mean,median,std
+North America,99,2,0.96,1.0,0.693
+Middle East & North Africa,109,7,0.895,0.8,0.748
+Sub-Saharan Africa,36,7,0.7,0.6,0.52
+East Asia & Pacific,187,9,0.68,0.6,0.673
+South Asia,39,1,0.646,0.6,0.681
+Unknown,22,1,0.627,0.6,0.612
+Europe & Central Asia,1482,37,0.542,0.4,0.584
+Latin America & Caribbean,145,8,0.538,0.4,0.636
