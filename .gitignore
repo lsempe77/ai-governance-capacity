@@ -1,6 +1,22 @@
-﻿data/
-.mypy_cache/
+﻿# Data (too large for git)
+data/pdfs/
+data/_archive/
+data/corpus/*.json
+
+# Python
 __pycache__/
 *.pyc
+.mypy_cache/
+
+# Environment
 .env
-docs/
+.venv/
+venv/
+
+# Archives
+src/**/_archive/
+docs/_archive/
+
+# OS
+.DS_Store
+Thumbs.db
