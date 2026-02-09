@@ -37,6 +37,12 @@ book:
       chapters:
         - 13-pca-nexus.qmd
         - 14-robustness.qmd
+    - part: "Part IV — UNESCO Alignment"
+      chapters:
+        - 17-unesco-landscape.qmd
+        - 18-unesco-determinants.qmd
+        - 19-unesco-clusters.qmd
+        - 20-unesco-dynamics.qmd
     - 15-discussion.qmd
     - 16-conclusion.qmd
 

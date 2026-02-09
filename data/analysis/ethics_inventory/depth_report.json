@@ -1,0 +1,13 @@
+{
+  "created": "2026-02-09T18:58:32.263025",
+  "phase": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "total_target": 1345,
+  "processed": 1018,
+  "failed": 19,
+  "skipped_already_done": 308,
+  "total_tokens": 5635776,
+  "estimated_cost_usd": 61.99,
+  "elapsed_seconds": 6332.472503662109,
+  "rate_per_minute": 9.645521550180762
+}

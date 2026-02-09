@@ -1,0 +1,3 @@
+income_group,n_policies,mean_depth,median_depth,std_depth,mean_pct_deep,mean_n_items,values_depth,principles_depth,mechanisms_depth
+High income,1049,3.153,3.182,0.573,40.9,10.8,2.979,3.043,3.512
+Developing,204,3.061,3.044,0.646,37.3,11.2,2.881,3.053,3.432

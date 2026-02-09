@@ -1,0 +1,28 @@
+UNESCO Item,Type,Pre Coverage %,Post Coverage %,Δ (pp),Chi²,p-value
+Human rights & human dignity,value,23.2,21.9,-1.4,0.272,0.6018
+"Peaceful, just & interconnected societies",value,81.4,85.7,+4.3,3.972,0.0463
+Diversity & inclusiveness,value,66.0,75.4,+9.4,13.364,0.0003
+Environment & ecosystem flourishing,value,45.0,41.4,-3.6,1.550,0.2132
+Proportionality & do no harm,principle,16.1,15.3,-0.8,0.095,0.7580
+Safety & security,principle,51.4,43.3,-8.2,8.439,0.0037
+Fairness & non-discrimination,principle,68.8,76.9,+8.2,10.500,0.0012
+Sustainability,principle,45.0,41.4,-3.6,1.550,0.2132
+Right to privacy & data protection,principle,56.5,44.4,-12.1,18.639,0.0000
+Human oversight & determination,principle,40.4,29.8,-10.6,15.677,0.0001
+Transparency & explainability,principle,75.9,66.2,-9.8,14.839,0.0001
+Responsibility & accountability,principle,74.8,70.0,-4.8,3.546,0.0597
+Awareness & literacy,principle,65.5,68.5,+3.0,1.233,0.2669
+Multi-stakeholder & adaptive governance,principle,53.1,52.4,-0.7,0.045,0.8322
+Ethical impact assessment,policy_area,30.3,25.6,-4.7,3.300,0.0693
+Ethical governance & stewardship,policy_area,84.3,80.1,-4.2,3.670,0.0554
+Data policy,policy_area,61.9,50.3,-11.6,17.330,0.0000
+Development & international cooperation,policy_area,36.7,36.5,-0.2,0.000,0.9876
+Environment & ecosystem,policy_area,45.0,41.4,-3.6,1.550,0.2132
+Gender,policy_area,10.5,7.9,-2.5,2.209,0.1372
+Culture,policy_area,10.3,7.7,-2.6,2.300,0.1294
+Education & research,policy_area,65.5,68.5,+3.0,1.233,0.2669
+Communication & information,policy_area,1.7,2.5,+0.9,0.850,0.3564
+Economy & labour,policy_area,78.0,81.5,+3.5,2.238,0.1346
+Health & social well-being,policy_area,41.5,31.8,-9.7,12.819,0.0003
+
+OVERALL (alignment score),,54.6,53.0,-1.6,t=2.427,0.0154

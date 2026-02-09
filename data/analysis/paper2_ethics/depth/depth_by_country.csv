@@ -1,0 +1,70 @@
+jurisdiction,income_group,region,n_policies,mean_depth,mean_pct_deep,mean_n_items
+Cyprus,High income,Europe & Central Asia,2,4.028,83.3,6.5
+Morocco,Developing,Middle East & North Africa,1,3.667,66.7,6.0
+Zambia,Developing,Sub-Saharan Africa,2,3.566,52.2,10.0
+Saudi Arabia,High income,Middle East & North Africa,47,3.552,61.0,13.7
+Japan,High income,East Asia & Pacific,17,3.462,53.9,13.8
+Norway,High income,Europe & Central Asia,12,3.435,48.3,10.2
+Mauritius,Developing,Sub-Saharan Africa,3,3.356,41.9,10.3
+New Zealand,High income,East Asia & Pacific,5,3.325,44.2,12.6
+Malta,High income,Europe & Central Asia,32,3.301,48.4,10.2
+United Kingdom,High income,Europe & Central Asia,56,3.295,48.8,12.8
+Tunisia,Developing,Middle East & North Africa,5,3.282,47.0,12.0
+United States,High income,North America,68,3.279,46.9,11.9
+Bulgaria,Developing,Europe & Central Asia,17,3.260,45.0,9.0
+Israel,High income,Middle East & North Africa,12,3.259,45.3,12.3
+Canada,High income,North America,9,3.256,41.1,11.9
+Luxembourg,High income,Europe & Central Asia,12,3.254,41.4,9.7
+India,Developing,South Asia,22,3.246,45.0,12.5
+Czech Republic,High income,Europe & Central Asia,16,3.227,46.2,8.7
+Spain,High income,Europe & Central Asia,21,3.223,43.8,9.9
+Netherlands,High income,Europe & Central Asia,36,3.221,43.7,9.6
+Poland,High income,Europe & Central Asia,19,3.219,44.6,9.4
+Germany,High income,Europe & Central Asia,68,3.216,44.0,12.8
+Viet Nam,Developing,East Asia & Pacific,4,3.211,36.2,7.2
+South Africa,Developing,Sub-Saharan Africa,2,3.200,40.0,10.0
+Mexico,Developing,Latin America & Caribbean,4,3.194,43.2,14.8
+Australia,High income,East Asia & Pacific,34,3.192,40.3,13.0
+Slovak Republic,High income,Europe & Central Asia,12,3.186,44.3,10.9
+Finland,High income,Europe & Central Asia,28,3.183,41.9,10.6
+Thailand,Developing,East Asia & Pacific,8,3.180,41.5,11.4
+Türkiye,Developing,Europe & Central Asia,18,3.180,36.7,11.4
+Lithuania,High income,Europe & Central Asia,13,3.172,41.6,6.8
+Kenya,Developing,Sub-Saharan Africa,10,3.160,43.2,13.7
+Singapore,High income,East Asia & Pacific,41,3.146,42.6,11.9
+Peru,Developing,Latin America & Caribbean,5,3.143,40.6,14.4
+Croatia,High income,Europe & Central Asia,11,3.128,42.5,10.6
+Slovenia,High income,Europe & Central Asia,43,3.128,38.1,9.2
+Denmark,High income,Europe & Central Asia,30,3.122,39.9,10.1
+Ireland,High income,Europe & Central Asia,30,3.119,41.4,10.1
+Estonia,High income,Europe & Central Asia,15,3.107,37.7,11.9
+Sweden,High income,Europe & Central Asia,27,3.104,40.5,10.2
+France,High income,Europe & Central Asia,55,3.097,37.5,11.3
+Romania,High income,Europe & Central Asia,25,3.095,42.1,8.7
+Egypt,Developing,Middle East & North Africa,4,3.079,34.9,17.2
+Indonesia,Developing,East Asia & Pacific,1,3.056,50.0,18.0
+United Arab Emirates,High income,Middle East & North Africa,4,3.042,42.1,9.0
+Latvia,High income,Europe & Central Asia,26,3.023,38.1,7.7
+Belgium,High income,Europe & Central Asia,58,3.015,32.5,9.5
+Argentina,Developing,Latin America & Caribbean,10,3.003,30.7,13.4
+Italy,High income,Europe & Central Asia,26,2.999,36.6,11.2
+Ukraine,Developing,Europe & Central Asia,23,2.975,35.1,9.0
+Brazil,Developing,Latin America & Caribbean,12,2.974,39.5,11.0
+Nigeria,Developing,Sub-Saharan Africa,5,2.959,32.4,10.2
+Costa Rica,Developing,Latin America & Caribbean,8,2.943,29.3,12.1
+Uganda,Developing,Sub-Saharan Africa,2,2.943,29.5,9.5
+Colombia,Developing,Latin America & Caribbean,22,2.923,34.8,12.3
+Portugal,High income,Europe & Central Asia,22,2.922,30.0,9.0
+Uruguay,High income,Latin America & Caribbean,5,2.902,31.5,11.0
+Austria,High income,Europe & Central Asia,52,2.886,22.3,10.3
+Hungary,High income,Europe & Central Asia,16,2.884,32.1,10.2
+Algeria,Developing,Middle East & North Africa,1,2.857,28.6,7.0
+Greece,High income,Europe & Central Asia,26,2.844,26.7,8.6
+Armenia,Developing,Europe & Central Asia,1,2.833,16.7,6.0
+Chile,High income,Latin America & Caribbean,8,2.829,26.6,9.8
+Rwanda,Developing,Sub-Saharan Africa,3,2.813,24.1,14.3
+Malaysia,Developing,East Asia & Pacific,1,2.800,20.0,5.0
+Switzerland,High income,Europe & Central Asia,4,2.751,14.7,13.5
+Iceland,High income,Europe & Central Asia,4,2.721,18.2,11.2
+Serbia,Developing,Europe & Central Asia,10,2.326,17.3,7.2
+Korea,High income,East Asia & Pacific,2,1.350,5.0,5.0

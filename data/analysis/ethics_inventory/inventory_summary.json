@@ -1,0 +1,2831 @@
+{
+  "created": "2026-02-09T08:18:03.022024",
+  "n_policies_inventoried": 1345,
+  "overview": {
+    "total_unique_values": 171,
+    "total_unique_principles": 160,
+    "total_unique_mechanisms": 689,
+    "total_unique_frameworks": 296,
+    "avg_values_per_policy": 4.11,
+    "avg_principles_per_policy": 3.95,
+    "avg_mechanisms_per_policy": 3.32,
+    "median_values_per_policy": 4,
+    "median_principles_per_policy": 4,
+    "median_mechanisms_per_policy": 3
+  },
+  "values_ranking": [
+    {
+      "name": "Public interest/common good",
+      "count": 948,
+      "pct": 70.5,
+      "strength": {
+        "implicit": 657,
+        "explicit": 291
+      }
+    },
+    {
+      "name": "Trust",
+      "count": 759,
+      "pct": 56.4,
+      "strength": {
+        "explicit": 419,
+        "implicit": 340
+      }
+    },
+    {
+      "name": "Sustainability/environment",
+      "count": 544,
+      "pct": 40.4,
+      "strength": {
+        "explicit": 262,
+        "implicit": 282
+      }
+    },
+    {
+      "name": "Safety/security",
+      "count": 526,
+      "pct": 39.1,
+      "strength": {
+        "explicit": 268,
+        "implicit": 258
+      }
+    },
+    {
+      "name": "Well-being/beneficence",
+      "count": 469,
+      "pct": 34.9,
+      "strength": {
+        "implicit": 364,
+        "explicit": 105
+      }
+    },
+    {
+      "name": "Privacy/data protection",
+      "count": 449,
+      "pct": 33.4,
+      "strength": {
+        "explicit": 431,
+        "implicit": 18
+      }
+    },
+    {
+      "name": "Fairness/justice/equity",
+      "count": 175,
+      "pct": 13.0,
+      "strength": {
+        "implicit": 61,
+        "explicit": 114
+      }
+    },
+    {
+      "name": "Human rights",
+      "count": 143,
+      "pct": 10.6,
+      "strength": {
+        "explicit": 112,
+        "implicit": 31
+      }
+    },
+    {
+      "name": "Non-discrimination",
+      "count": 131,
+      "pct": 9.7,
+      "strength": {
+        "explicit": 94,
+        "implicit": 37
+      }
+    },
+    {
+      "name": "Cultural diversity",
+      "count": 110,
+      "pct": 8.2,
+      "strength": {
+        "explicit": 43,
+        "implicit": 67
+      }
+    },
+    {
+      "name": "Innovation",
+      "count": 95,
+      "pct": 7.1,
+      "strength": {
+        "explicit": 87,
+        "implicit": 8
+      }
+    },
+    {
+      "name": "Human dignity",
+      "count": 80,
+      "pct": 5.9,
+      "strength": {
+        "implicit": 39,
+        "explicit": 41
+      }
+    },
+    {
+      "name": "Transparency",
+      "count": 74,
+      "pct": 5.5,
+      "strength": {
+        "explicit": 69,
+        "implicit": 5
+      }
+    },
+    {
+      "name": "Democracy",
+      "count": 69,
+      "pct": 5.1,
+      "strength": {
+        "explicit": 57,
+        "implicit": 12
+      }
+    },
+    {
+      "name": "Autonomy/self-determination",
+      "count": 62,
+      "pct": 4.6,
+      "strength": {
+        "implicit": 20,
+        "explicit": 42
+      }
+    },
+    {
+      "name": "Safety/Security",
+      "count": 59,
+      "pct": 4.4,
+      "strength": {
+        "explicit": 41,
+        "implicit": 18
+      }
+    },
+    {
+      "name": "Non-maleficence/do no harm",
+      "count": 57,
+      "pct": 4.2,
+      "strength": {
+        "implicit": 36,
+        "explicit": 21
+      }
+    },
+    {
+      "name": "Privacy/Data Protection",
+      "count": 44,
+      "pct": 3.3,
+      "strength": {
+        "explicit": 42,
+        "implicit": 2
+      }
+    },
+    {
+      "name": "Accountability",
+      "count": 42,
+      "pct": 3.1,
+      "strength": {
+        "explicit": 35,
+        "implicit": 7
+      }
+    },
+    {
+      "name": "Solidarity",
+      "count": 42,
+      "pct": 3.1,
+      "strength": {
+        "explicit": 13,
+        "implicit": 29
+      }
+    },
+    {
+      "name": "Inclusiveness/accessibility",
+      "count": 42,
+      "pct": 3.1,
+      "strength": {
+        "explicit": 25,
+        "implicit": 17
+      }
+    },
+    {
+      "name": "Public interest/Common good",
+      "count": 34,
+      "pct": 2.5,
+      "strength": {
+        "explicit": 11,
+        "implicit": 23
+      }
+    },
+    {
+      "name": "Public Interest/Common Good",
+      "count": 34,
+      "pct": 2.5,
+      "strength": {
+        "implicit": 30,
+        "explicit": 4
+      }
+    },
+    {
+      "name": "Fairness/Justice/Equity",
+      "count": 30,
+      "pct": 2.2,
+      "strength": {
+        "explicit": 25,
+        "implicit": 5
+      }
+    },
+    {
+      "name": "Equity",
+      "count": 27,
+      "pct": 2.0,
+      "strength": {
+        "explicit": 22,
+        "implicit": 5
+      }
+    },
+    {
+      "name": "Efficiency",
+      "count": 24,
+      "pct": 1.8,
+      "strength": {
+        "explicit": 10,
+        "implicit": 14
+      }
+    },
+    {
+      "name": "Inclusiveness",
+      "count": 20,
+      "pct": 1.5,
+      "strength": {
+        "explicit": 19,
+        "implicit": 1
+      }
+    },
+    {
+      "name": "International cooperation",
+      "count": 20,
+      "pct": 1.5,
+      "strength": {
+        "explicit": 14,
+        "implicit": 6
+      }
+    },
+    {
+      "name": "Economic growth",
+      "count": 20,
+      "pct": 1.5,
+      "strength": {
+        "explicit": 16,
+        "implicit": 4
+      }
+    },
+    {
+      "name": "Sustainability",
+      "count": 20,
+      "pct": 1.5,
+      "strength": {
+        "explicit": 13,
+        "implicit": 7
+      }
+    },
+    {
+      "name": "Sustainability/Environment",
+      "count": 14,
+      "pct": 1.0,
+      "strength": {
+        "explicit": 11,
+        "implicit": 3
+      }
+    },
+    {
+      "name": "Rule of law",
+      "count": 13,
+      "pct": 1.0,
+      "strength": {
+        "explicit": 13
+      }
+    },
+    {
+      "name": "Equality",
+      "count": 13,
+      "pct": 1.0,
+      "strength": {
+        "explicit": 12,
+        "implicit": 1
+      }
+    },
+    {
+      "name": "Inclusion",
+      "count": 13,
+      "pct": 1.0,
+      "strength": {
+        "explicit": 12,
+        "implicit": 1
+      }
+    },
+    {
+      "name": "Competitiveness",
+      "count": 13,
+      "pct": 1.0,
+      "strength": {
+        "explicit": 13
+      }
+    },
+    {
+      "name": "Education",
+      "count": 13,
+      "pct": 1.0,
+      "strength": {
+        "explicit": 12,
+        "implicit": 1
+      }
+    },
+    {
+      "name": "Freedom/liberty",
+      "count": 12,
+      "pct": 0.9,
+      "strength": {
+        "explicit": 10,
+        "implicit": 2
+      }
+    },
+    {
+      "name": "Diversity",
+      "count": 11,
+      "pct": 0.8,
+      "strength": {
+        "explicit": 11
+      }
+    },
+    {
+      "name": "Accessibility",
+      "count": 10,
+      "pct": 0.7,
+      "strength": {
+        "explicit": 9,
+        "implicit": 1
+      }
+    },
+    {
+      "name": "Security",
+      "count": 10,
+      "pct": 0.7,
+      "strength": {
+        "explicit": 10
+      }
+    },
+    {
+      "name": "Well-being/Beneficence",
+      "count": 9,
+      "pct": 0.7,
+      "strength": {
+        "implicit": 7,
+        "explicit": 2
+      }
+    },
+    {
+      "name": "Responsibility",
+      "count": 9,
+      "pct": 0.7,
+      "strength": {
+        "explicit": 9
+      }
+    },
+    {
+      "name": "Collaboration",
+      "count": 9,
+      "pct": 0.7,
+      "strength": {
+        "explicit": 9
+      }
+    },
+    {
+      "name": "Inclusiveness/Accessibility",
+      "count": 8,
+      "pct": 0.6,
+      "strength": {
+        "explicit": 5,
+        "implicit": 3
+      }
+    },
+    {
+      "name": "Openness",
+      "count": 7,
+      "pct": 0.5,
+      "strength": {
+        "explicit": 7
+      }
+    },
+    {
+      "name": "Human Rights",
+      "count": 6,
+      "pct": 0.4,
+      "strength": {
+        "implicit": 2,
+        "explicit": 4
+      }
+    },
+    {
+      "name": "Privacy/Data protection",
+      "count": 6,
+      "pct": 0.4,
+      "strength": {
+        "explicit": 6
+      }
+    },
+    {
+      "name": "Ethics",
+      "count": 6,
+      "pct": 0.4,
+      "strength": {
+        "explicit": 6
+      }
+    },
+    {
+      "name": "Peace",
+      "count": 6,
+      "pct": 0.4,
+      "strength": {
+        "explicit": 6
+      }
+    },
+    {
+      "name": "Digital sovereignty",
+      "count": 6,
+      "pct": 0.4,
+      "strength": {
+        "explicit": 6
+      }
+    }
+  ],
+  "principles_ranking": [
+    {
+      "name": "Transparency",
+      "count": 906,
+      "pct": 67.4
+    },
+    {
+      "name": "Inclusiveness/accessibility",
+      "count": 863,
+      "pct": 64.2
+    },
+    {
+      "name": "Accountability",
+      "count": 686,
+      "pct": 51.0
+    },
+    {
+      "name": "Data governance/data quality",
+      "count": 525,
+      "pct": 39.0
+    },
+    {
+      "name": "International cooperation",
+      "count": 460,
+      "pct": 34.2
+    },
+    {
+      "name": "Human oversight/human-in-the-loop",
+      "count": 411,
+      "pct": 30.6
+    },
+    {
+      "name": "Responsibility",
+      "count": 253,
+      "pct": 18.8
+    },
+    {
+      "name": "Multi-stakeholder governance",
+      "count": 141,
+      "pct": 10.5
+    },
+    {
+      "name": "Interoperability",
+      "count": 106,
+      "pct": 7.9
+    },
+    {
+      "name": "Inclusiveness/Accessibility",
+      "count": 80,
+      "pct": 5.9
+    },
+    {
+      "name": "Precaution/risk-based approach",
+      "count": 72,
+      "pct": 5.4
+    },
+    {
+      "name": "Purpose limitation",
+      "count": 71,
+      "pct": 5.3
+    },
+    {
+      "name": "Informed consent",
+      "count": 70,
+      "pct": 5.2
+    },
+    {
+      "name": "Robustness/reliability",
+      "count": 67,
+      "pct": 5.0
+    },
+    {
+      "name": "Explainability/interpretability",
+      "count": 54,
+      "pct": 4.0
+    },
+    {
+      "name": "Open source/openness",
+      "count": 48,
+      "pct": 3.6
+    },
+    {
+      "name": "Proportionality",
+      "count": 46,
+      "pct": 3.4
+    },
+    {
+      "name": "Training/capacity building",
+      "count": 43,
+      "pct": 3.2
+    },
+    {
+      "name": "Data Governance/Data Quality",
+      "count": 38,
+      "pct": 2.8
+    },
+    {
+      "name": "Sustainability",
+      "count": 33,
+      "pct": 2.5
+    },
+    {
+      "name": "Risk-based approach",
+      "count": 20,
+      "pct": 1.5
+    },
+    {
+      "name": "Human Oversight/Human-in-the-loop",
+      "count": 19,
+      "pct": 1.4
+    },
+    {
+      "name": "Due diligence",
+      "count": 14,
+      "pct": 1.0
+    },
+    {
+      "name": "Data governance/Data quality",
+      "count": 12,
+      "pct": 0.9
+    },
+    {
+      "name": "Robustness/Reliability",
+      "count": 12,
+      "pct": 0.9
+    },
+    {
+      "name": "Explainability/Interpretability",
+      "count": 12,
+      "pct": 0.9
+    },
+    {
+      "name": "International Cooperation",
+      "count": 10,
+      "pct": 0.7
+    },
+    {
+      "name": "Capacity building",
+      "count": 10,
+      "pct": 0.7
+    },
+    {
+      "name": "Collaboration",
+      "count": 9,
+      "pct": 0.7
+    },
+    {
+      "name": "Human oversight/Human-in-the-loop",
+      "count": 8,
+      "pct": 0.6
+    },
+    {
+      "name": "Purpose Limitation",
+      "count": 8,
+      "pct": 0.6
+    },
+    {
+      "name": "Inclusiveness",
+      "count": 8,
+      "pct": 0.6
+    },
+    {
+      "name": "Safety/security",
+      "count": 8,
+      "pct": 0.6
+    },
+    {
+      "name": "Security",
+      "count": 7,
+      "pct": 0.5
+    },
+    {
+      "name": "Precaution/Risk-based approach",
+      "count": 6,
+      "pct": 0.4
+    },
+    {
+      "name": "Innovation",
+      "count": 6,
+      "pct": 0.4
+    },
+    {
+      "name": "Precaution/Risk-based Approach",
+      "count": 6,
+      "pct": 0.4
+    },
+    {
+      "name": "Informed Consent",
+      "count": 5,
+      "pct": 0.4
+    },
+    {
+      "name": "Openness",
+      "count": 5,
+      "pct": 0.4
+    },
+    {
+      "name": "Multi-stakeholder Governance",
+      "count": 4,
+      "pct": 0.3
+    },
+    {
+      "name": "Interdisciplinarity",
+      "count": 4,
+      "pct": 0.3
+    },
+    {
+      "name": "Risk-based Approach",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Fairness",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Ethics",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Contestability/Right to appeal",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Adaptability",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Flexibility",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Privacy/data protection",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Efficiency",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Monitoring & evaluation/reporting",
+      "count": 2,
+      "pct": 0.1
+    }
+  ],
+  "mechanisms_ranking": [
+    {
+      "name": "Training/capacity building",
+      "count": 743,
+      "pct": 55.2,
+      "strength": {
+        "proposed": 344,
+        "required": 47,
+        "established": 290,
+        "implicit": 60,
+        "explicit": 2
+      }
+    },
+    {
+      "name": "Monitoring & evaluation/reporting",
+      "count": 680,
+      "pct": 50.6,
+      "strength": {
+        "implicit": 29,
+        "required": 129,
+        "proposed": 392,
+        "established": 130
+      }
+    },
+    {
+      "name": "Standards/technical standards",
+      "count": 415,
+      "pct": 30.9,
+      "strength": {
+        "implicit": 24,
+        "required": 50,
+        "proposed": 287,
+        "established": 54
+      }
+    },
+    {
+      "name": "Impact assessment",
+      "count": 279,
+      "pct": 20.7,
+      "strength": {
+        "required": 94,
+        "proposed": 166,
+        "established": 19
+      }
+    },
+    {
+      "name": "Data sharing/open data",
+      "count": 135,
+      "pct": 10.0,
+      "strength": {
+        "required": 23,
+        "proposed": 69,
+        "established": 38,
+        "implicit": 4,
+        "explicit": 1
+      }
+    },
+    {
+      "name": "International cooperation",
+      "count": 129,
+      "pct": 9.6,
+      "strength": {
+        "proposed": 29,
+        "established": 91,
+        "required": 4,
+        "explicit": 1,
+        "implicit": 4
+      }
+    },
+    {
+      "name": "Algorithmic auditing/third-party audit",
+      "count": 109,
+      "pct": 8.1,
+      "strength": {
+        "implicit": 6,
+        "required": 17,
+        "proposed": 79,
+        "established": 7
+      }
+    },
+    {
+      "name": "Sectoral regulation",
+      "count": 107,
+      "pct": 8.0,
+      "strength": {
+        "proposed": 66,
+        "established": 29,
+        "required": 7,
+        "implicit": 5
+      }
+    },
+    {
+      "name": "Regulatory sandbox",
+      "count": 102,
+      "pct": 7.6,
+      "strength": {
+        "proposed": 63,
+        "established": 38,
+        "required": 1
+      }
+    },
+    {
+      "name": "Ethics board/committee",
+      "count": 90,
+      "pct": 6.7,
+      "strength": {
+        "established": 38,
+        "proposed": 49,
+        "implicit": 1,
+        "required": 2
+      }
+    },
+    {
+      "name": "Multi-stakeholder governance",
+      "count": 78,
+      "pct": 5.8,
+      "strength": {
+        "proposed": 21,
+        "required": 3,
+        "explicit": 1,
+        "established": 51,
+        "implicit": 2
+      }
+    },
+    {
+      "name": "Certification/conformity assessment",
+      "count": 71,
+      "pct": 5.3,
+      "strength": {
+        "proposed": 28,
+        "required": 19,
+        "established": 24
+      }
+    },
+    {
+      "name": "Procurement requirements",
+      "count": 60,
+      "pct": 4.5,
+      "strength": {
+        "proposed": 23,
+        "required": 20,
+        "established": 13,
+        "implicit": 4
+      }
+    },
+    {
+      "name": "Complaints/redress mechanism",
+      "count": 58,
+      "pct": 4.3,
+      "strength": {
+        "required": 19,
+        "implicit": 16,
+        "proposed": 18,
+        "established": 5
+      }
+    },
+    {
+      "name": "Community of Experts",
+      "count": 54,
+      "pct": 4.0,
+      "strength": {
+        "established": 54
+      }
+    },
+    {
+      "name": "Open source/openness",
+      "count": 38,
+      "pct": 2.8,
+      "strength": {
+        "proposed": 8,
+        "explicit": 3,
+        "established": 24,
+        "required": 1,
+        "implicit": 2
+      }
+    },
+    {
+      "name": "Training/Capacity Building",
+      "count": 37,
+      "pct": 2.8,
+      "strength": {
+        "implicit": 4,
+        "required": 2,
+        "established": 17,
+        "proposed": 14
+      }
+    },
+    {
+      "name": "Catalogue Tools & Metrics",
+      "count": 37,
+      "pct": 2.8,
+      "strength": {
+        "proposed": 37
+      }
+    },
+    {
+      "name": "Registration/inventory of AI systems",
+      "count": 32,
+      "pct": 2.4,
+      "strength": {
+        "required": 18,
+        "proposed": 7,
+        "implicit": 1,
+        "established": 6
+      }
+    },
+    {
+      "name": "Monitoring & Evaluation/Reporting",
+      "count": 29,
+      "pct": 2.2,
+      "strength": {
+        "required": 3,
+        "implicit": 6,
+        "established": 10,
+        "proposed": 10
+      }
+    },
+    {
+      "name": "Penalties/sanctions/enforcement",
+      "count": 28,
+      "pct": 2.1,
+      "strength": {
+        "implicit": 3,
+        "required": 22,
+        "established": 2,
+        "proposed": 1
+      }
+    },
+    {
+      "name": "Code of conduct/voluntary commitments",
+      "count": 26,
+      "pct": 1.9,
+      "strength": {
+        "proposed": 18,
+        "established": 7,
+        "required": 1
+      }
+    },
+    {
+      "name": "Data governance/data quality",
+      "count": 26,
+      "pct": 1.9,
+      "strength": {
+        "required": 8,
+        "proposed": 8,
+        "implicit": 2,
+        "established": 8
+      }
+    },
+    {
+      "name": "Training/Capacity building",
+      "count": 24,
+      "pct": 1.8,
+      "strength": {
+        "implicit": 1,
+        "proposed": 16,
+        "established": 7
+      }
+    },
+    {
+      "name": "Funding",
+      "count": 21,
+      "pct": 1.6,
+      "strength": {
+        "established": 20,
+        "proposed": 1
+      }
+    },
+    {
+      "name": "Standards/Technical standards",
+      "count": 20,
+      "pct": 1.5,
+      "strength": {
+        "implicit": 1,
+        "established": 5,
+        "required": 2,
+        "proposed": 12
+      }
+    },
+    {
+      "name": "Standards/Technical Standards",
+      "count": 18,
+      "pct": 1.3,
+      "strength": {
+        "required": 2,
+        "implicit": 2,
+        "established": 7,
+        "proposed": 7
+      }
+    },
+    {
+      "name": "Labelling/disclosure requirements",
+      "count": 17,
+      "pct": 1.3,
+      "strength": {
+        "proposed": 10,
+        "required": 6,
+        "established": 1
+      }
+    },
+    {
+      "name": "Risk classification/tiered regulation",
+      "count": 13,
+      "pct": 1.0,
+      "strength": {
+        "required": 5,
+        "proposed": 4,
+        "established": 4
+      }
+    },
+    {
+      "name": "Collaboration",
+      "count": 13,
+      "pct": 1.0,
+      "strength": {
+        "established": 10,
+        "proposed": 3
+      }
+    },
+    {
+      "name": "Regulatory framework",
+      "count": 12,
+      "pct": 0.9,
+      "strength": {
+        "established": 4,
+        "proposed": 7,
+        "required": 1
+      }
+    },
+    {
+      "name": "Complaints/Redress Mechanism",
+      "count": 12,
+      "pct": 0.9,
+      "strength": {
+        "required": 2,
+        "established": 3,
+        "implicit": 4,
+        "proposed": 3
+      }
+    },
+    {
+      "name": "Pilot projects",
+      "count": 12,
+      "pct": 0.9,
+      "strength": {
+        "established": 10,
+        "proposed": 2
+      }
+    },
+    {
+      "name": "Data Sharing/Open Data",
+      "count": 11,
+      "pct": 0.8,
+      "strength": {
+        "required": 2,
+        "proposed": 3,
+        "established": 5,
+        "implicit": 1
+      }
+    },
+    {
+      "name": "Monitoring & evaluation/Reporting",
+      "count": 10,
+      "pct": 0.7,
+      "strength": {
+        "required": 2,
+        "proposed": 6,
+        "established": 2
+      }
+    },
+    {
+      "name": "Impact Assessment",
+      "count": 10,
+      "pct": 0.7,
+      "strength": {
+        "required": 4,
+        "proposed": 5,
+        "established": 1
+      }
+    },
+    {
+      "name": "Public consultation",
+      "count": 10,
+      "pct": 0.7,
+      "strength": {
+        "established": 6,
+        "proposed": 4
+      }
+    },
+    {
+      "name": "Partnerships",
+      "count": 10,
+      "pct": 0.7,
+      "strength": {
+        "required": 2,
+        "established": 8
+      }
+    },
+    {
+      "name": "Other: AI Incidents and Hazards Monitor",
+      "count": 10,
+      "pct": 0.7,
+      "strength": {
+        "proposed": 10
+      }
+    },
+    {
+      "name": "AI Incidents and Hazards Monitor",
+      "count": 10,
+      "pct": 0.7,
+      "strength": {
+        "proposed": 10
+      }
+    },
+    {
+      "name": "Algorithmic auditing/Third-party audit",
+      "count": 9,
+      "pct": 0.7,
+      "strength": {
+        "required": 3,
+        "proposed": 4,
+        "established": 1,
+        "implicit": 1
+      }
+    },
+    {
+      "name": "Algorithmic Auditing/Third-party Audit",
+      "count": 9,
+      "pct": 0.7,
+      "strength": {
+        "proposed": 7,
+        "established": 1,
+        "implicit": 1
+      }
+    },
+    {
+      "name": "Workshops",
+      "count": 9,
+      "pct": 0.7,
+      "strength": {
+        "established": 6,
+        "proposed": 3
+      }
+    },
+    {
+      "name": "Public-private partnerships",
+      "count": 8,
+      "pct": 0.6,
+      "strength": {
+        "established": 5,
+        "proposed": 3
+      }
+    },
+    {
+      "name": "Public-private partnership",
+      "count": 8,
+      "pct": 0.6,
+      "strength": {
+        "established": 6,
+        "proposed": 2
+      }
+    },
+    {
+      "name": "Stakeholder engagement",
+      "count": 8,
+      "pct": 0.6,
+      "strength": {
+        "established": 4,
+        "proposed": 4
+      }
+    },
+    {
+      "name": "Whistleblower protection",
+      "count": 6,
+      "pct": 0.4,
+      "strength": {
+        "proposed": 4,
+        "established": 2
+      }
+    },
+    {
+      "name": "Certification/Conformity Assessment",
+      "count": 6,
+      "pct": 0.4,
+      "strength": {
+        "proposed": 5,
+        "established": 1
+      }
+    },
+    {
+      "name": "Regulatory Sandbox",
+      "count": 6,
+      "pct": 0.4,
+      "strength": {
+        "proposed": 3,
+        "established": 2,
+        "implicit": 1
+      }
+    },
+    {
+      "name": "Networking",
+      "count": 6,
+      "pct": 0.4,
+      "strength": {
+        "established": 6
+      }
+    }
+  ],
+  "frameworks_ranking": [
+    {
+      "name": "OECD AI Principles",
+      "count": 271,
+      "pct": 20.1
+    },
+    {
+      "name": "UNESCO AI Recommendation",
+      "count": 29,
+      "pct": 2.2
+    },
+    {
+      "name": "UN Sustainable Development Goals",
+      "count": 7,
+      "pct": 0.5
+    },
+    {
+      "name": "General Data Protection Regulation (GDPR)",
+      "count": 6,
+      "pct": 0.4
+    },
+    {
+      "name": "EU AI Act",
+      "count": 6,
+      "pct": 0.4
+    },
+    {
+      "name": "GDPR",
+      "count": 5,
+      "pct": 0.4
+    },
+    {
+      "name": "Universal Declaration of Human Rights",
+      "count": 4,
+      "pct": 0.3
+    },
+    {
+      "name": "OECD",
+      "count": 4,
+      "pct": 0.3
+    },
+    {
+      "name": "G20 AI Principles",
+      "count": 4,
+      "pct": 0.3
+    },
+    {
+      "name": "Blueprint for an AI Bill of Rights",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Paris Agreement",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Data Governance Act",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "European Convention on Human Rights",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "NIST AI Risk Management Framework",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Bletchley Declaration",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Global Partnership on Artificial Intelligence (GPAI)",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "EU Ethics Guidelines for Trustworthy AI",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Horizon Europe",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "European AI Act",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "European Green Deal",
+      "count": 3,
+      "pct": 0.2
+    },
+    {
+      "name": "Charter of Fundamental Rights of the European Union",
+      "count": 2,
+      "pct": 0.1
+    },
+    {
+      "name": "European Declaration on Digital Rights and Principles for the Digital Decade",
+      "count": 2,
+      "pct": 0.1
+    },
+    {
+      "name": "UNESCO",
+      "count": 2,
+      "pct": 0.1
+    },
+    {
+      "name": "EU Coordinated Plan on AI",
+      "count": 2,
+      "pct": 0.1
+    },
+    {
+      "name": "EU AI Framework",
+      "count": 2,
+      "pct": 0.1
+    },
+    {
+      "name": "Singapore’s Model AI Governance Framework",
+      "count": 2,
+      "pct": 0.1
+    },
+    {
+      "name": "EU AI Regulation",
+      "count": 2,
+      "pct": 0.1
+    },
+    {
+      "name": "Ethics Guidelines for Trustworthy AI",
+      "count": 2,
+      "pct": 0.1
+    },
+    {
+      "name": "High-Level Expert Group on Artificial Intelligence",
+      "count": 2,
+      "pct": 0.1
+    },
+    {
+      "name": "European Union AI Framework",
+      "count": 2,
+      "pct": 0.1
+    }
+  ],
+  "by_income_group": {
+    "Developing": {
+      "n_policies": 206,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 149
+        },
+        {
+          "name": "Trust",
+          "count": 121
+        },
+        {
+          "name": "Well-being/beneficence",
+          "count": 104
+        },
+        {
+          "name": "Privacy/data protection",
+          "count": 88
+        },
+        {
+          "name": "Safety/security",
+          "count": 88
+        },
+        {
+          "name": "Sustainability/environment",
+          "count": 87
+        },
+        {
+          "name": "Fairness/justice/equity",
+          "count": 36
+        },
+        {
+          "name": "Human rights",
+          "count": 34
+        },
+        {
+          "name": "Non-discrimination",
+          "count": 31
+        },
+        {
+          "name": "Human dignity",
+          "count": 20
+        }
+      ],
+      "top_principles": [
+        {
+          "name": "Transparency",
+          "count": 138
+        },
+        {
+          "name": "Inclusiveness/accessibility",
+          "count": 135
+        },
+        {
+          "name": "Accountability",
+          "count": 117
+        },
+        {
+          "name": "Data governance/data quality",
+          "count": 92
+        },
+        {
+          "name": "International cooperation",
+          "count": 79
+        },
+        {
+          "name": "Human oversight/human-in-the-loop",
+          "count": 77
+        },
+        {
+          "name": "Responsibility",
+          "count": 41
+        },
+        {
+          "name": "Multi-stakeholder governance",
+          "count": 27
+        },
+        {
+          "name": "Precaution/risk-based approach",
+          "count": 15
+        },
+        {
+          "name": "Interoperability",
+          "count": 15
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Training/capacity building",
+          "count": 126
+        },
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 118
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 61
+        },
+        {
+          "name": "Impact assessment",
+          "count": 48
+        },
+        {
+          "name": "International cooperation",
+          "count": 23
+        },
+        {
+          "name": "Ethics board/committee",
+          "count": 21
+        },
+        {
+          "name": "Regulatory sandbox",
+          "count": 19
+        },
+        {
+          "name": "Sectoral regulation",
+          "count": 19
+        },
+        {
+          "name": "Algorithmic auditing/third-party audit",
+          "count": 15
+        },
+        {
+          "name": "Data sharing/open data",
+          "count": 15
+        }
+      ]
+    },
+    "High income": {
+      "n_policies": 1064,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 741
+        },
+        {
+          "name": "Trust",
+          "count": 585
+        },
+        {
+          "name": "Sustainability/environment",
+          "count": 425
+        },
+        {
+          "name": "Safety/security",
+          "count": 394
+        },
+        {
+          "name": "Well-being/beneficence",
+          "count": 342
+        },
+        {
+          "name": "Privacy/data protection",
+          "count": 327
+        },
+        {
+          "name": "Fairness/justice/equity",
+          "count": 118
+        },
+        {
+          "name": "Cultural diversity",
+          "count": 85
+        },
+        {
+          "name": "Innovation",
+          "count": 82
+        },
+        {
+          "name": "Non-discrimination",
+          "count": 80
+        }
+      ],
+      "top_principles": [
+        {
+          "name": "Transparency",
+          "count": 711
+        },
+        {
+          "name": "Inclusiveness/accessibility",
+          "count": 673
+        },
+        {
+          "name": "Accountability",
+          "count": 518
+        },
+        {
+          "name": "Data governance/data quality",
+          "count": 395
+        },
+        {
+          "name": "International cooperation",
+          "count": 343
+        },
+        {
+          "name": "Human oversight/human-in-the-loop",
+          "count": 306
+        },
+        {
+          "name": "Responsibility",
+          "count": 190
+        },
+        {
+          "name": "Multi-stakeholder governance",
+          "count": 95
+        },
+        {
+          "name": "Interoperability",
+          "count": 80
+        },
+        {
+          "name": "Inclusiveness/Accessibility",
+          "count": 70
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Training/capacity building",
+          "count": 575
+        },
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 515
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 323
+        },
+        {
+          "name": "Impact assessment",
+          "count": 194
+        },
+        {
+          "name": "Data sharing/open data",
+          "count": 109
+        },
+        {
+          "name": "International cooperation",
+          "count": 96
+        },
+        {
+          "name": "Algorithmic auditing/third-party audit",
+          "count": 83
+        },
+        {
+          "name": "Sectoral regulation",
+          "count": 80
+        },
+        {
+          "name": "Regulatory sandbox",
+          "count": 77
+        },
+        {
+          "name": "Ethics board/committee",
+          "count": 58
+        }
+      ]
+    },
+    "Unknown": {
+      "n_policies": 75,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 58
+        },
+        {
+          "name": "Trust",
+          "count": 53
+        },
+        {
+          "name": "Safety/security",
+          "count": 44
+        },
+        {
+          "name": "Human rights",
+          "count": 35
+        },
+        {
+          "name": "Privacy/data protection",
+          "count": 34
+        },
+        {
+          "name": "Sustainability/environment",
+          "count": 32
+        },
+        {
+          "name": "Well-being/beneficence",
+          "count": 23
+        },
+        {
+          "name": "Fairness/justice/equity",
+          "count": 21
+        },
+        {
+          "name": "Non-discrimination",
+          "count": 20
+        },
+        {
+          "name": "Democracy",
+          "count": 12
+        }
+      ],
+      "top_principles": [
+        {
+          "name": "Transparency",
+          "count": 57
+        },
+        {
+          "name": "Inclusiveness/accessibility",
+          "count": 55
+        },
+        {
+          "name": "Accountability",
+          "count": 51
+        },
+        {
+          "name": "Data governance/data quality",
+          "count": 38
+        },
+        {
+          "name": "International cooperation",
+          "count": 38
+        },
+        {
+          "name": "Human oversight/human-in-the-loop",
+          "count": 28
+        },
+        {
+          "name": "Responsibility",
+          "count": 22
+        },
+        {
+          "name": "Multi-stakeholder governance",
+          "count": 19
+        },
+        {
+          "name": "Interoperability",
+          "count": 11
+        },
+        {
+          "name": "Precaution/risk-based approach",
+          "count": 9
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 47
+        },
+        {
+          "name": "Training/capacity building",
+          "count": 42
+        },
+        {
+          "name": "Impact assessment",
+          "count": 37
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 31
+        },
+        {
+          "name": "Algorithmic auditing/third-party audit",
+          "count": 11
+        },
+        {
+          "name": "Data sharing/open data",
+          "count": 11
+        },
+        {
+          "name": "Ethics board/committee",
+          "count": 11
+        },
+        {
+          "name": "Multi-stakeholder governance",
+          "count": 10
+        },
+        {
+          "name": "International cooperation",
+          "count": 10
+        },
+        {
+          "name": "Sectoral regulation",
+          "count": 8
+        }
+      ]
+    }
+  },
+  "by_policy_type": {
+    "Legislation": {
+      "n_policies": 36,
+      "top_values": [
+        {
+          "name": "Privacy/data protection",
+          "count": 21
+        },
+        {
+          "name": "Public interest/common good",
+          "count": 16
+        },
+        {
+          "name": "Safety/security",
+          "count": 14
+        },
+        {
+          "name": "Trust",
+          "count": 12
+        },
+        {
+          "name": "Human rights",
+          "count": 9
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 19
+        },
+        {
+          "name": "Training/capacity building",
+          "count": 13
+        },
+        {
+          "name": "Impact assessment",
+          "count": 12
+        },
+        {
+          "name": "Complaints/redress mechanism",
+          "count": 11
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 8
+        }
+      ]
+    },
+    "Regulation": {
+      "n_policies": 25,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 19
+        },
+        {
+          "name": "Trust",
+          "count": 17
+        },
+        {
+          "name": "Privacy/data protection",
+          "count": 11
+        },
+        {
+          "name": "Safety/security",
+          "count": 6
+        },
+        {
+          "name": "Non-discrimination",
+          "count": 5
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 16
+        },
+        {
+          "name": "Training/capacity building",
+          "count": 13
+        },
+        {
+          "name": "Impact assessment",
+          "count": 9
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 8
+        },
+        {
+          "name": "Certification/conformity assessment",
+          "count": 5
+        }
+      ]
+    },
+    "Strategy": {
+      "n_policies": 172,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 136
+        },
+        {
+          "name": "Trust",
+          "count": 115
+        },
+        {
+          "name": "Sustainability/environment",
+          "count": 89
+        },
+        {
+          "name": "Safety/security",
+          "count": 81
+        },
+        {
+          "name": "Well-being/beneficence",
+          "count": 75
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Training/capacity building",
+          "count": 119
+        },
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 104
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 74
+        },
+        {
+          "name": "International cooperation",
+          "count": 40
+        },
+        {
+          "name": "Impact assessment",
+          "count": 37
+        }
+      ]
+    },
+    "Framework": {
+      "n_policies": 202,
+      "top_values": [
+        {
+          "name": "Trust",
+          "count": 158
+        },
+        {
+          "name": "Public interest/common good",
+          "count": 132
+        },
+        {
+          "name": "Safety/security",
+          "count": 124
+        },
+        {
+          "name": "Sustainability/environment",
+          "count": 110
+        },
+        {
+          "name": "Privacy/data protection",
+          "count": 109
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 129
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 97
+        },
+        {
+          "name": "Training/capacity building",
+          "count": 83
+        },
+        {
+          "name": "Impact assessment",
+          "count": 44
+        },
+        {
+          "name": "Regulatory sandbox",
+          "count": 25
+        }
+      ]
+    },
+    "Guideline": {
+      "n_policies": 155,
+      "top_values": [
+        {
+          "name": "Trust",
+          "count": 115
+        },
+        {
+          "name": "Public interest/common good",
+          "count": 97
+        },
+        {
+          "name": "Safety/security",
+          "count": 89
+        },
+        {
+          "name": "Privacy/data protection",
+          "count": 81
+        },
+        {
+          "name": "Well-being/beneficence",
+          "count": 45
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 97
+        },
+        {
+          "name": "Training/capacity building",
+          "count": 82
+        },
+        {
+          "name": "Impact assessment",
+          "count": 73
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 42
+        },
+        {
+          "name": "Algorithmic auditing/third-party audit",
+          "count": 30
+        }
+      ]
+    },
+    "Action Plan": {
+      "n_policies": 83,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 74
+        },
+        {
+          "name": "Trust",
+          "count": 48
+        },
+        {
+          "name": "Well-being/beneficence",
+          "count": 38
+        },
+        {
+          "name": "Sustainability/environment",
+          "count": 37
+        },
+        {
+          "name": "Safety/security",
+          "count": 35
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Training/capacity building",
+          "count": 59
+        },
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 55
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 38
+        },
+        {
+          "name": "Impact assessment",
+          "count": 21
+        },
+        {
+          "name": "Sectoral regulation",
+          "count": 15
+        }
+      ]
+    },
+    "Program": {
+      "n_policies": 476,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 346
+        },
+        {
+          "name": "Sustainability/environment",
+          "count": 160
+        },
+        {
+          "name": "Trust",
+          "count": 155
+        },
+        {
+          "name": "Well-being/beneficence",
+          "count": 123
+        },
+        {
+          "name": "Safety/security",
+          "count": 75
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Training/capacity building",
+          "count": 289
+        },
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 141
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 74
+        },
+        {
+          "name": "Impact assessment",
+          "count": 39
+        },
+        {
+          "name": "Sectoral regulation",
+          "count": 39
+        }
+      ]
+    }
+  },
+  "by_binding_nature": {
+    "Binding regulation": {
+      "n_policies": 22,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 15
+        },
+        {
+          "name": "Trust",
+          "count": 12
+        },
+        {
+          "name": "Privacy/data protection",
+          "count": 11
+        },
+        {
+          "name": "Safety/security",
+          "count": 8
+        },
+        {
+          "name": "Accountability",
+          "count": 5
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 14
+        },
+        {
+          "name": "Training/capacity building",
+          "count": 12
+        },
+        {
+          "name": "Impact assessment",
+          "count": 11
+        },
+        {
+          "name": "Certification/conformity assessment",
+          "count": 7
+        },
+        {
+          "name": "Data sharing/open data",
+          "count": 6
+        }
+      ]
+    },
+    "Hard law": {
+      "n_policies": 40,
+      "top_values": [
+        {
+          "name": "Trust",
+          "count": 20
+        },
+        {
+          "name": "Public interest/common good",
+          "count": 20
+        },
+        {
+          "name": "Privacy/data protection",
+          "count": 20
+        },
+        {
+          "name": "Non-discrimination",
+          "count": 14
+        },
+        {
+          "name": "Safety/security",
+          "count": 13
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 24
+        },
+        {
+          "name": "Training/capacity building",
+          "count": 17
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 13
+        },
+        {
+          "name": "Impact assessment",
+          "count": 12
+        },
+        {
+          "name": "Complaints/redress mechanism",
+          "count": 10
+        }
+      ]
+    },
+    "Non-binding": {
+      "n_policies": 1172,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 821
+        },
+        {
+          "name": "Trust",
+          "count": 671
+        },
+        {
+          "name": "Sustainability/environment",
+          "count": 503
+        },
+        {
+          "name": "Safety/security",
+          "count": 471
+        },
+        {
+          "name": "Well-being/beneficence",
+          "count": 434
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Training/capacity building",
+          "count": 649
+        },
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 570
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 356
+        },
+        {
+          "name": "Impact assessment",
+          "count": 218
+        },
+        {
+          "name": "International cooperation",
+          "count": 118
+        }
+      ]
+    },
+    "Soft law": {
+      "n_policies": 111,
+      "top_values": [
+        {
+          "name": "Public interest/common good",
+          "count": 92
+        },
+        {
+          "name": "Trust",
+          "count": 56
+        },
+        {
+          "name": "Safety/security",
+          "count": 34
+        },
+        {
+          "name": "Sustainability/environment",
+          "count": 32
+        },
+        {
+          "name": "Privacy/data protection",
+          "count": 32
+        }
+      ],
+      "top_mechanisms": [
+        {
+          "name": "Monitoring & evaluation/reporting",
+          "count": 72
+        },
+        {
+          "name": "Training/capacity building",
+          "count": 65
+        },
+        {
+          "name": "Standards/technical standards",
+          "count": 42
+        },
+        {
+          "name": "Impact assessment",
+          "count": 38
+        },
+        {
+          "name": "Regulatory sandbox",
+          "count": 20
+        }
+      ]
+    }
+  },
+  "entry_level_stats": [
+    {
+      "entry_id": "415612978265",
+      "title": "Hiroshima Artificial Intelligence Process Code of Conduct Reporting Framework",
+      "jurisdiction": "OECD/GPAI",
+      "income": "Unknown",
+      "ethics_score": 2.0,
+      "n_values": 10,
+      "n_principles": 12,
+      "n_mechanisms": 11,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "873b2d1abf14",
+      "title": "Declaration of Santiago",
+      "jurisdiction": "The United Nations Educational, Scientific and Cultural Organization",
+      "income": "Unknown",
+      "ethics_score": 1.8,
+      "n_values": 14,
+      "n_principles": 13,
+      "n_mechanisms": 6,
+      "n_frameworks": 1
+    },
+    {
+      "entry_id": "97ace3320338",
+      "title": "AI Professorships",
+      "jurisdiction": "Germany",
+      "income": "High income",
+      "ethics_score": 1.6,
+      "n_values": 15,
+      "n_principles": 10,
+      "n_mechanisms": 7,
+      "n_frameworks": 1
+    },
+    {
+      "entry_id": "bdbd203ae325",
+      "title": "Science and Technology Options Assessment (STOA) Panel Centre for AI",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 1.0,
+      "n_values": 14,
+      "n_principles": 10,
+      "n_mechanisms": 8,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "1b154d1b481d",
+      "title": "Executive Order on the Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence",
+      "jurisdiction": "United States",
+      "income": "High income",
+      "ethics_score": 2.6,
+      "n_values": 11,
+      "n_principles": 10,
+      "n_mechanisms": 10,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "d7b6dbbcefce",
+      "title": "Future Artificial Intelligence Research (FAIR) Centre",
+      "jurisdiction": "Italy",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "n_values": 11,
+      "n_principles": 11,
+      "n_mechanisms": 9,
+      "n_frameworks": 2
+    },
+    {
+      "entry_id": "be06b6bdfb97",
+      "title": "Beijing Consensus on AI and Education",
+      "jurisdiction": "China (People’s Republic of)",
+      "income": "Unknown",
+      "ethics_score": 1.8,
+      "n_values": 13,
+      "n_principles": 10,
+      "n_mechanisms": 8,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "dfb5156126ae",
+      "title": "Artificial Intelligence Act (AI ACT)",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 3.0,
+      "n_values": 13,
+      "n_principles": 10,
+      "n_mechanisms": 7,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "2864e66d39b7",
+      "title": "Regional/local AI networks",
+      "jurisdiction": "France",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "n_values": 14,
+      "n_principles": 9,
+      "n_mechanisms": 7,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "5df5a1dfa6fd",
+      "title": "Funding Initiative in the Field of AI",
+      "jurisdiction": "Germany",
+      "income": "High income",
+      "ethics_score": 2.0,
+      "n_values": 13,
+      "n_principles": 9,
+      "n_mechanisms": 7,
+      "n_frameworks": 1
+    },
+    {
+      "entry_id": "69b0f06eba30",
+      "title": "OUR AI: Our Ambition for France",
+      "jurisdiction": "France",
+      "income": "High income",
+      "ethics_score": 2.2,
+      "n_values": 14,
+      "n_principles": 8,
+      "n_mechanisms": 7,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "84b8107d7949",
+      "title": "AI Fund",
+      "jurisdiction": "Belgium",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "n_values": 9,
+      "n_principles": 11,
+      "n_mechanisms": 8,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "5ddc1bdd8e29",
+      "title": "AI Studios",
+      "jurisdiction": "Germany",
+      "income": "High income",
+      "ethics_score": 1.2,
+      "n_values": 13,
+      "n_principles": 8,
+      "n_mechanisms": 7,
+      "n_frameworks": 1
+    },
+    {
+      "entry_id": "da59c5325ab2",
+      "title": "European Strategy for Data",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 1.4,
+      "n_values": 12,
+      "n_principles": 10,
+      "n_mechanisms": 6,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "22d136d2e569",
+      "title": "Resolution on a Comprehensive European Industrial Policy on Artificial Intelligence and Robotics",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 1.4,
+      "n_values": 11,
+      "n_principles": 10,
+      "n_mechanisms": 7,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "0d726440a9ee",
+      "title": "AI Strategic Program",
+      "jurisdiction": "Italy",
+      "income": "High income",
+      "ethics_score": 1.2,
+      "n_values": 11,
+      "n_principles": 10,
+      "n_mechanisms": 6,
+      "n_frameworks": 2
+    },
+    {
+      "entry_id": "822aae3c6310",
+      "title": "The swedish Digitalisation Strategy 2025–2030",
+      "jurisdiction": "Sweden",
+      "income": "High income",
+      "ethics_score": 1.4,
+      "n_values": 10,
+      "n_principles": 9,
+      "n_mechanisms": 7,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "5edcac29c1fb",
+      "title": "Egypt National AI Strategy",
+      "jurisdiction": "Egypt",
+      "income": "Developing",
+      "ethics_score": 1.6,
+      "n_values": 12,
+      "n_principles": 9,
+      "n_mechanisms": 5,
+      "n_frameworks": 1
+    },
+    {
+      "entry_id": "4fc22cc8d980",
+      "title": "Special Committee on Artificial Intelligence in the Digital Age (AIDA)",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 1.6,
+      "n_values": 11,
+      "n_principles": 9,
+      "n_mechanisms": 6,
+      "n_frameworks": 4
+    },
+    {
+      "entry_id": "693f23086759",
+      "title": "Ethical Framework for Artificial Intelligence in Colombia",
+      "jurisdiction": "Colombia",
+      "income": "Developing",
+      "ethics_score": 0.2,
+      "n_values": 11,
+      "n_principles": 9,
+      "n_mechanisms": 6,
+      "n_frameworks": 1
+    },
+    {
+      "entry_id": "cdb89e63f5d0",
+      "title": "AI Governance in Japan 1.1",
+      "jurisdiction": "Japan",
+      "income": "High income",
+      "ethics_score": 2.0,
+      "n_values": 10,
+      "n_principles": 8,
+      "n_mechanisms": 7,
+      "n_frameworks": 4
+    },
+    {
+      "entry_id": "20dbbee78362",
+      "title": "Digital Rights Charter",
+      "jurisdiction": "Spain",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "n_values": 11,
+      "n_principles": 8,
+      "n_mechanisms": 6,
+      "n_frameworks": 5
+    },
+    {
+      "entry_id": "b3d141c38488",
+      "title": "AI in Education, Culture and the Audiovisual Sector",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 1.6,
+      "n_values": 9,
+      "n_principles": 9,
+      "n_mechanisms": 7,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "7aeac4490058",
+      "title": "Action Plan on Human Rights",
+      "jurisdiction": "Türkiye",
+      "income": "Developing",
+      "ethics_score": 2.2,
+      "n_values": 11,
+      "n_principles": 8,
+      "n_mechanisms": 5,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "d08017413cdd",
+      "title": "Declaration of Montevideo",
+      "jurisdiction": "The United Nations Educational, Scientific and Cultural Organization",
+      "income": "Unknown",
+      "ethics_score": 2.0,
+      "n_values": 10,
+      "n_principles": 8,
+      "n_mechanisms": 6,
+      "n_frameworks": 2
+    },
+    {
+      "entry_id": "0b823dc129ba",
+      "title": "National Ethical Guidelines for Biomedical and Health Research Involving Human Participants",
+      "jurisdiction": "India",
+      "income": "Developing",
+      "ethics_score": 2.2,
+      "n_values": 10,
+      "n_principles": 8,
+      "n_mechanisms": 6,
+      "n_frameworks": 6
+    },
+    {
+      "entry_id": "9a4eba14f16d",
+      "title": "AI Guidelines",
+      "jurisdiction": "Germany",
+      "income": "High income",
+      "ethics_score": 2.0,
+      "n_values": 10,
+      "n_principles": 9,
+      "n_mechanisms": 5,
+      "n_frameworks": 2
+    },
+    {
+      "entry_id": "14599b3659af",
+      "title": "Mandatory Guardrails for Safe and Responsible AI",
+      "jurisdiction": "Australia",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "n_values": 8,
+      "n_principles": 8,
+      "n_mechanisms": 8,
+      "n_frameworks": 5
+    },
+    {
+      "entry_id": "8ce3f59bc0a2",
+      "title": "Irish National AI Strategy 2021",
+      "jurisdiction": "Ireland",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "n_values": 7,
+      "n_principles": 10,
+      "n_mechanisms": 7,
+      "n_frameworks": 2
+    },
+    {
+      "entry_id": "a5e91c826739",
+      "title": "India AI: National Program on Artificial Intelligence",
+      "jurisdiction": "India",
+      "income": "Developing",
+      "ethics_score": 1.4,
+      "n_values": 10,
+      "n_principles": 9,
+      "n_mechanisms": 5,
+      "n_frameworks": 1
+    },
+    {
+      "entry_id": "8f6f1bfe26a8",
+      "title": "Funding Initiatives on AI and Machine Learning",
+      "jurisdiction": "Germany",
+      "income": "High income",
+      "ethics_score": 1.2,
+      "n_values": 11,
+      "n_principles": 7,
+      "n_mechanisms": 6,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "09ca323d939d",
+      "title": "Blockchain and AI Task Force",
+      "jurisdiction": "Kenya",
+      "income": "Developing",
+      "ethics_score": 1.2,
+      "n_values": 9,
+      "n_principles": 9,
+      "n_mechanisms": 6,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "003e5116aed8",
+      "title": "Generative Artificial Intelligence Guidelines Public",
+      "jurisdiction": "Saudi Arabia",
+      "income": "High income",
+      "ethics_score": 1.4,
+      "n_values": 7,
+      "n_principles": 9,
+      "n_mechanisms": 8,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "638b4919326c",
+      "title": "Ethics Guidelines for AI",
+      "jurisdiction": "Thailand",
+      "income": "Developing",
+      "ethics_score": 1.4,
+      "n_values": 11,
+      "n_principles": 7,
+      "n_mechanisms": 6,
+      "n_frameworks": 8
+    },
+    {
+      "entry_id": "c196d906b3a5",
+      "title": "Australian Framework for Generative AI in Schools",
+      "jurisdiction": "Australia",
+      "income": "High income",
+      "ethics_score": 2.2,
+      "n_values": 9,
+      "n_principles": 9,
+      "n_mechanisms": 5,
+      "n_frameworks": 8
+    },
+    {
+      "entry_id": "5b5bc2b2629f",
+      "title": "AI Ethics and Governance Body of Knowledge",
+      "jurisdiction": "Singapore",
+      "income": "High income",
+      "ethics_score": 2.2,
+      "n_values": 6,
+      "n_principles": 10,
+      "n_mechanisms": 7,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "d066d935722d",
+      "title": "GenAI Team at the CaMiNO",
+      "jurisdiction": "Poland",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "n_values": 10,
+      "n_principles": 8,
+      "n_mechanisms": 5,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "2e63c129f6fa",
+      "title": "Accelerating the use of generative AI in the economy",
+      "jurisdiction": "France",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "n_values": 9,
+      "n_principles": 7,
+      "n_mechanisms": 7,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "827c7ae83d76",
+      "title": "Egyptian Charter for Responsible AI",
+      "jurisdiction": "Egypt",
+      "income": "Developing",
+      "ethics_score": 2.0,
+      "n_values": 8,
+      "n_principles": 8,
+      "n_mechanisms": 7,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "985961b9edd6",
+      "title": "AI-related university courses",
+      "jurisdiction": "Italy",
+      "income": "High income",
+      "ethics_score": 1.4,
+      "n_values": 10,
+      "n_principles": 8,
+      "n_mechanisms": 5,
+      "n_frameworks": 1
+    },
+    {
+      "entry_id": "a23e1930dbf0",
+      "title": "Generative Artificial Intelligence Guidelines for Government",
+      "jurisdiction": "Saudi Arabia",
+      "income": "High income",
+      "ethics_score": 1.6,
+      "n_values": 8,
+      "n_principles": 8,
+      "n_mechanisms": 7,
+      "n_frameworks": 1
+    },
+    {
+      "entry_id": "7803568735eb",
+      "title": "Strategy of the e-Health Centre – summary 2023-2027",
+      "jurisdiction": "Poland",
+      "income": "High income",
+      "ethics_score": 1.2,
+      "n_values": 9,
+      "n_principles": 8,
+      "n_mechanisms": 6,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "d784521f7e8b",
+      "title": "Closing the Digital Gender Gap: Womens Participation in the Digital Economy",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 1.2,
+      "n_values": 9,
+      "n_principles": 8,
+      "n_mechanisms": 6,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "de836ce0d2e6",
+      "title": "Artificial Intelligence in the Financial Sector – Interim Report of the Inter-Agency Task Force on the Use of Artificial Intelligence and Machine Learning in Israel's Financial Sector",
+      "jurisdiction": "Israel",
+      "income": "High income",
+      "ethics_score": 1.4,
+      "n_values": 8,
+      "n_principles": 9,
+      "n_mechanisms": 6,
+      "n_frameworks": 2
+    },
+    {
+      "entry_id": "8f5eefa0f96f",
+      "title": "Ethics Guidelines on Artificial Intelligence",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 2.2,
+      "n_values": 9,
+      "n_principles": 8,
+      "n_mechanisms": 5,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "85fce2e0d219",
+      "title": "Centres of Excellence for AI Research",
+      "jurisdiction": "Germany",
+      "income": "High income",
+      "ethics_score": 1.2,
+      "n_values": 10,
+      "n_principles": 7,
+      "n_mechanisms": 5,
+      "n_frameworks": 0
+    },
+    {
+      "entry_id": "7bfce7360d35",
+      "title": "Recommendations for a trustworthy Artificial Intelligence",
+      "jurisdiction": "Argentina",
+      "income": "Developing",
+      "ethics_score": 1.8,
+      "n_values": 9,
+      "n_principles": 9,
+      "n_mechanisms": 4,
+      "n_frameworks": 2
+    },
+    {
+      "entry_id": "1e66dc7dfe76",
+      "title": "Public Administration Data Strategy",
+      "jurisdiction": "Malta",
+      "income": "High income",
+      "ethics_score": 1.6,
+      "n_values": 6,
+      "n_principles": 10,
+      "n_mechanisms": 6,
+      "n_frameworks": 2
+    },
+    {
+      "entry_id": "ab715542a7ea",
+      "title": "AI Action Plan",
+      "jurisdiction": "Hungary",
+      "income": "High income",
+      "ethics_score": 1.4,
+      "n_values": 9,
+      "n_principles": 8,
+      "n_mechanisms": 5,
+      "n_frameworks": 3
+    },
+    {
+      "entry_id": "8b93967d7f94",
+      "title": "AI Utilisation Guidelines",
+      "jurisdiction": "Japan",
+      "income": "High income",
+      "ethics_score": 1.6,
+      "n_values": 9,
+      "n_principles": 10,
+      "n_mechanisms": 3,
+      "n_frameworks": 3
+    }
+  ]
+}

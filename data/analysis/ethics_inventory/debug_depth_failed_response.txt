@@ -1,0 +1,124 @@
+Title: Civic Coding - Innovation Network AI for the Common Good
+Jurisdiction: Germany
+Error: Could not parse JSON from LLM output: line 1 column 1 (char 0)
+
+=== RAW ===
+```json
+{
+  "values": [
+    {
+      "name": "Public interest/common good",
+      "depth": "section",
+      "verbatim": "2. Handlungsrahmen von Civic Coding\n\nHandlungsrahmen der Initiative ist die Förderung der Entwicklung und Nutzung von KI und datenverarbeitenden Technologien für das Gemeinwohl. [...] Den Begriff „Gemeinwohl" verstehen die Gründungspartner*innen als das Handeln im Sinne von gesellschaftlichen Gemein- oder Gesamtinteressen im Gegensatz zu Privat- und Gruppeninteressen. Demnach bedeutet gemeinwohlorientierte KI eine KI, die in einem stetigen Aushandlungsprozess von Akteur*innen aus Zivilgesellschaft, Wirtschaft, Verwaltung, Politik und Forschung zum Wohlergehen einer Gemeinschaft – in diesem Verständnis der Öffentlichkeit – entwickelt und eingesetzt wird.",
+      "location_hint": "Section 2 (Handlungsrahmen von Civic Coding)"
+    },
+    {
+      "name": "Sustainability/environment",
+      "depth": "paragraph",
+      "verbatim": "Die Initiative Civic Coding steht für die Vision einer Gesellschaft, in der technologischer Wandel und Innovation sozial, nachhaltig und partizipativ gestaltet und genutzt werden. Sie zielt ab auf eine Zukunft, in der das Potenzial von KI dafür eingesetzt wird, unsere Gesellschaft gerechter, umweltbewusster und inklusiver zu machen.",
+      "location_hint": "Section 3 (Vision, Mission und Prinzipien)"
+    },
+    {
+      "name": "Democracy",
+      "depth": "phrase",
+      "verbatim": "Die Initiative Civic Coding fokussiert gezielt gemeinwohlorientierte Anwendungs- und Nutzungsbereiche, insbesondere zur Lösung von konkreten Problemen in der Daseinsvorsorge, in den Kernbereichen der Ressorts wie Umwelt, Nachhaltigkeit, Arbeit, Soziales, >>Demokratie<< und gesellschaftliche Teilhabe.",
+      "location_hint": "Section 2 (Handlungsrahmen von Civic Coding)"
+    },
+    {
+      "name": "Solidarity",
+      "depth": "phrase",
+      "verbatim": "Als Schlüsseltechnologie hat KI das Potenzial, gesellschaftlichen Fortschritt voranzutreiben und den Alltag von Menschen in unterschiedlichen Lebensbereichen und Lebenslagen sozialer, selbstbestimmter und nachhaltiger zu machen.",
+      "location_hint": "Section 2 (Handlungsrahmen von Civic Coding)"
+    },
+    {
+      "name": "Cultural diversity",
+      "depth": "phrase",
+      "verbatim": "Sie beabsichtigt, KI im Rahmen eines breiten gesellschaftlichen Dialogs und einer aktiven politischen Gestaltung ethisch, rechtlich, kulturell und institutionell in die Gesellschaft einzubetten",
+      "location_hint": "Section 1.1 (Ausgangssituation)"
+    },
+    {
+      "name": "Trust",
+      "depth": "not_found",
+      "verbatim": "No direct textual evidence found in the provided excerpt",
+      "location_hint": ""
+    }
+  ],
+  "principles": [
+    {
+      "name": "Transparency",
+      "depth": "paragraph",
+      "verbatim": "Transparent: Civic Coding versteht sich als lernende Initiative, die sich im wiederholten Austausch mit Beteiligten aus Zivilgesellschaft, Wissenschaft, Wirtschaft, Politik und Verwaltung stetig weiterentwickelt. Erkenntnisse und Erfahrungen, die in diesem iterativen Prozess gesammelt werden, sollen nachvollziehbar und transparent kommuniziert werden.",
+      "location_hint": "Section 3.1 (Prinzipien – Gemeinsam für das Gemeinwohl)"
+    },
+    {
+      "name": "Inclusiveness/accessibility",
+      "depth": "paragraph",
+      "verbatim": "Partizipativ: In den einzelnen Maßnahmen und Aktivitäten der Initiative werden Stakeholder*innen, Akteur*innen, Gestalter*innen, Anwender*innen und Nutzer*innen an Planung und Durchführung beteiligt. Diskursräume sind offen für eine gesellschaftliche Positionierung zu den Themen der Initiative. Um Zielgruppen und Zivilgesellschaft in das Projekt einzubinden, werden entsprechende Formate angeboten.",
+      "location_hint": "Section 3.1 (Prinzipien – Gemeinsam für das Gemeinwohl)"
+    },
+    {
+      "name": "Multi-stakeholder governance",
+      "depth": "paragraph",
+      "verbatim": "Ziel der Initiative ist es, durch die gezielte Befähigung und Vernetzung von Akteur*innen aus Zivilgesellschaft, Forschung, Politik, Verwaltung und Wirtschaft die Entwicklung und den Einsatz von KI für das Gemeinwohl zu verbreiten, KI-Kompetenzen in der Breite zu fördern und zivilgesellschaftliche Impulse und Ideen aufzunehmen und zu unterstützen.",
+      "location_hint": "Section 1.1 (Ausgangssituation)"
+    },
+    {
+      "name": "International cooperation",
+      "depth": "phrase",
+      "verbatim": "Dabei wirken wir deutschlandweit und im Einklang mit unseren europäischen Nachbar*innen.",
+      "location_hint": "Section 2 (Handlungsrahmen von Civic Coding)"
+    },
+    {
+      "name": "Responsibility",
+      "depth": "sentence",
+      "verbatim": "Ziel 3: Die Rolle und Verantwortung von öffentlichen Institutionen und der Wirtschaft bei Investitionen in die Entwicklung von gemeinwohlorientierter KI wird diskutiert und ist erkannt.",
+      "location_hint": "Section 5.1.1 (Information und Agenda-Setting)"
+    },
+    {
+      "name": "Open source/openness",
+      "depth": "sentence",
+      "verbatim": "Daher ist die Mission von Civic Coding, durch den Aufbau eines offenen Innovationsnetzes die Gestaltung und Entwicklung von KI-Anwendungen zu unterstützen, die auf die direkten und indirekten Bedürfnisse von Menschen und Umwelt ausgerichtet sind.",
+      "location_hint": "Section 3 (Vision, Mission und Prinzipien)"
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "Training/capacity building",
+      "depth": "section",
+      "verbatim": "5.1.2 Vernetzung, Kompetenzaufbau und Inkubation\n\nWir schaffen ein sichtbares und wirksames Innovationsnetz, indem wir:\n• die Vernetzung von Entwickler*innen, Anwender*innen, Ideengeber*innen und Nutzer*innen unterstützen,\n• zum Kompetenzaufbau in KI und datenverarbeitenden Technologien beitragen,\n• als Katalysator die Inkubation von Innovationen und langfristiger Umsetzung fördern und begleiten. [...] Ziel 2: Die Zielgruppen von Civic Coding entwickeln im Rahmen der Initiative neue Kenntnisse und Fähigkeiten, die ihnen dabei helfen, gemeinwohlorientierte KI zu entwickeln und/oder anzuwenden.",
+      "location_hint": "Section 5.1.2 (Vernetzung, Kompetenzaufbau und Inkubation)"
+    },
+    {
+      "name": "Standards/technical standards",
+      "depth": "paragraph",
+      "verbatim": "5.1.4 Infrastrukturen und Standards\n\nWir unterstützen die Entwicklung von Infrastrukturen und Maßnahmen zur Skalierung und nachhaltigen Nutzung von KI für das Gemeinwohl und stellen ressortübergreifend Infrastrukturen zur Verfügung. [...] Ziel 2: Civic Coding hat durch den Zusammenschluss von drei Ministerien zum Aufbau von langfristigen Strukturen und Standards beigetragen, welche die Zivilgesellschaft zur eigenständigen Nutzung und Weiterentwicklung von gemeinwohlorientierter KI befähigen.",
+      "location_hint": "Section 5.1.4 (Infrastrukturen und Standards)"
+    },
+    {
+      "name": "Monitoring & evaluation/reporting",
+      "depth": "paragraph",
+      "verbatim": "Die Initiative Civic Coding hat sich ambitionierte Ziele gesteckt. Um die Zielerreichung gut beurteilen zu können, gewonnene Erkenntnisse aus der Beurteilung in der fortlaufenden Ausgestaltung der Initiative zu berücksichtigen und aus ihnen lernen zu können, ist auch eine Wirkungsmessung Bestandteil von Civic Coding. Unseren Zielen werden hierfür messbare Indikatoren hinterlegt und transparent offengelegt. In einem Wirkungsmessungskonzept wird die erwartete Wirkungsentfaltung dargelegt (Wirkungslogik) und es wird festgehalten, wie diese beobachtet und gemessen wird.",
+      "location_hint": "Section 6 (Wirkungsmessung)"
+    },
+    {
+      "name": "Sectoral regulation",
+      "depth": "paragraph",
+      "verbatim": "5.1.5 Rahmenbedingungen und Diskurs\n\nWir schaffen Räume für Diskurs über notwendige Rahmenbedingungen für eine gemeinwohlorientierte KI und sorgen für eine konstruktive, kritische und inklusive Auseinandersetzung mit den Potenzialen und Risiken von datenbasierten Technologien. [...] Ziel 2: Die Initiative Civic Coding identifiziert im Zusammenspiel mit der Zivilgesellschaft relevante Rahmenbedingungen für die gemeinwohlorientierte Entwicklung und Nutzung von KI und stößt zielgerichtete Maßnahmen an.",
+      "location_hint": "Section 5.1.5 (Rahmenbedingungen und Diskurs)"
+    },
+    {
+      "name": "Other: Civic Innovation Platform",
+      "depth": "sentence",
+      "verbatim": "Die Civic Innovation Platform (CIP) vernetzt und fördert Akteur*innen aus den unterschiedlichsten Bereichen und Branchen, die gemeinsam KI-Technologien für gesellschaftliche und soziale Innovationen zum Wohle möglichst vieler nutzbar machen wollen.",
+      "location_hint": "Section 4 (Umsetzung)"
+    },
+    {
+      "name": "Other: Civic Data Lab",
+      "depth": "sentence",
+      "verbatim": "Das Civic Data Lab (CDL) unterstützt zivilgesellschaftliche Akteur*innen dabei, Daten für ihr gemeinwohlorientiertes Engagement zu nutzen.",
+      "location_hint": "Section 4 (Umsetzung)"
+    }
+  ]
+}
+```
+=== END ===

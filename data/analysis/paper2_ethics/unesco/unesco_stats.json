@@ -1,0 +1,264 @@
+{
+  "generated": "2026-02-09T20:49:13.785486",
+  "alignment_score_test": {
+    "hi_mean": 53.53,
+    "hi_sd": 11.51,
+    "hi_n": 1049,
+    "dev_mean": 53.51,
+    "dev_sd": 13.93,
+    "dev_n": 204,
+    "t_stat": 0.013,
+    "p_value": 0.99,
+    "cohens_d": 0.001
+  },
+  "coverage_test": {
+    "hi_mean": 47.26,
+    "dev_mean": 48.71,
+    "gap_pp": -1.45,
+    "t_stat": -1.069,
+    "p_value": 0.2858,
+    "cohens_d": -0.086
+  },
+  "item_tests": {
+    "Human rights & human dignity": {
+      "hi_pct": 21.2,
+      "dev_pct": 21.6,
+      "gap_pp": -0.4,
+      "chi2": 0.001,
+      "p_value": 0.9712
+    },
+    "Peaceful, just & interconnected societies": {
+      "hi_pct": 84.0,
+      "dev_pct": 78.4,
+      "gap_pp": 5.6,
+      "chi2": 3.362,
+      "p_value": 0.0667
+    },
+    "Diversity & inclusiveness": {
+      "hi_pct": 70.6,
+      "dev_pct": 65.7,
+      "gap_pp": 5.0,
+      "chi2": 1.76,
+      "p_value": 0.1846
+    },
+    "Environment & ecosystem flourishing": {
+      "hi_pct": 43.0,
+      "dev_pct": 44.6,
+      "gap_pp": -1.6,
+      "chi2": 0.122,
+      "p_value": 0.7273
+    },
+    "Proportionality & do no harm": {
+      "hi_pct": 13.6,
+      "dev_pct": 19.1,
+      "gap_pp": -5.5,
+      "chi2": 3.709,
+      "p_value": 0.0541
+    },
+    "Safety & security": {
+      "hi_pct": 46.7,
+      "dev_pct": 45.1,
+      "gap_pp": 1.6,
+      "chi2": 0.12,
+      "p_value": 0.7294
+    },
+    "Fairness & non-discrimination": {
+      "hi_pct": 72.8,
+      "dev_pct": 68.6,
+      "gap_pp": 4.2,
+      "chi2": 1.3,
+      "p_value": 0.2542
+    },
+    "Sustainability": {
+      "hi_pct": 43.0,
+      "dev_pct": 44.6,
+      "gap_pp": -1.6,
+      "chi2": 0.122,
+      "p_value": 0.7273
+    },
+    "Right to privacy & data protection": {
+      "hi_pct": 49.3,
+      "dev_pct": 54.4,
+      "gap_pp": -5.1,
+      "chi2": 1.596,
+      "p_value": 0.2064
+    },
+    "Human oversight & determination": {
+      "hi_pct": 34.9,
+      "dev_pct": 37.3,
+      "gap_pp": -2.4,
+      "chi2": 0.321,
+      "p_value": 0.571
+    },
+    "Transparency & explainability": {
+      "hi_pct": 71.3,
+      "dev_pct": 68.1,
+      "gap_pp": 3.2,
+      "chi2": 0.683,
+      "p_value": 0.4085
+    },
+    "Responsibility & accountability": {
+      "hi_pct": 71.8,
+      "dev_pct": 73.0,
+      "gap_pp": -1.3,
+      "chi2": 0.079,
+      "p_value": 0.7791
+    },
+    "Awareness & literacy": {
+      "hi_pct": 66.8,
+      "dev_pct": 67.2,
+      "gap_pp": -0.3,
+      "chi2": 0.0,
+      "p_value": 0.9915
+    },
+    "Multi-stakeholder & adaptive governance": {
+      "hi_pct": 51.2,
+      "dev_pct": 57.4,
+      "gap_pp": -6.2,
+      "chi2": 2.357,
+      "p_value": 0.1247
+    },
+    "Ethical impact assessment": {
+      "hi_pct": 26.8,
+      "dev_pct": 27.5,
+      "gap_pp": -0.7,
+      "chi2": 0.012,
+      "p_value": 0.913
+    },
+    "Ethical governance & stewardship": {
+      "hi_pct": 81.3,
+      "dev_pct": 84.3,
+      "gap_pp": -3.0,
+      "chi2": 0.84,
+      "p_value": 0.3595
+    },
+    "Data policy": {
+      "hi_pct": 55.3,
+      "dev_pct": 58.8,
+      "gap_pp": -3.5,
+      "chi2": 0.727,
+      "p_value": 0.3938
+    },
+    "Development & international cooperation": {
+      "hi_pct": 35.2,
+      "dev_pct": 39.7,
+      "gap_pp": -4.5,
+      "chi2": 1.332,
+      "p_value": 0.2485
+    },
+    "Environment & ecosystem": {
+      "hi_pct": 43.0,
+      "dev_pct": 44.6,
+      "gap_pp": -1.6,
+      "chi2": 0.122,
+      "p_value": 0.7273
+    },
+    "Gender": {
+      "hi_pct": 7.5,
+      "dev_pct": 13.7,
+      "gap_pp": -6.2,
+      "chi2": 7.616,
+      "p_value": 0.0058
+    },
+    "Culture": {
+      "hi_pct": 9.2,
+      "dev_pct": 6.4,
+      "gap_pp": 2.9,
+      "chi2": 1.421,
+      "p_value": 0.2332
+    },
+    "Education & research": {
+      "hi_pct": 66.8,
+      "dev_pct": 67.2,
+      "gap_pp": -0.3,
+      "chi2": 0.0,
+      "p_value": 0.9915
+    },
+    "Communication & information": {
+      "hi_pct": 1.8,
+      "dev_pct": 2.0,
+      "gap_pp": -0.1,
+      "chi2": 0.0,
+      "p_value": 1.0
+    },
+    "Economy & labour": {
+      "hi_pct": 80.1,
+      "dev_pct": 75.0,
+      "gap_pp": 5.1,
+      "chi2": 2.376,
+      "p_value": 0.1232
+    },
+    "Health & social well-being": {
+      "hi_pct": 34.1,
+      "dev_pct": 53.4,
+      "gap_pp": -19.3,
+      "chi2": 26.401,
+      "p_value": 0.0
+    }
+  },
+  "descriptives": {
+    "n_policies": 1326,
+    "alignment_score": {
+      "mean": 53.87,
+      "median": 53.78,
+      "sd": 12.2,
+      "min": 0.0,
+      "max": 85.04
+    },
+    "coverage_pct": {
+      "mean": 48.08,
+      "median": 48.0,
+      "sd": 16.5
+    }
+  },
+  "values_coverage": {
+    "mean_coverage_pct": 55.05,
+    "min_coverage_pct": 22.93,
+    "max_coverage_pct": 83.41,
+    "items": {
+      "Human rights & human dignity": 22.9,
+      "Peaceful, just & interconnected societies": 83.4,
+      "Diversity & inclusiveness": 70.4,
+      "Environment & ecosystem flourishing": 43.5
+    }
+  },
+  "principles_coverage": {
+    "mean_coverage_pct": 52.98,
+    "min_coverage_pct": 15.69,
+    "max_coverage_pct": 72.78,
+    "items": {
+      "Proportionality & do no harm": 15.7,
+      "Safety & security": 47.6,
+      "Fairness & non-discrimination": 72.5,
+      "Sustainability": 43.5,
+      "Right to privacy & data protection": 50.9,
+      "Human oversight & determination": 35.6,
+      "Transparency & explainability": 71.3,
+      "Responsibility & accountability": 72.8,
+      "Awareness & literacy": 66.9,
+      "Multi-stakeholder & adaptive governance": 52.9
+    }
+  },
+  "policy_areas_coverage": {
+    "mean_coverage_pct": 41.09,
+    "min_coverage_pct": 2.04,
+    "max_coverage_pct": 82.43,
+    "items": {
+      "Ethical impact assessment": 28.4,
+      "Ethical governance & stewardship": 82.4,
+      "Data policy": 56.5,
+      "Development & international cooperation": 36.8,
+      "Environment & ecosystem": 43.5,
+      "Gender": 9.6,
+      "Culture": 9.1,
+      "Education & research": 66.9,
+      "Communication & information": 2.0,
+      "Economy & labour": 79.6,
+      "Health & social well-being": 37.0
+    }
+  },
+  "significant_gaps": {
+    "Health & social well-being": -19.303631843585862,
+    "Gender": -6.194508308566516
+  }
+}

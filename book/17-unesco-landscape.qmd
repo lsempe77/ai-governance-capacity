@@ -1,0 +1,101 @@
+---
+title: "UNESCO Alignment Landscape"
+---
+
+## The Alignment Landscape: Coverage and Depth {#sec-unesco-landscape}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter maps how well 1,326 AI policies from 79 jurisdictions address the 25 items of the UNESCO Recommendation on the Ethics of Artificial Intelligence. Mean alignment is moderate ($\mu = 53.9$, $\sigma = 12.2$), with a clear "implementation gap": values (55%) and principles (53%) are better covered than policy action areas (41%). The most-addressed item — peaceful and just societies (83%) — is not the most substantively developed, revealing a "paradox of proclamation" in which breadth of mention does not guarantee depth of engagement.
+:::
+
+### Overall Alignment Score Distribution {#sec-unesco-score-dist}
+
+We define a composite **UNESCO alignment score** (0–100) for each policy, weighting coverage breadth (60%) and normalised depth quality (40%) across the 25 UNESCO items — 4 values, 10 principles, and 11 policy action areas. The score captures both *whether* a policy mentions a UNESCO item and *how substantively* it engages with it.
+
+![Distribution of UNESCO alignment scores across 1,326 AI policies. The distribution is approximately normal, centred on 54 with moderate spread.](../data/analysis/paper2_ethics/unesco/fig_unesco_compliance_score.png){#fig-unesco-score-dist}
+
+The mean alignment score is **53.9** (SD = 12.2, median = 53.8). No policy achieves full alignment: the maximum score is approximately 85, and the minimum near 20. This moderate central tendency suggests that most policies engage with roughly half of the UNESCO framework at a moderate depth — a glass-half-full finding that nonetheless leaves substantial room for improvement.
+
+### Coverage Across the 25 UNESCO Items {#sec-unesco-coverage}
+
+![Coverage rates across all 25 UNESCO items, ordered by frequency. Five items exceed 70% coverage, while six fall below 30%.](../data/analysis/paper2_ethics/unesco/fig_unesco_coverage_overview.png){#fig-unesco-coverage-overview}
+
+The coverage landscape is strikingly uneven. The five most-covered items are:
+
+| UNESCO Item | Type | Coverage |
+|:---|:---|---:|
+| Peaceful, just & interconnected societies | Value | 83.4% |
+| Ethical governance & stewardship | Policy area | 82.4% |
+| Economy & labour | Policy area | 79.6% |
+| Responsibility & accountability | Principle | 72.8% |
+| Fairness & non-discrimination | Principle | 72.5% |
+
+: Most-addressed UNESCO items {#tbl-unesco-top5}
+
+By contrast, the five least-covered items are:
+
+| UNESCO Item | Type | Coverage |
+|:---|:---|---:|
+| Communication & information | Policy area | 2.0% |
+| Culture | Policy area | 9.1% |
+| Gender | Policy area | 9.6% |
+| Proportionality & do no harm | Principle | 15.7% |
+| Human rights & human dignity | Value | 22.9% |
+
+: Least-addressed UNESCO items {#tbl-unesco-bottom5}
+
+The **near-absence of communication and information** (2.0%) represents a genuine blind spot: despite the UNESCO Recommendation explicitly calling for policies to address AI's impact on media, information ecosystems, and freedom of expression, virtually no national policy does so. Similarly, **human rights and human dignity** — the foundational value of the Recommendation and arguably its normative anchor — appears in only **22.9%** of policies. This is a striking omission for a framework that explicitly grounds AI ethics in human rights.
+
+### The Implementation Gap: Values vs. Principles vs. Policy Areas {#sec-unesco-layers}
+
+![Mean coverage rates by UNESCO framework layer. Values and principles are better covered than policy action areas, revealing an "implementation gap."](../data/analysis/paper2_ethics/unesco/fig_unesco_coverage_by_layer.png){#fig-unesco-coverage-layers}
+
+The UNESCO Recommendation's three-tier structure reveals a gradient of decreasing policy engagement:
+
+| Layer | Mean Coverage | Items |
+|:---|---:|---:|
+| Values | 55.0% | 4 |
+| Principles | 53.0% | 10 |
+| Policy action areas | 41.1% | 11 |
+
+: Coverage by UNESCO framework layer {#tbl-unesco-layers}
+
+This gradient — **values > principles > policy areas** — constitutes what we term the **implementation gap**. Policies are more likely to declare broad ethical values than to specify the concrete governance mechanisms needed to operationalise them. The 14-percentage-point gap between values and policy areas echoes the broader "principles-to-practice" critique in the AI ethics literature.
+
+### Coverage vs. Depth: The Paradox of Proclamation {#sec-unesco-paradox}
+
+![Scatter plot of coverage (% of policies mentioning an item) vs. mean depth (1–5 scale) for each UNESCO item. There is no significant correlation ($r = 0.02$, $p = 0.94$), indicating that breadth of mention does not predict substantive engagement.](../data/analysis/paper2_ethics/unesco/fig_unesco_coverage_vs_depth.png){#fig-unesco-coverage-depth}
+
+A central finding is that **coverage does not predict depth** ($r = 0.02$, $p = 0.94$). Items that are mentioned by many policies are not necessarily treated more substantively. We term this the **paradox of proclamation**: the most frequently invoked principles (transparency, accountability, fairness) tend to appear as brief rhetorical gestures — a sentence or even a phrase — rather than as deeply developed policy commitments.
+
+Conversely, some rarely mentioned items, when they do appear, receive surprisingly substantive treatment. **Awareness and literacy**, for instance, is covered in 66.9% of policies with a mean depth of **3.64** (paragraph-level), reflecting the concrete nature of education programmes. **Proportionality and do no harm**, though covered by only 15.7% of policies, achieves a depth of **3.53** when it does appear — suggesting that the few policies that engage with this principle do so thoughtfully.
+
+### The Depth Heatmap {#sec-unesco-depth-heatmap}
+
+![Depth heatmap across all 25 UNESCO items, showing the distribution of engagement levels from word (1) to section (5). Most engagement occurs at sentence (3) to paragraph (4) level.](../data/analysis/paper2_ethics/unesco/fig_unesco_depth_heatmap.png){#fig-unesco-depth-heatmap}
+
+The depth heatmap reveals that most UNESCO items, when mentioned, receive **sentence-level (3)** to **paragraph-level (4)** treatment. Very few items are engaged at section-level (5), suggesting that even the most substantive policies rarely dedicate entire sections to individual UNESCO items.
+
+### Depth by Framework Layer {#sec-unesco-depth-layers}
+
+![Depth distributions for the 4 UNESCO values.](../data/analysis/paper2_ethics/unesco/fig_unesco_values_depth.png){#fig-unesco-values-depth}
+
+![Depth distributions for the 10 UNESCO principles.](../data/analysis/paper2_ethics/unesco/fig_unesco_principles_depth.png){#fig-unesco-principles-depth}
+
+![Depth distributions for the 11 UNESCO policy action areas.](../data/analysis/paper2_ethics/unesco/fig_unesco_policy_areas_depth.png){#fig-unesco-policy-areas-depth}
+
+Across all three layers, the depth distributions are roughly similar, with most engagement occurring at depth levels 3–4. However, **policy action areas** show slightly higher depth when present — likely because they translate into concrete programmatic commitments (education, data governance, health) that inherently require more detailed treatment than abstract values.
+
+### The Gaps: What UNESCO Asks For and What It Gets {#sec-unesco-gaps}
+
+![Top and bottom UNESCO items by coverage, highlighting the largest gaps between the Recommendation's aspirations and actual policy content.](../data/analysis/paper2_ethics/unesco/fig_unesco_gaps_top_bottom.png){#fig-unesco-gaps}
+
+The gap analysis reveals three categories of UNESCO alignment:
+
+1. **Well-integrated items** (>70% coverage): peaceful societies, ethical governance, economy and labour, responsibility, fairness, transparency, diversity. These represent the "consensus core" of global AI ethics — the items that virtually all policy traditions address.
+
+2. **Partially addressed items** (30–70%): data policy, education, privacy, safety, sustainability, environment, health, development cooperation, multi-stakeholder governance, awareness. These are engaged by a majority or near-majority of policies but with significant variation.
+
+3. **Systematically neglected items** (<30%): human rights & dignity (22.9%), proportionality (15.7%), ethical impact assessment (28.4%), gender (9.6%), culture (9.1%), communication & information (2.0%). These represent the **most significant misalignment** between the UNESCO Recommendation and actual global AI policy practice.
+
+The neglect of human rights as a foundational frame, and the near-absence of gender-specific and cultural considerations, suggests that the global AI policy landscape remains heavily shaped by a **technology-centric governance paradigm** rather than the rights-based approach the UNESCO Recommendation advocates.

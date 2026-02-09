@@ -1,0 +1,53 @@
+{
+  "income_gap": {
+    "hi_mean": 3.153,
+    "hi_std": 0.573,
+    "hi_n": 1049,
+    "dev_mean": 3.061,
+    "dev_std": 0.646,
+    "dev_n": 204,
+    "t_stat": 2.06,
+    "p_value": 0.0396,
+    "cohens_d": 0.151
+  },
+  "descriptive": {
+    "n_policies": 1326,
+    "n_country": 1253,
+    "mean_depth": 3.155,
+    "median_depth": 3.176,
+    "std_depth": 0.546,
+    "mean_pct_deep": 40.5,
+    "mean_n_items": 11.1
+  },
+  "category_income_tests": {
+    "values": {
+      "hi_mean": 2.979,
+      "dev_mean": 2.881,
+      "gap": 0.099,
+      "t": 1.812,
+      "p": 0.0703,
+      "d": 0.145
+    },
+    "principles": {
+      "hi_mean": 3.043,
+      "dev_mean": 3.053,
+      "gap": -0.01,
+      "t": -0.202,
+      "p": 0.8398,
+      "d": -0.016
+    },
+    "mechanisms": {
+      "hi_mean": 3.512,
+      "dev_mean": 3.432,
+      "gap": 0.081,
+      "t": 1.634,
+      "p": 0.1025,
+      "d": 0.132
+    }
+  },
+  "breadth_depth_correlation": {
+    "pearson_r": 0.273,
+    "p_value": 0.0
+  },
+  "created": "2026-02-09T20:26:02.072693"
+}

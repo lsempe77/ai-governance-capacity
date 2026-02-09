@@ -1,0 +1,284 @@
+{
+  "generated": "2026-02-09T21:16:04.157877",
+  "descriptives": {
+    "n_policies": 1326,
+    "n_jurisdictions": 79,
+    "alignment_mean": 53.87,
+    "alignment_median": 53.78,
+    "alignment_sd": 12.2,
+    "coverage_mean": 48.08,
+    "values_coverage_mean": 55.05,
+    "principles_coverage_mean": 52.98,
+    "policy_areas_coverage_mean": 41.09
+  },
+  "coverage_depth_items": {
+    "Human rights & human dignity": {
+      "coverage_pct": 22.9,
+      "mean_depth": 3.19
+    },
+    "Peaceful, just & interconnected societies": {
+      "coverage_pct": 83.4,
+      "mean_depth": 2.92
+    },
+    "Diversity & inclusiveness": {
+      "coverage_pct": 70.4,
+      "mean_depth": 3.13
+    },
+    "Environment & ecosystem flourishing": {
+      "coverage_pct": 43.5,
+      "mean_depth": 3.15
+    },
+    "Proportionality & do no harm": {
+      "coverage_pct": 15.7,
+      "mean_depth": 3.53
+    },
+    "Safety & security": {
+      "coverage_pct": 47.6,
+      "mean_depth": 2.94
+    },
+    "Fairness & non-discrimination": {
+      "coverage_pct": 72.5,
+      "mean_depth": 3.11
+    },
+    "Sustainability": {
+      "coverage_pct": 43.5,
+      "mean_depth": 3.15
+    },
+    "Right to privacy & data protection": {
+      "coverage_pct": 50.9,
+      "mean_depth": 3.29
+    },
+    "Human oversight & determination": {
+      "coverage_pct": 35.6,
+      "mean_depth": 2.69
+    },
+    "Transparency & explainability": {
+      "coverage_pct": 71.3,
+      "mean_depth": 2.88
+    },
+    "Responsibility & accountability": {
+      "coverage_pct": 72.8,
+      "mean_depth": 3.17
+    },
+    "Awareness & literacy": {
+      "coverage_pct": 66.9,
+      "mean_depth": 3.64
+    },
+    "Multi-stakeholder & adaptive governance": {
+      "coverage_pct": 52.9,
+      "mean_depth": 3.52
+    },
+    "Ethical impact assessment": {
+      "coverage_pct": 28.4,
+      "mean_depth": 3.33
+    },
+    "Ethical governance & stewardship": {
+      "coverage_pct": 82.4,
+      "mean_depth": 3.46
+    },
+    "Data policy": {
+      "coverage_pct": 56.5,
+      "mean_depth": 3.36
+    },
+    "Development & international cooperation": {
+      "coverage_pct": 36.8,
+      "mean_depth": 3.41
+    },
+    "Environment & ecosystem": {
+      "coverage_pct": 43.5,
+      "mean_depth": 3.15
+    },
+    "Gender": {
+      "coverage_pct": 9.6,
+      "mean_depth": 3.07
+    },
+    "Culture": {
+      "coverage_pct": 9.1,
+      "mean_depth": 2.81
+    },
+    "Education & research": {
+      "coverage_pct": 66.9,
+      "mean_depth": 3.64
+    },
+    "Communication & information": {
+      "coverage_pct": 2.0,
+      "mean_depth": 3.52
+    },
+    "Economy & labour": {
+      "coverage_pct": 79.6,
+      "mean_depth": 2.96
+    },
+    "Health & social well-being": {
+      "coverage_pct": 37.0,
+      "mean_depth": 2.61
+    }
+  },
+  "coverage_depth_correlation": {
+    "r": 0.017,
+    "p": 0.9355
+  },
+  "pre_post": {
+    "pre_n": 727,
+    "post_n": 594,
+    "pre_mean_score": 54.59,
+    "post_mean_score": 52.96,
+    "t_stat": 2.427,
+    "p_value": 0.0154
+  },
+  "binding_nature": {
+    "f_stat": 1.656,
+    "p_anova": 0.1747
+  },
+  "regression": {
+    "model1": {
+      "n": 1253,
+      "r_squared": 0.0082,
+      "adj_r_squared": 0.0034,
+      "f_stat": 2.029,
+      "f_pvalue": 0.059,
+      "coefficients": {
+        "const": {
+          "beta": -102.4443,
+          "se": 153.6868,
+          "t": -0.667,
+          "p": 0.505
+        },
+        "is_developing": {
+          "beta": 0.4905,
+          "se": 1.6676,
+          "t": 0.294,
+          "p": 0.7687
+        },
+        "post_unesco": {
+          "beta": -1.8854,
+          "se": 0.7908,
+          "t": -2.384,
+          "p": 0.0171
+        },
+        "log_gdp": {
+          "beta": 0.4227,
+          "se": 0.9238,
+          "t": 0.458,
+          "p": 0.6473
+        },
+        "is_hard_law": {
+          "beta": 0.3212,
+          "se": 1.4178,
+          "t": 0.227,
+          "p": 0.8208
+        },
+        "is_soft_law": {
+          "beta": 2.6512,
+          "se": 1.0836,
+          "t": 2.447,
+          "p": 0.0144
+        },
+        "year": {
+          "beta": 0.0752,
+          "se": 0.0758,
+          "t": 0.992,
+          "p": 0.321
+        }
+      }
+    },
+    "model3_interaction": {
+      "n": 1253,
+      "r_squared": 0.0089,
+      "dev_x_post_beta": -1.7728,
+      "dev_x_post_p": 0.3926
+    },
+    "model2": {
+      "n": 1253,
+      "r_squared": 0.3484,
+      "adj_r_squared": 0.3442,
+      "coefficients": {
+        "const": {
+          "beta": 231.2193,
+          "se": 181.5817,
+          "p": 0.2029
+        },
+        "is_developing": {
+          "beta": -0.173,
+          "se": 1.3777,
+          "p": 0.9001
+        },
+        "post_unesco": {
+          "beta": -1.3981,
+          "se": 0.6924,
+          "p": 0.0434
+        },
+        "log_gdp": {
+          "beta": -0.4725,
+          "se": 0.7438,
+          "p": 0.5252
+        },
+        "is_hard_law": {
+          "beta": -9.3133,
+          "se": 1.3943,
+          "p": 0.0
+        },
+        "is_soft_law": {
+          "beta": -4.2219,
+          "se": 0.9115,
+          "p": 0.0
+        },
+        "year": {
+          "beta": -0.0922,
+          "se": 0.0898,
+          "p": 0.3045
+        },
+        "capacity": {
+          "beta": 3.2212,
+          "se": 0.4679,
+          "p": 0.0
+        },
+        "ethics_master": {
+          "beta": 11.549,
+          "se": 0.6275,
+          "p": 0.0
+        }
+      }
+    }
+  },
+  "clusters": {
+    "n_clusters": 4,
+    "profiles": {
+      "Comprehensive aligners": {
+        "n": 365,
+        "mean_alignment": 61.4,
+        "mean_coverage_pct": 58.8,
+        "income_dist": {
+          "Developing": 51,
+          "High income": 291
+        }
+      },
+      "Moderate aligners": {
+        "n": 337,
+        "mean_alignment": 60.1,
+        "mean_coverage_pct": 55.1,
+        "income_dist": {
+          "High income": 265,
+          "Developing": 46
+        }
+      },
+      "Selective aligners": {
+        "n": 204,
+        "mean_alignment": 52.9,
+        "mean_coverage_pct": 52.1,
+        "income_dist": {
+          "High income": 153,
+          "Developing": 41
+        }
+      },
+      "Minimal engagement": {
+        "n": 420,
+        "mean_alignment": 42.8,
+        "mean_coverage_pct": 31.2,
+        "income_dist": {
+          "High income": 340,
+          "Developing": 66
+        }
+      }
+    }
+  }
+}

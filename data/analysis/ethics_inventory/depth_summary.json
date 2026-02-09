@@ -1,0 +1,1676 @@
+{
+  "created": "2026-02-09T19:42:48.199383",
+  "n_policies": 1326,
+  "global_depth_distribution": {
+    "paragraph": 5309,
+    "phrase": 3868,
+    "sentence": 4301,
+    "not_found": 601,
+    "section": 1070,
+    "word": 211
+  },
+  "verbatim_length_stats": {
+    "paragraph": {
+      "n": 5309,
+      "median_chars": 395,
+      "mean_chars": 429,
+      "min_chars": 27,
+      "max_chars": 1507
+    },
+    "phrase": {
+      "n": 3868,
+      "median_chars": 110,
+      "mean_chars": 133,
+      "min_chars": 9,
+      "max_chars": 603
+    },
+    "sentence": {
+      "n": 4301,
+      "median_chars": 144,
+      "mean_chars": 163,
+      "min_chars": 13,
+      "max_chars": 859
+    },
+    "not_found": {
+      "n": 601,
+      "median_chars": 56,
+      "mean_chars": 56,
+      "min_chars": 56,
+      "max_chars": 56
+    },
+    "section": {
+      "n": 1070,
+      "median_chars": 616,
+      "mean_chars": 642,
+      "min_chars": 15,
+      "max_chars": 1760
+    },
+    "word": {
+      "n": 211,
+      "median_chars": 129,
+      "mean_chars": 135,
+      "min_chars": 10,
+      "max_chars": 1156
+    }
+  },
+  "values_depth": [
+    {
+      "name": "Public interest/common good",
+      "count": 949,
+      "avg_depth_score": 2.85,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 391,
+        "sentence": 276,
+        "paragraph": 262,
+        "section": 9,
+        "not_found": 9
+      },
+      "pct_deep": 28.6
+    },
+    {
+      "name": "Trust",
+      "count": 762,
+      "avg_depth_score": 2.42,
+      "depth_distribution": {
+        "word": 14,
+        "phrase": 279,
+        "sentence": 104,
+        "paragraph": 223,
+        "section": 13,
+        "not_found": 129
+      },
+      "pct_deep": 31.0
+    },
+    {
+      "name": "Sustainability/environment",
+      "count": 553,
+      "avg_depth_score": 3.13,
+      "depth_distribution": {
+        "word": 8,
+        "phrase": 111,
+        "sentence": 245,
+        "paragraph": 159,
+        "section": 26,
+        "not_found": 4
+      },
+      "pct_deep": 33.5
+    },
+    {
+      "name": "Safety/security",
+      "count": 530,
+      "avg_depth_score": 2.92,
+      "depth_distribution": {
+        "word": 6,
+        "phrase": 255,
+        "sentence": 68,
+        "paragraph": 141,
+        "section": 53,
+        "not_found": 7
+      },
+      "pct_deep": 36.6
+    },
+    {
+      "name": "Well-being/beneficence",
+      "count": 469,
+      "avg_depth_score": 2.54,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 282,
+        "sentence": 106,
+        "paragraph": 77,
+        "not_found": 2
+      },
+      "pct_deep": 16.4
+    },
+    {
+      "name": "Privacy/data protection",
+      "count": 458,
+      "avg_depth_score": 3.27,
+      "depth_distribution": {
+        "word": 4,
+        "phrase": 57,
+        "sentence": 227,
+        "paragraph": 117,
+        "section": 46,
+        "not_found": 7
+      },
+      "pct_deep": 35.6
+    },
+    {
+      "name": "Fairness/justice/equity",
+      "count": 174,
+      "avg_depth_score": 2.93,
+      "depth_distribution": {
+        "word": 3,
+        "phrase": 62,
+        "sentence": 33,
+        "paragraph": 57,
+        "section": 11,
+        "not_found": 8
+      },
+      "pct_deep": 39.1
+    },
+    {
+      "name": "Human rights",
+      "count": 142,
+      "avg_depth_score": 3.06,
+      "depth_distribution": {
+        "phrase": 34,
+        "sentence": 25,
+        "paragraph": 69,
+        "section": 3,
+        "not_found": 11
+      },
+      "pct_deep": 50.7
+    },
+    {
+      "name": "Non-discrimination",
+      "count": 131,
+      "avg_depth_score": 2.92,
+      "depth_distribution": {
+        "word": 5,
+        "phrase": 43,
+        "sentence": 23,
+        "paragraph": 48,
+        "section": 6,
+        "not_found": 6
+      },
+      "pct_deep": 41.2
+    },
+    {
+      "name": "Cultural diversity",
+      "count": 110,
+      "avg_depth_score": 2.55,
+      "depth_distribution": {
+        "word": 4,
+        "phrase": 43,
+        "sentence": 30,
+        "paragraph": 25,
+        "not_found": 8
+      },
+      "pct_deep": 22.7
+    },
+    {
+      "name": "Innovation",
+      "count": 96,
+      "avg_depth_score": 3.69,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 12,
+        "sentence": 13,
+        "paragraph": 56,
+        "section": 13
+      },
+      "pct_deep": 71.9
+    },
+    {
+      "name": "Human dignity",
+      "count": 78,
+      "avg_depth_score": 2.22,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 42,
+        "sentence": 13,
+        "paragraph": 11,
+        "section": 1,
+        "not_found": 10
+      },
+      "pct_deep": 15.4
+    },
+    {
+      "name": "Transparency",
+      "count": 73,
+      "avg_depth_score": 3.01,
+      "depth_distribution": {
+        "word": 5,
+        "phrase": 24,
+        "sentence": 17,
+        "paragraph": 19,
+        "section": 8
+      },
+      "pct_deep": 37.0
+    },
+    {
+      "name": "Democracy",
+      "count": 68,
+      "avg_depth_score": 2.88,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 19,
+        "sentence": 28,
+        "paragraph": 18,
+        "not_found": 1
+      },
+      "pct_deep": 26.5
+    },
+    {
+      "name": "Autonomy/self-determination",
+      "count": 62,
+      "avg_depth_score": 3.23,
+      "depth_distribution": {
+        "phrase": 12,
+        "sentence": 16,
+        "paragraph": 32,
+        "not_found": 2
+      },
+      "pct_deep": 51.6
+    },
+    {
+      "name": "Safety/Security",
+      "count": 59,
+      "avg_depth_score": 3.03,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 25,
+        "sentence": 10,
+        "paragraph": 17,
+        "section": 6
+      },
+      "pct_deep": 39.0
+    },
+    {
+      "name": "Non-maleficence/do no harm",
+      "count": 56,
+      "avg_depth_score": 3.0,
+      "depth_distribution": {
+        "phrase": 19,
+        "sentence": 14,
+        "paragraph": 22,
+        "not_found": 1
+      },
+      "pct_deep": 39.3
+    },
+    {
+      "name": "Privacy/Data Protection",
+      "count": 44,
+      "avg_depth_score": 3.86,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 8,
+        "sentence": 2,
+        "paragraph": 14,
+        "section": 18
+      },
+      "pct_deep": 72.7
+    },
+    {
+      "name": "Inclusiveness/accessibility",
+      "count": 44,
+      "avg_depth_score": 3.34,
+      "depth_distribution": {
+        "phrase": 9,
+        "sentence": 12,
+        "paragraph": 22,
+        "section": 1
+      },
+      "pct_deep": 52.3
+    },
+    {
+      "name": "Accountability",
+      "count": 42,
+      "avg_depth_score": 3.17,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 15,
+        "sentence": 5,
+        "paragraph": 14,
+        "section": 6
+      },
+      "pct_deep": 47.6
+    },
+    {
+      "name": "Solidarity",
+      "count": 42,
+      "avg_depth_score": 2.5,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 24,
+        "sentence": 12,
+        "paragraph": 5
+      },
+      "pct_deep": 11.9
+    },
+    {
+      "name": "Public Interest/Common Good",
+      "count": 34,
+      "avg_depth_score": 2.91,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 9,
+        "sentence": 12,
+        "paragraph": 11,
+        "not_found": 1
+      },
+      "pct_deep": 32.4
+    },
+    {
+      "name": "Public interest/Common good",
+      "count": 34,
+      "avg_depth_score": 2.62,
+      "depth_distribution": {
+        "phrase": 12,
+        "sentence": 15,
+        "paragraph": 5,
+        "not_found": 2
+      },
+      "pct_deep": 14.7
+    },
+    {
+      "name": "Fairness/Justice/Equity",
+      "count": 31,
+      "avg_depth_score": 3.48,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 5,
+        "sentence": 7,
+        "paragraph": 9,
+        "section": 8,
+        "not_found": 1
+      },
+      "pct_deep": 54.8
+    },
+    {
+      "name": "Equity",
+      "count": 27,
+      "avg_depth_score": 2.89,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 9,
+        "sentence": 8,
+        "paragraph": 6,
+        "section": 2
+      },
+      "pct_deep": 29.6
+    },
+    {
+      "name": "Efficiency",
+      "count": 24,
+      "avg_depth_score": 3.42,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 4,
+        "sentence": 3,
+        "paragraph": 16
+      },
+      "pct_deep": 66.7
+    },
+    {
+      "name": "International cooperation",
+      "count": 20,
+      "avg_depth_score": 3.8,
+      "depth_distribution": {
+        "phrase": 1,
+        "sentence": 5,
+        "paragraph": 11,
+        "section": 3
+      },
+      "pct_deep": 70.0
+    },
+    {
+      "name": "Economic growth",
+      "count": 20,
+      "avg_depth_score": 3.5,
+      "depth_distribution": {
+        "phrase": 2,
+        "sentence": 7,
+        "paragraph": 10,
+        "section": 1
+      },
+      "pct_deep": 55.0
+    },
+    {
+      "name": "Inclusiveness",
+      "count": 20,
+      "avg_depth_score": 2.9,
+      "depth_distribution": {
+        "phrase": 10,
+        "sentence": 2,
+        "paragraph": 8
+      },
+      "pct_deep": 40.0
+    },
+    {
+      "name": "Sustainability",
+      "count": 20,
+      "avg_depth_score": 2.9,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 9,
+        "sentence": 3,
+        "paragraph": 5,
+        "section": 2
+      },
+      "pct_deep": 35.0
+    }
+  ],
+  "principles_depth": [
+    {
+      "name": "Transparency",
+      "count": 906,
+      "avg_depth_score": 2.29,
+      "depth_distribution": {
+        "word": 27,
+        "phrase": 322,
+        "sentence": 163,
+        "paragraph": 150,
+        "section": 63,
+        "not_found": 181
+      },
+      "pct_deep": 23.5
+    },
+    {
+      "name": "Inclusiveness/accessibility",
+      "count": 864,
+      "avg_depth_score": 3.12,
+      "depth_distribution": {
+        "word": 6,
+        "phrase": 216,
+        "sentence": 234,
+        "paragraph": 378,
+        "section": 8,
+        "not_found": 22
+      },
+      "pct_deep": 44.7
+    },
+    {
+      "name": "Accountability",
+      "count": 687,
+      "avg_depth_score": 2.91,
+      "depth_distribution": {
+        "word": 13,
+        "phrase": 154,
+        "sentence": 331,
+        "paragraph": 137,
+        "section": 27,
+        "not_found": 25
+      },
+      "pct_deep": 23.9
+    },
+    {
+      "name": "Data governance/data quality",
+      "count": 525,
+      "avg_depth_score": 3.34,
+      "depth_distribution": {
+        "word": 3,
+        "phrase": 50,
+        "sentence": 247,
+        "paragraph": 179,
+        "section": 39,
+        "not_found": 7
+      },
+      "pct_deep": 41.5
+    },
+    {
+      "name": "International cooperation",
+      "count": 461,
+      "avg_depth_score": 3.31,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 81,
+        "sentence": 100,
+        "paragraph": 225,
+        "section": 32,
+        "not_found": 21
+      },
+      "pct_deep": 55.7
+    },
+    {
+      "name": "Human oversight/human-in-the-loop",
+      "count": 411,
+      "avg_depth_score": 2.51,
+      "depth_distribution": {
+        "word": 8,
+        "phrase": 250,
+        "sentence": 58,
+        "paragraph": 75,
+        "section": 10,
+        "not_found": 10
+      },
+      "pct_deep": 20.7
+    },
+    {
+      "name": "Responsibility",
+      "count": 253,
+      "avg_depth_score": 2.87,
+      "depth_distribution": {
+        "word": 3,
+        "phrase": 80,
+        "sentence": 105,
+        "paragraph": 57,
+        "section": 4,
+        "not_found": 4
+      },
+      "pct_deep": 24.1
+    },
+    {
+      "name": "Multi-stakeholder governance",
+      "count": 141,
+      "avg_depth_score": 3.77,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 4,
+        "sentence": 23,
+        "paragraph": 108,
+        "section": 4
+      },
+      "pct_deep": 79.4
+    },
+    {
+      "name": "Interoperability",
+      "count": 109,
+      "avg_depth_score": 3.22,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 30,
+        "sentence": 29,
+        "paragraph": 42,
+        "section": 7
+      },
+      "pct_deep": 45.0
+    },
+    {
+      "name": "Inclusiveness/Accessibility",
+      "count": 79,
+      "avg_depth_score": 3.04,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 20,
+        "sentence": 30,
+        "paragraph": 26,
+        "section": 1,
+        "not_found": 1
+      },
+      "pct_deep": 34.2
+    },
+    {
+      "name": "Precaution/risk-based approach",
+      "count": 72,
+      "avg_depth_score": 3.83,
+      "depth_distribution": {
+        "phrase": 3,
+        "sentence": 10,
+        "paragraph": 55,
+        "section": 4
+      },
+      "pct_deep": 81.9
+    },
+    {
+      "name": "Purpose limitation",
+      "count": 71,
+      "avg_depth_score": 2.96,
+      "depth_distribution": {
+        "phrase": 16,
+        "sentence": 29,
+        "paragraph": 19,
+        "section": 3,
+        "not_found": 4
+      },
+      "pct_deep": 31.0
+    },
+    {
+      "name": "Informed consent",
+      "count": 69,
+      "avg_depth_score": 2.54,
+      "depth_distribution": {
+        "word": 4,
+        "phrase": 24,
+        "sentence": 9,
+        "paragraph": 19,
+        "section": 4,
+        "not_found": 9
+      },
+      "pct_deep": 33.3
+    },
+    {
+      "name": "Robustness/reliability",
+      "count": 67,
+      "avg_depth_score": 2.79,
+      "depth_distribution": {
+        "word": 3,
+        "phrase": 21,
+        "sentence": 24,
+        "paragraph": 15,
+        "section": 2,
+        "not_found": 2
+      },
+      "pct_deep": 25.4
+    },
+    {
+      "name": "Explainability/interpretability",
+      "count": 53,
+      "avg_depth_score": 2.77,
+      "depth_distribution": {
+        "word": 7,
+        "phrase": 18,
+        "sentence": 6,
+        "paragraph": 14,
+        "section": 6,
+        "not_found": 2
+      },
+      "pct_deep": 37.7
+    },
+    {
+      "name": "Open source/openness",
+      "count": 48,
+      "avg_depth_score": 3.6,
+      "depth_distribution": {
+        "phrase": 5,
+        "sentence": 18,
+        "paragraph": 16,
+        "section": 9
+      },
+      "pct_deep": 52.1
+    },
+    {
+      "name": "Proportionality",
+      "count": 46,
+      "avg_depth_score": 3.24,
+      "depth_distribution": {
+        "phrase": 6,
+        "sentence": 20,
+        "paragraph": 18,
+        "section": 1,
+        "not_found": 1
+      },
+      "pct_deep": 41.3
+    },
+    {
+      "name": "Training/capacity building",
+      "count": 43,
+      "avg_depth_score": 3.63,
+      "depth_distribution": {
+        "phrase": 6,
+        "sentence": 9,
+        "paragraph": 23,
+        "section": 5
+      },
+      "pct_deep": 65.1
+    },
+    {
+      "name": "Data Governance/Data Quality",
+      "count": 38,
+      "avg_depth_score": 3.47,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 6,
+        "sentence": 5,
+        "paragraph": 22,
+        "section": 3
+      },
+      "pct_deep": 65.8
+    },
+    {
+      "name": "Sustainability",
+      "count": 34,
+      "avg_depth_score": 3.82,
+      "depth_distribution": {
+        "phrase": 3,
+        "sentence": 2,
+        "paragraph": 27,
+        "section": 2
+      },
+      "pct_deep": 85.3
+    },
+    {
+      "name": "Risk-based approach",
+      "count": 20,
+      "avg_depth_score": 3.75,
+      "depth_distribution": {
+        "phrase": 2,
+        "sentence": 5,
+        "paragraph": 9,
+        "section": 4
+      },
+      "pct_deep": 65.0
+    },
+    {
+      "name": "Human Oversight/Human-in-the-loop",
+      "count": 19,
+      "avg_depth_score": 3.0,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 3,
+        "sentence": 5,
+        "paragraph": 5,
+        "section": 3,
+        "not_found": 2
+      },
+      "pct_deep": 42.1
+    },
+    {
+      "name": "Due diligence",
+      "count": 14,
+      "avg_depth_score": 3.21,
+      "depth_distribution": {
+        "phrase": 4,
+        "sentence": 4,
+        "paragraph": 5,
+        "section": 1
+      },
+      "pct_deep": 42.9
+    },
+    {
+      "name": "Explainability/Interpretability",
+      "count": 12,
+      "avg_depth_score": 3.75,
+      "depth_distribution": {
+        "phrase": 3,
+        "sentence": 1,
+        "paragraph": 4,
+        "section": 4
+      },
+      "pct_deep": 66.7
+    },
+    {
+      "name": "Data governance/Data quality",
+      "count": 12,
+      "avg_depth_score": 3.5,
+      "depth_distribution": {
+        "phrase": 1,
+        "sentence": 2,
+        "paragraph": 6,
+        "section": 2,
+        "not_found": 1
+      },
+      "pct_deep": 66.7
+    },
+    {
+      "name": "Robustness/Reliability",
+      "count": 12,
+      "avg_depth_score": 3.0,
+      "depth_distribution": {
+        "phrase": 6,
+        "sentence": 2,
+        "paragraph": 2,
+        "section": 2
+      },
+      "pct_deep": 33.3
+    },
+    {
+      "name": "Collaboration",
+      "count": 11,
+      "avg_depth_score": 3.64,
+      "depth_distribution": {
+        "phrase": 1,
+        "sentence": 4,
+        "paragraph": 4,
+        "section": 2
+      },
+      "pct_deep": 54.5
+    },
+    {
+      "name": "International Cooperation",
+      "count": 10,
+      "avg_depth_score": 3.8,
+      "depth_distribution": {
+        "word": 1,
+        "paragraph": 8,
+        "section": 1
+      },
+      "pct_deep": 90.0
+    },
+    {
+      "name": "Capacity building",
+      "count": 10,
+      "avg_depth_score": 3.6,
+      "depth_distribution": {
+        "phrase": 2,
+        "sentence": 2,
+        "paragraph": 4,
+        "section": 2
+      },
+      "pct_deep": 60.0
+    },
+    {
+      "name": "Purpose Limitation",
+      "count": 8,
+      "avg_depth_score": 3.75,
+      "depth_distribution": {
+        "phrase": 1,
+        "sentence": 2,
+        "paragraph": 3,
+        "section": 2
+      },
+      "pct_deep": 62.5
+    }
+  ],
+  "mechanisms_depth": [
+    {
+      "name": "Training/capacity building",
+      "count": 747,
+      "avg_depth_score": 3.58,
+      "depth_distribution": {
+        "word": 4,
+        "phrase": 131,
+        "sentence": 136,
+        "paragraph": 341,
+        "section": 127,
+        "not_found": 8
+      },
+      "pct_deep": 62.7
+    },
+    {
+      "name": "Monitoring & evaluation/reporting",
+      "count": 683,
+      "avg_depth_score": 3.41,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 67,
+        "sentence": 234,
+        "paragraph": 330,
+        "section": 34,
+        "not_found": 17
+      },
+      "pct_deep": 53.3
+    },
+    {
+      "name": "Standards/technical standards",
+      "count": 418,
+      "avg_depth_score": 3.32,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 56,
+        "sentence": 168,
+        "paragraph": 175,
+        "section": 14,
+        "not_found": 4
+      },
+      "pct_deep": 45.2
+    },
+    {
+      "name": "Impact assessment",
+      "count": 278,
+      "avg_depth_score": 2.97,
+      "depth_distribution": {
+        "word": 2,
+        "phrase": 69,
+        "sentence": 84,
+        "paragraph": 76,
+        "section": 26,
+        "not_found": 21
+      },
+      "pct_deep": 36.7
+    },
+    {
+      "name": "Data sharing/open data",
+      "count": 134,
+      "avg_depth_score": 3.87,
+      "depth_distribution": {
+        "phrase": 3,
+        "sentence": 27,
+        "paragraph": 84,
+        "section": 19,
+        "not_found": 1
+      },
+      "pct_deep": 76.9
+    },
+    {
+      "name": "International cooperation",
+      "count": 128,
+      "avg_depth_score": 3.92,
+      "depth_distribution": {
+        "phrase": 5,
+        "sentence": 18,
+        "paragraph": 82,
+        "section": 22,
+        "not_found": 1
+      },
+      "pct_deep": 81.2
+    },
+    {
+      "name": "Sectoral regulation",
+      "count": 112,
+      "avg_depth_score": 3.4,
+      "depth_distribution": {
+        "phrase": 16,
+        "sentence": 29,
+        "paragraph": 58,
+        "section": 6,
+        "not_found": 3
+      },
+      "pct_deep": 57.1
+    },
+    {
+      "name": "Algorithmic auditing/third-party audit",
+      "count": 107,
+      "avg_depth_score": 3.04,
+      "depth_distribution": {
+        "phrase": 19,
+        "sentence": 33,
+        "paragraph": 42,
+        "section": 4,
+        "not_found": 9
+      },
+      "pct_deep": 43.0
+    },
+    {
+      "name": "Regulatory sandbox",
+      "count": 101,
+      "avg_depth_score": 3.11,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 11,
+        "sentence": 35,
+        "paragraph": 24,
+        "section": 18,
+        "not_found": 12
+      },
+      "pct_deep": 41.6
+    },
+    {
+      "name": "Ethics board/committee",
+      "count": 90,
+      "avg_depth_score": 3.36,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 14,
+        "sentence": 25,
+        "paragraph": 37,
+        "section": 10,
+        "not_found": 3
+      },
+      "pct_deep": 52.2
+    },
+    {
+      "name": "Multi-stakeholder governance",
+      "count": 79,
+      "avg_depth_score": 3.75,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 3,
+        "sentence": 16,
+        "paragraph": 54,
+        "section": 5
+      },
+      "pct_deep": 74.7
+    },
+    {
+      "name": "Certification/conformity assessment",
+      "count": 69,
+      "avg_depth_score": 3.2,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 12,
+        "sentence": 21,
+        "paragraph": 27,
+        "section": 5,
+        "not_found": 3
+      },
+      "pct_deep": 46.4
+    },
+    {
+      "name": "Procurement requirements",
+      "count": 61,
+      "avg_depth_score": 3.48,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 3,
+        "sentence": 27,
+        "paragraph": 21,
+        "section": 8,
+        "not_found": 1
+      },
+      "pct_deep": 47.5
+    },
+    {
+      "name": "Complaints/redress mechanism",
+      "count": 59,
+      "avg_depth_score": 3.2,
+      "depth_distribution": {
+        "phrase": 12,
+        "sentence": 19,
+        "paragraph": 22,
+        "section": 4,
+        "not_found": 2
+      },
+      "pct_deep": 44.1
+    },
+    {
+      "name": "Community of Experts",
+      "count": 54,
+      "avg_depth_score": 3.0,
+      "depth_distribution": {
+        "sentence": 54
+      },
+      "pct_deep": 0.0
+    },
+    {
+      "name": "Open source/openness",
+      "count": 39,
+      "avg_depth_score": 3.49,
+      "depth_distribution": {
+        "phrase": 7,
+        "sentence": 6,
+        "paragraph": 26
+      },
+      "pct_deep": 66.7
+    },
+    {
+      "name": "Training/Capacity Building",
+      "count": 37,
+      "avg_depth_score": 3.35,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 4,
+        "sentence": 11,
+        "paragraph": 13,
+        "section": 6,
+        "not_found": 2
+      },
+      "pct_deep": 51.4
+    },
+    {
+      "name": "Catalogue Tools & Metrics",
+      "count": 37,
+      "avg_depth_score": 3.0,
+      "depth_distribution": {
+        "sentence": 37
+      },
+      "pct_deep": 0.0
+    },
+    {
+      "name": "Registration/inventory of AI systems",
+      "count": 32,
+      "avg_depth_score": 3.34,
+      "depth_distribution": {
+        "phrase": 5,
+        "sentence": 9,
+        "paragraph": 10,
+        "section": 6,
+        "not_found": 2
+      },
+      "pct_deep": 50.0
+    },
+    {
+      "name": "Monitoring & Evaluation/Reporting",
+      "count": 29,
+      "avg_depth_score": 3.45,
+      "depth_distribution": {
+        "phrase": 3,
+        "sentence": 8,
+        "paragraph": 15,
+        "section": 2,
+        "not_found": 1
+      },
+      "pct_deep": 58.6
+    },
+    {
+      "name": "Penalties/sanctions/enforcement",
+      "count": 28,
+      "avg_depth_score": 4.07,
+      "depth_distribution": {
+        "sentence": 5,
+        "paragraph": 16,
+        "section": 7
+      },
+      "pct_deep": 82.1
+    },
+    {
+      "name": "Data governance/data quality",
+      "count": 27,
+      "avg_depth_score": 3.78,
+      "depth_distribution": {
+        "phrase": 1,
+        "sentence": 6,
+        "paragraph": 18,
+        "section": 2
+      },
+      "pct_deep": 74.1
+    },
+    {
+      "name": "Code of conduct/voluntary commitments",
+      "count": 26,
+      "avg_depth_score": 3.12,
+      "depth_distribution": {
+        "phrase": 5,
+        "sentence": 6,
+        "paragraph": 12,
+        "section": 1,
+        "not_found": 2
+      },
+      "pct_deep": 50.0
+    },
+    {
+      "name": "Funding",
+      "count": 24,
+      "avg_depth_score": 3.62,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 1,
+        "sentence": 6,
+        "paragraph": 14,
+        "section": 2
+      },
+      "pct_deep": 66.7
+    },
+    {
+      "name": "Training/Capacity building",
+      "count": 24,
+      "avg_depth_score": 3.38,
+      "depth_distribution": {
+        "phrase": 3,
+        "sentence": 8,
+        "paragraph": 9,
+        "section": 3,
+        "not_found": 1
+      },
+      "pct_deep": 50.0
+    },
+    {
+      "name": "Standards/Technical standards",
+      "count": 20,
+      "avg_depth_score": 3.25,
+      "depth_distribution": {
+        "phrase": 3,
+        "sentence": 7,
+        "paragraph": 7,
+        "section": 2,
+        "not_found": 1
+      },
+      "pct_deep": 45.0
+    },
+    {
+      "name": "Standards/Technical Standards",
+      "count": 18,
+      "avg_depth_score": 3.39,
+      "depth_distribution": {
+        "word": 1,
+        "phrase": 3,
+        "sentence": 3,
+        "paragraph": 10,
+        "section": 1
+      },
+      "pct_deep": 61.1
+    },
+    {
+      "name": "Labelling/disclosure requirements",
+      "count": 17,
+      "avg_depth_score": 3.76,
+      "depth_distribution": {
+        "phrase": 2,
+        "sentence": 1,
+        "paragraph": 13,
+        "section": 1
+      },
+      "pct_deep": 82.4
+    },
+    {
+      "name": "Risk classification/tiered regulation",
+      "count": 13,
+      "avg_depth_score": 3.92,
+      "depth_distribution": {
+        "phrase": 2,
+        "paragraph": 8,
+        "section": 3
+      },
+      "pct_deep": 84.6
+    },
+    {
+      "name": "Collaboration",
+      "count": 13,
+      "avg_depth_score": 3.31,
+      "depth_distribution": {
+        "phrase": 2,
+        "sentence": 5,
+        "paragraph": 6
+      },
+      "pct_deep": 46.2
+    }
+  ],
+  "by_income_group": {
+    "Developing": {
+      "n_policies": 204,
+      "total_items": 2448,
+      "depth_distribution": {
+        "phrase": 655,
+        "paragraph": 787,
+        "section": 144,
+        "sentence": 675,
+        "found": 157,
+        "word": 30
+      },
+      "pct_deep": 38.0
+    },
+    "High income": {
+      "n_policies": 1049,
+      "total_items": 11744,
+      "depth_distribution": {
+        "paragraph": 4045,
+        "sentence": 3323,
+        "phrase": 2943,
+        "found": 397,
+        "section": 866,
+        "word": 170
+      },
+      "pct_deep": 41.8
+    },
+    "Unknown": {
+      "n_policies": 73,
+      "total_items": 1168,
+      "depth_distribution": {
+        "paragraph": 477,
+        "phrase": 270,
+        "sentence": 303,
+        "found": 47,
+        "section": 60,
+        "word": 11
+      },
+      "pct_deep": 46.0
+    }
+  },
+  "deepest_policies": [
+    {
+      "entry_id": "415612978265",
+      "title": "Hiroshima Artificial Intelligence Process Code of Conduct Reporting Framework",
+      "jurisdiction": "OECD/GPAI",
+      "income": "Unknown",
+      "ethics_score": 2.0,
+      "depth_distribution": {
+        "paragraph": 18,
+        "section": 4,
+        "sentence": 7,
+        "phrase": 3,
+        "not_found": 1
+      },
+      "n_items": 33
+    },
+    {
+      "entry_id": "0b823dc129ba",
+      "title": "National Ethical Guidelines for Biomedical and Health Research Involving Human Participants",
+      "jurisdiction": "India",
+      "income": "Developing",
+      "ethics_score": 2.2,
+      "depth_distribution": {
+        "paragraph": 16,
+        "sentence": 3,
+        "section": 5
+      },
+      "n_items": 24
+    },
+    {
+      "entry_id": "827c7ae83d76",
+      "title": "Egyptian Charter for Responsible AI",
+      "jurisdiction": "Egypt",
+      "income": "Developing",
+      "ethics_score": 2.0,
+      "depth_distribution": {
+        "paragraph": 14,
+        "section": 5,
+        "sentence": 4
+      },
+      "n_items": 23
+    },
+    {
+      "entry_id": "9a4eba14f16d",
+      "title": "AI Guidelines",
+      "jurisdiction": "Germany",
+      "income": "High income",
+      "ethics_score": 2.0,
+      "depth_distribution": {
+        "sentence": 4,
+        "paragraph": 15,
+        "section": 4,
+        "phrase": 1
+      },
+      "n_items": 24
+    },
+    {
+      "entry_id": "92f7f41aaf0c",
+      "title": "Autonomous Driving in European Transport",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 1.4,
+      "depth_distribution": {
+        "section": 1,
+        "paragraph": 18,
+        "sentence": 1
+      },
+      "n_items": 20
+    },
+    {
+      "entry_id": "d7e5c618f63a",
+      "title": "ASEAN Guide on AI Governance and Ethics",
+      "jurisdiction": "Singapore",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "depth_distribution": {
+        "section": 10,
+        "paragraph": 8,
+        "phrase": 1,
+        "sentence": 1
+      },
+      "n_items": 20
+    },
+    {
+      "entry_id": "8ce3f59bc0a2",
+      "title": "Irish National AI Strategy 2021",
+      "jurisdiction": "Ireland",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "depth_distribution": {
+        "paragraph": 18,
+        "sentence": 3,
+        "phrase": 3
+      },
+      "n_items": 24
+    },
+    {
+      "entry_id": "a23e1930dbf0",
+      "title": "Generative Artificial Intelligence Guidelines for Government",
+      "jurisdiction": "Saudi Arabia",
+      "income": "High income",
+      "ethics_score": 1.6,
+      "depth_distribution": {
+        "paragraph": 12,
+        "section": 6,
+        "sentence": 5
+      },
+      "n_items": 23
+    },
+    {
+      "entry_id": "0b960cf6f552",
+      "title": "CurrentAI",
+      "jurisdiction": "France",
+      "income": "High income",
+      "ethics_score": 1.6,
+      "depth_distribution": {
+        "section": 3,
+        "paragraph": 15,
+        "sentence": 1
+      },
+      "n_items": 19
+    },
+    {
+      "entry_id": "54132cc20ec6",
+      "title": "AI Ethics Principles",
+      "jurisdiction": "Saudi Arabia",
+      "income": "High income",
+      "ethics_score": 1.6,
+      "depth_distribution": {
+        "section": 7,
+        "paragraph": 11,
+        "sentence": 2
+      },
+      "n_items": 20
+    },
+    {
+      "entry_id": "638b4919326c",
+      "title": "Ethics Guidelines for AI",
+      "jurisdiction": "Thailand",
+      "income": "Developing",
+      "ethics_score": 1.4,
+      "depth_distribution": {
+        "phrase": 2,
+        "paragraph": 13,
+        "section": 5,
+        "sentence": 3,
+        "not_found": 1
+      },
+      "n_items": 24
+    },
+    {
+      "entry_id": "dfb5156126ae",
+      "title": "Artificial Intelligence Act (AI ACT)",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 3.0,
+      "depth_distribution": {
+        "paragraph": 17,
+        "sentence": 9,
+        "phrase": 4
+      },
+      "n_items": 30
+    },
+    {
+      "entry_id": "cb596f8981da",
+      "title": "Online Harms White Paper and Bill",
+      "jurisdiction": "United Kingdom",
+      "income": "High income",
+      "ethics_score": 2.2,
+      "depth_distribution": {
+        "section": 2,
+        "paragraph": 15,
+        "sentence": 3
+      },
+      "n_items": 20
+    },
+    {
+      "entry_id": "7aeac4490058",
+      "title": "Action Plan on Human Rights",
+      "jurisdiction": "Türkiye",
+      "income": "Developing",
+      "ethics_score": 2.2,
+      "depth_distribution": {
+        "paragraph": 13,
+        "section": 4,
+        "phrase": 4,
+        "sentence": 3
+      },
+      "n_items": 24
+    },
+    {
+      "entry_id": "e61c2cb96167",
+      "title": "Employment Practices: Monitoring at Work Draft Guidance",
+      "jurisdiction": "United Kingdom",
+      "income": "High income",
+      "ethics_score": 2.0,
+      "depth_distribution": {
+        "section": 6,
+        "paragraph": 11,
+        "phrase": 3,
+        "sentence": 1
+      },
+      "n_items": 21
+    },
+    {
+      "entry_id": "e67af2e452a7",
+      "title": "Compendium of AI Use Cases",
+      "jurisdiction": "Singapore",
+      "income": "High income",
+      "ethics_score": 1.4,
+      "depth_distribution": {
+        "paragraph": 12,
+        "sentence": 2,
+        "section": 5,
+        "phrase": 1
+      },
+      "n_items": 20
+    },
+    {
+      "entry_id": "a161c12e929f",
+      "title": "Action Plan for Digitalisation and AI in Mobility",
+      "jurisdiction": "Germany",
+      "income": "High income",
+      "ethics_score": 1.0,
+      "depth_distribution": {
+        "paragraph": 17,
+        "sentence": 6,
+        "phrase": 3
+      },
+      "n_items": 26
+    },
+    {
+      "entry_id": "0951e356e664",
+      "title": "Approach Document for India: Part 2 - Operationalizing Principles for Responsible AI",
+      "jurisdiction": "India",
+      "income": "Developing",
+      "ethics_score": 2.0,
+      "depth_distribution": {
+        "phrase": 1,
+        "paragraph": 15,
+        "section": 1
+      },
+      "n_items": 17
+    },
+    {
+      "entry_id": "1a5e0e108d0d",
+      "title": "National Framework for Artificial Intelligence in Digital Learning (AIDL)",
+      "jurisdiction": "Saudi Arabia",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "depth_distribution": {
+        "section": 6,
+        "sentence": 2,
+        "paragraph": 10,
+        "phrase": 1
+      },
+      "n_items": 19
+    },
+    {
+      "entry_id": "c39c1ef35f13",
+      "title": "UK Government's Guidelines for AI Procurement",
+      "jurisdiction": "United Kingdom",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "depth_distribution": {
+        "paragraph": 11,
+        "phrase": 2,
+        "section": 5,
+        "sentence": 1
+      },
+      "n_items": 19
+    },
+    {
+      "entry_id": "1e66dc7dfe76",
+      "title": "Public Administration Data Strategy",
+      "jurisdiction": "Malta",
+      "income": "High income",
+      "ethics_score": 1.6,
+      "depth_distribution": {
+        "paragraph": 13,
+        "sentence": 6,
+        "section": 3
+      },
+      "n_items": 22
+    },
+    {
+      "entry_id": "da59c5325ab2",
+      "title": "European Strategy for Data",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 1.4,
+      "depth_distribution": {
+        "sentence": 7,
+        "paragraph": 16,
+        "phrase": 4,
+        "not_found": 1
+      },
+      "n_items": 28
+    },
+    {
+      "entry_id": "28b65a67e680",
+      "title": "Opinion of the Data Ethics Commission",
+      "jurisdiction": "Germany",
+      "income": "High income",
+      "ethics_score": 2.0,
+      "depth_distribution": {
+        "paragraph": 10,
+        "section": 6,
+        "sentence": 3,
+        "phrase": 1,
+        "not_found": 1
+      },
+      "n_items": 21
+    },
+    {
+      "entry_id": "22d136d2e569",
+      "title": "Resolution on a Comprehensive European Industrial Policy on Artificial Intelligence and Robotics",
+      "jurisdiction": "European Union",
+      "income": "Unknown",
+      "ethics_score": 1.4,
+      "depth_distribution": {
+        "sentence": 11,
+        "paragraph": 16,
+        "phrase": 1
+      },
+      "n_items": 28
+    },
+    {
+      "entry_id": "de836ce0d2e6",
+      "title": "Artificial Intelligence in the Financial Sector – Interim Report of the Inter-Agency Task Force on the Use of Artificial Intelligence and Machine Learning in Israel's Financial Sector",
+      "jurisdiction": "Israel",
+      "income": "High income",
+      "ethics_score": 1.4,
+      "depth_distribution": {
+        "section": 7,
+        "sentence": 4,
+        "paragraph": 9,
+        "phrase": 3
+      },
+      "n_items": 23
+    },
+    {
+      "entry_id": "a10a4358fe24",
+      "title": "Emerging Technologies Handbook",
+      "jurisdiction": "Colombia",
+      "income": "Developing",
+      "ethics_score": 1.0,
+      "depth_distribution": {
+        "paragraph": 15,
+        "sentence": 10,
+        "phrase": 1,
+        "section": 1
+      },
+      "n_items": 27
+    },
+    {
+      "entry_id": "28a6aad3a6cb",
+      "title": "Canada's Directive on Automated Decision-making",
+      "jurisdiction": "Canada",
+      "income": "High income",
+      "ethics_score": 2.6,
+      "depth_distribution": {
+        "paragraph": 12,
+        "sentence": 4,
+        "section": 3,
+        "phrase": 1,
+        "not_found": 1
+      },
+      "n_items": 21
+    },
+    {
+      "entry_id": "1efdb6146ce7",
+      "title": "Establishment of Edge nodes indicators",
+      "jurisdiction": "Slovenia",
+      "income": "High income",
+      "ethics_score": 2.0,
+      "depth_distribution": {
+        "paragraph": 14,
+        "sentence": 4,
+        "phrase": 2,
+        "section": 1
+      },
+      "n_items": 21
+    },
+    {
+      "entry_id": "71a234b1fe88",
+      "title": "Estonia's Digital Agenda 2030",
+      "jurisdiction": "Estonia",
+      "income": "High income",
+      "ethics_score": 1.8,
+      "depth_distribution": {
+        "paragraph": 13,
+        "sentence": 1,
+        "section": 2,
+        "phrase": 1
+      },
+      "n_items": 17
+    },
+    {
+      "entry_id": "a501202a0491",
+      "title": "Guidance on AI and Data Protection",
+      "jurisdiction": "United Kingdom",
+      "income": "High income",
+      "ethics_score": 2.0,
+      "depth_distribution": {
+        "section": 6,
+        "paragraph": 9,
+        "not_found": 1,
+        "phrase": 1,
+        "sentence": 1
+      },
+      "n_items": 18
+    }
+  ]
+}

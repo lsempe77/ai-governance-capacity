@@ -1,0 +1,14 @@
+{
+  "created": "2026-02-08T23:53:01.282982",
+  "phase": "B",
+  "model": "openai/gpt-4o",
+  "total_target": 1345,
+  "processed": 1320,
+  "failed": 0,
+  "skipped_no_text": 0,
+  "skipped_already_done": 25,
+  "total_tokens": 5138799,
+  "estimated_cost_usd": 25.693995,
+  "elapsed_seconds": 2612.370452642441,
+  "rate_per_minute": 30.3172928326028
+}
