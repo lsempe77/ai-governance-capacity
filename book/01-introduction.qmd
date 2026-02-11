@@ -5,58 +5,48 @@ title: "Introduction"
 ## The Promise and the Gap {#sec-intro}
 
 ::: {.callout-note appearance="simple"}
-**Chapter summary.** This chapter motivates the research question, identifies the gap in existing literature, and previews the book's contributions. We argue that the field of AI governance has produced an abundance of *policies* but remarkably little evidence on whether governments can actually *implement* them.
+**Chapter summary.** This chapter motivates the research question, identifies the gap in existing literature, and previews the research's contributions. We argue that the field of AI governance has produced an abundance of policies but remarkably little evidence on whether governments can actually implement them.
 :::
 
 ### The AI Policy Explosion
 
-Between 2017 and 2025, governments worldwide produced an extraordinary volume of AI governance activity. The OECD.AI Policy Observatory — the most comprehensive global tracker — catalogues over 2,200 policy initiatives across 70+ jurisdictions, ranging from national AI strategies and ethics guidelines to binding legislation and executive orders. Every G20 nation, every EU member state, and a growing number of developing countries have issued at least one AI policy document.
+Between 2017 and 2025, governments worldwide produced a substantial volume of AI governance activity. The OECD.AI Policy Observatory^[<https://oecd.ai/en/policies>] — the most comprehensive global tracker — catalogues over 2,200 policy initiatives across 70+ jurisdictions, ranging from national AI strategies and ethics guidelines to binding legislation and executive orders. As of January 2026, this includes policies from major economies and a growing number of developing countries.
 
 Yet quantity is not quality. The proliferation of AI policies raises a fundamental question that the governance literature has largely neglected:
 
 > **Do countries have the capacity to implement their AI policies, and how does this vary between high-income and developing countries?**
 
-This question sits at the intersection of three scholarly traditions — implementation science, AI governance, and development studies — yet has received almost no systematic empirical attention. The existing literature is rich in *describing* what policies say but remarkably thin on *measuring* whether governments can execute them.
+This question sits at the intersection of three scholarly traditions — implementation science, AI governance, and development studies — yet has received almost no systematic empirical attention. Existing research documents the content of AI policies but rarely assesses whether governments possess the institutional capacity to implement them.
 
 ### What We Know (and Don't Know)
 
 The AI governance literature has grown exponentially since Jobin et al.'s [-@jobin2019] landmark mapping of 84 ethics guidelines. Subsequent work has catalogued principles [@floridi2018; @fjeld2020], traced regulatory approaches [@cath2018; @radu2021], and debated the adequacy of soft law versus hard regulation [@smuha2021; @stix2021].
 
-What this literature has *not* done is measure implementation capacity. Three gaps are particularly striking:
-
-1. **No capacity measurement.** Despite decades of implementation science establishing that policy design determines implementation success [@mazmanian1983; @pressman1973], no study has systematically scored AI policies on implementation readiness.
-
-2. **No Global South perspective.** The AI governance conversation is dominated by a handful of jurisdictions — the EU, US, UK, and China. Developing countries, which collectively represent the majority of the world's population, are largely absent from comparative analyses [@hagendorff2020].
-
-3. **No methodological infrastructure.** The field lacks validated instruments for measuring governance quality at scale. Manual coding of 2,200+ documents is infeasible; the potential of LLM-based coding remains underexplored [@gilardi2023].
+What this literature has not done is measure implementation capacity. Three gaps are particularly striking. First, despite decades of implementation science establishing that policy design determines implementation success [@mazmanian1983; @pressman1973], no study has systematically scored AI policies on implementation readiness. Second, the AI governance conversation is dominated by a handful of jurisdictions — the EU, US, UK, and China — while developing countries, which collectively represent the majority of the world's population, are largely absent from comparative analyses [@hagendorff2020]. Third, the field lacks validated instruments for measuring governance quality at scale. Manual coding of 2,200+ documents is infeasible, and the potential of LLM-based coding remains underexplored [@gilardi2023].
 
 ### Our Contribution
 
-This book addresses all three gaps simultaneously. We construct the first **Global Observatory of AI Governance Capacity** — a comprehensive dataset measuring not just *what* AI policies exist, but *whether governments can actually implement them*.
+This research addresses all three gaps simultaneously. Drawing on the complete OECD.AI Policy Observatory, we set the foundations of the first **Global Observatory of AI Governance Capacity** — a comprehensive assessment measuring not just *what* AI policies exist, but *whether governments can actually implement them*.
 
-Our contributions are:
+This study makes four contributions to the AI governance literature. First, we develop a novel measurement framework that operationalises implementation capacity through 10 dimensions — five for governance capacity (grounded in @mazmanian1983; @lipsky1980; @grindle1996) and five for ethics governance (grounded in @jobin2019; @floridi2018; @unesco2021) — each scored on a 0–4 scale. Second, we validate an LLM-based coding methodology using a three-model ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) that achieves ICC(2,1) = 0.827, demonstrating excellent inter-rater reliability and showing that LLMs can serve as reliable coders for policy analysis at scale.
 
-1. **A novel measurement framework.** We operationalise implementation capacity through 10 dimensions — five for governance capacity (grounded in @mazmanian1983; @lipsky1980; @grindle1996) and five for ethics governance (grounded in @jobin2019; @floridi2018; @unesco2021) — each scored on a 0–4 scale.
+::: {.callout-tip title="Definition: ICC (Intraclass Correlation Coefficient)"}
+The ICC measures inter-rater reliability — the degree to which different raters assign consistent scores to the same items. ICC values range from 0 to 1, with values above 0.75 considered "excellent." Our ICC of 0.827 indicates that approximately 83% of the variance in scores reflects true differences in policy quality assessment rather than measurement noise.
+:::
 
-2. **A validated LLM-based coding methodology.** We deploy a three-model ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) achieving ICC(2,1) = 0.827 (Excellent reliability), demonstrating that LLMs can serve as reliable coders for policy analysis at scale.
-
-3. **The largest comparative AI governance dataset.** 2,216 policies across 70+ jurisdictions, with full-text analysis of 1,754 documents totalling 11.4 million words.
-
-4. **A set of surprising empirical findings** that challenge conventional wisdom about the "AI governance divide" between rich and poor countries.
+Third, we construct the largest comparative AI governance dataset to date: 2,216 policies across 70+ jurisdictions, with full-text analysis of 1,754 documents totalling 11.4 million words. Fourth, the analysis yields empirical findings that challenge conventional assumptions about the "AI governance divide" between wealthy and developing countries.
 
 ### Preview of Key Findings
 
-Our analysis reveals a landscape far more nuanced than the simple North–South divide assumed in much of the literature:
+Our analysis reveals a landscape more complex than the simple North–South divide assumed in much of the literature. Our assessment finds that the vast majority of policies in the OECD.AI repository demonstrate low implementation capacity, with most falling below the midpoint of our readiness scale. This indicates that the capacity gap is a global phenomenon rather than one confined to developing countries. While an income-group gap appears in the raw data, this gap vanishes entirely when restricted to well-documented policies, suggesting that text quality rather than true capacity differences drives much of the observed gap.
 
-- The vast majority of AI policies (96.5%) score below 2/4 on implementation readiness — the gap is global, not just a developing-country problem.
-- The income-group gap in capacity scores ($d = 0.30$) is statistically significant but **vanishes entirely** ($d = 0.04$, n.s.) when restricted to well-documented policies, suggesting text quality rather than true capacity differences drives much of the observed gap.
-- Within-group inequality overwhelmingly dominates: 98–99% of total variation in governance scores is *within* income groups. The income label explains only 1–2% of inequality.
-- GDP per capita explains a mere 1.5–3.5% of country-level governance scores. Several developing countries — Brazil, Kenya, Rwanda, Tunisia — consistently outperform their GDP-predicted levels.
-- Policy diffusion is 98% horizontal — countries learn from peers within their income group, not in a top-down cascade from rich to poor.
+Within-group inequality overwhelmingly dominates the distribution: nearly all variation in governance scores occurs within income groups rather than between them. GDP per capita explains only a small fraction of country-level governance scores, while several developing countries — Brazil, Kenya, Rwanda, and Tunisia — consistently outperform their GDP-predicted levels. 
+
+Perhaps most strikingly, our examination of how policies spread across countries shows that policy learning occurs overwhelmingly horizontally, with countries learning from peers within their income group rather than through a top-down cascade from wealthy to poor countries. This finding challenges assumptions about regulatory diffusion and suggests that the "Brussels Effect" may operate differently in AI governance than in other domains. These patterns are explored in detail in @sec-cap-inequality and @sec-cap-dynamics.
 
 ### Roadmap
 
-The remainder of the book is organised as follows:
+The remainder of the work is organised as follows:
 
 - **@sec-literature** reviews the three literature streams that ground our framework.
 - **@sec-data-methods** describes the OECD.AI corpus, text extraction pipeline, and data preparation.
