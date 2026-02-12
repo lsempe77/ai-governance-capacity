@@ -13,43 +13,64 @@ observatory/
 ├── .env                           # API keys (OpenRouter)
 ├── requirements.txt               # Python dependencies
 │
-├── docs/                          # Core documentation
-│   ├── PROJECT_PLAN.md            # Comprehensive 4-phase plan
-│   ├── METHODOLOGY.md             # Research methodology
-│   ├── THEORETICAL_FRAMEWORK.md   # Theoretical underpinnings
-│   ├── INDICATOR_RUBRIC.md        # Capacity indicator definitions
-│   ├── VALIDATION_PROTOCOL.md     # Validation methodology
-│   └── MPHIL_MODULE.md           # Teaching module outline
+├── book1_capacity/                # 📘 Quarto Book: AI Governance Capacity
+│   ├── _quarto.yml                # Book configuration
+│   ├── index.qmd                  # Book landing page
+│   ├── 01-introduction.qmd        # Introduction
+│   ├── 02-literature.qmd          # Literature review
+│   ├── 03-data-methods.qmd        # Data & methods
+│   ├── 04-scoring.qmd             # Scoring methodology
+│   ├── 05-capacity-landscape.qmd  # Capacity landscape analysis
+│   ├── 06-capacity-determinants.qmd # Determinants of capacity
+│   ├── 07-capacity-inequality.qmd # Inequality analysis
+│   ├── 08-capacity-dynamics.qmd   # Temporal dynamics
+│   └── appendix-*.qmd             # Appendices
+│
+├── book2_ethics/                  # 📗 Quarto Book: AI Ethics Governance
+│   ├── _quarto.yml                # Book configuration
+│   ├── 09-ethics-landscape.qmd    # Ethics landscape analysis
+│   ├── 10-ethics-determinants.qmd # Determinants of ethics
+│   ├── 11-ethics-inequality.qmd   # Inequality analysis
+│   ├── 12-ethics-dynamics.qmd     # Temporal dynamics
+│   └── ...                        # Shared chapters & appendices
+│
+├── book3_unesco/                  # 📕 Quarto Book: UNESCO Alignment
+│   ├── _quarto.yml                # Book configuration
+│   ├── 17-unesco-landscape.qmd    # UNESCO alignment landscape
+│   ├── 18-unesco-determinants.qmd # Determinants of alignment
+│   ├── 19-unesco-clusters.qmd     # Cluster analysis
+│   ├── 20-unesco-dynamics.qmd     # Temporal dynamics
+│   └── ...                        # Shared chapters & appendices
 │
 ├── src/
 │   ├── scrapers/                  # Data collection scripts
 │   │   ├── retrieve_v3.py         # Final document retriever (+ Wayback Machine)
-│   │   ├── download_all_pdfs.py   # Phase 1 bulk downloader
+│   │   ├── download_all_pdfs.py   # Bulk PDF downloader
 │   │   ├── find_pdfs_with_claude.py # Claude-assisted URL finder
 │   │   ├── integrate_content.py   # Content file → corpus matcher
-│   │   ├── audit_matching.py      # PDF-to-corpus matching audit
-│   │   └── ...                    # UNESCO/OECD specific scrapers
+│   │   └── audit_matching.py      # PDF-to-corpus matching audit
 │   ├── analysis/                  # Analysis pipeline
-│   │   ├── extract_text.py        # Phase 1: text extraction + quality flags
-│   │   ├── score_policies.py      # Phase 2: 3-model LLM scoring (parallel)
-│   │   ├── inter_rater.py         # Phase 2.3: inter-rater reliability
+│   │   ├── extract_text.py        # Text extraction + quality flags
+│   │   ├── score_policies.py      # 3-model LLM scoring (parallel)
+│   │   ├── inter_rater.py         # Inter-rater reliability
 │   │   ├── country_metadata.py    # Country → income/region/GDP mapping
-│   │   ├── sota_analysis.py       # Phase 3a: 10 core analyses (descriptive, regression, clustering)
-│   │   ├── advanced_analysis.py   # Phase 3b: robustness, multilevel, PCA, convergence
-│   │   ├── extended_analysis.py   # Phase 3c: inequality, portfolio, quantile & Tobit regression
-│   │   └── diffusion_frontier.py  # Phase 3d: policy diffusion patterns & efficiency frontier
+│   │   ├── sota_analysis.py       # Core analyses (descriptive, regression, clustering)
+│   │   ├── advanced_analysis.py   # Robustness, multilevel, PCA, convergence
+│   │   ├── extended_analysis.py   # Inequality, portfolio, quantile & Tobit
+│   │   ├── diffusion_frontier.py  # Policy diffusion & efficiency frontier
+│   │   └── unesco_paper3.py       # UNESCO alignment analysis
 │   └── collectors/                # Corpus building (completed)
 │
 ├── data/
 │   ├── corpus/                    # Master corpus (2,216 entries)
-│   │   └── corpus_enriched.json   # Enriched with full text + quality flags
 │   ├── pdfs/                      # Downloaded documents (~2,085 files)
 │   ├── analysis/                  # Analysis outputs
-│   │   ├── scores_raw.jsonl       # Raw scores: 6,641 lines (entry × model)
-│   │   ├── scores_ensemble.json   # Merged median ensemble (2,216 entries)
-│   │   ├── inter_rater_report.json # ICC, kappa, correlations
-│   │   ├── extraction_report.json # Phase 1 quality metrics
-│   │   └── scoring_report.json    # Phase 2 run statistics
+│   │   ├── paper1_capacity/       # Capacity paper outputs
+│   │   ├── paper2_ethics/         # Ethics paper outputs
+│   │   ├── shared/                # Shared analysis outputs
+│   │   ├── scores_raw.jsonl       # Raw scores (entry × model)
+│   │   ├── scores_ensemble.json   # Merged median ensemble
+│   │   └── inter_rater_report.json # ICC, kappa, correlations
 │   └── _archive/                  # Archived raw/intermediate data
 ```
 
@@ -294,19 +315,31 @@ See [docs/PROJECT_PLAN.md](docs/PROJECT_PLAN.md) for full details.
 
 > **Key finding:** GDP explains only 1.5–3.5% of country-level score variation (R² ≈ 0.02–0.04). **GDP is not destiny** — Brazil, Kenya, Rwanda, and Tunisia punch far above their weight, while Korea, Portugal, and Kazakhstan underperform relative to resources. The efficiency frontier is anchored by African countries (Rwanda, Kenya, Uganda) with modest GDP but focused governance efforts.
 
+## � Publications
+
+This project produces three research outputs as Quarto books:
+
+| Book | Focus | Key Chapters |
+|------|-------|--------------|
+| **📘 Book 1: Capacity** | AI governance implementation capacity | Landscape, determinants, inequality, dynamics |
+| **📗 Book 2: Ethics** | AI ethics governance operationalisation | Landscape, determinants, inequality, dynamics |
+| **📕 Book 3: UNESCO** | Alignment with UNESCO AI Recommendation | Landscape, determinants, clusters, dynamics |
+
+### Building the Books
+
+```bash
+# Build individual books
+cd book1_capacity && quarto render
+cd book2_ethics && quarto render
+cd book3_unesco && quarto render
+```
+
 ## 🛠️ Setup
 
 ```bash
 pip install -r requirements.txt
 # Add OpenRouter API key to .env: OPENROUTER_API_KEY=sk-or-v1-...
 ```
-
-## 📚 Key Documentation
-
-- **[Project Plan](docs/PROJECT_PLAN.md)** — Full roadmap with phases, deliverables, timelines
-- **[Methodology](docs/METHODOLOGY.md)** — Research design and methods
-- **[Indicator Rubric](docs/INDICATOR_RUBRIC.md)** — Scoring criteria for capacity dimensions
-- **[Validation Protocol](docs/VALIDATION_PROTOCOL.md)** — Inter-rater reliability approach
 
 ## 📄 License
 
