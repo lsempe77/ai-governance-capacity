@@ -46,20 +46,27 @@ observatory/
 │   ├── scrapers/                  # Data collection scripts
 │   │   ├── retrieve_v3.py         # Final document retriever (+ Wayback Machine)
 │   │   ├── download_all_pdfs.py   # Bulk PDF downloader
+│   │   ├── download_oecd_docs.py  # OECD document downloader
+│   │   ├── download_unesco.py     # UNESCO document downloader
 │   │   ├── find_pdfs_with_claude.py # Claude-assisted URL finder
 │   │   ├── integrate_content.py   # Content file → corpus matcher
-│   │   └── audit_matching.py      # PDF-to-corpus matching audit
-│   ├── analysis/                  # Analysis pipeline
-│   │   ├── extract_text.py        # Text extraction + quality flags
-│   │   ├── score_policies.py      # 3-model LLM scoring (parallel)
-│   │   ├── inter_rater.py         # Inter-rater reliability
-│   │   ├── country_metadata.py    # Country → income/region/GDP mapping
-│   │   ├── sota_analysis.py       # Core analyses (descriptive, regression, clustering)
-│   │   ├── advanced_analysis.py   # Robustness, multilevel, PCA, convergence
-│   │   ├── extended_analysis.py   # Inequality, portfolio, quantile & Tobit
-│   │   ├── diffusion_frontier.py  # Policy diffusion & efficiency frontier
-│   │   └── unesco_paper3.py       # UNESCO alignment analysis
-│   └── collectors/                # Corpus building (completed)
+│   │   ├── audit_matching.py      # PDF-to-corpus matching audit
+│   │   └── add_unesco_content.py  # UNESCO content integration
+│   └── analysis/                  # Analysis pipeline
+│       ├── extract_text.py        # Text extraction + quality flags
+│       ├── score_policies.py      # 3-model LLM scoring (parallel)
+│       ├── inter_rater.py         # Inter-rater reliability
+│       ├── country_metadata.py    # Country → income/region/GDP mapping
+│       ├── sota_analysis.py       # Core analyses (descriptive, regression, clustering)
+│       ├── advanced_analysis.py   # Robustness, multilevel, PCA, convergence
+│       ├── extended_analysis.py   # Inequality, portfolio, quantile & Tobit
+│       ├── diffusion_frontier.py  # Policy diffusion & efficiency frontier
+│       ├── unesco_paper3.py       # UNESCO alignment analysis
+│       ├── unesco_alignment.py    # UNESCO alignment scoring
+│       ├── depth_analysis.py      # Depth analysis for capacity
+│       ├── ethics_depth.py        # Depth analysis for ethics
+│       ├── ethics_inventory.py    # Ethics dimension inventory
+│       └── normalise_depth.py     # Score normalisation
 │
 ├── data/
 │   ├── corpus/                    # Master corpus (2,216 entries)
