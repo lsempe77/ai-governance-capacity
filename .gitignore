@@ -17,6 +17,14 @@ venv/
 src/**/_archive/
 docs/_archive/
 
+# Quarto outputs (PDF and Word)
+book1_capacity/_book/*.pdf
+book1_capacity/_book/*.docx
+book2_ethics/_book/*.pdf
+book2_ethics/_book/*.docx
+book3_unesco/_book/*.pdf
+book3_unesco/_book/*.docx
+
 # OS
 .DS_Store
 Thumbs.db
