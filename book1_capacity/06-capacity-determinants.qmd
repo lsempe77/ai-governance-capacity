@@ -1,0 +1,105 @@
+---
+title: "Capacity Determinants"
+---
+
+## What Explains Governance Capacity? {#sec-cap-determinants}
+
+### OLS Regression {#sec-cap-ols}
+
+With the descriptive landscape established, the obvious question is: what drives capacity scores? The conventional bet is on wealth—rich countries have the resources, expertise, and institutions for sophisticated regulation. I test this with four complementary regression specifications.
+
+![Scatter plot of capacity scores against log GDP per capita, with regression line. The relationship is positive but weak.](../data/analysis/paper1_capacity/fig_gdp_scatter.png){#fig-cap-gdp-scatter}
+
+The scatter in @fig-cap-gdp-scatter tells the story before any regression: the relationship with GDP is positive but weak, with many developing-country policies above the line and many high-income policies below it. The baseline OLS model:
+
+$$\text{Capacity}_i = \beta_0 + \beta_1 \ln(\text{GDP}_{pc}) + \beta_2 \text{Year} + \beta_3 \text{Binding} + \beta_4 \text{GoodText} + \varepsilon_i$$
+
+| Variable | $\beta$ | SE | $t$ | $p$ |
+|:---|---:|---:|---:|:---|
+| Intercept | −0.536 | 0.245 | −2.19 | .029 |
+| log(GDP pc) | **0.086** | 0.023 | 3.81 | < .001 |
+| Year (centred) | 0.010 | 0.006 | 1.75 | .081 |
+| Binding regulation | **0.190** | 0.069 | 2.73 | .006 |
+| Good text quality | **1.004** | 0.027 | 37.64 | < .001 |
+
+: OLS regression: capacity determinants ($R^2 = 0.436$, $N = 1{,}949$) {#tbl-cap-ols}
+
+The results reveal three patterns. **Text quality swamps everything else**: the coefficient on `is_good_text` (β = 1.004, t = 37.64) dwarfs every substantive predictor. Policies with ≥500 words of extracted text score a full point higher on the 0–4 scale, mostly because longer documents give the LLM coders more evidence to work with. This is largely a measurement artifact, not a governance finding.
+
+**GDP is statistically significant but substantively weak** (β = 0.086). Tripling a country's wealth from $10K to $30K per capita raises capacity by less than a tenth of a point. Finally, **binding regulation adds ~0.19 points** (β = 0.190), reflecting the structural reality that laws must specify authorities and enforcement mechanisms.
+
+The model's R² of 0.436 looks respectable until you remove text quality—then it collapses to 0.012. GDP, year, and document type *combined* explain just 1.2% of capacity variance. Nearly all the model's explanatory power comes from the measurement artifact of text length.
+
+### Multilevel Models {#sec-cap-multilevel}
+
+OLS assumes independence across observations, but policies nest within countries. Multiple policies from Canada share institutional features, creating dependency that inflates standard errors. I estimate a random-intercept multilevel model:
+
+$$\text{Capacity}_{ij} = \gamma_0 + \gamma_1 \ln(\text{GDP}_{pc,j}) + u_j + \varepsilon_{ij}$$
+
+where $u_j \sim N(0, \sigma^2_u)$ is the country random effect.
+
+![Country random effects from the multilevel capacity model. Most countries cluster near zero, with a few clear over- and under-performers.](../data/analysis/paper1_capacity/robustness/fig_country_random_effects.png){#fig-cap-re}
+
+| Metric | OLS | Mixed |
+|:---|---:|---:|
+| GDP $\beta$ | 0.088 | **0.066** |
+| GDP $p$ | < .001 | .038 |
+| Country ICC | — | **0.091** |
+| LR test vs OLS | — | $p = .007$ |
+
+: OLS vs. multilevel model comparison {#tbl-cap-multilevel}
+
+The **country-level ICC of 0.091** tells the story: only 9.1% of total variance occurs between countries. The remaining 90.9% is between policies *within* countries. A Canadian policy differs more from the average Canadian policy than the average Canadian policy differs from the average Brazilian policy.
+
+Accounting for clustering reduces the GDP coefficient by ~25% (0.088 → 0.066), because OLS double-counts country-level variation. The likelihood ratio test confirms the multilevel model is the correct specification (p = .007), but the practical implication is the same: GDP matters even less than OLS suggested.
+
+### Quantile Regression {#sec-cap-quantile}
+
+OLS and multilevel models estimate *mean* effects. But GDP might matter a lot for getting basic infrastructure in place (lower quantiles) while being irrelevant for distinguishing good from excellent policies (upper quantiles)—or vice versa. Quantile regression [@koenker1978] lets me check.
+
+![Quantile regression coefficients for GDP across the capacity distribution. GDP matters at the median but not at the extremes — an inverted-U pattern.](../data/analysis/paper1_capacity/extended/fig_quantile_regression.png){#fig-cap-qr}
+
+@fig-cap-qr visualizes the GDP effect across quantiles, revealing a clear **inverted-U pattern** where GDP matters most at the median and least at both tails. The formal estimates quantify this heterogeneity:
+
+| Quantile ($\tau$) | GDP $\beta$ | SE | $p$ |
+|:---|---:|---:|:---|
+| 0.25 (positive subset) | 0.068 | 0.024 | .005 |
+| 0.50 | **0.098** | 0.019 | < .001 |
+| 0.75 | 0.064 | 0.029 | .028 |
+| OLS (reference) | 0.086 | 0.023 | < .001 |
+
+: Quantile regression: GDP effect across the capacity distribution {#tbl-cap-qr}
+
+@fig-cap-qr shows an **inverted-U**: GDP matters most at the median (β = 0.098) and less at both tails (β = 0.064–0.068). At the bottom, many policies score zero regardless of GDP—no amount of national wealth transforms a press release into an implementation plan. At the top, excellent policies emerge from factors orthogonal to wealth: policy learning, political commitment, design sophistication. Brazil's comprehensive framework did not require first-world GDP. Wealth helps countries avoid governance failures (moving from zero to moderate) but does not ensure excellence.
+
+### Tobit Regression {#sec-cap-tobit}
+
+The 27.6% floor effect (scores censored at zero) biases OLS downward—scores cannot go below zero, so OLS treats observed zeros as the "true" capacity when they might reflect even lower latent quality. Tobit [@tobin1958] models this left-censoring explicitly:
+
+$$\text{Capacity}_i^* = \mathbf{x}_i' \boldsymbol{\beta} + \varepsilon_i, \quad \text{Capacity}_i = \max(0, \text{Capacity}_i^*)$$
+
+![Comparison of OLS and Tobit coefficients for the capacity model. Tobit coefficients are systematically larger, reflecting correction for censoring.](../data/analysis/paper1_capacity/extended/fig_tobit_comparison.png){#fig-cap-tobit}
+
+| Variable | OLS $\beta$ | Tobit $\beta$ | Ratio |
+|:---|---:|---:|---:|
+| log(GDP pc) | 0.086 | **0.121** | 1.41× |
+| Year | 0.010 | 0.008 | 0.80× |
+| Binding regulation | 0.190 | **0.174** | 0.92× |
+| Good text quality | 1.004 | **1.193** | 1.19× |
+| $\sigma$ | — | 0.742 | — |
+
+: OLS vs. Tobit comparison {#tbl-cap-tobit}
+
+The Tobit GDP coefficient (β = 0.121) is **41% larger** than OLS (0.086), confirming that OLS understates the true wealth-capacity relationship when floor effects are present. But even corrected, 0.121 remains modest: tripling GDP per capita adds 0.12 points on a 4-point scale. The correction matters methodologically without changing the substantive conclusion.
+
+### Synthesis {#sec-cap-determinants-synthesis}
+
+Across four estimation strategies, three findings hold.
+
+**Text quality dominates.** In every specification, document length dwarfs GDP, policy type, and time trends. Much of what looks like governance quality is actually documentation quality. The robustness checks in @sec-robustness test whether anything survives once measurement quality is held constant.
+
+**GDP matters, but barely.** After multilevel correction for clustering (−25%) and Tobit correction for censoring (+41%), GDP per capita explains 3–12% of capacity variance depending on specification. Tripling national wealth adds 0.07–0.12 points on a 4-point scale. Institutional choices and policy design matter more.
+
+**Binding regulation helps.** Laws consistently outscore voluntary guidelines by ~0.19 points, reflecting structural necessities of legal enforceability. Countries can strengthen implementation readiness by choosing binding instruments—a strategic option available regardless of wealth.
+
+The multilevel decomposition makes the point clearly: 91% of variance is *within* countries. Seeking country-level explanations—GDP, democracy, institutional quality—inevitably leaves most variation unexplained. What matters is the individual policy: its type, how well it is documented, and what design choices it makes.

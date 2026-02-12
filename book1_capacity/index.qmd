@@ -1,0 +1,24 @@
+---
+title: "Global Observatory of AI Governance Capacity"
+subtitle: "Measuring Implementation Readiness Across 2,100+ Policies"
+author:
+  - name: "Lucas Sempé"
+    affiliation: "International Initiative for Impact Evaluation (3ie)"
+date: "2026-02-11"
+---
+
+# Preface {.unnumbered}
+
+I started this project with a simple question: governments worldwide are writing AI policies at a furious pace, but can they actually implement them?
+
+To find out, I scored 2,100+ policies across 70+ jurisdictions on five dimensions of implementation capacity (clarity, resources, authority, accountability, and coherence) using a three-model LLM ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) that achieved excellent inter-rater reliability (ICC = 0.827). The results surprised me.
+
+The headline is not that rich countries do better. They do, slightly (d = 0.30), but that gap vanishes entirely when I restrict the analysis to well-documented policies (d = 0.04). What looked like a governance divide turned out to be largely a documentation divide. Meanwhile, 98% of the real variation sits *within* income groups, not between them. Brazil, Kenya, and Rwanda outperform their GDP predictions by wide margins. And when policies spread across borders, they spread sideways: countries learning from peers at similar income levels, not cascading down from wealthy nations.
+
+This book walks through the evidence for these claims and the many robustness checks I ran to stress-test them.
+
+---
+
+**Citation:** Sempé, L. (2026). *Global Observatory of AI Governance Capacity*. International Initiative for Impact Evaluation (3ie).
+
+**Data and Code:** github.com/lsempe77/ai-governance-capacity

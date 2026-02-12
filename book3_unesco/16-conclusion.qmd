@@ -1,0 +1,27 @@
+---
+title: "Conclusion"
+---
+
+## UNESCO as Coordination Framework {#sec-conclusion}
+
+Did the UNESCO Recommendation reshape global AI governance? Partially. Countries adopted its language more than its substance, aligning selectively with components that matched their existing priorities while largely ignoring environmental sustainability, gender, and cultural considerations.
+
+The numbers tell the story: mean alignment of 1.68 out of 4.0; a 21% increase after 2021 that still leaves policies below the operationalization threshold; African countries slightly ahead at 1.78; and a striking 72% of policies in the "selective adoption" cluster versus only 28% showing comprehensive engagement.
+
+### What We Learned
+
+Selective adoption dominates—countries legitimate existing priorities rather than reshape them. The post-2021 increase, while real, changed rhetoric more than practice. Regional patterns reflect governance maturity: UNESCO serves as a template where capacity is limited and a selective supplement where governance traditions are established. Even high-alignment policies rarely operationalize UNESCO principles; they mention without implementing. Yet the framework has coordination value: its 21 components provide a common vocabulary for cross-national comparison and expose blind spots that might otherwise go unnoticed.
+
+### Strengthening UNESCO Influence
+
+Transforming rhetoric into implementation would require accountability mechanisms that UNESCO currently lacks: annual member-state reporting, regional peer review forums, technical assistance for operationalization, and visible recognition for countries that move beyond lip service. Whether the political will exists for such measures is another question entirely.
+
+### The Observatory Vision
+
+This analysis is a snapshot. We envision continuous tracking that produces member-state scorecards, identifies implementation gaps, benchmarks progress over time, and supports evidence-based governance strengthening. The tools exist; the question is whether countries want to be measured.
+
+Code, data, and methods: <https://github.com/lsempe77/ai-governance-capacity>
+
+---
+
+*Alignment is neither automatic nor impossible. It requires political commitment—and political commitment requires domestic constituencies that care about international norms. Building those constituencies may be UNESCO's most important, and most difficult, task.*

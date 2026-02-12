@@ -1,0 +1,43 @@
+---
+title: "Discussion"
+---
+
+## Implications for Ethics Governance {#sec-discussion}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter examines implications of the ethics findings, focusing on the relationship between wealth and normative governance, convergence patterns, and the operationalization challenge.
+:::
+
+### Ethics and Economic Development
+
+GDP shows no effect on ethics scores at any quantile. Unlike implementation capacity (where GDP matters modestly), ethics governance requires political commitment rather than fiscal resources.
+
+Nearly 97% of policies score below 2.0 on operationalization. This deficit affects high-income and developing countries alike—a universal weakness rather than a development-stage phenomenon.
+
+Countries at any income level can strengthen ethics governance immediately. Economic development is not a prerequisite.
+
+### Convergence Over Time
+
+Ethics gaps are narrowing, in contrast to the stable capacity gaps documented earlier. High-income scores dropped from 1.58 (2017-2020) to 1.34 (2021-2025), while developing-country scores remained stable.
+
+Wealthy countries' early ethics frameworks tended toward aspiration over implementation. Developing countries, learning from these experiences, have emphasized operationalization from the outset—avoiding the principle-heavy, implementation-light approach that characterized first-generation frameworks.
+
+### The Operationalization Challenge
+
+E4 Operationalization scores lowest among ethics dimensions (mean 0.91). Policies invoke principles without specifying compliance requirements, enforcement procedures, or technical standards. What @selbst2019 termed "fairness gerrymandering"—proclaiming commitments without operational definitions—characterizes much of global ethics governance.
+
+Addressing this gap requires specifying operational definitions (what does fairness mean in public procurement?), establishing compliance procedures, creating enforcement mechanisms, and providing technical guidance.
+
+### Documentation Quality as Confounder
+
+The income gap (d=0.20) reverses direction for well-documented policies (d=-0.09, n.s.). When documentation quality is comparable, developing countries slightly outperform wealthy countries.
+
+The apparent gap in the full sample reflects measurement artifacts rather than genuine differences in normative governance. Future ethics research should control for documentation quality to avoid similar confounds.
+
+### Within-Group Variation
+
+Nearly all ethics variation (99%) occurs within income groups rather than between them. Countries at similar GDP levels show vastly different ethics depth—political choices, not economic constraints, drive the distribution.
+
+Tunisia, Brazil, and Canada anchor the ethics efficiency frontier, while several wealthy countries underperform relative to their economic resources.
+
+These patterns suggest ethics governance is actionable at any income level. Countries can strengthen commitments through legislative specificity, rights codification, participatory mechanisms, and inclusion mandates.

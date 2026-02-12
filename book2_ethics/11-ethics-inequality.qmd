@@ -1,0 +1,89 @@
+---
+title: "Ethics Inequality & Clusters"
+---
+
+## Ethics Inequality and Governance Profiles {#sec-eth-inequality}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** Inequality decomposition for ethics mirrors the capacity findings: 99.5% of variation is within income groups. Portfolio breadth is near-universal, but E2 Rights and E5 Inclusion show the largest coverage gaps.
+:::
+
+### Inequality Decomposition {#sec-eth-gini}
+
+Capacity analysis showed 98.8% of governance variation within income groups. The ethics domain exhibits a similar pattern.
+
+We use Gini coefficients, Lorenz curves, and Theil decomposition to partition ethics inequality into between-group and within-group components.
+
+![Lorenz curves for ethics scores. Developing countries show higher within-group inequality than HI countries.](../data/analysis/paper2_ethics/extended/fig_lorenz.png){#fig-eth-lorenz}
+
+@fig-eth-lorenz shows the developing-country curve bows further from the equality line, indicating greater heterogeneity.
+
+| Metric | Value |
+|:---|---:|
+| Gini (all countries) | 0.569 |
+| Gini (HI only) | 0.553 |
+| Gini (Developing) | 0.638 |
+| Gini (country means) | 0.273 |
+
+: Gini coefficients for ethics scores {#tbl-eth-gini}
+
+@tbl-eth-gini shows ethics inequality exceeds capacity inequality (0.569 vs. 0.518 Gini), reflecting the severe floor effect (36.3% zeros). Ethical engagement is polarized: countries either commit substantially or ignore it almost entirely.
+
+A key asymmetry: developing countries show higher inequality (0.638) than high-income countries (0.553). Developing countries span the full spectrum—Kenya, Colombia, Brazil, and Rwanda match or exceed many high-income countries, while others produce near-zero policies. High-income countries converge on moderate scores with fewer extremes.
+
+The country-means Gini (0.273) is lower because averaging smooths policy-level variation. Some countries consistently outperform others, reflecting political and institutional factors rather than wealth.
+
+#### Theil Decomposition
+
+Theil's index enables exact additive decomposition of inequality into between-group and within-group components.
+
+![Theil decomposition: 99.5% of ethics inequality is within income groups.](../data/analysis/paper2_ethics/extended/fig_theil_decomposition.png){#fig-eth-theil}
+
+@fig-eth-theil shows the between-group slice is barely visible.
+
+| Component | Share |
+|:---|---:|
+| Between income groups | 0.5% |
+| Within income groups | 99.5% |
+
+: Theil decomposition for ethics {#tbl-eth-theil}
+
+Only 0.5% of ethics inequality is between income groups; 99.5% is within. This is even more extreme than capacity's 1.2%. Knowing whether a policy comes from a high-income or developing country tells you almost nothing about its ethics score.
+
+For development policy, these findings suggest economic growth alone would do little to improve ethics governance. A country crossing the high-income threshold gains 0.12 points (3% of the scale) but still faces the same within-group variation. Targeting factors that matter—political prioritization, civil society strength, stakeholder inclusion—appears more promising than assuming growth generates ethics.
+
+### Policy Portfolio Breadth {#sec-eth-portfolio}
+
+Countries produce portfolios of policies. *Breadth* measures how many of the five ethics dimensions receive non-zero scores in at least one policy. A 5/5 country addresses all dimensions; 3/5 has gaps on two.
+
+![Policy portfolio coverage for ethics dimensions.](../data/analysis/paper2_ethics/extended/fig_portfolio_heatmap.png){#fig-eth-portfolio-heatmap}
+
+![Ethics portfolio gap analysis.](../data/analysis/paper2_ethics/extended/fig_portfolio_gaps.png){#fig-eth-portfolio-gaps}
+
+| Metric | HI | Developing | $p$ |
+|:---|---:|---:|:---|
+| Mean breadth (out of 5) | 5.00 | 4.36 | .054 |
+| Countries with 5/5 coverage | 94% | — | — |
+| Least covered dimensions | E2 Rights (94.1%) | E5 Inclusion (94.1%) | — |
+
+: Ethics portfolio breadth {#tbl-eth-portfolio}
+
+The gap is marginally significant (p = .054). High-income countries achieve near-universal coverage (94% at 5/5); developing countries average 4.36/5 with modest gaps. E2 Rights and E5 Inclusion are most commonly absent—notable because these dimensions protect marginalized populations from algorithmic harms.
+
+Most countries engaging ethics do so comprehensively rather than cherry-picking, contrary to narratives suggesting superficial ethics adoption for international legitimacy.
+
+### K-Means Clustering {#sec-eth-clusters}
+
+Cluster analysis identifies distinct ethics profiles — typologies defined by dimensional strengths and weaknesses.
+
+![Cluster profiles for ethics dimensions. Two-cluster solution mirrors the capacity pattern.](../data/analysis/paper2_ethics/fig_cluster_radar.png){#fig-eth-cluster-radar}
+
+The two-cluster solution (silhouette = 0.42) mirrors capacity:
+
+*Cluster 1 ("Ethics-Light"):* ~65% of policies. Near-zero scores across all dimensions. These policies address AI through purely technical lenses—procurement guidelines, technical standards—without engaging ethics.
+
+*Cluster 2 ("Ethics-Engaged"):* ~35% of policies. Moderate scores emphasizing E1 Framework Depth and E3 Governance Mechanisms. These explicitly articulate principles and establish accountability structures. National strategies and comprehensive frameworks fall here.
+
+Both clusters contain policies from both income groups. Developing countries produce both Ethics-Light and Ethics-Engaged policies. High-income countries span both clusters. Income does not determine governance typology.
+
+The binary characterizes global AI governance: countries either commit to comprehensive normative engagement or focus narrowly on technical implementation. Effective governance requires both types — ethics frameworks establishing foundations, plus technical policies implementing them.

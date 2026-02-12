@@ -1,0 +1,126 @@
+---
+title: "UNESCO Alignment Determinants"
+---
+
+## What Drives UNESCO Alignment? {#sec-unesco-determinants}
+
+We expected wealth to matter. Richer countries have more institutional capacity, more regulatory expertise, more resources to dedicate to comprehensive policy development. The conventional wisdom in AI governance discourse holds that developing countries lag behind. That's not what we found.
+
+### The Income Divide That Isn't {#sec-unesco-income}
+
+![Violin plots of UNESCO alignment scores by income group. The distributions are remarkably similar, with near-complete overlap.](../data/analysis/paper2_ethics/unesco/fig_unesco_income_alignment_dist.png){#fig-unesco-income-violin}
+
+| Metric | Value |
+|:---|:---|
+| High income mean (N = 1,049) | 53.5 |
+| Developing mean (N = 204) | 53.5 |
+| Welch's $t$ | 0.013 |
+| $p$-value | 0.99 |
+| Cohen's $d$ | **0.001** |
+
+: Income-group comparison for UNESCO alignment {#tbl-unesco-income}
+
+The income gap is **effectively zero** ($d = 0.001$). Same mean. Same distribution. We double-checked.
+
+Why might this be? The UNESCO framework, negotiated with input from all member states, may function as a normative template equally accessible regardless of national wealth. It tells countries *what* to address rather than *how* to address it—and the "what" is free to adopt. Our capacity and ethics scores showed small-but-significant income gaps ($d = 0.30$ and $d = 0.20$); UNESCO alignment shows none.
+
+#### Item-Level Income Gaps {#sec-unesco-income-items}
+
+![Radar plot comparing UNESCO item coverage between high-income and developing countries. The profiles are largely overlapping, with notable divergences on health and gender.](../data/analysis/paper2_ethics/unesco/fig_unesco_radar_income.png){#fig-unesco-radar-income}
+
+![Bar chart of UNESCO item coverage gaps between income groups, highlighting statistically significant differences.](../data/analysis/paper2_ethics/unesco/fig_unesco_income_gap.png){#fig-unesco-income-gap}
+
+The aggregate null result conceals meaningful item-level heterogeneity. Two items show **statistically significant** income gaps — both favouring developing countries:
+
+| UNESCO Item | HI Coverage | Dev Coverage | Gap (pp) | $p$ |
+|:---|---:|---:|---:|:---|
+| Health & social well-being | 34.1% | 53.4% | **−19.3** | < .001 |
+| Gender | 7.5% | 13.7% | **−6.2** | .006 |
+
+: Significant item-level income gaps {#tbl-unesco-income-items}
+
+Developing countries are nearly **20 percentage points more likely** to address health and social well-being. Two factors explain this: first, health-sector AI deployment is particularly salient in low- and middle-income countries, where AI is framed primarily as a development tool rather than a general-purpose technology; second, international development frameworks (SDGs, WHO guidelines) consistently emphasize health equity, and developing-country policies reflect that influence.
+
+The gender gap (+6.2pp for developing countries) tells a similar story. UN system frameworks foreground gender mainstreaming, and developing-country policies are more responsive to that emphasis than their high-income counterparts.
+
+### Regional Patterns {#sec-unesco-region}
+
+![Mean UNESCO alignment scores by region. Regional variation is modest, with most regions clustered within a 10-point range.](../data/analysis/paper2_ethics/unesco/fig_unesco_region_scores.png){#fig-unesco-region-scores}
+
+![Regional heatmap showing UNESCO item coverage rates by region. Each row is a region, each column a UNESCO item.](../data/analysis/paper2_ethics/unesco/fig_unesco_region_heatmap.png){#fig-unesco-region-heatmap}
+
+Regional variation in UNESCO alignment is present but modest. All regions fall within the 45–60 range on the 0–100 scale. The regional heatmap reveals that while overall alignment levels are similar, regional profiles diverge on *which* UNESCO items get attention.
+
+European policies emphasize transparency, accountability, and privacy—the GDPR tradition writ large. African and Asian policies engage more with development cooperation and multi-stakeholder governance. North American policies cluster around safety, security, and economy, reflecting a market-oriented governance philosophy. Same overall scores, different priorities.
+
+### Binding Nature and Policy Type {#sec-unesco-binding}
+
+![UNESCO alignment scores by binding nature. Differences are small and not statistically significant ($F = 1.66$, $p = 0.17$).](../data/analysis/paper2_ethics/unesco/fig_unesco_binding_nature.png){#fig-unesco-binding-nature}
+
+| Binding Nature | N | Mean | SD | Coverage |
+|:---|---:|---:|---:|---:|
+| Hard law | 40 | 56.0 | 9.2 | 47.3% |
+| Soft law | 110 | 55.9 | 10.7 | 50.1% |
+| Binding regulation | 22 | 53.7 | 11.9 | 41.5% |
+| Non-binding | 1,154 | 53.6 | 12.4 | 48.0% |
+
+: UNESCO alignment by binding nature {#tbl-unesco-binding}
+
+The ANOVA is not significant ($F = 1.66$, $p = 0.17$), indicating that binding nature does not strongly predict UNESCO alignment. However, a suggestive pattern emerges: hard law and soft law instruments score 2–3 points higher than non-binding documents. This small difference may reflect the greater drafting effort and stakeholder consultation that formal legal instruments typically undergo.
+
+![UNESCO alignment scores by policy type. Variation across policy types is substantial, with strategies and action plans tending to score highest.](../data/analysis/paper2_ethics/unesco/fig_unesco_policy_type.png){#fig-unesco-policy-type}
+
+Policy type shows more variation than binding nature. National AI strategies and action plans, which are typically comprehensive, forward-looking documents, tend to achieve higher UNESCO alignment than narrower regulatory instruments or sectoral guidelines.
+
+### Multivariate Regression: What Predicts Alignment? {#sec-unesco-regression}
+
+To disentangle the relative contributions of structural factors, we estimate three OLS models with heteroskedasticity-consistent (HC1) standard errors. The dependent variable is the UNESCO alignment score (0–100).
+
+#### Model 1: Structural Covariates Only
+
+| Variable | $\beta$ | SE | $p$ |
+|:---|---:|---:|:---|
+| Intercept | −102.4 | 153.7 | .505 |
+| Developing country | 0.49 | 1.67 | .769 |
+| Post-UNESCO era | **−1.89** | 0.79 | **.017** |
+| Log GDP per capita | 0.42 | 0.92 | .647 |
+| Hard law | 0.32 | 1.42 | .821 |
+| Soft law | **2.65** | 1.08 | **.014** |
+| Year | 0.08 | 0.08 | .321 |
+
+: Regression Model 1: Structural predictors only ($N = 1{,}253$, $R^2 = 0.008$) {#tbl-unesco-reg-m1}
+
+Model 1 has very low explanatory power ($R^2 = 0.008$), confirming that structural country-level characteristics explain almost none of the variance in UNESCO alignment. Two variables are significant: the **post-UNESCO era** dummy ($\beta = -1.89$, $p = .017$) — alignment is slightly *lower* in the post-2021 period — and **soft law** ($\beta = 2.65$, $p = .014$) — soft law instruments score modestly higher.
+
+The negative post-UNESCO coefficient is counterintuitive and is explored further in @sec-unesco-dynamics. It likely reflects compositional change in the policy corpus rather than declining alignment.
+
+#### Model 2: Adding Capacity and Ethics Scores
+
+| Variable | $\beta$ | SE | $p$ |
+|:---|---:|---:|:---|
+| Developing country | −0.17 | 1.38 | .900 |
+| Post-UNESCO era | **−1.40** | 0.69 | **.043** |
+| Log GDP per capita | −0.47 | 0.74 | .525 |
+| Hard law | **−9.31** | 1.39 | **< .001** |
+| Soft law | **−4.22** | 0.91 | **< .001** |
+| Year | −0.09 | 0.09 | .305 |
+| Capacity score | **3.22** | 0.47 | **< .001** |
+| Ethics score | **11.55** | 0.63 | **< .001** |
+
+: Regression Model 2: With capacity and ethics scores ($N = 1{,}253$, $R^2 = 0.348$) {#tbl-unesco-reg-m2}
+
+Adding capacity and ethics scores dramatically increases explanatory power ($R^2 = 0.348$). The two strongest predictors:
+
+**Ethics score** ($\beta = 11.5$, $p < .001$): policies with richer ethical content align more closely with UNESCO's fundamentally ethics-focused framework.
+
+**Capacity score** ($\beta = 3.2$, $p < .001$): implementation capacity also predicts alignment, though less strongly.
+
+Binding nature coefficients reverse sign once content is controlled. Hard law ($\beta = -9.3$) and soft law ($\beta = -4.2$) now show *lower* alignment than non-binding documents—formally binding instruments are narrower in scope and cover fewer UNESCO items, even if they engage more deeply on the items they address.
+
+#### Model 3: Income × Post-UNESCO Interaction
+
+The interaction between developing-country status and the post-UNESCO era is not significant ($\beta = -1.77$, $p = .393$), indicating that the (slight) post-UNESCO decline in alignment is not differentially driven by developing countries. The UNESCO Recommendation's adoption does not appear to have produced a differential effect by income group.
+
+### Summary {#sec-unesco-det-summary}
+
+UNESCO alignment is a policy-level phenomenon, not a country-level one. National income, GDP per capita, and region explain almost none of the variance. What matters is policy content: the depth of ethics and capacity provisions. Alignment with international frameworks depends not on wealth but on ambition and comprehensiveness.

@@ -1,0 +1,50 @@
+---
+title: "Literature Review"
+---
+
+## Theoretical Foundations {#sec-literature}
+
+### Implementation Science and Policy Capacity {#sec-lit-implementation}
+
+The conceptual foundation here is implementation science, starting with Pressman and Wildavsky's [-@pressman1973] observation that well-designed programs routinely fail in execution. The field asks a deceptively simple question: what features separate policies that get implemented from those that remain aspirational?
+
+#### Top-Down Approaches
+
+@mazmanian1983 identified six conditions for effective implementation: clear policy objectives, adequate causal theory, legal structuring, committed implementing officials, organized interest group support, and stable conditions. I use these as the backbone of my capacity dimensions: Clarity tracks their objectives condition, Resources captures their commitment requirements, Authority corresponds to legal structuring, Accountability to monitoring, and Coherence to inter-agency coordination.
+
+@sabatier1986 synthesized top-down and bottom-up perspectives, arguing that both formal structure and implementing strategies matter. This is why I look at policy architecture rather than policy content alone.
+
+#### Bottom-Up Approaches and Discretion
+
+@lipsky1980 shifted focus to "street-level bureaucrats," the frontline workers whose discretionary decisions effectively *are* policy. For AI governance, this matters concretely: even comprehensive legislation fails if the regulators lack expertise or mandate. Think of data protection authorities trying to interpret GDPR's algorithmic accountability provisions, or competition regulators assessing AI market power, with limited technical staff. My **Accountability (C4)** dimension captures whether policies constrain this discretion through monitoring and evaluation frameworks.
+
+#### State Capacity
+
+@grindle1996 identified four capacity types relevant to AI governance:
+
+| Capacity Type | Our Dimension | Indicators |
+|:---|:---|:---|
+| Technical | C2 Resources | Expertise, training, technology |
+| Administrative | C3 Authority | Legal mandate, organizational structure |
+| Political | C5 Coherence | Cross-ministry coordination |
+| Fiscal | C2 Resources | Budget allocation |
+
+: State capacity mapping {#tbl-capacity-mapping}
+
+@fukuyama2013 argued that governance quality is conceptually distinct from democracy or GDP, proposing measurement through government outputs. That is essentially what I do here: measuring institutional readiness through policy quality rather than inputs like national wealth.
+
+@andrews2017 introduced "building state capability" through iterative adaptation, warning against imposing "best practice" from high-income countries. The data bear this out: developing countries that score well on capacity do so through different pathways than wealthy nations.
+
+### The Capacity Gap in Digital Governance
+
+Recent research documents persistent implementation gaps in digital regulation. @yeung2018 shows algorithmic regulation demands technical expertise most governments lack. @katzenbach2019 demonstrates that platform governance creates enforcement challenges traditional regulators struggle to address.
+
+@dafoe2018 argues that AI governance faces unique capacity challenges: rapid technological change outpacing regulatory adaptation, concentrated expertise in private sector rather than government, and international coordination problems where no single jurisdiction can effectively regulate global AI systems.
+
+### Measurement Challenges
+
+Despite theoretical progress, **systematic capacity measurement remains rare**. Existing studies rely on qualitative assessments [@cihon2021] or expert surveys [@dafoe2020] that cover a handful of cases at most. The LLM-based scoring approach I develop here is an attempt to bridge that gap, enabling assessment across 2,100+ policies without sacrificing interpretive depth.
+
+### Contribution
+
+This book takes classical implementation science and puts it to work on AI governance at a scale that was not previously feasible. The validated five-dimension framework, the three-model ensemble achieving ICC = 0.827, and the resulting global dataset allow a direct empirical test of whether wealth determines governance capacity. As the following chapters demonstrate, it largely does not.

@@ -10,9 +10,11 @@ title: "Capacity Determinants"
 
 ### OLS Regression {#sec-cap-ols}
 
+Having established the descriptive landscape of AI governance capacity — its distribution, income-group gaps, regional patterns, and country rankings — we now turn to the analytical question of *explanation*: what factors determine why some policies demonstrate high implementation readiness while others remain aspirational? The conventional expectation holds that national wealth drives governance capacity, with wealthy countries possessing the fiscal resources, technical expertise, and institutional infrastructure necessary for sophisticated AI regulation. Testing this hypothesis requires moving beyond descriptive comparison to multivariate regression that can isolate the effect of GDP while controlling for other predictors of capacity.
+
 ![Scatter plot of capacity scores against log GDP per capita, with regression line. The relationship is positive but weak.](../data/analysis/paper1_capacity/fig_gdp_scatter.png){#fig-cap-gdp-scatter}
 
-We begin with a standard OLS model predicting the capacity composite:
+@fig-cap-gdp-scatter provides the first visual evidence, plotting capacity scores against log GDP per capita. While the relationship appears positive — the regression line slopes upward — the scatter around this line proves substantial. Many developing-country policies score above the line while many high-income policies score below it, suggesting that wealth alone provides limited predictive power. The formal test employs a standard OLS model predicting the capacity composite:
 
 $$\text{Capacity}_i = \beta_0 + \beta_1 \ln(\text{GDP}_{pc}) + \beta_2 \text{Year} + \beta_3 \text{Binding} + \beta_4 \text{GoodText} + \varepsilon_i$$
 
@@ -26,17 +28,21 @@ $$\text{Capacity}_i = \beta_0 + \beta_1 \ln(\text{GDP}_{pc}) + \beta_2 \text{Yea
 
 : OLS regression: capacity determinants ($R^2 = 0.436$, $N = 1{,}949$) {#tbl-cap-ols}
 
-Three findings stand out:
+@tbl-cap-ols reveals three critical findings that fundamentally shape interpretation of governance capacity gaps. First, **text quality dominates** all other predictors by an enormous margin. The coefficient on `is_good_text` (β = 1.004, t = 37.64) dwarfs every substantive predictor, indicating that policies with at least 500 words of extracted text score a full point higher on the 0-4 scale than those with minimal documentation. This massive effect represents primarily a measurement artifact rather than a genuine governance difference: longer documents provide more textual evidence for LLM coders to assess, mechanically generating higher scores. The fact that text quality alone produces a t-statistic of 37.64 — far exceeding any conventional threshold — demonstrates its overwhelming influence on observed scores.
 
-1. **Text quality dominates**: `is_good_text` ($\beta = 1.00$) dwarfs all other predictors. Policies with ≥500 words of extracted text score a full point higher — this is a measurement artefact, not a governance difference.
-2. **GDP matters but modestly**: A one-unit increase in log GDP per capita ($\approx$ tripling GDP) raises capacity by only 0.086 points on a 4-point scale.
-3. **Binding regulation adds capacity**: Laws and executive orders score 0.19 points higher than soft-law instruments, reflecting their inherently more operational character.
+Second, **GDP matters, but only modestly**. The log GDP per capita coefficient (β = 0.086, p < .001) achieves statistical significance but substantive importance proves limited. A one-unit increase in log GDP — roughly equivalent to tripling a country's wealth from $10,000 to $30,000 per capita — raises capacity scores by only 0.086 points on a 4-point scale. This means moving from a typical developing-country income level to a typical high-income level would increase capacity scores by less than one-tenth of a point, a difference imperceptible against the backdrop of within-group variation we documented in @sec-cap-inequality. The weak GDP effect challenges the conventional assumption that wealth automatically translates into governance capacity.
 
-The overall $R^2 = 0.436$, but this is almost entirely driven by text quality. Without the text quality control, $R^2$ drops to 0.012.
+Third, **binding regulation adds capacity** through its inherent operational character. Laws and executive orders score 0.19 points higher than soft-law instruments (β = 0.190, p = .006), reflecting the structural reality that legally enforceable policies must specify authorities, enforcement mechanisms, and monitoring procedures to be judicially defensible. This effect validates our measurement approach: scores appropriately reflect document content matched to policy type rather than applying uniform standards regardless of function.
+
+The model's overall fit provides the most consequential finding: R² = 0.436, indicating that 44% of variance in capacity scores can be explained by these predictors. However, this seemingly respectable fit conceals a troubling reality. When text quality is removed from the model, R² collapses to 0.012 — meaning that GDP, policy year, and document type combined explain only 1.2% of variation in capacity scores. Nearly all the model's explanatory power derives from the measurement artifact of text length rather than substantive governance differences. This sensitivity to text quality motivates the robustness checks in @sec-robustness, where we restrict analyses to well-documented policies to determine whether the income gap persists when measurement quality is held constant.
 
 ### Multilevel Models {#sec-cap-multilevel}
 
-Policies are nested within countries, violating the OLS independence assumption. We estimate a random-intercept multilevel model:
+The OLS specification rests on a critical assumption: that observations are independent, with each policy's score unaffected by others in the dataset. This assumption fails in our context because policies nest within countries. Multiple policies from the same jurisdiction share institutional features, regulatory traditions, and political contexts that the OLS model ignores. This clustering creates dependency: policies from Canada may consistently score higher or lower than the overall mean due to Canadian-specific factors, and knowing one Canadian policy's score provides information about others. Ignoring this nested structure produces two problems: standard errors become artificially small (inflating statistical significance), and country-level effects get incorrectly attributed to policy-level predictors.
+
+The solution employs multilevel modeling with random intercepts for countries, allowing each jurisdiction to have its own baseline capacity level around which individual policies vary. This approach explicitly partitions variance into between-country and within-country components, revealing how much of the apparent GDP effect reflects genuine cross-national differences versus policy-level variation.
+
+We estimate a random-intercept multilevel model:
 
 $$\text{Capacity}_{ij} = \gamma_0 + \gamma_1 \ln(\text{GDP}_{pc,j}) + u_j + \varepsilon_{ij}$$
 
@@ -53,17 +59,21 @@ where $u_j \sim N(0, \sigma^2_u)$ is the country random effect.
 
 : OLS vs. multilevel model comparison {#tbl-cap-multilevel}
 
-Key insights:
+@tbl-cap-multilevel exposes the consequences of ignoring nested structure. The **country-level ICC = 0.091** delivers a striking finding: only 9.1% of total variance occurs between countries, while 90.9% occurs between policies within countries. This decomposition fundamentally challenges wealth-based explanations of governance capacity. If national characteristics — GDP, institutions, political systems — primarily determined capacity, we would expect substantial between-country variance as countries cluster around characteristic levels. Instead, the overwhelming dominance of within-country variance (91%) indicates that policy-specific features matter far more than country-level attributes. A Canadian policy is more different from the average Canadian policy than the average Canadian policy is from the average Brazilian policy.
 
-- **Country-level ICC = 0.091**: Only 9.1% of variance is between countries; 90.9% is between policies within countries.
-- **OLS inflates the GDP effect**: The mixed-model GDP coefficient (0.066) is 25% smaller than the OLS estimate (0.088), because OLS double-counts country-level variation.
-- **The multilevel model is the correct specification** (LR test $p = .007$), though the practical difference is modest.
+The multilevel specification reveals that **OLS inflates the GDP effect** by approximately 25%. The mixed-model GDP coefficient (β = 0.066) proves substantially smaller than the OLS estimate (β = 0.088), because OLS double-counts country-level variation. When a country like Denmark has many high-scoring policies, OLS attributes this pattern entirely to Denmark's high GDP, ignoring the possibility that multiple Danish policies score high for Denmark-specific reasons unrelated to wealth. The multilevel model correctly partitions these sources, revealing that the GDP effect is even weaker than OLS suggests.
+
+The likelihood ratio test confirms that **the multilevel model provides the correct specification** (LR test p = .007), formally rejecting the OLS assumption of independence. However, the practical difference remains modest — the GDP coefficient declines from 0.088 to 0.066, neither value suggesting strong wealth effects. The more consequential finding emerges from the variance decomposition: governance capacity is overwhelmingly a policy-level rather than country-level phenomenon.
 
 ### Quantile Regression {#sec-cap-quantile}
 
-OLS estimates the *mean* effect of GDP on capacity. But does GDP matter equally for low-scoring and high-scoring policies? Quantile regression [@koenker1978] allows us to estimate effects at different points of the distribution.
+Both OLS and multilevel models estimate mean effects: how does GDP affect the *average* policy's capacity score? This focus on central tendency obscures potential heterogeneity across the score distribution. GDP might matter enormously for moving policies from zero to minimal capacity (getting basic institutional architecture in place) while proving irrelevant for distinguishing good policies from excellent ones. Alternatively, wealth might primarily help countries produce sophisticated policies at the high end while having little effect on preventing low-quality outputs. Standard regression cannot detect such distributional heterogeneity because it collapses all policies into a single average effect.
+
+Quantile regression [@koenker1978] addresses this limitation by estimating separate effects at different points of the distribution — the 25th percentile (low-scoring policies), the median (typical policies), and the 75th percentile (high-scoring policies). This approach reveals whether GDP effects vary across the capacity spectrum, providing diagnostic insight into where wealth matters most for governance quality.
 
 ![Quantile regression coefficients for GDP across the capacity distribution. GDP matters at the median but not at the extremes — an inverted-U pattern.](../data/analysis/paper1_capacity/extended/fig_quantile_regression.png){#fig-cap-qr}
+
+@fig-cap-qr visualizes the GDP effect across quantiles, revealing a striking **inverted-U pattern** where GDP matters most at the median and least at both tails. The formal estimates quantify this heterogeneity:
 
 | Quantile ($\tau$) | GDP $\beta$ | SE | $p$ |
 |:---|---:|---:|:---|
@@ -74,11 +84,21 @@ OLS estimates the *mean* effect of GDP on capacity. But does GDP matter equally 
 
 : Quantile regression: GDP effect across the capacity distribution {#tbl-cap-qr}
 
-The GDP effect follows an **inverted-U pattern**: strongest at the median ($\beta = 0.098$) and weaker at both tails. At the lowest quantiles, many policies score zero regardless of GDP; at the highest quantiles, top policies achieve high scores regardless of national wealth.
+@tbl-cap-qr confirms the inverted-U pattern statistically. The GDP effect proves **strongest at the median** (τ = 0.50, β = 0.098, p < .001), where typical policies cluster, and **weaker at both extremes**. At the 25th percentile (β = 0.068) and 75th percentile (β = 0.064), GDP effects are 30-35% smaller than at the median, though they remain statistically significant.
+
+This pattern admits a straightforward interpretation grounded in the mechanisms linking wealth to capacity. At the lowest quantiles, many policies score zero regardless of national GDP because they consist of brief announcements or aspirational statements without operational content. No amount of national wealth can transform a press release into an implementation plan — these minimal documents systematically score near zero independent of country resources. The floor effect thus compresses the lower tail, limiting GDP's influence.
+
+At the highest quantiles, top-performing policies achieve comprehensive scores through factors beyond fiscal resources: policy learning from international models, political commitment to robust governance, technical sophistication in policy design, and effective stakeholder consultation. Countries can produce excellent policies through these pathways regardless of wealth — Brazil's AI governance framework demonstrates that sophisticated design does not require first-world GDP. The ceiling effect thus loosens the wealth-capacity link at the high end, as governance sophistication becomes primarily a choice variable rather than a resource constraint.
+
+GDP matters most in the middle range, where policies transition from minimal to moderate implementation readiness. Wealthy countries more reliably avoid zero-scoring announcements and more frequently reach moderate capacity levels with some operational detail, resource specification, and enforcement structure. But this advantage proves temporary: achieving truly high capacity requires factors orthogonal to wealth, explaining why the GDP effect declines again at the 75th percentile. The inverted-U thus reveals that wealth primarily helps countries avoid governance failures rather than ensuring governance excellence.
 
 ### Tobit Regression {#sec-cap-tobit}
 
-The strong floor effect (27.6% of policies score exactly zero) motivates a Tobit model [@tobin1958] with left-censoring at zero:
+The quantile regression revealed that GDP effects weaken at the lower tail where floor effects concentrate. This finding points to a broader statistical challenge: the strong floor effect documented in @sec-cap-landscape, where 27.6% of policies score exactly zero, violates OLS assumptions. Standard regression treats zero as just another value along a continuous scale, but scores cannot fall below zero — the distribution is censored at the lower bound. When censoring is severe, OLS produces attenuated coefficient estimates that understate true effects, because it incorrectly treats observed zeros as the latent capacity these policies would have exhibited absent the floor constraint.
+
+Tobit regression [@tobin1958] explicitly models this left-censoring, distinguishing latent capacity (which can be negative, indicating policies that would score below zero if the scale permitted) from observed capacity (truncated at zero). The model estimates what capacity scores would be absent the floor constraint, then applies the censoring rule to generate predicted observations. This approach yields unbiased coefficient estimates when censoring is present.
+
+The Tobit model with left-censoring at zero takes the form:
 
 $$\text{Capacity}_i^* = \mathbf{x}_i' \boldsymbol{\beta} + \varepsilon_i, \quad \text{Capacity}_i = \max(0, \text{Capacity}_i^*)$$
 
@@ -94,14 +114,22 @@ $$\text{Capacity}_i^* = \mathbf{x}_i' \boldsymbol{\beta} + \varepsilon_i, \quad 
 
 : OLS vs. Tobit comparison {#tbl-cap-tobit}
 
-The Tobit GDP coefficient (0.121) is **41% larger** than the OLS estimate (0.086), confirming that OLS attenuates the true effect when floor effects are present. The estimated $\sigma = 0.742$ and the probability of being uncensored at the mean is 82.7%.
+![Comparison of OLS and Tobit coefficients for the capacity model. Tobit coefficients are systematically larger, reflecting correction for censoring.](../data/analysis/paper1_capacity/extended/fig_tobit_comparison.png){#fig-cap-tobit}
+
+@tbl-cap-tobit and @fig-cap-tobit demonstrate that OLS indeed attenuates the GDP effect in the presence of floor censoring. The Tobit GDP coefficient (β = 0.121) proves **41% larger** than the OLS estimate (β = 0.086), confirming that treating zeros as typical observations understates the true wealth-capacity relationship. The estimated error standard deviation σ = 0.742 quantifies residual variation after accounting for censoring, while the probability of being uncensored at the mean predictor values (82.7%) indicates that censoring affects more than a quarter of observations — substantial enough to bias OLS but not so extreme that most observations cluster at zero.
+
+Crucially, however, even the corrected Tobit coefficient of 0.121 remains substantively modest. Tripling GDP per capita increases capacity by only 0.12 points on a 4-point scale — enough to move from "minimal" to "low-moderate" implementation readiness but insufficient to explain the full range of variation we observe. The correction for censoring matters methodologically, confirming that OLS underestimates effects, but it does not fundamentally alter the substantive conclusion that GDP provides limited explanatory power for governance capacity.
+
+The text quality coefficient experiences similar inflation (from 1.004 in OLS to 1.193 in Tobit), reinforcing that measurement artifacts dominate substantive predictors even after correcting for floor effects. The binding regulation coefficient, by contrast, shrinks slightly (from 0.190 to 0.174), suggesting that document type effects prove somewhat sensitive to specification choices — though the direction and significance remain stable across models.
 
 ### Synthesis {#sec-cap-determinants-synthesis}
 
-Across all four estimation strategies, three consistent findings emerge:
+Across four complementary estimation strategies — each addressing different threats to valid inference — three consistent findings crystallize that fundamentally shape how we interpret AI governance capacity.
 
-1. **Text quality is the dominant predictor** — it accounts for more variance than all substantive predictors combined.
-2. **GDP matters, but modestly** — even after correcting for censoring (Tobit), the GDP effect explains only a small share of variation. GDP is not destiny.
-3. **Binding regulation adds capacity** — the legal form of a policy matters for its operational content.
+First, **text quality dominates all substantive predictors** across every specification. Whether we employ OLS, multilevel models, quantile regression, or Tobit estimation, the coefficient on document length dwarfs GDP, policy type, and temporal trends. This measurement artifact accounts for more variance than all theoretically-motivated predictors combined, indicating that much of what appears as governance quality actually reflects documentation practices. The robustness checks in @sec-robustness examine whether substantive findings persist when we restrict analyses to well-documented policies, effectively holding measurement quality constant.
 
-The multilevel model reveals that 91% of variance is *within* countries, suggesting that country-level characteristics (income, institutions) are far less important than policy-level features (document type, text quality, sector). This finding is explored further through inequality decomposition in @sec-cap-inequality.
+Second, **GDP matters, but only modestly**, even after every methodological correction. The multilevel model accounts for clustered observations, reducing the GDP coefficient by 25%. The Tobit model corrects for floor censoring, inflating the coefficient by 41%. Yet across all specifications, GDP per capita explains only 3-12% of variance in governance scores, with point estimates suggesting that tripling national wealth increases capacity by 0.07-0.12 points on a 4-point scale. This weak relationship fundamentally challenges the assumption that wealth determines governance capacity. GDP is not destiny — institutional choices, policy design sophistication, and political commitment prove far more consequential than national income.
+
+Third, **binding regulation systematically adds capacity** compared to voluntary guidelines and strategic documents. This effect emerges consistently across specifications, reflecting the structural reality that legally enforceable policies must specify operational details — authorities, enforcement mechanisms, resource allocations — that voluntary instruments can omit. The finding validates our measurement approach while highlighting that governance instrument choice matters independently of national characteristics. Countries can strengthen implementation readiness by adopting binding regulation rather than relying exclusively on soft-law approaches, a strategic choice available regardless of wealth.
+
+The multilevel decomposition provides perhaps the most consequential insight: 91% of variance in capacity scores occurs *within* countries rather than between them. This overwhelming dominance of policy-level variation over country-level variation suggests that seeking country-level explanations — whether GDP, democracy levels, or institutional quality — inevitably leaves most variation unexplained. What matters is not which country produces a policy but rather what type of document it is (binding vs. voluntary), how well it is documented (measurement quality), and what specific design choices it makes (implementation architecture). This finding motivates the inequality analysis in @sec-cap-inequality, which examines the structure of within-group versus between-group variation in greater detail, and the dynamics analysis in @sec-cap-dynamics, which identifies countries that consistently outperform their GDP-predicted capacity through effective institutional design.

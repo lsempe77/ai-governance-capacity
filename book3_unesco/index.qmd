@@ -1,0 +1,28 @@
+---
+title: "UNESCO AI Ethics Recommendation: Global Alignment Assessment"
+subtitle: "Measuring Policy Convergence with UNESCO Principles Across 2,100+ Documents"
+author:
+  - name: "Lucas Sempé"
+    affiliation: "International Initiative for Impact Evaluation (3ie)"
+date: "2026-02-11"
+---
+
+# Preface {.unnumbered}
+
+In November 2021, UNESCO achieved something rare: 193 countries agreed on a shared framework for AI ethics. This book asks what happened next.
+
+We analyzed 2,100+ AI policies from 70+ jurisdictions to measure how closely national governance actually aligns with UNESCO's ten core values and eleven action areas. The short answer: partial adoption. Countries cherry-pick the components that match existing priorities while largely ignoring environmental sustainability, gender, and culture.
+
+## What We Found
+
+Mean alignment sits at 1.68 out of 4.0—somewhere between "mentioned" and "described," well short of operationalized. Human rights and transparency score highest; sustainability trails far behind. Only 28% of policies show comprehensive alignment; the remaining 72% adopt selectively. Post-2021 policies show modest improvement, but the 2021 milestone changed rhetoric more than practice.
+
+## How We Measured It
+
+We used three large language models (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) as automated policy analysts, scoring each document against UNESCO's 21 components. The ensemble achieves excellent reliability (ICC = 0.827)—comparable to human expert agreement on complex policy assessment tasks.
+
+---
+
+**Citation:** Sempé, L. (2026). *UNESCO AI Ethics Recommendation: Global Alignment Assessment*. International Initiative for Impact Evaluation (3ie).
+
+**Data and Code:** github.com/lsempe77/ai-governance-capacity

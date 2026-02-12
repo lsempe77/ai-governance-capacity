@@ -1,0 +1,31 @@
+---
+title: "Conclusion"
+---
+
+## Toward Implementation-Ready Governance {#sec-conclusion}
+
+This study asked: *Do countries have capacity to implement AI policies?* The answer is sobering: the global modal AI policy scores below 2/4 on implementation readiness.
+
+But distribution matters more than the average. The capacity gap between income groups is small (d = 0.30) and fragile, vanishing for well-documented policies. Within-group inequality dominates, accounting for 98% of total variance. Rwanda, Kenya, and Brazil outperform wealthier nations. GDP explains just 3.5% of variation. Policy diffusion operates horizontally within income groups rather than cascading from wealthy nations.
+
+### Main Findings
+
+The capacity gap is universal. Every country needs stronger implementation infrastructure, particularly in Accountability and Resources.
+
+National wealth plays a limited role. Capacity emerges from institutional design choices, not economic endowments. Rwanda and Kenya demonstrate that sophisticated governance frameworks can precede high per-capita income.
+
+Text quality confounds measurement. Researchers using document-based analysis should stratify by text quality or risk mistaking documentation gaps for governance gaps.
+
+Horizontal diffusion dominates. Countries learn from peers at similar income levels, which favors South-South cooperation over top-down technical assistance.
+
+The framework enables targeted intervention. By identifying dimension-specific weaknesses, the five-dimensional approach provides actionable guidance: specify objectives (C1), allocate resources (C2), designate authorities (C3), establish monitoring (C4), ensure coordination (C5).
+
+### The Observatory Vision
+
+I envision a living observatory: continuously updated capacity tracking enabling annual scoring rounds, country-level scorecards, benchmarking tools, and research infrastructure.
+
+Code, data, and methods: <https://github.com/lsempe77/ai-governance-capacity>
+
+---
+
+*The capacity to govern AI well is neither automatic nor impossible. It is built, one dimension at a time, by countries investing in institutional infrastructure that turns aspiration into action.*

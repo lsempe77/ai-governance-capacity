@@ -1,0 +1,44 @@
+---
+title: "Introduction"
+---
+
+## Measuring Normative Commitments in AI Governance {#sec-intro}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** How deeply do AI policies embed ethical commitments? This chapter introduces the research question, examines gaps in ethics governance measurement, and previews our analytical framework.
+:::
+
+### Beyond Principle Proliferation
+
+The AI ethics landscape shows remarkable normative convergence. @jobin2019 found recurring principles (transparency, fairness, accountability) across 84 guidelines. @fjeld2020 found similar patterns in 36 frameworks.
+
+But convergence on *principles* doesn't guarantee *governance depth*. Do policies merely list values, or do they specify rights protections, establish participatory mechanisms, operationalize principles, and ensure inclusive engagement?
+
+This book measures ethics governance depth across five dimensions:
+
+1. *E1 Framework Depth*: Specificity of ethical principles and value articulation
+2. *E2 Rights Protection*: Safeguards for privacy, fairness, non-discrimination, due process
+3. *E3 Participatory Governance*: Public consultation, multi-stakeholder processes, transparency
+4. *E4 Operationalization*: Concrete requirements, compliance mechanisms, enforcement
+5. *E5 Inclusion*: Representation of marginalized groups, accessibility, equity considerations
+
+### Key Findings Preview
+
+Analysis of 2,100+ policies reveals:
+
+- Low depth overall: Mean 1.39/4.0, with superficial ethical commitments in most policies
+- Convergence: Ethics gaps narrowing faster than capacity gaps
+- Within-group inequality: 99% of variation occurs within income groups
+- Documentation confound: The income gap (d=0.20) reverses (d=-0.09) for well-documented policies
+- Horizontal diffusion: Regional ethics norms spread through peer learning
+
+### Roadmap
+
+- **Chapter 9**: Global ethics governance landscape
+- **Chapter 10**: Determinants of ethics depth
+- **Chapter 11**: Inequality patterns
+- **Chapter 12**: Temporal dynamics and convergence
+- **Chapter 14**: Robustness checks
+- **Chapters 15-16**: Implications and conclusions
+
+The following chapters show that developing countries increasingly match wealthy-country ethics commitments.

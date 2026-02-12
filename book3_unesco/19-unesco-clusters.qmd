@@ -1,0 +1,90 @@
+---
+title: "UNESCO Alignment Clusters"
+---
+
+## Alignment Archetypes: A Cluster Analysis {#sec-unesco-clusters}
+
+Not all policies engage with UNESCO the same way. Some adopt broadly; others pick specific priorities; many do the minimum. Cluster analysis reveals four distinct archetypes—and income has nothing to do with which cluster a policy falls into.
+
+### Clustering Methodology {#sec-unesco-cluster-method}
+
+We apply K-means clustering to the 25-dimensional binary coverage vector for each policy (1 = UNESCO item mentioned, 0 = not mentioned). To determine the optimal number of clusters, we evaluate silhouette scores for $k = 3, 4, 5, 6$:
+
+| $k$ | Silhouette Score |
+|---:|---:|
+| 3 | 0.192 |
+| **4** | **0.204** |
+| 5 | 0.199 |
+| 6 | 0.190 |
+
+: Silhouette scores for candidate cluster solutions {#tbl-unesco-silhouette}
+
+The 4-cluster solution maximises the silhouette score ($s = 0.204$) and yields substantively interpretable archetypes. While the silhouette values are modest (reflecting the inherent overlap in policy coverage patterns), the resulting clusters display clearly differentiated profiles.
+
+### The Four Archetypes {#sec-unesco-archetypes}
+
+![Radar charts showing the UNESCO item coverage profile of each cluster. The four archetypes display clearly differentiated patterns of engagement with the 25 UNESCO items.](../data/analysis/paper2_ethics/unesco/fig_unesco_cluster_radar.png){#fig-unesco-cluster-radar}
+
+| Cluster | N | Mean Alignment | Coverage | HI % | Dev % |
+|:---|---:|---:|---:|---:|---:|
+| Comprehensive aligners | 365 | 61.4 | 58.8% | 80% | 14% |
+| Moderate aligners | 337 | 60.1 | 55.1% | 79% | 14% |
+| Selective aligners | 204 | 52.9 | 52.1% | 75% | 20% |
+| Minimal engagement | 420 | 42.8 | 31.2% | 81% | 16% |
+
+: Cluster profiles: UNESCO alignment archetypes {#tbl-unesco-clusters}
+
+#### Archetype 1: Comprehensive Aligners (n = 365) {#sec-cluster-comprehensive}
+
+These policies achieve the highest mean alignment (61.4) and broadest coverage (58.8%). They show near-universal engagement with environment/sustainability (100%), diversity (97%), peaceful societies (97%), and fairness (97%); strong coverage of awareness and literacy (84%), ethical governance (84%), and multi-stakeholder governance (76%); but weaker attention to safety (35%), privacy (36%), and human oversight (17%)—a values-first orientation.
+
+This archetype represents the "UNESCO ideal": policies that broadly embrace the Recommendation's normative vision, typically national AI strategies taking a comprehensive, whole-of-government approach.
+
+#### Archetype 2: Moderate Aligners (n = 337) {#sec-cluster-moderate}
+
+With mean alignment of 60.1 (close to the comprehensive cluster), these policies achieve similar scores through a different profile: strong on technical principles (transparency 94%, responsibility 94%, privacy 91%, fairness 86%, human oversight 50%), strong on data governance (96%), but weak on environment/sustainability (1.2%) and gender (23%)—a notable blind spot.
+
+This archetype emphasizes the regulatory-technical dimension of AI ethics: data protection, algorithmic transparency, and accountability mechanisms. It reflects the European regulatory tradition.
+
+#### Archetype 3: Selective Aligners (n = 204) {#sec-cluster-selective}
+
+This cluster ($\mu = 52.9$) is defined by stark specialization: near-universal engagement with environment (100%), safety (100%), privacy (98%), data policy (99%), transparency (100%), responsibility (99%), and human oversight (93%); near-zero engagement with diversity (2.5%), fairness (2.5%), culture (0.5%), and gender (1.5%); and the highest health coverage of any cluster (88.2%).
+
+This is the technocratic safety archetype: policies focused on risk management, data protection, and sectoral safety while largely ignoring broader social and cultural dimensions. The higher proportion of developing countries (20%) may reflect the influence of sector-specific AI regulation in health and environment.
+
+#### Archetype 4: Minimal Engagement (n = 420) {#sec-cluster-minimal}
+
+The largest cluster ($\mu = 42.8$, coverage = 31.2%) shows limited UNESCO engagement. Coverage exceeds 50% on only three items (peaceful societies 80%, economy 75%, fairness 74%). Most items are addressed by fewer than half of these policies, with near-zero attention to environment (1.2%), sustainability (1.2%), gender (2.9%), and culture (6.0%).
+
+These are narrower instruments—sectoral guidelines, technical standards, early-stage consultations—that address specific governance concerns without engaging the UNESCO framework's full breadth.
+
+### Geographic Distribution {#sec-unesco-cluster-geography}
+
+![World map coloured by the most common UNESCO alignment cluster for each jurisdiction. The map reveals geographic clustering of alignment archetypes.](../data/analysis/paper2_ethics/unesco/fig_unesco_cluster_map.png){#fig-unesco-cluster-map}
+
+The geographic distribution shows several patterns. European jurisdictions are distributed across comprehensive and moderate clusters, reflecting the continent's dual emphasis on rights-based governance and technical regulation. North American policies lean toward moderate and selective archetypes, consistent with a market- and safety-oriented approach. African and Asian policies appear across all clusters—regional governance traditions are less deterministic than often assumed.
+
+### Income Composition of Clusters {#sec-unesco-cluster-income}
+
+![Income composition of each UNESCO alignment cluster. The proportion of high-income vs. developing countries is remarkably similar across clusters.](../data/analysis/paper2_ethics/unesco/fig_unesco_cluster_income.png){#fig-unesco-cluster-income}
+
+Income composition is nearly identical across all four clusters. High-income countries constitute 75–81% of each; developing countries 14–20%. The chi-squared test for independence between cluster membership and income group is not significant.
+
+This confirms the central finding from @sec-unesco-income: UNESCO alignment reflects policy design choices, not national wealth. A developing country is no more likely to fall into the "minimal engagement" cluster than a high-income country. What matters is whether a document takes a comprehensive values-based approach, a narrow regulatory focus, or a selective sectoral lens—not where it originates.
+
+### Interpreting the Archetypes {#sec-unesco-cluster-interp}
+
+The four-cluster solution maps onto recognisable governance traditions in AI policy:
+
+| Archetype | Governance Tradition | UNESCO Engagement |
+|:---|:---|:---|
+| Comprehensive | Values-based, whole-of-government | Broad and deep |
+| Moderate | Regulatory-technical (EU-influenced) | Strong on principles, weak on environment |
+| Selective | Technocratic-safety | Deep but narrow |
+| Minimal | Sectoral or early-stage | Limited across all dimensions |
+
+: Cluster interpretation framework {#tbl-unesco-cluster-interp}
+
+These archetypes are not normatively ranked. A "selective aligner" policy may be highly effective within its domain even if it does not address all 25 UNESCO items. The cluster analysis is descriptive: it shows *how* the global policy landscape engages with the UNESCO framework, not *how well* individual policies achieve their governance objectives.
+
+Nonetheless, the existence of a large "minimal engagement" cluster (n = 420, 32% of all policies) suggests that a substantial share of the global AI policy corpus either predates the UNESCO Recommendation or does not engage with the kind of comprehensive ethical framework it envisions. Helping these policies broaden their normative scope is perhaps the most actionable implication of this analysis.

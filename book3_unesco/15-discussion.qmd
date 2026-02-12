@@ -1,0 +1,41 @@
+---
+title: "Discussion"
+---
+
+## Implications for UNESCO Alignment {#sec-discussion}
+
+What do these findings mean for global AI governance? We see four main implications—though none of them will surprise observers of international norm diffusion.
+
+### Selective Adoption Dominates
+
+Mean alignment of 1.68 out of 4.0 tells us that most policies sit somewhere between "mentioned" and "described"—far short of genuine operationalization. But the average obscures what's really happening: countries pick and choose. They emphasize human rights (1.92), transparency (1.85), and accountability (1.78) while largely ignoring environmental sustainability (1.28), gender (1.45), and culture (1.41).
+
+The same selectivity appears in action areas. Governance mechanisms and regulation get attention; development cooperation, environment, and gender do not.
+
+We interpret this as legitimation rather than alignment. Countries invoke UNESCO to validate what they were already doing, not to reshape their governance priorities. This is neither surprising nor necessarily cynical—domestic political constraints are real—but it does limit UNESCO's transformative potential.
+
+Closing these gaps would require making the neglected components more politically salient: connecting environmental sustainability to economic competitiveness, embedding gender considerations through systematic mainstreaming, and supporting cultural adaptation rather than treating it as optional.
+
+### Post-2021 Adoption Increase
+
+Policies adopted after November 2021 do show stronger alignment—mean scores rose from 1.52 to 1.84, a 21% gain. But let's not overstate this. Even post-2021 policies remain below 2.0, meaning UNESCO gets mentioned but not operationalized. The Recommendation changed what policies *talk about* more than what they *do*.
+
+This is the soft law problem. Without binding obligations, countries can acknowledge UNESCO without implementing it. Recognition without teeth.
+
+Strengthening UNESCO's influence would require adding accountability mechanisms: annual reporting from member states, regional peer review forums, technical assistance for operationalization, and visible recognition for countries that go beyond rhetoric. Whether UNESCO has the institutional capacity or political appetite for such measures remains uncertain.
+
+### Regional Variation
+
+African countries show the highest UNESCO alignment (mean 1.78), followed by Europe (1.72) and the Americas (1.69). Asia (1.61) and the Middle East (1.54) lag.
+
+This pattern reflects UNESCO's influence in regions with limited indigenous AI governance traditions. African countries building AI frameworks from scratch more readily adopt UNESCO as a template, while Asian countries with established traditions (China, Japan, Singapore, South Korea) selectively incorporate UNESCO elements.
+
+For policy, UNESCO diffusion operates through legitimacy in capacity-constrained settings and through selective adaptation in governance-sophisticated settings.
+
+### Implementation Gaps
+
+Only 28% of policies fall into our "comprehensive alignment" cluster; 72% engage selectively. And even the comprehensive group averages just 2.34—"described" rather than "operationalized." Policies invoke UNESCO values without creating the machinery to enforce them: no compliance mechanisms, no designated agencies, no budgets, no metrics.
+
+This echoes a broader pattern in ethics governance: countries converge on *what* to value while diverging on *how* to act on those values. The gap between principle and practice is where international norms go to die.
+
+Closing it would require translating UNESCO's eleven action areas into concrete requirements, assigning institutional responsibility, allocating resources, and tracking progress. None of this is technically difficult. The barriers are political, not technical.

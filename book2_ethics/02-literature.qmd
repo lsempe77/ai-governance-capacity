@@ -1,0 +1,57 @@
+---
+title: "Literature Review"
+---
+
+## Theoretical Foundations {#sec-literature}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** We situate ethics governance measurement within three literatures: AI ethics principles mapping, normative governance frameworks, and the gap between principles and practice.
+:::
+
+### The AI Ethics Mapping Wave {#sec-lit-ethics}
+
+@jobin2019 analyzed 84 AI guidelines, finding convergence around transparency, fairness, non-maleficence, responsibility, and privacy. @floridi2018 proposed AI4People, adding beneficence and autonomy. @fjeld2020 extended mapping to 36 frameworks.
+
+These studies established *what principles appear* but not *how deeply policies operationalize them*. As @hagendorff2020 observed, the gap between principles and practice remains a pressing challenge for the field.
+
+#### From Principles to Governance
+
+@mittelstadt2019 distinguished *principle-based* from *practice-based* AI ethics. Principles articulate values (fairness, transparency); practice requires translating values into actionable requirements, compliance mechanisms, and enforcement procedures. Most policies remain principle-based.
+
+@rességuier2020 proposed measuring ethics "embeddedness"—the degree to which principles become operationalized through concrete requirements. The framework developed here measures this embeddedness across five dimensions.
+
+### Normative Frameworks
+
+#### Rights-Based Approaches
+
+@hildebrandt2019 grounds AI ethics in fundamental rights, arguing that algorithmic systems threaten privacy, equality, and due process. The E2 Rights Protection dimension captures whether policies establish specific safeguards for these rights.
+
+@yeung2018 shows rights-based governance requires translating abstract rights into technical specifications—a challenging task most policies avoid, which helps account for the low E2 scores documented in @sec-ethics-landscape.
+
+#### Participatory Governance
+
+@rahwan2018 argues that AI governance requires democratic participation since algorithmic systems encode societal values. @stilgoe2020 demonstrates that meaningful participation demands structured processes rather than token consultation.
+
+The E3 Participatory Governance dimension measures whether policies establish multi-stakeholder processes, public consultation mechanisms, and transparency requirements that enable democratic oversight.
+
+#### Operationalization Challenges
+
+@selbst2019 documents "fairness gerrymandering"—policies proclaiming commitment to fairness without specifying operational definitions or compliance methods. @whittaker2018 shows this pattern extends to transparency, accountability, and ethics principles broadly.
+
+The E4 Operationalization dimension distinguishes policies that merely mention principles from those specifying concrete requirements, compliance procedures, and enforcement mechanisms.
+
+### The Governance Gap
+
+Multiple studies document gaps between commitment and implementation: @mittelstadt2019, @hagendorff2020, and @jobin2019 all find principles fail to translate into tangible governance. We score not what policies say but what they establish.
+
+### Ethics and Development
+
+@lee2018 argues developing countries face ethical "catch-up" challenges. @gwagwa2020 shows African countries increasingly develop indigenous frameworks rather than importing Western principles. @muller2021 documents how UNESCO's AI Ethics Recommendation (2021) creates opportunity for convergence — which our temporal analysis examines.
+
+### Measurement Challenges
+
+Existing assessments use binary presence/absence [@fjeld2020] or qualitative evaluation [@mittelstadt2019]. Neither scales to comprehensive global measurement. Our LLM-based scoring enables assessment across 2,100+ policies.
+
+### Contribution
+
+This book provides: (1) an operationalized five-dimension framework, (2) validated methodology (ICC = 0.827), (3) first comprehensive global ethics measurement, and (4) convergence analysis testing whether gaps narrow. The following chapters show ethics varies more within income groups than between them.

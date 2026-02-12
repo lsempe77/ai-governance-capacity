@@ -1,0 +1,129 @@
+---
+title: "Capacity Landscape"
+---
+
+## The Global Landscape of AI Governance Capacity {#sec-cap-landscape}
+
+### Overall Score Distribution {#sec-cap-distribution}
+
+Start with the aggregate picture: what does AI governance capacity look like when all 2,216 policies are considered together?
+
+![Distribution of capacity dimension scores across 2,216 policies. All five dimensions exhibit strong right skew with floor effects at zero.](../data/analysis/paper1_capacity/fig_distributions.png){#fig-cap-distributions}
+
+The capacity composite averages **0.83/4.00** (SD = 0.77), well below the scale midpoint. But this mean hides a lot. As @fig-cap-distributions shows, all five dimensions are right-skewed, with most policies clustered at or near zero and a smaller tail extending upward. Dimension-level means range from 0.48 (C4 Accountability) to 1.07 (C5 Coherence):
+
+| Dimension | Mean | SD | Median |
+|:---|---:|---:|---:|
+| C1 Clarity & Specificity | 0.94 | 0.97 | 1.00 |
+| C2 Resources & Budget | 0.68 | 0.89 | 0.00 |
+| C3 Authority & Enforcement | 1.04 | 1.08 | 1.00 |
+| C4 Accountability & M&E | 0.48 | 0.72 | 0.00 |
+| C5 Coherence & Coordination | 1.07 | 0.97 | 1.00 |
+| **Capacity composite** | **0.83** | **0.77** | **0.60** |
+
+: Capacity dimension descriptive statistics {#tbl-cap-descriptives}
+
+One dimension stands out: **Accountability (C4) is the weakest globally**, averaging just 0.48, less than half of Coherence (C5) at 1.07. Governments are more than twice as likely to specify coordination mechanisms as to establish monitoring and evaluation frameworks. They articulate what they intend to do (Clarity) and how agencies should work together (Coherence) before committing to transparent oversight.
+
+The standard deviations (0.72–1.08) are large, and **27.6% of policies score exactly zero** on the composite. More than a quarter of documents in the Observatory function as announcements rather than operational governance instruments. This floor effect, visible in the median of 0.00 for Resources and Accountability, motivates the Tobit approach in @sec-cap-determinants.
+
+### Income-Group Comparisons {#sec-cap-income}
+
+The standard narrative posits a clear North–South divide: wealthy countries have sophisticated frameworks, developing countries struggle to keep up. The data complicate this story.
+
+![Violin plots comparing capacity score distributions between high-income and developing countries. The overlap between distributions is substantial.](../data/analysis/paper1_capacity/fig_income_violins.png){#fig-cap-income-violins}
+
+@fig-cap-income-violins shows both the gap and its limits. High-income countries average 0.87 (SD 0.77), developing countries 0.65 (SD 0.72). The difference is statistically significant:
+
+| Metric | Value |
+|:---|:---|
+| HI mean (N = 1,700) | 0.87 |
+| Developing mean (N = 397) | 0.65 |
+| Welch's $t$ | 5.47 |
+| $p$-value | < .001 |
+| Cohen's $d$ | **0.30** |
+| Mann-Whitney $U$ | 395,388 |
+
+: Income-group capacity comparison {#tbl-cap-income}
+
+Statistically significant, yes (t = 5.47, p < .001). But the Cohen's d of **0.30** is small by conventional standards, and the distributions overlap heavily. Many developing-country policies outscore the high-income median; many high-income policies sit near zero.
+
+But here is the twist: this gap **vanishes entirely** for well-documented policies (d = 0.04, n.s.; see @sec-robustness). Does the observed gap reflect genuine capacity differences, or systematic differences in how countries document their policies? That question runs through every subsequent chapter.
+
+#### Dimension-Level Gaps
+
+The aggregate gap masks dimension-level heterogeneity. If the divide reflected generalized institutional weakness, we would expect uniform gaps across all five dimensions. Instead, the pattern is differentiated:
+
+![Boxplots of capacity scores by income group across all five dimensions.](../data/analysis/paper1_capacity/fig_income_boxplot.png){#fig-cap-income-boxplot}
+
+@fig-cap-income-boxplot visualizes how the income gap varies across dimensions, with the gap most pronounced for Resources and Coherence, and smallest for Accountability. The dimension-level statistics reveal this pattern precisely:
+
+| Dimension | HI Mean | Dev Mean | Diff | $d$ | $p$ |
+|:---|---:|---:|---:|---:|:---|
+| C1 Clarity | 0.98 | 0.74 | 0.24 | 0.30 | < .001 |
+| C2 Resources | 0.70 | 0.43 | 0.27 | **0.32** | < .001 |
+| C3 Authority | 1.09 | 0.86 | 0.23 | 0.23 | < .001 |
+| C4 Accountability | 0.48 | 0.37 | 0.10 | **0.15** | .005 |
+| C5 Coherence | 1.13 | 0.86 | 0.27 | 0.29 | < .001 |
+
+: Dimension-level income gaps {#tbl-cap-dim-gaps}
+
+The gap is largest in **Resources (C2)** (d = 0.32) and smallest in **Accountability (C4)** (d = 0.15), confirming hypothesis H3. The logic tracks: specifying budgets and staffing requires fiscal resources that correlate with wealth. Designing monitoring frameworks, by contrast, is primarily a policy design choice, and developing countries could establish reporting requirements and oversight bodies with minimal fiscal commitment.
+
+There is an irony here: both income groups underperform on accountability (0.48 for HI, 0.37 for developing). The reluctance to create transparent oversight mechanisms apparently transcends wealth. Accountability frameworks create political risks by enabling external assessment of implementation failures, a concern that affects all governments.
+
+### Regional Patterns {#sec-cap-regional}
+
+Income groups are blunt instruments. "Developing" lumps together Latin American countries with sophisticated regulatory traditions, South Asian nations with large tech sectors but limited governance infrastructure, and Sub-Saharan African countries with nascent AI policy ecosystems. Regional analysis provides finer grain.
+
+![Heatmap of mean capacity scores by region and dimension. North America and Europe & Central Asia lead; Sub-Saharan Africa and South Asia trail.](../data/analysis/paper1_capacity/fig_region_heatmap.png){#fig-cap-region-heatmap}
+
+@fig-cap-region-heatmap shows substantial regional variation that does not map neatly onto income. **North America** leads across all dimensions, driven by the US and Canada. **Europe & Central Asia** has the broadest dimensional coverage, especially on Coherence (C5), reflecting the EU's multilevel coordination infrastructure.
+
+More interesting are the developing regions that punch above their weight. **Latin America** scores above its income-group average on multiple dimensions, with particular strength in Authority (C3). Brazil, Colombia, and Argentina have adopted binding AI legislation with real enforcement teeth. **Sub-Saharan Africa**, while scoring lowest overall, shows surprising strength in Authority: Kenya, Rwanda, and South Africa have enacted AI-specific legislation with compliance mechanisms that exceed what many wealthy countries have managed.
+
+Governance capacity reflects institutional and political factors well beyond simple wealth accumulation.
+
+### Policy-Type Variation {#sec-cap-policy-type}
+
+Not all policy documents carry the same implementation obligations. National strategies articulate visions; binding regulations establish legal requirements; ethics guidelines provide normative frameworks. These functional differences mean capacity scores should vary by type. This reflects the different purposes documents serve rather than genuine capacity differences across jurisdictions.
+
+![Capacity scores by policy type. Binding regulations score highest; guidelines and principles score lowest.](../data/analysis/paper1_capacity/fig_policy_type.png){#fig-cap-policy-type}
+
+As @fig-cap-policy-type confirms, **binding regulation** scores highest. Laws must specify enforcement mechanisms, responsible agencies, and monitoring procedures to be judicially enforceable. **National strategies** sit in the middle, strong on Clarity and Coherence but weaker on Resources and Authority (which strategies typically leave to implementing legislation). **Guidelines and principles** score lowest, reflecting their aspirational character. Ethics guidelines list desirable AI properties without specifying who implements them, how compliance is monitored, or what resources are allocated.
+
+The pattern validates the measurement approach: scores reflect document content appropriate to policy type. It also means that jurisdictions relying on voluntary guidelines will systematically score lower than those with binding legislation, even if the voluntary approach works in practice. Subsequent analyses control for policy type accordingly.
+
+### Country Rankings {#sec-cap-rankings}
+
+Which countries have the strongest AI governance capacity? Rankings compress the multidimensional framework into a single scale, losing nuance but gaining interpretive clarity. They reflect both the number of policies and their average quality.
+
+![Temporal trends in capacity scores across the 2017–2025 period.](../data/analysis/paper1_capacity/fig_temporal_trend.png){#fig-cap-temporal}
+
+@fig-cap-temporal shows aggregate capacity has been roughly flat since 2019 despite rapid policy proliferation: more policies, but not better ones.
+
+The top-scoring jurisdictions combine large portfolios with consistently high individual scores:
+
+| Rank | Jurisdiction | Mean Score | Income | N Policies |
+|:---|:---|---:|:---|---:|
+| 1 | European Union | 1.42 | HI | 60 |
+| 2 | Canada | 1.38 | HI | 15 |
+| 3 | United Kingdom | 1.32 | HI | 72 |
+| 4 | United States | 1.28 | HI | 84 |
+| 5 | Colombia | 1.21 | UMI | 8 |
+
+: Top 5 jurisdictions by capacity score {#tbl-cap-top5}
+
+The top four are unsurprising: the **EU** (1.42) leads on the strength of the AI Act and its complementary policies; **Canada** (1.38) and the **UK** (1.32) show that smaller portfolios can achieve high quality; the **US** (1.28) ranks fourth because its massive 84-document portfolio includes substantial variation across federal agencies and states.
+
+The fifth slot is more interesting. **Colombia** (1.21), an upper-middle-income country, outperforms dozens of wealthy nations with just eight focused, well-designed policies. This is a preview of a pattern explored in @sec-cap-dynamics: several developing countries, including Brazil (consistently top 10) and Kenya (above many European countries), achieve strong capacity through strategic design rather than resource abundance.
+
+### Correlation Structure {#sec-cap-correlations}
+
+Are the five capacity dimensions actually distinct, or do they just measure the same thing with different labels?
+
+![Correlation matrix across the five capacity dimensions. All dimensions are positively correlated, with the strongest link between C3 (Authority) and C5 (Coherence).](../data/analysis/paper1_capacity/fig_correlations.png){#fig-cap-correlations}
+
+The pairwise correlations in @fig-cap-correlations range from r = 0.45 to r = 0.75, positively related but well short of 1.0. Policies that score high on one dimension tend to score high on others, pointing to a common governance quality factor. But a policy can still score high on Clarity (well-defined objectives) while scoring low on Resources (no budget), or achieve strong Coherence (coordination) despite weak Accountability (no monitoring). The dimensions maintain enough discriminant validity to justify separate measurement.
+
+The strongest links (Authority with Coherence at r = 0.75, Clarity with Authority at r = 0.70) make structural sense: policies with legal mandates more readily establish coordination mechanisms. The formal PCA in @sec-pca-nexus confirms that ~66% of variance loads onto a general governance factor, with enough residual independence to warrant the multidimensional approach.

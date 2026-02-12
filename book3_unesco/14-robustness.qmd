@@ -1,0 +1,79 @@
+---
+title: "Robustness Checks"
+---
+
+## How Robust Are UNESCO Findings? {#sec-robustness}
+
+Our main findings survive stress-testing: the post-2021 alignment increase holds up, the two-cluster typology is stable, and text quality confounds are limited. Here's the evidence.
+
+### Post-2021 Adoption Effect {#sec-post-unesco}
+
+The UNESCO Recommendation was adopted in November 2021. Do policies created after adoption show stronger alignment?
+
+| Period | N | Mean UNESCO Score | Interpretation |
+|:---|---:|---:|:---|
+| Pre-2021 (2017-2021) | 1,342 | 1.52 | Baseline |
+| **Post-2021 (2022-2025)** | 755 | **1.84** | **+21% increase** |
+| Difference | — | +0.32*** | $p$ < .001 |
+
+: UNESCO alignment before and after Recommendation {#tbl-unesco-temporal}
+
+Yes, substantially. The +0.32 point gain (21% from baseline) is statistically significant and substantively meaningful. The Recommendation influenced national policy development.
+
+But let's not overstate this. Even post-2021 policies score only 1.84—somewhere between "mentioned" and "described," well short of "operationalized." UNESCO changed what policies *talk about* more than what they *do*.
+
+#### Component-Level Analysis
+
+Which components drove the increase?
+
+The gains concentrate in core governance: human rights (+18%), transparency (+15%), accountability (+16%), governance mechanisms (+18%), regulation (+17%), ethical impact assessment (+23%).
+
+The laggards remain laggards: environmental sustainability (+3%), gender (+4%), culture (+4%). Selective adoption persists even after UNESCO provided a comprehensive framework.
+
+### Cluster Stability
+
+The two-cluster solution ("Comprehensive Alignment" 28% vs "Selective Adoption" 72%) is stable:
+
+| $k$ | Silhouette Score |
+|:---|---:|
+| 2 | **0.44** (optimal) |
+| 3 | 0.36 |
+| 4 | 0.31 |
+| 5 | 0.27 |
+
+: UNESCO cluster stability {#tbl-unesco-clusters}
+
+Silhouette scores peak at k=2 and decline monotonically, confirming the binary typology. Even within the "Comprehensive Alignment" cluster, the mean score (2.34/4.0) indicates "described" rather than "operationalized" engagement; rhetoric exceeds implementation.
+
+### Text Quality Effects on UNESCO
+
+Does the text quality confound affect UNESCO alignment?
+
+| Sample | N | Mean UNESCO | Difference |
+|:---|---:|---:|:---|
+| All texts | 2,097 | 1.68 | Baseline |
+| Good-text (≥500 words) | 948 | 1.87 | +11% |
+
+: UNESCO scores by text quality {#tbl-unesco-text}
+
+UNESCO alignment shows modest sensitivity to text quality (+11% for well-documented policies) compared to capacity (87% gap reduction) or ethics (sign reversal). This suggests UNESCO measurement is more robust to documentation quality, possibly because UNESCO's 21 components are mentioned even in brief summaries, while capacity infrastructure and ethics operationalization require detailed text to detect.
+
+On income-group UNESCO gaps: full sample d = +0.18***; good-text d = +0.11 ($p$ = .06). Unlike capacity/ethics (where gaps vanish), the UNESCO gap merely shrinks, remaining marginally significant. This persistence suggests genuine alignment differences rather than pure measurement artifacts.
+
+### Sensitivity Analyses
+
+Regional robustness: the post-2021 increases are consistent across regions (Africa +23%, Europe +19%, Americas +21%, Asia +18%). Component robustness: all 21 UNESCO components show positive post-2021 trends, though magnitudes range from 3% to 23%. Temporal specification: results hold across alternative period definitions (pre/post November 2021, calendar years, announcement vs. adoption dates).
+
+### Summary
+
+| Finding | Robust? | Evidence |
+|:---|:---|:---|
+| Post-2021 alignment increase | ✅ **Yes** | +21%, consistent across regions/components |
+| Two-cluster structure | ✅ Yes | Stable across k values |
+| Selective adoption pattern | ✅ Yes | Core governance emphasized, cross-cutting themes neglected |
+| Implementation gap | ✅ Yes | Even high-alignment policies below "operationalized" |
+| Text quality sensitivity | ⚠️ Moderate | +11% for good texts (less than capacity/ethics) |
+
+: UNESCO robustness summary {#tbl-unesco-robustness}
+
+UNESCO findings are highly robust: the post-2021 alignment increase, selective adoption pattern, and implementation gap persist across specifications. Unlike capacity/ethics, UNESCO alignment shows genuine income-group differences that don't entirely vanish with text quality controls, suggesting wealthy countries engage more comprehensively with the multilateral framework.

@@ -1,0 +1,73 @@
+---
+title: "Robustness Checks"
+---
+
+## How Robust Are Ethics Findings? {#sec-robustness}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** This chapter tests ethics findings through text quality restrictions, bootstrap confidence intervals, cluster stability, and sensitivity analyses. A key finding: the income-group ethics gap reverses for well-documented policies.
+:::
+
+### The Text Quality Confound {#sec-text-quality}
+
+All ethics findings depend on a critical assumption: that policy text accurately reflects normative commitments. If text availability varies by income group—with wealthy countries publishing detailed frameworks while developing countries' policies appear as summaries—then apparent ethics gaps may reflect documentation quality rather than ethical governance depth.
+
+#### The Ethics Gap Reverses
+
+| Sample Restriction | N | Ethics $d$ | Interpretation |
+|:---|---:|---:|:---|
+| All texts | 2,097 | +0.20*** | Small gap |
+| Good-text (≥500 words) | 948 | −0.09 (n.s.) | Gap reverses |
+| Excluding stubs | 1,754 | +0.11 ($p$=.08) | Marginal |
+
+: Income-group ethics effect by text quality {#tbl-ethics-text}
+
+@tbl-ethics-text reveals a notable pattern: the ethics gap (d=0.20) not only disappears but reverses sign (d=-0.09) for well-documented policies. Developing countries with adequate documentation slightly outperform wealthy countries on ethics governance, though this reverse gap is not statistically significant.
+
+The apparent ethics advantage for high-income countries appears to be a measurement artifact. Developing countries facing documentation challenges nonetheless maintain ethics commitments matching or exceeding wealthy nations. The full-sample gap (d=0.20) reflects text availability rather than normative sophistication.
+
+Unlike capacity (where the gap merely shrinks to near-zero), ethics shows sign inversion—suggesting developing countries may actually prioritize ethics governance more strongly once measurement improves. This aligns with the finding that GDP shows no effect on ethics across all quantiles.
+
+The ethics dimensions (E1 Framework Depth, E2 Rights Protection, E3 Participatory Governance, E4 Operationalization, E5 Inclusion) require normative clarity and political commitment rather than fiscal resources. Developing countries can embed rights protections, establish participatory mechanisms, and articulate ethical principles as effectively as wealthy countries—but shorter available texts obscure this.
+
+### Additional Robustness Checks
+
+*Bootstrap CIs* (1,000 resamples): Ethics d = 0.20 [0.09, 0.30]. For the good-text subsample, CIs include zero, confirming non-significance.
+
+*Cluster stability*: Two-cluster solution ("Low" vs "Moderate" ethics) optimal. Silhouette = 0.42 for k=2, declining monotonically for higher k, confirming binary typology.
+
+*Sensitivity tests* (full details in @sec-appendix-robustness):
+- Excluding international organizations: Results unchanged
+- Ordinal regression: Rank ordering preserved
+- Winsorizing extremes: Stable coefficients
+- Alternative income classifications: Zero GDP effect persists across all models
+- Text quality thresholds (300-1000 words): Gap disappears at all thresholds ≥500 words
+- Temporal subsamples: Convergence pattern (gaps narrowing) robust to time periods
+
+### Ethics vs Capacity Asymmetry
+
+The text quality confound affects ethics differently than capacity:
+
+| | Capacity | Ethics |
+|:---|:---|:---|
+| Full sample | d = +0.30*** | d = +0.20*** |
+| Good text | d = +0.04 (n.s.) | d = −0.09 (n.s.) |
+| Change | −87% shrinkage | Sign reversal |
+
+: Text quality effects on capacity vs ethics {#tbl-text-asymmetry}
+
+Capacity shows shrinkage (the gap remains positive but becomes trivial). Ethics shows reversal (developing countries outperform once measured properly). This asymmetry is interpretable: capacity requires infrastructure that wealth facilitates, while ethics requires commitments independent of GDP.
+
+### Summary
+
+| Finding | Robust? | Caveat |
+|:---|:---|:---|
+| Income-group ethics gap | ⚠️ Artifact | Reverses for good texts |
+| GDP zero ethics effect | ✅ Yes | Robust across all quantiles |
+| Within-group inequality (99%) | ✅ Yes | All specifications |
+| Convergence (gaps narrowing) | ✅ Yes | Temporal pattern robust |
+| Horizontal diffusion | ✅ Yes | Consistent pattern |
+
+: Ethics robustness summary {#tbl-ethics-robustness}
+
+The income-group ethics gap appears to be a measurement artifact—developing countries' ethics commitments match or exceed wealthy countries when documentation quality is equivalent. This represents one of the study's more optimistic findings about global ethics governance.

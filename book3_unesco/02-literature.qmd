@@ -1,0 +1,53 @@
+---
+title: "Literature Review"
+---
+
+## Theoretical Foundations {#sec-literature}
+
+When 193 countries adopt a recommendation, what happens next? The international relations literature suggests several possibilities—coercion, competition, learning, legitimacy-seeking—each implying different patterns of adoption. Understanding these mechanisms helps explain why some UNESCO components spread faster than others.
+
+### The UNESCO Recommendation {#sec-lit-unesco}
+
+The **Recommendation on the Ethics of Artificial Intelligence**, adopted in November 2021, established ten core values (spanning human rights to environmental sustainability) and eleven action areas (from ethical impact assessment to regulation). @taddeo2021 characterizes it as "soft law"—non-binding but influential through moral authority and coordination effects. @floridi2021 argues it provides the most comprehensive multilateral AI ethics framework to date, integrating principles from diverse philosophical traditions.
+
+### International Norm Diffusion
+
+#### Mechanisms of Regulatory Convergence
+
+@simmons2006 identifies four mechanisms driving policy convergence: coercion (powerful actors impose rules), competition (regulatory arbitrage pressures jurisdictions toward common standards), learning (countries emulate successful policies from peers), and emulation (mimetic isomorphism driven by legitimacy rather than function).
+
+Our analysis examines which mechanisms drive UNESCO alignment. If coercion or competition dominates, we should see wealth-driven adoption patterns. If learning or emulation dominates, we should see horizontal diffusion within regions or income groups.
+
+#### The Brussels Effect
+
+@bradford2020 theorizes the "Brussels Effect", whereby EU regulations become global standards through market power. In data protection, GDPR created de facto global norms as firms adopted EU standards globally rather than maintaining separate compliance systems.
+
+But AI ethics differs from data protection: no single jurisdiction dominates global AI markets sufficiently to impose standards unilaterally. UNESCO's multilateral framework thus operates through different diffusion mechanisms than GDPR, emphasizing learning and legitimacy over market coercion.
+
+### Global Standards and Local Adaptation
+
+@acharya2004 distinguishes **localization** (modifying global norms to fit local contexts) from **transplantation** (wholesale adoption). @wiener2020 shows that international norms rarely transplant unchanged; they undergo reinterpretation reflecting local values, institutions, and priorities.
+
+Our measurement framework captures this by scoring **depth of engagement** rather than binary adoption: policies can mention UNESCO values (score 1), describe them contextually (score 2), operationalize them through requirements (score 3), or establish comprehensive governance (score 4). This allows distinguishing superficial from substantive adoption.
+
+### Value Priorities and Selectivity
+
+@jobin2019 documents convergence on core AI ethics principles but divergence on prioritization. @winfield2021 shows regional variation: European frameworks emphasize human rights and fundamental freedoms, Asian frameworks emphasize social harmony and collective welfare, Middle Eastern frameworks emphasize cultural values and religious principles.
+
+UNESCO's framework accommodates this diversity through breadth, including 10 values and 11 action areas, which allows countries to prioritize different components while claiming UNESCO alignment. Our analysis examines whether countries adopt the full framework or selectively emphasize values matching existing priorities.
+
+### Implementation Challenges
+
+@cihon2021 documents the obstacles to translating UNESCO principles into national governance: the values are vague and require national specification; 21 components create a substantial implementation burden; action areas like "ethical impact assessment" lack established templates; and multiple government agencies must coordinate on different areas.
+
+These challenges predict variable UNESCO alignment even among committed member states. Our measurement distinguishes rhetoric (mentioning UNESCO) from implementation (operationalizing UNESCO components).
+
+### Research Questions
+
+This literature motivates our inquiry: How aligned are national policies with UNESCO's 21-component framework? Which values and action areas receive priority, and which get neglected? Has alignment increased since 2021?
+
+### Contribution
+
+This book offers the first systematic scoring of UNESCO alignment across 2,100+ policies, distinguishing which components get adopted and which get ignored, testing whether post-2021 policies show stronger alignment, and examining whether UNESCO spreads through learning, competition, or legitimacy-seeking.
+
+The following chapters show selective rather than comprehensive adoption, with countries prioritizing values that match their existing governance frameworks.

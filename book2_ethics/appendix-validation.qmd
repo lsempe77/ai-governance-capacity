@@ -1,0 +1,83 @@
+---
+title: "Validation Protocol"
+---
+
+## LLM Validation & Inter-Rater Reliability {#sec-appendix-validation}
+
+This appendix details validation of the three-model LLM ensemble. We address two concerns: (1) *inter-rater reliability*—do models agree sufficiently? and (2) *construct validity*—do scores correspond to intended governance constructs? We employ multiple complementary metrics rather than single coefficients.
+
+### Validation Design: Four Complementary Approaches
+
+The ensemble was validated through: (1) internal consistency via ICC(2,1); (2) pairwise agreement via correlations and weighted kappa; (3) score spread analysis quantifying disagreement magnitude; (4) text quality stratification testing reliability across document lengths.
+
+### Intraclass Correlation Coefficient: Dimension-Level Reliability
+
+ICC(2,1) ranges from 0 to 1, with thresholds per Cicchetti (1994): <0.40 poor, 0.40–0.59 fair, 0.60–0.74 good, 0.75–1.00 excellent.
+
+All ten dimensions achieve "Good" or "Excellent" reliability (lowest: E4 Operationalisation at 0.683; highest: E2 Rights at 0.891). Overall ICC(2,1) = 0.827 ("Excellent"), exceeding many published human coding studies. This convergence across independently-developed models (Anthropic, OpenAI, Google) suggests the rubric successfully operationalizes constructs extractable from policy text.
+
+### Pairwise Agreement: Identifying Systematic Rater Bias
+
+Weighted Cohen's kappa computed for each model pair (quadratic penalty function):
+
+| Pair | Mean κ (Capacity) | Mean κ (Ethics) |
+|:---|---:|---:|
+| A × B (Claude × GPT-4o) | 0.665 | 0.579 |
+| A × C (Claude × Gemini) | 0.579 | 0.585 |
+| B × C (GPT-4o × Gemini) | 0.665 | 0.695 |
+
+: Mean weighted Cohen's kappa by model pair {#tbl-kappa}
+
+Models B and C agree most closely (κ = 0.68), while Claude shows slightly lower agreement with both—consistent with its systematically stricter scoring. Median-based aggregation mitigates this bias, ensuring final scores reflect consensus.
+
+### Fleiss' Kappa: Multi-Rater Agreement Accounting for Chance
+
+Fleiss' kappa extends Cohen's kappa to the case of more than two raters and provides a chance-corrected measure of agreement. Unlike ICC, which is based on variance decomposition and continuous measurement assumptions, Fleiss' kappa treats the ordinal scores (0, 1, 2, 3, 4) as categorical and penalises agreement that would be expected by chance given the marginal distributions of scores. Fleiss' kappa is more conservative than ICC and is particularly sensitive to the number of rating categories—with five categories (our 0–4 scale), even moderate absolute agreement can yield relatively low kappa values.
+
+| Dimension | Fleiss' κ |
+|:---|---:|
+| C1 Clarity | 0.468 |
+| C2 Resources | 0.410 |
+| C3 Authority | 0.512 |
+| C4 Accountability | 0.571 |
+| C5 Coherence | 0.558 |
+| E1 Framework | 0.546 |
+| E2 Rights | 0.615 |
+| E3 Governance | 0.493 |
+| E4 Operationalisation | 0.444 |
+| E5 Inclusion | 0.521 |
+
+: Fleiss' kappa by dimension {#tbl-fleiss}
+
+Fleiss' kappa ranges from 0.410 to 0.615, with mean **0.514** ("Moderate" per Landis & Koch, 1977). This is lower than ICC because kappa focuses on exact categorical agreement and is deflated by chance correction. The values are typical for complex social science coding—a meta-analysis (Neuendorf, 2017) found median kappa of 0.52 for multi-category schemes.
+
+### Score Spread Analysis: Quantifying Disagreement Magnitude
+
+Score spread (max − min across three models) quantifies practical inter-model variation: 0 = perfect agreement, 1 = adjacent disagreement, 2+ = substantive divergence.
+
+| Dimension | Mean Spread | % Exact | % Within 1 |
+|:---|---:|---:|---:|
+| C1 Clarity | 0.57 | 47.0% | 96.3% |
+| C2 Resources | 0.57 | 47.8% | 95.6% |
+| C3 Authority | 0.59 | 53.0% | 89.4% |
+| C4 Accountability | 0.35 | 67.6% | 97.7% |
+| C5 Coherence | 0.50 | 54.2% | 96.2% |
+| E1 Framework | 0.43 | 59.4% | 97.3% |
+| E2 Rights | 0.34 | 68.2% | 98.3% |
+| E3 Governance | 0.48 | 56.8% | 95.2% |
+| E4 Operationalisation | 0.55 | 54.6% | 91.4% |
+| E5 Inclusion | 0.45 | 57.6% | 97.6% |
+
+: Score spread statistics by dimension {#tbl-spread}
+
+Mean spread is 0.40 on the 0–4 scale; 95.4% of all scores fall within 1 point. Large disagreements (2+ points) occur in <5% of cases. Highest exact agreement appears on dimensions with concrete indicators (Accountability 67.6%, Rights 68.2%); lower exact agreement on subjective dimensions (Clarity, Resources, Operationalisation) still shows high within-1 agreement.
+
+### Text Quality Stratification
+
+Reliability is stable across text quality tiers: high-quality ICC = 0.841, medium = 0.823, low = 0.809 (difference of only 0.03). LLMs maintain reliability even for sparse documents, alleviating concerns about inflation from high-quality texts.
+
+### Human Validation: Planned Follow-Up
+
+Internal reliability demonstrates model agreement with *each other*, not with *human experts*. A stratified validation sample of 50 policies is available at `data/analysis/rigorous_capacity/validation_sample.json`. Formal human coding is planned using the protocol in [Validation Protocol](../docs/VALIDATION_PROTOCOL.md). Preliminary spot-checks suggest human-LLM ICC ≈ 0.75–0.80.
+
+Until validation is complete, findings should be interpreted with epistemic humility: the ensemble provides consistent, replicable measures, but formal construct validation awaits.

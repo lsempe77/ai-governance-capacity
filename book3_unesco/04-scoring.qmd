@@ -1,0 +1,161 @@
+---
+title: "LLM Ensemble Scoring & Validation"
+---
+
+## Measuring Governance Quality at Scale {#sec-scoring}
+
+Coding 2,216 policy documents by hand would take years. We used three large language models instead—Claude Sonnet 4, GPT-4o, and Gemini Flash 2.0—and found they agree with each other about as well as human experts typically do (ICC = 0.827).
+
+### Scoring Framework {#sec-framework}
+
+We developed a 10-dimension assessment framework capturing both structural implementation features (capacity) and substantive ethical commitments (ethics). Each policy was scored on a 0–4 scale: 0 = absent, 1–2 = minimal to moderate, 3 = substantial readiness, 4 = comprehensive operationalization.
+
+#### Capacity Dimensions {#sec-cap-dims}
+
+Grounded in implementation science [@mazmanian1983; @lipsky1980; @grindle1996; @fukuyama2013]:
+
+| Code | Dimension | What It Measures |
+|:---|:---|:---|
+| C1 | Clarity & Specificity | Clear objectives, measurable targets, defined scope |
+| C2 | Resources & Budget | Dedicated funding, staffing, infrastructure |
+| C3 | Authority & Enforcement | Legal mandate, penalties, compliance mechanisms |
+| C4 | Accountability & M&E | Reporting, evaluation, oversight bodies |
+| C5 | Coherence & Coordination | Cross-agency alignment, international coordination |
+
+: Capacity scoring dimensions {#tbl-cap-dims}
+
+These dimensions operationalize classic implementation conditions: clear objectives (Mazmanian and Sabatier), fiscal capacity (Grindle), legal authority, accountability constraints (Lipsky), and coordination (Hjern).
+
+#### Ethics Dimensions {#sec-eth-dims}
+
+Grounded in AI ethics literature [@jobin2019; @floridi2018; @oecd2019; @unesco2021; @euaiact2024]:
+
+| Code | Dimension | What It Measures |
+|:---|:---|:---|
+| E1 | Ethical Framework Depth | Grounding in principles, coherent ethical vision |
+| E2 | Rights Protection | Privacy, non-discrimination, human oversight, transparency |
+| E3 | Governance Mechanisms | Ethics boards, impact assessments, auditing |
+| E4 | Operationalisation | Concrete requirements, standards, certification |
+| E5 | Inclusion & Participation | Stakeholder processes, marginalised group representation |
+
+: Ethics scoring dimensions {#tbl-eth-dims}
+
+These dimensions synthesize the convergence documented by @jobin2019 around transparency, fairness, accountability, and privacy—distinguishing aspirational statements from concrete requirements with measurable standards.
+
+Each dimension uses explicit rubrics (see @sec-appendix-rubric) with anchored examples. Composite scores are unweighted means: *Capacity* = mean(C1–C5), *Ethics* = mean(E1–E5), *Overall* = mean(all 10).
+
+### Three-Model Ensemble {#sec-ensemble}
+
+Human expert coding would take years at this scale. Keyword-based automation lacks interpretive capacity. We used frontier LLMs instead, leveraging their ability to read and interpret complex documents while maintaining consistency through ensemble design.
+
+Each policy was independently scored by three models via the OpenRouter API:
+
+| Model | Identifier | Role | Entries Scored |
+|:---|:---|:---|---:|
+| Model A | Claude Sonnet 4 | Strictest scorer | 2,210 (99.7%) |
+| Model B | GPT-4o | Moderate scorer | 2,216 (100%) |
+| Model C | Gemini Flash 2.0 | Moderate scorer | 2,215 (100%) |
+
+: LLM ensemble composition {#tbl-ensemble}
+
+Combining models from three organizations (Anthropic, OpenAI, Google) reduces the risk that shared training biases systematically skew results.
+
+Each model received identical prompts with the full policy text and scoring rubric, returning structured JSON with dimension-level scores and supporting evidence. The final score for each dimension is the **median** of the three model scores. The total effort: **6,641 API calls** with 99.7% completion rate.
+
+### Inter-Rater Reliability {#sec-irr}
+
+Do the three models agree? If agreement is low, ensemble scores become arbitrary. If high, scores capture genuine policy quality rather than measurement noise.
+
+We assess agreement using ICC(2,1) as our primary metric, supplemented by pairwise correlations and Fleiss' kappa.
+
+#### Overall Reliability
+
+| Metric | Value | Interpretation |
+|:---|:---|:---|
+| ICC(2,1) overall | **0.827** | Excellent |
+| ICC(2,1) capacity | 0.824 | Excellent |
+| ICC(2,1) ethics | 0.791 | Excellent |
+| Mean pairwise Pearson | 0.86 | Strong |
+| Mean pairwise Spearman | 0.88 | Strong |
+| Mean Fleiss' κ | 0.51 | Moderate |
+| Mean overall spread | 0.40/4 | Low disagreement |
+| Scores within 1 point | 95.4% | High consistency |
+
+: Inter-rater reliability summary {#tbl-irr-summary}
+
+@tbl-irr-summary shows ICC(2,1) of 0.827—"Excellent" under Cicchetti's guidelines, meaning ~83% of variance reflects true between-policy differences rather than rater disagreement. This matches or exceeds typical human coder agreement in policy analysis. The low mean spread (0.40 points) and 95.4% within-1-point agreement confirm that models rarely diverge substantially. Both capacity and ethics subscales achieve excellent reliability independently (0.824 and 0.791).
+
+#### Dimension-Level ICCs
+
+| Dimension | ICC(2,1) | Quality |
+|:---|:---|:---|
+| C1 Clarity | 0.720 | Good |
+| C2 Resources | 0.735 | Good |
+| C3 Authority | 0.751 | Excellent |
+| C4 Accountability | 0.753 | Excellent |
+| C5 Coherence | 0.804 | Excellent |
+| E1 Framework | 0.751 | Excellent |
+| E2 Rights | 0.785 | Excellent |
+| E3 Governance | 0.691 | Good |
+| E4 Operationalisation | 0.605 | Good |
+| E5 Inclusion | 0.746 | Good |
+
+: Dimension-level ICC values {#tbl-irr-dims}
+
+All dimensions achieve at least "Good" reliability (>0.60), with six reaching "Excellent" (>0.75). Highest agreement appears on structural features like Coherence (0.804) and Rights (0.785), where textual evidence is concrete. Lower reliability on Operationalisation (0.605) reflects greater interpretive challenge—distinguishing operational requirements from aspirational language requires subtle judgment.
+
+#### Model-Specific Scoring Patterns {#sec-model-bias}
+
+The three models exhibit systematic scoring tendencies:
+
+| Model | Capacity Mean | Ethics Mean | Overall Mean |
+|:---|---:|---:|---:|
+| A (Claude) | 0.68 | 0.46 | 0.57 |
+| B (GPT-4o) | 0.92 | 0.71 | 0.81 |
+| C (Gemini) | 0.93 | 0.68 | 0.81 |
+
+: Model-level mean scores {#tbl-model-means}
+
+Claude (Model A) scores ~0.24 points lower than GPT-4o and Gemini across all dimensions—a consistent calibration difference, not random noise. Claude applies stricter standards for what constitutes operationalized governance. But the high correlation across models (r > 0.85) shows they agree on *rank ordering* even while differing on absolute levels. The median aggregation handles this naturally, positioning final scores between strict and lenient interpretations.
+
+#### Agreement by Text Quality {#sec-agreement-quality}
+
+| Text Quality | N | Mean Spread | Within 1 pt |
+|:---|---:|---:|---:|
+| Good (≥500 words) | 942 | 0.57 | 90.3% |
+| Thin (100–499) | 805 | 0.34 | 98.9% |
+| Stub (<100) | 462 | 0.13 | 99.8% |
+
+: Agreement by text quality {#tbl-agreement-quality}
+
+Models achieve near-perfect agreement on stubs (99.8% within 1 point) because minimal texts converge trivially on low scores. Higher disagreement on good-quality texts (90.3% within 1 point) reflects substantive engagement: longer documents present genuinely ambiguous cases where reasonable analysts might differ. Does detailed budget projection but unclear enforcement merit a 2 or 3? These boundary cases produce the observed spread.
+
+### Composite Scores {#sec-composite-scores}
+
+The resulting ensemble produces composite scores with the following distributions:
+
+| Component | Mean | SD | Median | IQR |
+|:---|---:|---:|---:|:---|
+| Capacity (C1–C5) | 0.83 | 0.77 | 0.60 | 0.00–1.40 |
+| Ethics (E1–E5) | 0.61 | 0.62 | 0.40 | 0.00–1.00 |
+| Overall (all 10) | 0.73 | 0.66 | 0.50 | 0.10–1.15 |
+
+: Composite score distributions {#tbl-composites}
+
+Three features matter for subsequent analysis.
+
+The **strong floor effect** (27.6% scoring zero on capacity, 36.3% on ethics) reflects that many documents are brief announcements or aspirational statements without operational content. This censoring violates OLS assumptions, motivating Tobit models.
+
+The **right skew** (medians below means, IQR concentrated low) shows most policies cluster at low implementation readiness, with a smaller set achieving higher scores. This motivates quantile regression.
+
+The **capacity-ethics gap** (0.83 vs. 0.61) indicates governments more frequently specify institutional structures than operationalize ethical principles. This receives detailed examination in @sec-pca-nexus.
+
+### Validation Discussion {#sec-validation-discussion}
+
+Using LLMs as automated coders has both promise and peril. Recent validation studies show frontier models achieve reliability comparable to trained human coders, processing text orders of magnitude faster [@gilardi2023; @tornberg2024]. But caveats apply: performance varies across tasks, and models may carry biases from training data [@pangakis2023].
+
+Three design features address these concerns. The **multi-model ensemble** reduces risk from any single model's idiosyncrasies. **Structured output with evidence** enables auditing and grounds assessments in observable text. **Median aggregation** is robust to outliers and calibration differences.
+
+Limitations remain. The three models may share biases from overlapping training corpora (all likely saw the OECD AI Principles and EU AI Act). The rubric involves subjective judgments about "adequate" clarity or "substantial" resources. And we lack a gold standard to evaluate which model's calibration is "correct."
+
+These uncertainties motivate the robustness checks in @sec-robustness. Consistency across specifications provides confidence that findings reflect genuine patterns rather than measurement artifacts.

@@ -1,0 +1,27 @@
+---
+title: "Introduction"
+---
+
+## Global Alignment with UNESCO AI Ethics {#sec-intro}
+
+In November 2021, 193 countries agreed on something remarkable: a shared vision for ethical AI. But did anyone actually follow through?
+
+### The UNESCO Milestone
+
+The **Recommendation on the Ethics of Artificial Intelligence**, adopted in November 2021, stands as the first global normative instrument on AI ethics. It is ambitious in scope: ten core values (from human rights to environmental sustainability) and eleven action areas (spanning ethical impact assessment to gender policy). No previous multilateral agreement had attempted anything this comprehensive for AI governance. The question we address here is whether countries have translated this ambition into their own policies—or merely paid lip service.
+
+### Research Questions
+
+We ask: How closely do national AI policies actually mirror UNESCO's framework? Which values get attention, and which get ignored? And has the Recommendation made any difference since 2021?
+
+### Measurement Framework
+
+We score each policy on 21 UNESCO components (10 values + 11 action areas) using the same LLM ensemble methodology achieving ICC = 0.827. Scores reflect depth of engagement: 0 = absent, 1 = mentioned, 2 = described, 3 = operationalized, 4 = comprehensive.
+
+### What We Found
+
+The short answer: partial adoption. Mean alignment sits at 1.68 out of 4.0—somewhere between "mentioned" and "described" but well short of "operationalized." Countries cherry-pick. Human rights and transparency score highest (1.92 and 1.85); environmental sustainability trails at 1.28. Only 28% of policies show comprehensive alignment; the remaining 72% engage selectively. Post-2021 policies do show stronger alignment, though the improvement is modest rather than transformative.
+
+### Roadmap
+
+Chapter 17 maps the alignment landscape. Chapter 18 investigates what drives alignment (spoiler: it's not national wealth). Chapter 19 identifies four distinct policy archetypes through cluster analysis. Chapter 20 examines whether the 2021 adoption date actually changed anything. Chapter 14 stress-tests our findings, and Chapters 15-16 draw out the implications.

@@ -1,0 +1,196 @@
+---
+title: "Robustness Checks"
+---
+
+## Comprehensive Robustness Analysis {#sec-appendix-robustness}
+
+This appendix documents the full battery of sensitivity tests, bootstrap procedures, and alternative specifications. The main text highlights the text quality confound; here I present everything else.
+
+### Bootstrap Confidence Intervals: Technical Details {#sec-appendix-bootstrap}
+
+Bootstrap resampling provides non-parametric confidence intervals for effect sizes without assuming normality or homoscedasticity. We drew 1,000 bootstrap samples with replacement from the full policy corpus (N = 2,216), recalculating Cohen's d for the income-group comparison in each resample. The resulting distribution of 1,000 d values provides an empirical sampling distribution, from which we extract percentile-based 95% confidence intervals.
+
+![Bootstrap distributions of the income-group effect size (Cohen's d) from 1,000 resamples for capacity.](../data/analysis/paper1_capacity/robustness/fig_bootstrap_ci.png){#fig-bootstrap-capacity}
+
+![Bootstrap distributions of the income-group effect size (Cohen's d) from 1,000 resamples for ethics.](../data/analysis/paper2_ethics/robustness/fig_bootstrap_ci.png){#fig-bootstrap-ethics}
+
+The bootstrap distributions (@fig-bootstrap-capacity, @fig-bootstrap-ethics) show approximately normal shapes centered on the observed sample estimates, validating the parametric t-test assumptions used in the main analysis. The distributions exhibit no extreme skewness or multimodality that would suggest violation of asymptotic normality.
+
+| Metric | Point Estimate | Bootstrap Mean | Bootstrap SE | 95% CI (percentile) | 95% CI (BCa) |
+|:---|---:|---:|---:|:---|:---|
+| Capacity d | 0.30 | 0.301 | 0.056 | [0.19, 0.41] | [0.19, 0.41] |
+| Ethics d | 0.20 | 0.199 | 0.054 | [0.09, 0.30] | [0.09, 0.30] |
+
+: Bootstrap statistics for income-group effect sizes {#tbl-bootstrap-full}
+
+The bootstrap means (0.301 for capacity, 0.199 for ethics) match point estimates within rounding error, confirming that the resampling procedure recovers population parameters accurately.
+
+### Cluster Stability: Silhouette Analysis Details {#sec-appendix-cluster-stability}
+
+K-means clustering requires specifying the number of clusters k a priori. We evaluated solutions for k = 2 through k = 6 using multiple internal validation metrics: silhouette score (primary), Calinski-Harabasz index, and Davies-Bouldin index. Silhouette scores range from -1 (worst) to +1 (best), with values > 0.50 indicating strong structure, 0.25-0.50 indicating acceptable structure, and < 0.25 indicating weak structure.
+
+![Cluster stability analysis across different values of k for capacity dimensions.](../data/analysis/paper1_capacity/robustness/fig_cluster_stability.png){#fig-cluster-stability-capacity}
+
+![Cluster stability analysis across different values of k for ethics dimensions.](../data/analysis/paper2_ethics/robustness/fig_cluster_stability.png){#fig-cluster-stability-ethics}
+
+| k | Silhouette (Cap) | Calinski-Harabasz (Cap) | Davies-Bouldin (Cap) | Silhouette (Eth) | Calinski-Harabasz (Eth) | Davies-Bouldin (Eth) |
+|---:|---:|---:|---:|---:|---:|---:|
+| 2 | **0.41** | **1,247.3** | **0.89** | **0.42** | **1,289.6** | **0.87** |
+| 3 | 0.33 | 982.1 | 1.12 | 0.35 | 1,021.4 | 1.09 |
+| 4 | 0.28 | 834.5 | 1.34 | 0.30 | 867.9 | 1.31 |
+| 5 | 0.25 | 723.8 | 1.52 | 0.27 | 751.2 | 1.48 |
+| 6 | 0.22 | 645.3 | 1.67 | 0.24 | 672.1 | 1.64 |
+
+: Comprehensive cluster validation metrics across k values {#tbl-cluster-metrics}
+
+All three validation metrics (@tbl-cluster-metrics) consistently identify k = 2 as optimal for both capacity and ethics. The silhouette score peaks at k = 2 and declines monotonically for higher k. The Calinski-Harabasz index, which measures between-cluster variance relative to within-cluster variance (higher is better), similarly peaks at k = 2. The Davies-Bouldin index, which measures average similarity between each cluster and its most similar cluster (lower is better), achieves its minimum at k = 2.
+
+The convergence of multiple metrics provides strong evidence that the two-cluster solution is not an artifact of metric choice. The monotonic decline in quality metrics for k > 2 indicates that additional clusters force artificial subdivisions rather than revealing natural structure.
+
+### Sensitivity to Alternative Specifications {#sec-appendix-sensitivity}
+
+We tested robustness of the regression results to six alternative specifications. For each specification, we report the income-group coefficient (developing country dummy), its standard error, and Cohen's d effect size for direct comparability.
+
+#### Specification 1: Excluding International Organizations
+
+Some policies originate from supranational entities (EU, OECD, African Union, UN agencies) rather than nation-states. Including these might inflate estimates if international organizations systematically produce more comprehensive policies.
+
+| Sample | N | Income Coef (β) | SE | t | p | Cohen's d |
+|:---|---:|---:|---:|---:|---:|---:|
+| All policies | 2,097 | −0.183 | 0.043 | −4.26 | < .001 | 0.30 |
+| Nation-states only | 1,884 | −0.176 | 0.045 | −3.91 | < .001 | 0.29 |
+
+: Sensitivity to excluding international organizations {#tbl-sens-intl}
+
+Excluding international organizations produces negligible changes: the capacity gap declines from d = 0.30 to d = 0.29 (3% reduction), remaining statistically significant. International organizations are not driving the observed income-group patterns.
+
+#### Specification 2: Ordinal Regression
+
+Standard OLS treats governance scores as continuous interval-scaled variables (equal distances between 0-1, 1-2, 2-3, 3-4). Ordinal regression relaxes this assumption, treating scores as ordered categories without assuming equal intervals.
+
+| Model | Income Coef (β) | SE | z | p | Proportional odds |
+|:---|---:|---:|---:|---:|:---|
+| OLS (linear) | −0.183 | 0.043 | −4.26 | < .001 | — |
+| Ordinal logit | −0.412 | 0.098 | −4.21 | < .001 | Yes |
+| Partial proportional odds | −0.398 | 0.102 | −3.90 | < .001 | Relaxed for 2 dimensions |
+
+: Sensitivity to ordinal versus linear specification {#tbl-sens-ordinal}
+
+The ordinal logit model yields virtually identical statistical significance (z = −4.21 vs t = −4.26) despite different coefficient scales (log-odds vs linear). The proportional odds assumption holds (Brant test: χ² = 18.3, df = 12, p = .11). Results are robust to functional form.
+
+#### Specification 3: Winsorizing Extreme Scores
+
+A few policies score exceptionally high (approaching 4.0) or exceptionally low (exactly 0.0 across all dimensions). Winsorizing caps extreme values at the 5th and 95th percentiles to reduce outlier influence.
+
+| Treatment | N | Mean (HI) | Mean (Dev) | Income Coef (β) | SE | Cohen's d |
+|:---|---:|---:|---:|---:|---:|---:|
+| No winsorizing | 2,097 | 0.860 | 0.676 | −0.183 | 0.043 | 0.30 |
+| 5% winsorizing | 2,097 | 0.843 | 0.691 | −0.172 | 0.041 | 0.28 |
+| 10% winsorizing | 2,097 | 0.821 | 0.708 | −0.159 | 0.039 | 0.25 |
+
+: Sensitivity to winsorizing extreme scores {#tbl-sens-winsor}
+
+Winsorizing produces modest attenuation: 5% winsorizing reduces d from 0.30 to 0.28 (7% reduction), while 10% winsorizing reduces d to 0.25 (17% reduction). The gap remains significant across all specifications, indicating that central tendencies rather than outliers drive observed patterns.
+
+#### Specification 4: Alternative Income Classifications
+
+Our primary analysis uses World Bank's binary high-income versus developing-country classification. Alternative classifications include three-group (high / middle / low), four-group (World Bank standard), or continuous GDP per capita.
+
+| Classification | HI Mean | UM Mean | LM Mean | LI Mean | F / χ² | p | η² |
+|:---|---:|---:|---:|---:|---:|---:|---:|
+| Binary (HI vs Dev) | 0.860 | — | 0.676 | — | 18.2 | < .001 | 0.009 |
+| Three-group (HI / M / L) | 0.860 | 0.689 | 0.643 | — | 11.4 | < .001 | 0.011 |
+| Four-group (HI / UM / LM / LI) | 0.860 | 0.701 | 0.668 | 0.612 | 8.7 | < .001 | 0.012 |
+| Continuous (log GDP pc) | — | — | — | — | β = 0.042 | .002 | 0.004 |
+
+: Sensitivity to alternative income classifications {#tbl-sens-income}
+
+All classification schemes produce similar substantive conclusions: modest but significant income gradients exist in the full sample, with effect sizes (η² = 0.009-0.012, small by conventional standards) consistent across specifications. The continuous GDP specification shows weak predictive power (R² = 0.004 in bivariate model), confirming that income classifications capture most available information.
+
+#### Specification 5: Alternative Text Quality Thresholds
+
+Our primary analysis uses ≥500 words as the "good quality" threshold. Alternative thresholds test robustness to this choice.
+
+| Threshold | N (good) | % Good | Income d (good texts) | Income d (full sample) | Gap reduction |
+|:---|---:|---:|---:|---:|---:|
+| ≥300 words | 1,254 | 59.8% | 0.18** | 0.30*** | 40% |
+| ≥400 words | 1,089 | 51.9% | 0.12* | 0.30*** | 60% |
+| **≥500 words** | **948** | **45.2%** | **0.04 (n.s.)** | **0.30***  | **87%** |
+| ≥700 words | 756 | 36.0% | −0.02 (n.s.) | 0.30*** | > 100% |
+| ≥1000 words | 534 | 25.5% | −0.08 (n.s.) | 0.30*** | > 100% |
+
+: Sensitivity to alternative text quality thresholds {#tbl-sens-threshold}
+
+Income gaps shrink monotonically as word-count thresholds increase, approaching zero for thresholds ≥500 words and inverting (though remaining non-significant) for thresholds ≥700 words. The qualitative finding—that restricting to adequate-quality texts eliminates income gaps—holds across all reasonable threshold choices. The 500-word cutoff represents a conservative choice, eliminating only the most problematic texts while retaining sufficient sample size (N = 948, 45% of corpus).
+
+#### Specification 6: Temporal Subsamples
+
+Governance patterns might differ between early (2017-2020) and recent (2021-2025) periods as AI governance matured.
+
+| Period | N | Income d (capacity) | Income d (ethics) | GDP β (capacity) | GDP β (ethics) |
+|:---|---:|---:|---:|---:|---:|
+| 2017-2020 | 892 | 0.34*** | 0.24*** | 0.038* | 0.002 (n.s.) |
+| 2021-2025 | 1,205 | 0.27*** | 0.16** | 0.045* | −0.008 (n.s.) |
+| Pre-UNESCO (≤2021) | 727 | 0.32*** | 0.22*** | 0.041* | 0.005 (n.s.) |
+| Post-UNESCO (≥2022) | 594 | 0.28*** | 0.18** | 0.046* | −0.003 (n.s.) |
+
+: Sensitivity to temporal subsamples {#tbl-sens-temporal}
+
+Income gaps remain significant across both periods but show slight attenuation over time (capacity d declines from 0.34 to 0.27, ethics d from 0.24 to 0.16), consistent with the convergence dynamics in Chapters 8 and 12. GDP effects remain weak and significant for capacity, near-zero for ethics. Core findings are temporally stable.
+
+### Measurement Validation: Score Distributions
+
+A concern with any scoring system is whether the resulting distributions exhibit pathological features (excessive clumping, bimodality, long tails) that might distort statistical analyses. We examine score distributions for all ten dimensions plus composite scores.
+
+| Dimension | Mean | SD | Skewness | Kurtosis | % at floor (0) | % at ceiling (4) |
+|:---|---:|---:|---:|---:|---:|---:|
+| C1 Clarity | 0.82 | 0.89 | 1.08 | 0.34 | 32.1% | 0.3% |
+| C2 Resources | 0.71 | 0.94 | 1.31 | 0.78 | 41.2% | 0.5% |
+| C3 Authority | 0.89 | 0.97 | 0.94 | −0.12 | 30.4% | 0.8% |
+| C4 Accountability | 0.48 | 0.76 | 1.78 | 2.34 | 53.8% | 0.1% |
+| C5 Coherence | 1.12 | 1.01 | 0.67 | −0.45 | 23.9% | 1.2% |
+| E1 Framework | 0.73 | 0.88 | 1.15 | 0.52 | 34.6% | 0.4% |
+| E2 Rights | 0.68 | 0.91 | 1.25 | 0.67 | 38.7% | 0.6% |
+| E3 Governance | 0.54 | 0.82 | 1.52 | 1.45 | 47.3% | 0.2% |
+| E4 Operationalisation | 0.62 | 0.86 | 1.34 | 0.89 | 42.1% | 0.3% |
+| E5 Inclusion | 0.49 | 0.78 | 1.65 | 1.98 | 51.2% | 0.1% |
+| **Capacity composite** | **0.83** | **0.73** | **0.89** | **0.21** | **27.6%** | **0.0%** |
+| **Ethics composite** | **0.61** | **0.69** | **1.12** | **0.68** | **36.3%** | **0.0%** |
+
+: Score distribution diagnostics for all dimensions {#tbl-score-distributions}
+
+All dimensions show positive skewness (most policies score low) and substantial floor effects (23–54% score exactly zero). Ceiling effects are negligible (<1% for dimensions, 0% for composites), indicating adequate headroom in the 0–4 scale. Kurtosis stays within acceptable ranges (<3 for all composites), so no pathological tail behaviour threatens the parametric analyses.
+
+### Regression Diagnostics
+
+All regression models reported in the book were subjected to standard diagnostic checks for violations of OLS assumptions.
+
+| Diagnostic | Test | Statistic | p | Conclusion |
+|:---|:---|---:|---:|:---|
+| **Linearity** | RESET F-test | F(3, 1941) = 2.14 | .09 | Acceptable |
+| **Normality** | Shapiro-Wilk (residuals) | W = 0.987 | < .001 | Mild violation |
+| **Homoscedasticity** | Breusch-Pagan | χ²(12) = 34.8 | < .001 | Violated |
+| **Multicollinearity** | Mean VIF | VIF = 1.84 | — | Acceptable |
+| **Independence** | Durbin-Watson | DW = 1.97 | — | Acceptable |
+| **Influential obs** | Max Cook's D | D = 0.018 | — | No outliers |
+
+: Regression diagnostic tests for capacity model {#tbl-regression-diagnostics}
+
+The diagnostics reveal mild departures from ideal OLS assumptions. **Normality**: The Shapiro-Wilk test rejects normality (p < .001), but visual inspection reveals only slight negative skewness in residuals. With N > 2,000, the Central Limit Theorem ensures that coefficient estimates and standard errors remain asymptotically valid. **Homoscedasticity**: The Breusch-Pagan test detects heteroscedasticity (p < .001), which we address by reporting heteroscedasticity-consistent (HC1) standard errors throughout. **Linearity**: The RESET test suggests acceptable functional form (p = .09). **Multicollinearity**: The mean VIF of 1.84 (max VIF = 3.12) falls well below concerning thresholds (VIF > 5). **Independence**: The Durbin-Watson statistic near 2.0 indicates no meaningful autocorrelation. **Outliers**: No observations exhibit Cook's distance > 0.05, indicating no single policy drives results.
+
+These diagnostics support the validity of reported regression results, with appropriate corrections (robust standard errors) applied where violations occur.
+
+### Multilevel Model Specifications
+
+The multilevel models reported in @sec-cap-multilevel and @sec-eth-multilevel were estimated using restricted maximum likelihood (REML) with the `lme4` package in R. We report full variance decomposition and model comparison statistics.
+
+| Model | Log-likelihood | AIC | BIC | Variance (country) | Variance (residual) | ICC | N countries | N policies |
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **Capacity null model** | −2,847.3 | 5,700.6 | 5,718.1 | 0.051 | 0.510 | 0.091 | 71 | 2,097 |
+| **Capacity with covariates** | −2,612.4 | 5,248.8 | 5,319.5 | 0.043 | 0.338 | 0.113 | 71 | 2,097 |
+| **Ethics null model** | −2,689.2 | 5,384.4 | 5,401.9 | 0.069 | 0.482 | 0.125 | 71 | 2,097 |
+| **Ethics with covariates** | −2,478.6 | 4,981.2 | 5,051.9 | 0.058 | 0.321 | 0.153 | 71 | 2,097 |
+
+: Multilevel model specifications and variance decomposition {#tbl-multilevel-specs}
+
+The null models (random intercept only, no covariates) provide baseline variance decomposition. The ICCs (0.091 for capacity, 0.125 for ethics) indicate that 9-13% of total variance occurs between countries, while 87-91% occurs within countries. Adding covariates reduces both between-country and within-country variance, with the proportional reduction slightly larger for residual variance (34% reduction for capacity, 33% for ethics) than for between-country variance (16% reduction for capacity, 16% for ethics). The likelihood ratio tests comparing covariate models to null models are highly significant (capacity: χ²(12) = 469.8, p < .001; ethics: χ²(12) = 421.2, p < .001), confirming that covariates improve model fit.

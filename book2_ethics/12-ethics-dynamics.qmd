@@ -1,0 +1,115 @@
+---
+title: "Ethics Dynamics"
+---
+
+## Convergence, Diffusion, and the Ethics Frontier {#sec-eth-dynamics}
+
+::: {.callout-note appearance="simple"}
+**Chapter summary.** In contrast to capacity, ethics scores are converging across income groups—though through an unexpected mechanism: high-income countries are declining rather than developing countries improving. The efficiency frontier for ethics features several African countries exceeding GDP-based predictions.
+:::
+
+### The Convergence Finding {#sec-eth-convergence}
+
+Capacity showed stable gaps from 2017-2025. Ethics diverges: gaps are narrowing.
+
+![Ethics convergence trends by income group. The gap is narrowing, driven by HI countries declining.](../data/analysis/paper2_ethics/robustness/fig_convergence.png){#fig-eth-convergence}
+
+![Dimension-level convergence for ethics.](../data/analysis/paper2_ethics/robustness/fig_dimension_convergence.png){#fig-eth-dim-convergence}
+
+@fig-eth-convergence shows high-income countries declining while developing countries remain flat. @fig-eth-dim-convergence shows the decline affects multiple dimensions.
+
+| Metric | Value |
+|:---|:---|
+| Income × Year interaction | $\beta = -0.031$, $p = .015$* |
+| HI temporal slope | −0.023/yr ($p = .001$) |
+| Developing temporal slope | +0.016/yr (n.s.) |
+| Gap trend | Narrowing (−0.038/yr, $p = .018$) |
+
+: Convergence test for ethics scores {#tbl-eth-convergence}
+
+Ethics gaps narrow at −0.031 points per year (p = .015). The mechanism is unexpected: high-income countries decline at −0.023/yr (p = .001), while developing countries show modest, non-significant improvement (+0.016/yr). The gap narrows because wealthy countries retreat rather than developing countries catching up.
+
+Why are high-income countries declining?
+
+1. *Regulation replacing aspiration:* Early policies (2017-2020) were deliberative frameworks—Canada's Declaration, France's Villani Report. Later policies (EU AI Act) focus on compliance, assuming ethics as background. This represents maturation rather than regression.
+
+2. *Ethics fatigue:* Initial enthusiasm waned as AI governance became routine. Newer policies address technical issues where ethics may seem tangential.
+
+3. *Composition effects:* Later policies are narrower (AI procurement in healthcare) rather than comprehensive frameworks.
+
+4. *Industry pressure:* Some countries de-emphasize ethics amid arguments that requirements stifle competitiveness.
+
+Developing countries show modest improvement (+0.016/yr), though below significance — indicating heterogeneity consistent with 99.5% within-group variation. If trends continue, the gap closes entirely by 2030. Ethics diffuses more readily than capacity, requiring political will rather than fiscal resources.
+
+### Temporal Trends {#sec-eth-temporal-trends}
+
+Not all dimensions decline equally; specific dimensions drive the trend.
+
+![Ethics dimension scores over time.](../data/analysis/paper2_ethics/fig_temporal_dimensions.png){#fig-eth-temporal-dims}
+
+![Ethics trends by income group.](../data/analysis/paper2_ethics/fig_temporal_income.png){#fig-eth-temporal-income}
+
+@fig-eth-temporal-dims shows E1 Framework Depth and E3 Governance Mechanisms decline sharpest, while E2 Rights Protection and E5 Inclusion remain stable. This supports the "regulation replacing aspiration" interpretation: newer policies assume rights as established principles while focusing on implementation details rather than comprehensive frameworks.
+
+@fig-eth-temporal-income confirms convergence visually: high-income trajectories trend down, developing countries stay flat, and the gap narrows.
+
+### Policy Diffusion {#sec-eth-diffusion}
+
+Capacity showed 98% horizontal diffusion (peer learning) rather than vertical (rich-to-poor). Ethics exhibits a similar pattern.
+
+![Cumulative adoption curves for ethics governance.](../data/analysis/paper2_ethics/frontier/fig_diffusion_curves.png){#fig-eth-diffusion}
+
+![First movers in AI ethics governance.](../data/analysis/paper2_ethics/frontier/fig_first_movers.png){#fig-eth-first-movers}
+
+![Regional diffusion heatmap for ethics policies.](../data/analysis/paper2_ethics/frontier/fig_diffusion_heatmap.png){#fig-eth-diffusion-heatmap}
+
+| Metric | Value |
+|:---|:---|
+| HI median first adoption | 2018 |
+| Developing median first adoption | 2020 |
+| Adoption lag (HI earlier by) | 1.2 years ($p = .021$) |
+| HI adoption by 2025 | 100% |
+| Developing adoption by 2025 | 72% |
+| Diffusion direction | 98% horizontal |
+
+: Ethics diffusion patterns {#tbl-eth-diffusion}
+
+The adoption gap exceeds the quality gap: high-income countries adopted 1.2 years earlier and achieved 100% adoption by 2025 vs. 72% for developing countries. Quality differences are smaller for ethics (d=0.20) than capacity (d=0.30).
+
+Twenty-eight percent of developing countries have no ethics content—complete governance voids without principles, rights protections, or accountability mechanisms. This coverage gap matters more than quality gaps.
+
+Despite this, diffusion is 98% horizontal—developing countries learn from regional peers rather than wealthy countries. International frameworks (UNESCO AI Ethics Recommendation) establish foundations, but countries adapt ethics to local contexts from similar jurisdictions.
+
+### Efficiency Frontier {#sec-eth-frontier}
+
+Capacity analysis showed GDP explains only 3.5% of variation. For ethics, it's even less.
+
+![Ethics efficiency frontier. GDP explains only 1.5% of country-level ethics variation.](../data/analysis/paper2_ethics/frontier/fig_efficiency_frontier.png){#fig-eth-frontier}
+
+![Residual ranking for ethics: distance from GDP-predicted score.](../data/analysis/paper2_ethics/frontier/fig_residual_ranking.png){#fig-eth-residual}
+
+![Over- and under-performer profiles for ethics.](../data/analysis/paper2_ethics/frontier/fig_overunder_profile.png){#fig-eth-overunder}
+
+| Metric | Value |
+|:---|:---|
+| OLS $R^2$ (score ~ GDP) | 0.015 |
+| Top overperformer | 🇮🇸 Iceland (+0.61) |
+| Top underperformer | 🇰🇿 Kazakhstan (−0.56) |
+| Frontier countries (FDH) | Uganda → Rwanda → Nigeria → Brazil → Iceland |
+| Most efficient (score/$10k GDP) | Rwanda (2.30), Nigeria (1.51) |
+
+: Ethics efficiency frontier results {#tbl-eth-frontier}
+
+GDP explains just 1.5% of ethics variation (R² = 0.015). Knowing GDP tells you almost nothing about ethics quality.
+
+The frontier features developing countries alongside wealthy ones: Uganda, Rwanda, Nigeria, and Brazil all achieve near-maximum ethics at their GDP levels. Rwanda's efficiency ratio of 2.30 ethics points per $10,000 GDP is four times the typical high-income ratio. These countries demonstrate that ethics emerges from political commitment rather than fiscal abundance.
+
+Kazakhstan underperforms most dramatically (−0.56 residual), with resource wealth failing to generate ethics governance. Several wealthy Asian countries similarly emphasize competitiveness over ethics.
+
+Diverse pathways work: Iceland's deliberative democracy, Nigeria's federal civil society engagement, Brazil's multi-stakeholder processes. No single institutional model monopolizes ethical AI governance.
+
+### Chapter Summary
+
+Three patterns distinguish ethics dynamics from capacity. First, convergence occurs via decline: high-income countries decline at −0.023/yr (p = .001) while developing countries improve modestly. The gap narrows because wealthy countries shift from aspirational frameworks to technical regulation. Second, adoption gaps exceed quality gaps: only 72% of developing countries have any ethics policy (vs. 100% HI). Quality differences are small (d = 0.20), but 28% of developing countries have complete ethics voids. Third, GDP explains almost nothing (R² = 0.015). Rwanda achieves 2.30 ethics points per $10,000 GDP. Political commitment matters; wealth does not.
+
+These findings suggest ethics governance is achievable at any income level. Development interventions should target coverage gaps and facilitate South-South learning from frontier countries like Rwanda, Kenya, and Brazil.

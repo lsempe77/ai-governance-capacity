@@ -1,0 +1,31 @@
+---
+title: "Conclusion"
+---
+
+## Toward Operationalized Ethics Governance {#sec-conclusion}
+
+*How deeply do AI policies embed ethical commitments?* The evidence suggests: not very deeply. The modal policy scores below 2/4 on operationalization, invoking principles without governance depth.
+
+Yet the distribution offers grounds for optimism. Ethics gaps are converging as developing countries match wealthy-country commitments. GDP shows no relationship with ethics quality at any quantile examined. Nearly all variation (99%) occurs within income groups, with Tunisia, Brazil, and Canada achieving high scores regardless of wealth. And when documentation quality is comparable, the income gap disappears entirely—even reversing sign.
+
+These findings carry several implications for policy and research.
+
+First, normative governance is not contingent on economic development. Countries at any income level can embed rights protections, establish participatory mechanisms, and operationalize ethical principles.
+
+Second, gaps are narrowing. Developing countries have increasingly avoided the principle-heavy, implementation-light approach that characterized early high-income frameworks.
+
+Third, operationalization remains the binding constraint. Convergence on principles means little without compliance mechanisms and enforcement capacity.
+
+Fourth, documentation quality confounds cross-national comparison. Developing countries' true commitments likely exceed what available texts suggest.
+
+Finally, political will—not economic resources—drives variation. Countries at similar GDP levels show vastly different ethics depth, suggesting governance quality reflects domestic political choices.
+
+### The Observatory Vision
+
+This research points toward a living observatory for ethics governance—one that continuously tracks operationalization depth, enables country-level scorecards, and supports benchmarking.
+
+Code, data, and methods are available at <https://github.com/lsempe77/ai-governance-capacity>.
+
+---
+
+*Ethics governance ultimately reflects political commitment to translate values into enforceable requirements—building infrastructure that makes principles meaningful.*

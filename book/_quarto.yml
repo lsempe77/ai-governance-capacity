@@ -51,6 +51,8 @@ book:
     - appendix-countries.qmd
     - appendix-tables.qmd
     - appendix-validation.qmd
+    - appendix-pca.qmd
+    - appendix-robustness.qmd
 
   page-navigation: true
   reader-mode: true
@@ -88,6 +90,13 @@ format:
       - left=25mm
       - right=25mm
       - bottom=30mm
+
+  docx:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    fig-width: 6.5
+    fig-height: 4.5
 
 execute:
   echo: false

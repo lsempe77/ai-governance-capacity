@@ -1,0 +1,31 @@
+---
+title: "Discussion"
+---
+
+## Implications for Capacity Building {#sec-discussion}
+
+What does this mean for capacity-building? Four patterns stand out.
+
+### The Universal Capacity Deficit
+
+Some 96.5% of AI policies worldwide score below 2.0/4.0 on implementation readiness. This capacity deficit is universal: it affects the US, EU, and China as much as developing countries.
+
+Weakness concentrates in Accountability (C4, mean 0.48/4.0) and Resources (C2, mean 1.12/4.0). Policies routinely lack monitoring procedures, evaluation frameworks, budget specifications, and staffing plans. For policymakers, the priority should be strengthening these dimensions through annual reviews, published KPIs, independent evaluation, and budget transparency rather than producing additional strategy documents.
+
+### The Limited Role of National Wealth
+
+GDP explains only 3.5% of capacity variation. Rwanda (2.30–3.10× GDP predictions), Kenya, Brazil, and Uganda have all achieved sophisticated governance capacity despite modest GDPs ($800–$9,000).
+
+Capacity emerges from political choices, not fiscal abundance. Countries can build governance infrastructure concurrently with economic development through technical assistance, policy transfer, civil society engagement, and regional cooperation. Development agencies should therefore fund capacity-building regardless of recipient income, target dimension-specific gaps in Resources and Accountability, and facilitate peer learning from frontier countries.
+
+### Documentation as Confound
+
+The income gap (d = 0.30) vanishes for well-documented policies (d = 0.04). The apparent divide likely reflects documentation quality rather than true capacity differences.
+
+For researchers using text-based governance analysis, this finding underscores the need to stratify by document quality and, where possible, standardize documentation requirements across jurisdictions.
+
+### Learning from Peers
+
+Capacity diffuses horizontally within income groups rather than cascading from wealthy countries. Brazil, India, and China prove central to developing-country policy networks.
+
+South-South exchanges, regional capacity hubs, and peer review mechanisms may prove more effective than traditional North-South technical assistance models.
