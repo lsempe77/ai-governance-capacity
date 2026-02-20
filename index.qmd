@@ -1,5 +1,5 @@
 ---
-title: "AI Governance Capacity"
+title: "AI Ethics & Governance"
 subtitle: "A cross-national analysis of 2,216 AI policies across 193 countries"
 ---
 
@@ -7,9 +7,9 @@ subtitle: "A cross-national analysis of 2,216 AI policies across 193 countries"
 
 This project analyses 2,216 AI policy documents from 193 countries, drawn from the [OECD.AI Policy Observatory](https://oecd.ai), to answer a straightforward question:
 
-> **Do countries have the capacity to implement their AI policies, and how does this vary between high-income and developing countries?**
+> **Do countries translate their ethical AI commitments into enforceable governance, and how does this vary between high-income and developing countries?**
 
-Three complementary lenses — implementation capacity, ethics governance depth, and UNESCO alignment — are used to trace how AI governance performs from the abstract (values) to the concrete (policy actions). The central finding is that ethical principles are widely endorsed but rarely operationalised: accountability mechanisms are the most systematically omitted governance feature worldwide.
+Three complementary lenses — ethics governance depth, UNESCO alignment, and implementation capacity — are used to trace how AI governance performs from the abstract (values and principles) to the concrete (policy actions and institutional arrangements). The central finding is that ethical principles are widely endorsed but rarely operationalised: accountability mechanisms are the most systematically omitted governance feature worldwide.
 
 All work is in progress. Comments and feedback are welcome.
 
