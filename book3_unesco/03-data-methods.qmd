@@ -1,12 +1,12 @@
 ---
-title: "Data & Methods"
+title: "Data and Methods"
 ---
 
 ## The OECD.AI Corpus {#sec-data-methods}
 
-We scraped 2,216 AI policies from the OECD.AI Policy Observatory, retrieved the original documents (94% success rate), and extracted 11.4 million words of analysis-ready text. Here's how.
+This study compiled 2,216 AI policies from the OECD.AI Policy Observatory, retrieved the original documents (94% success rate), and extracted 11.4 million words of analysis-ready text.
 
-### Data Source {#sec-data-source}
+### Corpus Construction {#sec-data-source}
 
 The **OECD.AI Policy Observatory** [@oecdai2024] is the most comprehensive international tracker of AI policy initiatives. It catalogues government actions—national strategies, legislation, executive orders, guidelines, programmes—with structured metadata on jurisdiction, year, policy type, and target sectors. We scraped the complete Observatory as of January 2026, obtaining **2,216 policy entries** spanning **70+ jurisdictions** from **2017–2025**.
 
@@ -22,17 +22,13 @@ The **OECD.AI Policy Observatory** [@oecdai2024] is the most comprehensive inter
 
 The 70+ jurisdictions include not only major economies but also developing countries across Africa, Asia, and Latin America—the geographic diversity needed to examine capacity gaps across income levels.
 
-### Document Retrieval {#sec-retrieval}
-
-The Observatory points to documents but doesn't host them. Original URLs go stale, documents get renamed, websites restructure. We built a five-strategy retrieval pipeline: direct download from the source URL (~60% success), scraping embedded links from OECD.AI pages, querying the Internet Archive Wayback Machine for expired URLs, targeted DuckDuckGo searches, and Claude API web search for difficult cases.
+**Document Retrieval.** The Observatory points to documents but does not host them. Original URLs expire, documents are renamed, and websites restructure. The study employed a five-strategy retrieval pipeline: direct download from the source URL (~60% success), scraping embedded links from OECD.AI pages, querying the Internet Archive Wayback Machine for expired URLs, targeted DuckDuckGo searches, and Claude API web search for difficult cases.
 
 This achieved ~94% coverage: 2,085 documents retrieved. The remainder—mostly press releases and brief announcements—remained available as OECD snippets.
 
-### Text Extraction {#sec-extraction}
+**Text Extraction.** PDFs, HTML pages, scanned documents—each format required specialized handling. The study used PyMuPDF for text-based PDFs, `trafilatura` for web pages (stripping navigation and boilerplate), and OECD snippets where no downloadable source existed.
 
-PDFs, HTML pages, scanned documents—each format required specialized handling. We used PyMuPDF for text-based PDFs, `trafilatura` for web pages (stripping navigation and boilerplate), and fell back to OECD snippets where no downloadable source existed.
-
-We classified documents by word count:
+Documents were classified by word count:
 
 | Quality Tier | Word Count | N | % | Description |
 |:---|:---|---:|---:|:---|
@@ -45,17 +41,9 @@ We classified documents by word count:
 
 Nearly 80% of the corpus contains sufficient text for reliable analysis. The full corpus totals 11.4 million words, with a median document length of 1,247 words.
 
-### Enriched Corpus {#sec-enriched-corpus}
+### Enriched Corpus and Sample Composition {#sec-enriched-corpus}
 
-The retrieval and extraction pipeline produced a unified corpus file (`corpus_enriched.json`) that merges OECD metadata with our extracted content and quality assessments. For each of the 2,216 entries, this file preserves the original OECD metadata (including title, jurisdiction, year, URL, policy type, and target sectors) while adding the extracted full text (or OECD snippet where full text was unavailable), text quality classification, word count, and extraction method employed. This enriched structure enables analyses that link policy content to contextual metadata, supporting questions about how governance quality varies by jurisdiction, year, or policy type.
-
-### Country Metadata {#sec-country-metadata}
-
-To enable cross-national comparison, each jurisdiction was mapped to standardized contextual metadata using World Bank classifications. Income groups follow the World Bank's four-tier system: High Income (HI), Upper Middle Income (UMI), Lower Middle Income (LMI), and Low Income (LI). For analyses focused on the North–South divide, we constructed a binary classification contrasting High Income countries against Developing countries (aggregating UMI, LMI, and LI). Regional classifications employ the World Bank's geographic taxonomy: East Asia & Pacific (EAP), Europe & Central Asia (ECA), Latin America & Caribbean (LAC), Middle East & North Africa (MENA), North America (NAM), South Asia (SA), and Sub-Saharan Africa (SSA). We also incorporated GDP per capita (current US dollars, 2023) as a continuous measure of economic development, enabling analyses that examine governance quality relative to national wealth.
-
-International organisations — including the OECD itself, the European Union, the United Nations, and multilateral development banks — were flagged separately and excluded from country-level analyses where appropriate, as these entities operate under different institutional logics than national governments.
-
-### Sample Composition {#sec-sample}
+The pipeline produced `corpus_enriched.json`, merging OECD metadata with extracted text and quality assessments. Each jurisdiction was mapped to World Bank classifications: income groups (HI, UMI, LMI, LI), regions (EAP, ECA, LAC, MENA, NAM, SA, SSA), and GDP per capita (current USD, 2023). For North–South analyses, a binary HI vs. Developing classification was used. International organisations were flagged and excluded from country-level analyses.
 
 The final analytical sample reflects the OECD.AI Observatory's coverage, which skews toward high-income countries:
 
@@ -92,49 +80,43 @@ graph LR
     style E fill:#f3e5f5
 ```
 
-@fig-pipeline shows how each stage transforms the data: from initial policy entries through document retrieval and text extraction (the data collection phase documented in preceding sections), to LLM-based scoring (detailed in @sec-scoring), culminating in the 20 analytical chapters that follow. The 6,641 LLM API calls represent three model assessments for each of the 2,216 policies across 10 dimensions, with the ensemble approach ensuring reliability through inter-model agreement.
-
 ### Analytical Methods {#sec-analytical-methods}
 
 The statistical analyses in subsequent chapters employ multiple complementary methods to examine governance capacity from different angles. This methodological pluralism enables robust inference: findings that emerge consistently across diverse analytical approaches inspire greater confidence than those dependent on a single modeling choice. Here we overview the core analytical techniques; specific model specifications appear in their respective chapters.
 
-#### Text-to-Data Conversion: LLM Ensemble Scoring
+**Text-to-data conversion** used frontier LLMs as automated policy analysts. Each model reads the full document (up to 8,000+ words), applies our scoring rubric, and returns structured JSON with scores and supporting evidence. This preserves the interpretive sophistication of human expert coding while achieving the scale needed for 2,216 documents. The three-model ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) functions as a panel of expert raters, with the median score serving as the final assessment. The resulting ICC(2,1) = 0.827 demonstrates excellent reliability—comparable to or exceeding typical human coder agreement on complex policy dimensions. Detailed validation appears in @sec-scoring.
 
-We converted unstructured policy documents into structured scores using frontier LLMs as automated policy analysts. Each model reads the full document (up to 8,000+ words), applies our scoring rubric, and returns structured JSON with scores and supporting evidence. This preserves the interpretive sophistication of human expert coding while achieving the scale needed for 2,216 documents.
+**Descriptive analysis.** Each analytical section begins with descriptive statistics and visual exploration: histograms with frequency annotations, ridge plots showing density distributions across groups, radar charts for multidimensional profiles, and heatmaps for clustering patterns. These visualizations uncover patterns that summary statistics alone would obscure.
 
-The three-model ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) functions as a panel of expert raters, with the median score serving as the final assessment. The resulting ICC(2,1) = 0.827 demonstrates excellent reliability—comparable to or exceeding typical human coder agreement on complex policy dimensions. Detailed validation appears in @sec-scoring.
+**Regression models.** Chapters examining determinants employ four approaches: OLS regression for baseline relationships, multilevel models with random intercepts for countries (correcting for nested structure), quantile regression for heterogeneous effects across the distribution, and Tobit models addressing the substantial floor effect (27.6% of policies score exactly zero).
 
-#### Descriptive Analysis
+**Inequality analysis.** Inequality chapters use decomposition techniques: Gini coefficients and Lorenz curves for overall inequality, Theil's T index for between-group versus within-group decomposition, and policy portfolio analysis distinguishing coverage gaps from implementation quality.
 
-Each analytical chapter begins with descriptive statistics and visual exploration: histograms with frequency annotations, ridge plots showing density distributions across groups, radar charts for multidimensional profiles, and heatmaps for clustering patterns. These visualizations uncover patterns that summary statistics alone would obscure.
+**Temporal analysis.** Chapters examining dynamics over time use panel data methods: first-difference models for year-to-year changes, Cohen's d effect sizes for substantive significance, and convergence analysis testing whether income-group gaps are narrowing, widening, or stable.
 
-#### Regression Models
+**Multivariate methods.** PCA examines the latent structure underlying governance dimensions, with optimal components determined by the Kaiser criterion (eigenvalues > 1). Cronbach's alpha assesses internal consistency. K-means clustering identifies natural policy groupings, with optimal k determined through silhouette coefficients.
 
-Chapters examining determinants employ four approaches: OLS regression for baseline relationships, multilevel models with random intercepts for countries (correcting for nested structure), quantile regression for heterogeneous effects across the distribution, and Tobit models addressing the substantial floor effect (27.6% of policies score exactly zero).
+**Hypothesis testing.** We use Welch's t-tests for mean comparisons (avoiding equal variance assumptions), Mann-Whitney U tests when distributions violate normality, and chi-square tests for categorical outcomes. We report exact p-values, effect sizes (Cohen's d, Cramér's V), and confidence intervals throughout.
 
-#### Inequality Analysis
+### Limitations and Reproducibility {#sec-corpus-limitations}
 
-Inequality chapters use decomposition techniques: Gini coefficients and Lorenz curves for overall inequality, Theil's T index for between-group versus within-group decomposition, and policy portfolio analysis distinguishing coverage gaps from implementation quality.
+The OECD.AI Observatory, while the most comprehensive international tracker available, introduces several systematic biases relevant to UNESCO alignment measurement.
 
-#### Temporal Analysis
+**English-language dominance.** The Observatory favours English-language sources. Policies published in English receive fuller documentation, and the LLM scoring models perform best on English text. Countries that adopted the UNESCO Recommendation and developed national responses in French, Arabic, or other languages may have their alignment understated if only abbreviated English summaries are available.
 
-Chapters examining dynamics over time use panel data methods: first-difference models for year-to-year changes, Cohen's d effect sizes for substantive significance, and convergence analysis testing whether income-group gaps are narrowing, widening, or stable.
+**OECD member-state reporting bias.** OECD member countries have institutional incentives to report policy activities. Non-member countries—including many UNESCO member states that adopted the Recommendation—may have governance instruments that do not appear in the database. The 77% high-income composition of the corpus likely overstates wealthy-country governance activity relative to the global picture.
 
-#### Multivariate Methods
+**Sub-national exclusion.** The Observatory focuses on national-level policies, excluding state, provincial, and municipal AI governance. In federal systems, substantial governance activity occurs at sub-national levels and may reflect UNESCO alignment not captured here.
 
-PCA examines the latent structure underlying governance dimensions, with optimal components determined by the Kaiser criterion (eigenvalues > 1). Cronbach's alpha assesses internal consistency. K-means clustering identifies natural policy groupings, with optimal k determined through silhouette coefficients.
+**Temporal coverage unevenness.** The post-2021 period is critical for assessing UNESCO influence, but later years may have incomplete coverage if the Observatory's cataloguing lags behind policy adoption. This could bias temporal analyses.
 
-#### Hypothesis Testing
+**UNESCO-specific limitation.** The Observatory was not designed to track UNESCO alignment specifically. Policies that explicitly reference and implement the UNESCO Recommendation may not be tagged differently from policies developed independently. The alignment measurement thus captures *substantive overlap* with UNESCO components rather than *intentional implementation* of the Recommendation.
 
-We use Welch's t-tests for mean comparisons (avoiding equal variance assumptions), Mann-Whitney U tests when distributions violate normality, and chi-square tests for categorical outcomes. We report exact p-values, effect sizes (Cohen's d, Cramér's V), and confidence intervals throughout.
+These limitations counsel caution, particularly when interpreting the pre/post 2021 comparison. The robustness checks in @sec-robustness address the most consequential biases directly.
 
-### Reproducibility {#sec-reproducibility}
+**Reproducibility.** All code is available at <https://github.com/lsempe77/ai-governance-capacity>. The pipeline uses deterministic document IDs (`MD5(url)[:12]`) to ensure reproducibility of the corpus-to-analysis link. API calls to LLM providers used fixed model identifiers and structured JSON output schemas.
 
-All code is available at <https://github.com/lsempe77/ai-governance-capacity>. The pipeline uses deterministic document IDs (`MD5(url)[:12]`) to ensure reproducibility of the corpus-to-analysis link. API calls to LLM providers used fixed model identifiers and structured JSON output schemas.
-
-### Use of Large Language Models {#sec-llm-acknowledgment}
-
-This research employs large language models in two distinct capacities, both of which we disclose here in the interest of methodological transparency.
+**Use of Large Language Models.** This research employs large language models in two distinct capacities, both of which we disclose here in the interest of methodological transparency.
 
 **For data analysis:** Large language models (Claude Sonnet 4, GPT-4o, and Gemini Flash 2.0) serve as the core analytical instrument, functioning as automated policy coders that convert unstructured policy documents into structured quantitative scores. This use constitutes the research methodology itself and is documented extensively throughout @sec-data-methods and @sec-scoring, including validation against human expert ratings. All LLM-generated scores are preserved in the public repository, enabling verification and replication of our analytical pipeline.
 

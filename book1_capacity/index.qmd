@@ -1,5 +1,5 @@
 ---
-title: "Global Observatory of AI Governance Capacity"
+title: "AI Governance Implementation Capacity: A Cross-National Analysis"
 subtitle: "Measuring Implementation Readiness Across 2,100+ Policies"
 author:
   - name: "Lucas Sempé"
@@ -9,16 +9,16 @@ date: "2026-02-11"
 
 # Preface {.unnumbered}
 
-I started this project with a simple question: governments worldwide are writing AI policies at a furious pace, but can they actually implement them?
+This project began with a fundamental question about the global proliferation of artificial intelligence policies: as governments worldwide develop AI governance frameworks at an unprecedented rate, do they possess the institutional capacity to implement them effectively?
 
-To find out, I scored 2,100+ policies across 70+ jurisdictions on five dimensions of implementation capacity (clarity, resources, authority, accountability, and coherence) using a three-model LLM ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) that achieved excellent inter-rater reliability (ICC = 0.827). The results surprised me.
+To address this question, I assessed over 2,100 policies across more than 70 jurisdictions, evaluating five critical dimensions of implementation capacity: clarity, resources, authority, accountability, and coherence. The scoring methodology employed a three-model ensemble of large language models (Claude Sonnet 4, GPT-4o, and Gemini Flash 2.0), achieving adequate inter-rater reliability (ICC = 0.83).
 
-The headline is not that rich countries do better. They do, slightly (d = 0.30), but that gap vanishes entirely when I restrict the analysis to well-documented policies (d = 0.04). What looked like a governance divide turned out to be largely a documentation divide. Meanwhile, 98% of the real variation sits *within* income groups, not between them. Brazil, Kenya, and Rwanda outperform their GDP predictions by wide margins. And when policies spread across borders, they spread sideways: countries learning from peers at similar income levels, not cascading down from wealthy nations.
+The findings challenge conventional assumptions about global governance capacity. While high-income countries demonstrate marginally higher capacity scores overall (Cohen's d = 0.30), this advantage disappears almost entirely when the analysis is restricted to well-documented policies (Cohen's d = 0.04). What initially appeared to be a governance capacity divide reveals itself primarily as a documentation gap. Moreover, 98% of the observed variation in capacity scores occurs within income groups rather than between them. Countries such as Brazil, Kenya, and Rwanda substantially exceed predictions based on their GDP levels, suggesting that economic development alone does not determine governance capacity. Furthermore, the analysis of policy diffusion patterns indicates that countries predominantly learn from peers at similar income levels rather than following a top-down diffusion model from wealthy nations.
 
-This book walks through the evidence for these claims and the many robustness checks I ran to stress-test them.
+This report presents the empirical evidence supporting these conclusions, along with extensive robustness checks conducted to validate the findings.
 
 ---
 
-**Citation:** Sempé, L. (2026). *Global Observatory of AI Governance Capacity*. International Initiative for Impact Evaluation (3ie).
+**Citation:** Sempé, L. (2026). *AI Governance Implementation Capacity: A Cross-National Analysis*. International Initiative for Impact Evaluation (3ie).
 
 **Data and Code:** github.com/lsempe77/ai-governance-capacity

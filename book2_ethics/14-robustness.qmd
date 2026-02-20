@@ -5,14 +5,16 @@ title: "Robustness Checks"
 ## How Robust Are Ethics Findings? {#sec-robustness}
 
 ::: {.callout-note appearance="simple"}
-**Chapter summary.** This chapter tests ethics findings through text quality restrictions, bootstrap confidence intervals, cluster stability, and sensitivity analyses. A key finding: the income-group ethics gap reverses for well-documented policies.
+**Section summary.** This section tests ethics findings through text quality restrictions, bootstrap confidence intervals, cluster stability, and sensitivity analyses. A key finding: the income-group ethics gap reverses for well-documented policies.
 :::
+
+The preceding sections documented low ethics scores, negligible GDP effects, within-group inequality dominance, and convergence driven by high-income country decline. Before drawing policy conclusions from these findings, this section subjects them to systematic robustness checks. The most consequential test examines the text quality confound: if developing countries' policies appear weaker simply because they are less well documented, then the apparent ethics gap may be a measurement artifact rather than a governance reality.
 
 ### The Text Quality Confound {#sec-text-quality}
 
 All ethics findings depend on a critical assumption: that policy text accurately reflects normative commitments. If text availability varies by income group—with wealthy countries publishing detailed frameworks while developing countries' policies appear as summaries—then apparent ethics gaps may reflect documentation quality rather than ethical governance depth.
 
-#### The Ethics Gap Reverses
+**The Ethics Gap Reverses.**
 
 | Sample Restriction | N | Ethics $d$ | Interpretation |
 |:---|---:|---:|:---|
@@ -22,29 +24,30 @@ All ethics findings depend on a critical assumption: that policy text accurately
 
 : Income-group ethics effect by text quality {#tbl-ethics-text}
 
-@tbl-ethics-text reveals a notable pattern: the ethics gap (d=0.20) not only disappears but reverses sign (d=-0.09) for well-documented policies. Developing countries with adequate documentation slightly outperform wealthy countries on ethics governance, though this reverse gap is not statistically significant.
+@tbl-ethics-text reveals a notable pattern: the ethics gap (d=0.20) not only disappears but reverses sign (d=-0.09) when analysis is restricted to well-documented policies. Developing countries with adequate documentation slightly outperform wealthy countries on ethics governance, though this reverse gap lacks statistical significance.
 
-The apparent ethics advantage for high-income countries appears to be a measurement artifact. Developing countries facing documentation challenges nonetheless maintain ethics commitments matching or exceeding wealthy nations. The full-sample gap (d=0.20) reflects text availability rather than normative sophistication.
+The apparent ethics advantage for high-income countries represents a measurement artifact. Developing countries facing documentation challenges nonetheless maintain ethics commitments matching or exceeding wealthy nations. The full-sample gap (d=0.20) reflects text availability rather than normative sophistication.
 
-Unlike capacity (where the gap merely shrinks to near-zero), ethics shows sign inversion—suggesting developing countries may actually prioritize ethics governance more strongly once measurement improves. This aligns with the finding that GDP shows no effect on ethics across all quantiles.
+Unlike capacity (where the gap merely shrinks to near-zero), ethics shows sign inversion—suggesting developing countries may actually prioritize ethics governance more strongly once measurement quality improves. This aligns with the finding that GDP shows no effect on ethics across all quantiles.
 
 The ethics dimensions (E1 Framework Depth, E2 Rights Protection, E3 Participatory Governance, E4 Operationalization, E5 Inclusion) require normative clarity and political commitment rather than fiscal resources. Developing countries can embed rights protections, establish participatory mechanisms, and articulate ethical principles as effectively as wealthy countries—but shorter available texts obscure this.
 
 ### Additional Robustness Checks
 
-*Bootstrap CIs* (1,000 resamples): Ethics d = 0.20 [0.09, 0.30]. For the good-text subsample, CIs include zero, confirming non-significance.
+**Bootstrap confidence intervals** (1,000 resamples): Ethics d = 0.20 [0.09, 0.30]. The interval is precise but does not address validity. For the good-text subsample, the 95% CI spans [−0.22, +0.04], comfortably including zero and confirming that the apparent income-group gap lacks statistical significance once documentation quality is controlled.
 
-*Cluster stability*: Two-cluster solution ("Low" vs "Moderate" ethics) optimal. Silhouette = 0.42 for k=2, declining monotonically for higher k, confirming binary typology.
+**Cluster stability**: The two-cluster solution ("Ethics-Light" vs "Ethics-Engaged") is optimal. Silhouette scores decline monotonically: 0.42 for k=2, dropping for higher k. The binary typology reflects a genuine bimodal structure—policies either engage with ethics comprehensively or ignore it almost entirely. This bimodality is consistent with the severe floor effect (36.3% zeros) and suggests that ethics governance is closer to a binary commitment decision than a continuous gradient.
 
-*Sensitivity tests* (full details in @sec-appendix-robustness):
-- Excluding international organizations: Results unchanged
-- Ordinal regression: Rank ordering preserved
-- Winsorizing extremes: Stable coefficients
-- Alternative income classifications: Zero GDP effect persists across all models
-- Text quality thresholds (300-1000 words): Gap disappears at all thresholds ≥500 words
-- Temporal subsamples: Convergence pattern (gaps narrowing) robust to time periods
+**Sensitivity tests** (full details in the *Robustness Appendix* of the companion Methods volume):
 
-### Ethics vs Capacity Asymmetry
+- *Excluding international organisations*: Removing the 119 policies from the EU, OECD, UN, and multilateral bodies leaves all results unchanged. The ethics findings reflect national governance patterns rather than the influence of international frameworks, which tend to score high on principles but may operate under different institutional logics.
+- *Ordinal regression*: Treating ethics scores as ordered categories rather than continuous variables preserves the rank ordering of all predictors. The zero GDP effect, within-group inequality dominance, and convergence pattern all hold, confirming that findings do not depend on the interval-scale assumption.
+- *Winsorizing extremes*: Trimming the top and bottom 5% of scores yields coefficients within 10% of baseline estimates, ruling out the possibility that outlier policies—either extremely sophisticated frameworks or unusually empty ones—drive the results.
+- *Alternative income classifications*: The zero GDP effect persists across two-group (HI vs developing), three-group (HI/UMI/LMI+LI), and four-group (full World Bank tiers) specifications. The non-relationship between wealth and ethics governance is not an artefact of how the income divide is drawn.
+- *Text quality thresholds (300–1,000 words)*: The income-group gap disappears at all thresholds ≥500 words and reverses sign at ≥1,000 words. This dose-response pattern—stronger reversal with more stringent quality thresholds—provides compelling evidence for the measurement-artefact interpretation.
+- *Temporal subsamples*: The convergence pattern (gaps narrowing via high-income decline) holds in both the 2017–2020 and 2021–2025 subsamples, confirming that the trend is not driven by a single policy wave or by the composition of newer policies alone.
+
+### Ethics vs Capacity Asymmetry and Summary
 
 The text quality confound affects ethics differently than capacity:
 
@@ -58,7 +61,7 @@ The text quality confound affects ethics differently than capacity:
 
 Capacity shows shrinkage (the gap remains positive but becomes trivial). Ethics shows reversal (developing countries outperform once measured properly). This asymmetry is interpretable: capacity requires infrastructure that wealth facilitates, while ethics requires commitments independent of GDP.
 
-### Summary
+**Summary.**
 
 | Finding | Robust? | Caveat |
 |:---|:---|:---|

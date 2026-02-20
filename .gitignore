@@ -1,4 +1,4 @@
-﻿# Data (too large for git)
+# Data (too large for git)
 data/pdfs/
 data/_archive/
 data/corpus/*.json
@@ -28,3 +28,5 @@ book3_unesco/_book/*.docx
 # OS
 .DS_Store
 Thumbs.db
+
+/.quarto/

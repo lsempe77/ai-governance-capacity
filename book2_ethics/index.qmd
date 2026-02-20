@@ -1,5 +1,5 @@
 ---
-title: "Global Observatory of AI Ethics Governance"
+title: "AI Ethics Governance Depth: A Cross-National Analysis"
 subtitle: "Measuring Normative Commitments Across 2,100+ Policies"
 author:
   - name: "Lucas Sempé"
@@ -9,7 +9,7 @@ date: "2026-02-11"
 
 # Preface {.unnumbered}
 
-This book presents the first systematic global assessment of AI ethics governance—measuring the depth and specificity of normative commitments in AI policies worldwide.
+This study presents the first systematic global assessment of AI ethics governance—measuring the depth and specificity of normative commitments in AI policies worldwide.
 
 Drawing on 2,100+ policies across 70+ jurisdictions, we score each policy on five ethics dimensions: framework depth, rights protection, participatory governance, operationalization, and inclusion. The analysis reveals a landscape where ethical commitments vary more within income groups than between them.
 
@@ -26,6 +26,6 @@ We employ an LLM ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) achieving 
 
 ---
 
-**Citation:** Sempé, L. (2026). *Global Observatory of AI Ethics Governance*. International Initiative for Impact Evaluation (3ie).
+**Citation:** Sempé, L. (2026). *AI Ethics Governance Depth: A Cross-National Analysis*. International Initiative for Impact Evaluation (3ie).
 
 **Data and Code:** github.com/lsempe77/ai-governance-capacity

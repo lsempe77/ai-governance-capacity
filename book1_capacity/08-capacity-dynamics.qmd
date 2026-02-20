@@ -4,9 +4,9 @@ title: "Capacity Dynamics"
 
 ## Temporal Trends, Diffusion, and the Efficiency Frontier {#sec-cap-dynamics}
 
-### Temporal Trends {#sec-cap-temporal}
+The preceding sections established the cross-sectional landscape: low average capacity, weak GDP effects, and inequality concentrated within income groups. This section introduces a temporal dimension, asking whether these patterns are stable, converging, or diverging over the 2017–2025 period. It then examines policy diffusion mechanisms—how governance approaches spread across jurisdictions—and identifies countries that achieve governance capacity exceeding expectations given their economic development level.
 
-The cross-sectional picture is clear: income-group gaps are modest and within-group variation dominates. But is the gap widening, narrowing, or flat? I test this with an income-group × year interaction term.
+### Temporal Trends {#sec-cap-temporal}
 
 ![Capacity dimension scores over time (2017–2025). Most dimensions show modest upward trends.](../data/analysis/paper1_capacity/fig_temporal_dimensions.png){#fig-cap-temporal-dims}
 
@@ -23,21 +23,21 @@ Individual dimensions trend modestly upward from 2017 to 2025, but the income-gr
 
 : Convergence test for capacity scores {#tbl-cap-convergence}
 
-**No convergence.** The interaction coefficient (β = +0.0003, p = .98) is indistinguishable from zero. High-income countries are flat (−0.0001/yr, n.s.); developing countries improve at +0.010/yr (n.s.), not enough to narrow anything.
+**No convergence is detected.** The interaction coefficient (β = +0.0003, p = .98) proves statistically indistinguishable from zero. High-income countries remain flat (−0.0001/yr, n.s.); developing countries show modest improvement at +0.010/yr (n.s.), insufficient to narrow existing gaps.
 
-This contrasts with ethics scores (@sec-eth-dynamics), where I find significant convergence driven by high-income countries *declining*. Capacity resists that pattern. The likely explanation: you can adopt ethical principles by citing international frameworks, but building implementation infrastructure (budgets, staff, enforcement mechanisms) requires institutional development that policy learning alone cannot substitute. An alternative reading: if text quality improves over time (newer policies better documented), apparent stability could mask real changes. The robustness checks in @sec-robustness address this.
+This pattern contrasts with ethics scores (see the ethics dynamics analysis), where significant convergence occurs through high-income countries *declining*. Capacity resists this pattern. The likely explanation: ethical principles can be adopted through citation of international frameworks, whereas building implementation infrastructure (budgets, staff, enforcement mechanisms) requires institutional development that policy learning alone cannot substitute. An alternative interpretation: if text quality improves over time (newer policies better documented), apparent stability could mask underlying changes. The robustness checks in @sec-robustness address this possibility.
 
-### Convergence Trends {#sec-cap-convergence}
+@fig-cap-convergence and @fig-cap-dim-convergence present the detailed convergence analysis across dimensions and income groups, confirming the pattern of temporal stability.
 
 ![Detailed convergence analysis showing income-group trends and gap evolution for capacity dimensions.](../data/analysis/paper1_capacity/robustness/fig_convergence.png){#fig-cap-convergence}
 
 ![Dimension-level convergence patterns. No dimension shows statistically significant convergence.](../data/analysis/paper1_capacity/robustness/fig_dimension_convergence.png){#fig-cap-dim-convergence}
 
-### Policy Diffusion Patterns {#sec-cap-diffusion}
+### Diffusion and the Efficiency Frontier {#sec-cap-diffusion}
 
-How do AI governance policies spread? The comparative policy literature offers two models. **Vertical diffusion** (Bradford's [-@bradford2020] "Brussels Effect"): innovations cascade from wealthy jurisdictions to developing countries through aid, technical assistance, and emulation. **Horizontal diffusion**: countries learn from peers facing similar constraints. The distinction matters. Vertical diffusion implies that strengthening high-income frameworks will eventually benefit developing countries; horizontal diffusion implies South-South cooperation matters more.
+The mechanisms of policy spread warrant examination. The comparative policy literature proposes two models. **Vertical diffusion** (Bradford's [-@bradford2020] "Brussels Effect"): innovations cascade from wealthy jurisdictions to developing countries through aid, technical assistance, and emulation. **Horizontal diffusion**: countries learn from peers facing similar constraints. The distinction carries policy implications: vertical diffusion suggests that strengthening high-income frameworks will eventually benefit developing countries; horizontal diffusion implies South-South cooperation proves more consequential.
 
-I track when each country first adopted AI governance policies and classify diffusion direction.
+This analysis tracks when each country first adopted AI governance policies and classifies diffusion direction.
 
 ![Cumulative adoption curves by income group and region. HI countries adopted ~1.3 years earlier, but diffusion is overwhelmingly horizontal.](../data/analysis/paper1_capacity/frontier/fig_diffusion_curves.png){#fig-cap-diffusion}
 
@@ -64,11 +64,11 @@ Second, and more important: **98% of diffusion is horizontal.** Countries learn 
 
 Why? Wealthy-country models assume infrastructure that developing countries lack: data protection authorities, judicial capacity for algorithmic accountability, technical audit expertise. Direct transplantation is infeasible. Countries look to peers who adapted governance to similar resource constraints, or they resist perceived regulatory imperialism by developing indigenous approaches.
 
-The regions with the largest adoption lag, **Sub-Saharan Africa and MENA** (14–29% adoption by 2019 versus 100% in North America), lack the dense policy networks connecting European countries or the regional mechanisms linking Latin American nations. Yet even these late adopters diffuse horizontally when they do adopt.
+The mechanisms of horizontal diffusion are visible in the data. **Regional bodies** serve as transmission channels: the African Union's Continental AI Strategy provided a shared template that Kenya, Rwanda, and South Africa adapted to national contexts; the Red Iberoamericana de Inteligencia Artificial connected Latin American policymakers drafting national strategies simultaneously; and ASEAN's governance framework circulated among Southeast Asian countries with varying levels of AI maturity. **Bilateral technical assistance** between peers—Brazil advising Colombia, Singapore supporting ASEAN neighbours—transfers governance knowledge without the power asymmetry of North-South aid. **International conferences and working groups** (the Global Partnership on AI, the AI for Good summits, OECD committee meetings) create spaces where officials from similar-income countries compare approaches, often discovering that peers have solved problems they are facing. **Policy entrepreneur networks**—individuals who have drafted governance frameworks in one country and then advise neighbouring jurisdictions—facilitate direct knowledge transfer within income tiers.
 
-### Governance Efficiency Frontier {#sec-cap-frontier}
+The regions with the largest adoption lag, **Sub-Saharan Africa and MENA** (14–29% adoption by 2019 versus 100% in North America), lack these dense policy networks. They have fewer regional coordination mechanisms, fewer shared-language policy communities, and fewer international conference participants. Yet even these late adopters diffuse horizontally when they do adopt, suggesting that the constraint is network density rather than any inherent barrier to governance innovation.
 
-GDP explains little, and diffusion is horizontal. But which specific countries punch above their weight? I use Free Disposable Hull (FDH) analysis to construct an efficiency frontier, connecting countries that achieve higher governance scores than any other country at similar or lower GDP.
+**Governance efficiency frontier.** GDP explains little, and diffusion is horizontal. But which specific countries punch above their weight? I use Free Disposable Hull (FDH) analysis to construct an efficiency frontier, connecting countries that achieve higher governance scores than any other country at similar or lower GDP.
 
 ![Efficiency frontier for capacity scores. Countries above the line outperform their GDP-predicted governance level; those below underperform.](../data/analysis/paper1_capacity/frontier/fig_efficiency_frontier.png){#fig-cap-frontier}
 
@@ -91,17 +91,15 @@ Countries above the regression line in @fig-cap-frontier outperform GDP predicti
 
 **GDP explains 3.5% of country-level capacity variation** (R² = 0.035). The scatterplot disperses widely around the regression line. Knowing a country's GDP tells you almost nothing about its governance capacity.
 
-The frontier is anchored by African countries. **Rwanda** achieves 3.10 capacity points per $10K of GDP, nearly double Kenya's 1.91 and far exceeding any high-income country's efficiency ratio. Rwanda has data protection legislation and a national AI strategy with implementation roadmaps, despite per-capita GDP below $1,000. **Kenya** and **Uganda** similarly adopted binding AI legislation with enforcement mechanisms rivaling countries 10–20 times wealthier.
+The frontier is anchored by African countries. **Rwanda** achieves 3.10 capacity points per $10K of GDP, nearly double Kenya's 1.91 and far exceeding any high-income country's efficiency ratio. Rwanda's performance reflects deliberate institutional choices: a dedicated Centre for the Fourth Industrial Revolution (C4IR Kigali) that coordinates AI governance across ministries, data protection legislation with a functioning regulator, and national AI strategy documents that specify implementation timelines, responsible agencies, and budget allocations—precisely the capacity dimensions (C2, C3, C5) where most countries score weakest. **Kenya** established a Blockchain and AI Taskforce that produced binding recommendations, created a Data Protection Commissioner with enforcement powers, and embedded AI governance within its existing regulatory infrastructure rather than building parallel institutions. **Uganda** adopted binding data protection and AI governance legislation with enforcement mechanisms rivalling countries 10–20 times wealthier, leveraging its existing telecommunications regulator as an institutional anchor.
 
-**Brazil** is the top overall overperformer (+0.69 residual): comprehensive national strategy, algorithmic accountability frameworks, cross-ministry coordination, extensive stakeholder consultation. This comes from political commitment, not fiscal abundance.
+**Brazil** is the top overall overperformer (+0.69 residual). Its success stems from layered institutional investment: the Brazilian AI Strategy (EBIA) designated MCTI as lead agency with cross-ministry coordination mechanisms (C5), the Marco Legal da IA established algorithmic accountability requirements with enforcement provisions (C4), and extensive multi-stakeholder consultation processes generated broad political buy-in that sustained implementation across government transitions. Brazil's approach demonstrates that political commitment and institutional coordination, not fiscal abundance, drive governance capacity.
 
-On the other side, **Kazakhstan** (−0.75 residual) and **South Korea** score well below GDP predictions. Wealth without political prioritization and institutional coordination produces weak governance.
+On the other side, **Kazakhstan** (−0.75 residual) and **South Korea** score well below GDP predictions. Both countries have the fiscal resources to build governance infrastructure but have not translated economic capacity into institutional commitment: policies remain declaratory (high on objectives, low on resources and accountability), coordination mechanisms are absent or fragmented, and monitoring provisions lack enforcement teeth. Wealth without political prioritisation and institutional coordination produces weak governance.
 
 The mean distance to frontier (0.588) indicates most countries operate well below the efficiency boundary. There is room for improvement without additional resources, by learning from frontier peers at similar income levels.
 
-### Chapter Summary {#sec-cap-dynamics-summary}
-
-This chapter points to three patterns:
+This section points to three patterns:
 
 1. **Temporal stability.** The capacity gap is neither widening nor narrowing (2017–2025). Unlike ethics scores, which converge because high-income countries decline, capacity resists automatic improvement. Building implementation infrastructure requires targeted intervention, not diffusion alone.
 

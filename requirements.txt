@@ -1,4 +1,4 @@
-# AI Governance Observatory - Python Dependencies
+`# AI Governance Observatory - Python Dependencies
 
 # Core web scraping
 requests>=2.31.0

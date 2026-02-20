@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Capacity Landscape – Global Observatory of AI Governance Capacity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ad92c8f6789d64c8f40a91dd2b038e8c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Global Observatory of AI Governance Capacity</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book1_capacity/_book/index.html"> 
+<span class="menu-text">Book 1 — Capacity</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book2_ethics/_book/index.html"> 
+<span class="menu-text">Book 2 — Ethics</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book3_unesco/_book/index.html"> 
+<span class="menu-text">Book 3 — UNESCO</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book4_methods/_book/index.html"> 
+<span class="menu-text">Book 4 — Methods</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lsempe77/ai-governance-capacity"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-cap-landscape" id="toc-sec-cap-landscape" class="nav-link active" data-scroll-target="#sec-cap-landscape">The Global Landscape of AI Governance Capacity</a>
+  <ul class="collapse">
+  <li><a href="#sec-cap-distribution" id="toc-sec-cap-distribution" class="nav-link" data-scroll-target="#sec-cap-distribution">Overall Score Distribution</a></li>
+  <li><a href="#sec-cap-income" id="toc-sec-cap-income" class="nav-link" data-scroll-target="#sec-cap-income">Income-Group Comparisons</a></li>
+  <li><a href="#sec-cap-regional" id="toc-sec-cap-regional" class="nav-link" data-scroll-target="#sec-cap-regional">Regional Patterns</a></li>
+  <li><a href="#sec-cap-policy-type" id="toc-sec-cap-policy-type" class="nav-link" data-scroll-target="#sec-cap-policy-type">Policy-Type Variation</a></li>
+  <li><a href="#sec-cap-rankings" id="toc-sec-cap-rankings" class="nav-link" data-scroll-target="#sec-cap-rankings">Country Rankings and Correlation Structure</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Capacity Landscape</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-cap-landscape" class="level2">
+<h2 class="anchored" data-anchor-id="sec-cap-landscape">The Global Landscape of AI Governance Capacity</h2>
+<p>With the scoring methodology validated and the corpus assembled, this section turns to the central empirical question: what does the global landscape of AI governance capacity actually look like? The analysis proceeds from aggregate distributions through income-group comparisons to regional and country-level patterns, revealing a governance landscape characterised by pervasive weakness, substantial heterogeneity, and a surprising absence of the North–South divide that conventional wisdom would predict.</p>
+<section id="sec-cap-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cap-distribution">Overall Score Distribution</h3>
+<p>The aggregate picture reveals the baseline state of AI governance capacity across all 2,216 policies.</p>
+<div id="fig-cap-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cap-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../data/analysis/paper1_capacity/fig_distributions.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cap-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Distribution of capacity dimension scores across 2,216 policies. All five dimensions exhibit strong right skew with floor effects at zero.
+</figcaption>
+</figure>
+</div>
+<p>The capacity composite averages <strong>0.83/4.00</strong> (SD = 0.77), well below the scale midpoint. However, this mean conceals substantial variation. As <a href="#fig-cap-distributions" class="quarto-xref">Figure&nbsp;1</a> shows, all five dimensions exhibit right skewness, with most policies clustered at or near zero and a smaller tail extending upward. Dimension-level means range from 0.48 (C4 Accountability) to 1.07 (C5 Coherence):</p>
+<div id="tbl-cap-descriptives" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cap-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Capacity dimension descriptive statistics
+</figcaption>
+<div aria-describedby="tbl-cap-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+<th style="text-align: right;">Median</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C1 Clarity &amp; Specificity</td>
+<td style="text-align: right;">0.94</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C2 Resources &amp; Budget</td>
+<td style="text-align: right;">0.68</td>
+<td style="text-align: right;">0.89</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C3 Authority &amp; Enforcement</td>
+<td style="text-align: right;">1.04</td>
+<td style="text-align: right;">1.08</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C4 Accountability &amp; M&amp;E</td>
+<td style="text-align: right;">0.48</td>
+<td style="text-align: right;">0.72</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C5 Coherence &amp; Coordination</td>
+<td style="text-align: right;">1.07</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Capacity composite</strong></td>
+<td style="text-align: right;"><strong>0.83</strong></td>
+<td style="text-align: right;"><strong>0.77</strong></td>
+<td style="text-align: right;"><strong>0.60</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>One dimension stands out: <strong>Accountability (C4) is the weakest globally</strong>, averaging just 0.48, less than half of Coherence (C5) at 1.07. Governments are more than twice as likely to specify coordination mechanisms as to establish monitoring and evaluation frameworks. They articulate what they intend to do (Clarity) and how agencies should work together (Coherence) before committing to transparent oversight.</p>
+<p>The standard deviations (0.72–1.08) are large, and <strong>27.6% of policies score exactly zero</strong> on the composite. More than a quarter of documents in the Observatory function as announcements rather than operational governance instruments. This floor effect, visible in the median of 0.00 for Resources and Accountability, motivates the Tobit approach in <strong>?@sec-cap-determinants</strong>.</p>
+</section>
+<section id="sec-cap-income" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cap-income">Income-Group Comparisons</h3>
+<p>The standard narrative posits a clear North–South divide: wealthy countries have sophisticated frameworks, developing countries struggle to keep up. The data complicate this story.</p>
+<div id="fig-cap-income-violins" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cap-income-violins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../data/analysis/paper1_capacity/fig_income_violins.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cap-income-violins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Violin plots comparing capacity score distributions between high-income and developing countries. The overlap between distributions is substantial.
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-cap-income-violins" class="quarto-xref">Figure&nbsp;2</a> shows both the gap and its limits. High-income countries average 0.87 (SD 0.77), developing countries 0.65 (SD 0.72). The difference is statistically significant:</p>
+<div id="tbl-cap-income" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cap-income-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Income-group capacity comparison
+</figcaption>
+<div aria-describedby="tbl-cap-income-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">HI mean (N = 1,700)</td>
+<td style="text-align: left;">0.87</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Developing mean (N = 397)</td>
+<td style="text-align: left;">0.65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Welch’s <span class="math inline">\(t\)</span></td>
+<td style="text-align: left;">5.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(p\)</span>-value</td>
+<td style="text-align: left;">&lt; .001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cohen’s <span class="math inline">\(d\)</span></td>
+<td style="text-align: left;"><strong>0.30</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mann-Whitney <span class="math inline">\(U\)</span></td>
+<td style="text-align: left;">395,388</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Statistically significant, yes (t = 5.47, p &lt; .001). But the Cohen’s d of <strong>0.30</strong> is small by conventional standards, and the distributions overlap heavily. Many developing-country policies outscore the high-income median; many high-income policies sit near zero.</p>
+<p>However, the critical finding emerges when examining text quality: this gap <strong>vanishes entirely</strong> for well-documented policies (d = 0.04, n.s.; see <strong>?@sec-robustness</strong>). This pattern raises a fundamental methodological question: does the observed gap reflect genuine capacity differences, or systematic variation in documentation practices across income groups?</p>
+<p>Several mechanisms could produce weaker documentation without weaker governance. Developing countries may publish policies in national languages not captured by the OECD Observatory’s predominantly English-language indexing. Their policy documents may be hosted on government websites with limited archival practices, leading to higher rates of link decay and retrieval failure. Implementation details may reside in subsidiary regulations, ministerial orders, or administrative guidance rather than in the primary strategy document indexed by the OECD. And the OECD Observatory itself may provide thinner descriptions for developing-country policies due to reporting asymmetries. These mechanisms would depress measured scores without reflecting genuine capacity deficits.</p>
+<p>This question motivates the analyses in subsequent sections.</p>
+<p><strong>Dimension-level gaps.</strong> The aggregate gap masks dimension-level heterogeneity. If the divide reflected generalized institutional weakness, we would expect uniform gaps across all five dimensions. Instead, the pattern is differentiated:</p>
+<div id="fig-cap-income-boxplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cap-income-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../data/analysis/paper1_capacity/fig_income_boxplot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cap-income-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Boxplots of capacity scores by income group across all five dimensions.
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-cap-income-boxplot" class="quarto-xref">Figure&nbsp;3</a> visualizes how the income gap varies across dimensions, with the gap most pronounced for Resources and Coherence, and smallest for Accountability. The dimension-level statistics reveal this pattern precisely:</p>
+<div id="tbl-cap-dim-gaps" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cap-dim-gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Dimension-level income gaps
+</figcaption>
+<div aria-describedby="tbl-cap-dim-gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: right;">HI Mean</th>
+<th style="text-align: right;">Dev Mean</th>
+<th style="text-align: right;">Diff</th>
+<th style="text-align: right;"><span class="math inline">\(d\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C1 Clarity</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">0.74</td>
+<td style="text-align: right;">0.24</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: left;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C2 Resources</td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;">0.43</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: right;"><strong>0.32</strong></td>
+<td style="text-align: left;">&lt; .001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C3 Authority</td>
+<td style="text-align: right;">1.09</td>
+<td style="text-align: right;">0.86</td>
+<td style="text-align: right;">0.23</td>
+<td style="text-align: right;">0.23</td>
+<td style="text-align: left;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C4 Accountability</td>
+<td style="text-align: right;">0.48</td>
+<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;"><strong>0.15</strong></td>
+<td style="text-align: left;">.005</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C5 Coherence</td>
+<td style="text-align: right;">1.13</td>
+<td style="text-align: right;">0.86</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: left;">&lt; .001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The gap is largest in <strong>Resources (C2)</strong> (d = 0.32) and smallest in <strong>Accountability (C4)</strong> (d = 0.15), confirming hypothesis H3. The logic tracks: specifying budgets and staffing requires fiscal resources that correlate with wealth. Designing monitoring frameworks, by contrast, is primarily a policy design choice, and developing countries could establish reporting requirements and oversight bodies with minimal fiscal commitment.</p>
+<p>There is an irony here: both income groups underperform on accountability (0.48 for HI, 0.37 for developing). The reluctance to create transparent oversight mechanisms apparently transcends wealth. Accountability frameworks create political risks by enabling external assessment of implementation failures, a concern that affects all governments.</p>
+</section>
+<section id="sec-cap-regional" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cap-regional">Regional Patterns</h3>
+<p>Income groups are blunt instruments. “Developing” lumps together Latin American countries with sophisticated regulatory traditions, South Asian nations with large tech sectors but limited governance infrastructure, and Sub-Saharan African countries with nascent AI policy ecosystems. Regional analysis provides finer grain.</p>
+<div id="fig-cap-region-heatmap" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cap-region-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../data/analysis/paper1_capacity/fig_region_heatmap.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cap-region-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Heatmap of mean capacity scores by region and dimension. North America and Europe &amp; Central Asia lead; Sub-Saharan Africa and South Asia trail.
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-cap-region-heatmap" class="quarto-xref">Figure&nbsp;4</a> shows substantial regional variation that does not map neatly onto income. <strong>North America</strong> leads across all dimensions, driven by the US and Canada. <strong>Europe &amp; Central Asia</strong> has the broadest dimensional coverage, especially on Coherence (C5), reflecting the EU’s multilevel coordination infrastructure.</p>
+<p>More interesting are the developing regions that punch above their weight. <strong>Latin America</strong> scores above its income-group average on multiple dimensions, with particular strength in Authority (C3). Brazil, Colombia, and Argentina have adopted binding AI legislation with real enforcement teeth. This likely reflects the region’s longstanding tradition of codified law (civil law systems), strong constitutional courts, and established data protection authorities—institutional infrastructure that predates AI governance and provides ready-made channels for algorithmic regulation. The Inter-American Development Bank and regional forums like the Red Iberoamericana have also facilitated policy coordination across the region.</p>
+<p><strong>Sub-Saharan Africa</strong>, while scoring lowest overall, shows surprising strength in Authority: Kenya, Rwanda, and South Africa have enacted AI-specific legislation with compliance mechanisms that exceed what many wealthy countries have managed. These countries benefit from institutional investments in digital governance—Kenya’s data protection framework, Rwanda’s ICT-driven development strategy, South Africa’s constitutional rights infrastructure—that provide foundations for AI-specific regulation. The African Union’s AI strategy has also created a continental reference point, though adoption remains uneven.</p>
+<p><strong>East Asia &amp; Pacific</strong> presents a mixed picture: high-performing jurisdictions like Singapore, Japan, and South Korea coexist with countries showing minimal AI governance activity. The region’s diversity—spanning high-income technology leaders, rapidly industrialising economies, and small island states—makes regional averages particularly uninformative.</p>
+<p><strong>MENA</strong> and <strong>South Asia</strong> trail on most dimensions, reflecting later entry into AI governance (median first adoption in 2020–2021) rather than inherently weaker institutional capacity. The UAE and Saudi Arabia are notable exceptions in MENA, with comprehensive strategies driven by national economic diversification agendas.</p>
+<p>Governance capacity reflects institutional and political factors well beyond simple wealth accumulation.</p>
+</section>
+<section id="sec-cap-policy-type" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cap-policy-type">Policy-Type Variation</h3>
+<p>Not all policy documents carry the same implementation obligations. National strategies articulate visions; binding regulations establish legal requirements; ethics guidelines provide normative frameworks. These functional differences mean capacity scores should vary by type. This reflects the different purposes documents serve rather than genuine capacity differences across jurisdictions.</p>
+<div id="fig-cap-policy-type" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cap-policy-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../data/analysis/paper1_capacity/fig_policy_type.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cap-policy-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Capacity scores by policy type. Binding regulations score highest; guidelines and principles score lowest.
+</figcaption>
+</figure>
+</div>
+<p>As <a href="#fig-cap-policy-type" class="quarto-xref">Figure&nbsp;5</a> confirms, <strong>binding regulation</strong> scores highest. Laws must specify enforcement mechanisms, responsible agencies, and monitoring procedures to be judicially enforceable. <strong>National strategies</strong> sit in the middle, strong on Clarity and Coherence but weaker on Resources and Authority (which strategies typically leave to implementing legislation). <strong>Guidelines and principles</strong> score lowest, reflecting their aspirational character. Ethics guidelines list desirable AI properties without specifying who implements them, how compliance is monitored, or what resources are allocated.</p>
+<p>The pattern validates the measurement approach: scores reflect document content appropriate to policy type. It also means that jurisdictions relying on voluntary guidelines will systematically score lower than those with binding legislation, even if the voluntary approach works in practice. Subsequent analyses control for policy type accordingly.</p>
+</section>
+<section id="sec-cap-rankings" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cap-rankings">Country Rankings and Correlation Structure</h3>
+<p>Which countries have the strongest AI governance capacity? Rankings compress the multidimensional framework into a single scale, losing nuance but gaining interpretive clarity. They reflect both the number of policies and their average quality. The top-scoring jurisdictions combine large portfolios with consistently high individual scores:</p>
+<div id="tbl-cap-top5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cap-top5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Top 5 jurisdictions by capacity score
+</figcaption>
+<div aria-describedby="tbl-cap-top5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Rank</th>
+<th style="text-align: left;">Jurisdiction</th>
+<th style="text-align: right;">Mean Score</th>
+<th style="text-align: left;">Income</th>
+<th style="text-align: right;">N Policies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">European Union</td>
+<td style="text-align: right;">1.42</td>
+<td style="text-align: left;">HI</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Canada</td>
+<td style="text-align: right;">1.38</td>
+<td style="text-align: left;">HI</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">United Kingdom</td>
+<td style="text-align: right;">1.32</td>
+<td style="text-align: left;">HI</td>
+<td style="text-align: right;">72</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">United States</td>
+<td style="text-align: right;">1.28</td>
+<td style="text-align: left;">HI</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Colombia</td>
+<td style="text-align: right;">1.21</td>
+<td style="text-align: left;">UMI</td>
+<td style="text-align: right;">8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The top four are unsurprising: the <strong>EU</strong> (1.42) leads on the strength of the AI Act and its complementary policies; <strong>Canada</strong> (1.38) and the <strong>UK</strong> (1.32) show that smaller portfolios can achieve high quality; the <strong>US</strong> (1.28) ranks fourth because its massive 84-document portfolio includes substantial variation across federal agencies and states.</p>
+<p>The fifth slot is more interesting. <strong>Colombia</strong> (1.21), an upper-middle-income country, outperforms dozens of wealthy nations with just eight focused, well-designed policies. This is a preview of a pattern explored in <strong>?@sec-cap-dynamics</strong>: several developing countries, including Brazil (consistently top 10) and Kenya (above many European countries), achieve strong capacity through strategic design rather than resource abundance.</p>
+<p><strong>Correlation structure.</strong> The five capacity dimensions are positively correlated (r = 0.45 to 0.75) but maintain sufficient discriminant validity to justify separate measurement. A common governance quality factor accounts for ~66% of variance in PCA, meaning policies that score high on one dimension tend to score high on others. However, the residual independence is substantively important: a policy can score high on Clarity (well-defined objectives) while scoring low on Resources (no budget), or achieve strong Coherence (coordination) despite weak Accountability (no monitoring). The strongest links—Authority with Coherence (r = 0.75) and Clarity with Authority (r = 0.70)—make structural sense: policies with legal mandates more readily establish coordination mechanisms.</p>
+<div id="fig-cap-correlations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cap-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../data/analysis/paper1_capacity/fig_correlations.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cap-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Correlation matrix across the five capacity dimensions.
+</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -9,9 +9,9 @@ date: "2026-02-11"
 
 # Preface {.unnumbered}
 
-In November 2021, UNESCO achieved something rare: 193 countries agreed on a shared framework for AI ethics. This book asks what happened next.
+In November 2021, UNESCO achieved a multilateral milestone: 193 countries adopted a shared framework for AI ethics. This study examines subsequent policy implementation.
 
-We analyzed 2,100+ AI policies from 70+ jurisdictions to measure how closely national governance actually aligns with UNESCO's ten core values and eleven action areas. The short answer: partial adoption. Countries cherry-pick the components that match existing priorities while largely ignoring environmental sustainability, gender, and culture.
+This study analyzed 2,100+ AI policies from 70+ jurisdictions to measure the extent to which national governance aligns with UNESCO's ten core values and eleven action areas. The analysis reveals partial adoption. Countries selectively emphasize components that match existing priorities while largely neglecting environmental sustainability, gender, and culture.
 
 ## What We Found
 
@@ -19,7 +19,7 @@ Mean alignment sits at 1.68 out of 4.0—somewhere between "mentioned" and "desc
 
 ## How We Measured It
 
-We used three large language models (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) as automated policy analysts, scoring each document against UNESCO's 21 components. The ensemble achieves excellent reliability (ICC = 0.827)—comparable to human expert agreement on complex policy assessment tasks.
+The study employed three large language models (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) as automated policy analysts, scoring each document against UNESCO's 21 components. The ensemble achieves excellent reliability (ICC = 0.827)—comparable to human expert agreement on complex policy assessment tasks.
 
 ---
 

@@ -4,11 +4,11 @@ title: "UNESCO Alignment Dynamics"
 
 ## Temporal Dynamics: Before and After UNESCO {#sec-unesco-dynamics}
 
-Did the 2021 UNESCO Recommendation change anything? The honest answer: less than proponents hoped. Mean alignment actually *declined* slightly after adoption—though the story is more complicated than that headline suggests.
+The impact of the 2021 UNESCO Recommendation on national policy development requires empirical assessment. Mean alignment declined slightly after adoption—though temporal patterns reveal substantial complexity.
 
 ### The Pre/Post UNESCO Split {#sec-unesco-prepost}
 
-The UNESCO Recommendation on the Ethics of Artificial Intelligence was adopted by the UNESCO General Conference on 23 November 2021. We split the corpus at this date:
+The UNESCO Recommendation on the Ethics of Artificial Intelligence was adopted by the UNESCO General Conference on 23 November 2021. The corpus was split at this date:
 
 | Era | N | Period | Mean Alignment |
 |:---|---:|:---|---:|
@@ -17,11 +17,15 @@ The UNESCO Recommendation on the Ethics of Artificial Intelligence was adopted b
 
 : Pre/post UNESCO temporal split {#tbl-unesco-temporal-split}
 
+::: {.callout-note}
+**Metric clarification.** The 25-item alignment score (0–100) used in this chapter captures coverage of and depth on UNESCO’s specific framework components. The 10-dimension capacity/ethics composite (0–4) used in @sec-robustness captures general governance quality. Post-2021 policies score *higher* on the C+E composite (1.52 → 1.84, +21%) but *slightly lower* on the 25-item alignment score (54.6 → 53.0). This reflects the expanding policy corpus including narrower instruments that engage deeply with core governance principles but address fewer of UNESCO’s 25 specific items.
+:::
+
 ### Yearly Trend {#sec-unesco-yearly-trend}
 
 ![UNESCO alignment score over time (2017–2025). The trend line shows modest year-to-year variation without a clear upward trajectory following the 2021 adoption.](../data/analysis/paper2_ethics/unesco/fig_unesco_score_vs_year.png){#fig-unesco-yearly-trend}
 
-The time-series plot shows **no clear upward shift** after 2021. Year-to-year variation is modest, and if anything, the trend tilts slightly downward. If you were hoping for evidence that international normative instruments drive policy change, this is not encouraging.
+The time-series plot demonstrates **no clear upward shift** after 2021. Year-to-year variation is modest, and the trend, if anything, tilts slightly downward. This pattern provides limited evidence that international normative instruments drive substantial policy change.
 
 ### Item-Level Pre/Post Changes {#sec-unesco-prepost-items}
 
@@ -51,7 +55,7 @@ The pattern is clear: diversity and fairness gained ground post-2021 (+9.4pp and
 
 What explains this? The post-2021 corpus includes many first-time policy issuers: countries entering AI governance for the first time, often with narrower documents that prioritize broad strategic goals over technical governance mechanisms. Compositional change, not normative retreat.
 
-### The Income × Temporal Interaction {#sec-unesco-prepost-income}
+### Income, Temporal Interactions, and Interpretation {#sec-unesco-prepost-income}
 
 ![Pre/post UNESCO coverage rates broken down by income group. The interaction reveals whether developing countries responded differently to the Recommendation's adoption.](../data/analysis/paper2_ethics/unesco/fig_unesco_pre_post_income.png){#fig-unesco-prepost-income}
 
@@ -59,9 +63,7 @@ The interaction between income group and the post-UNESCO era is not significant 
 
 What this means: the UNESCO Recommendation has not (yet) produced differential norm diffusion. Developing countries haven't disproportionately increased alignment, nor have they fallen further behind. Temporal dynamics reflect corpus composition, not income-differentiated policy change.
 
-### Interpreting the Negative Trend {#sec-unesco-interp-trend}
-
-The slight but significant decline in mean alignment from 54.6 to 53.0 ($p = .015$) warrants careful interpretation. We don't think countries are retreating from UNESCO values. More plausible explanations:
+**Interpreting the negative trend.** The slight but significant decline in mean alignment from 54.6 to 53.0 ($p = .015$) warrants careful interpretation. We don't think countries are retreating from UNESCO values. More plausible explanations:
 
 The post-2021 corpus includes many "new entrant" jurisdictions issuing preliminary documents—consultation papers, sectoral guidelines, early-stage strategies—that naturally address fewer UNESCO items than comprehensive national strategies.
 
@@ -71,12 +73,14 @@ As AI governance matures, the marginal policy added is increasingly a technical 
 
 None of this implies normative regression. The decline reflects diversification of the governance toolkit, not retreat from ethical commitments.
 
-### The Regression Perspective {#sec-unesco-trend-regression}
+::: {.callout-warning}
+**Interpretive caveat.** The compositional explanation above—that new entrants and narrower instruments drive the decline—is asserted on theoretical grounds but not empirically tested. A definitive test would restrict the analysis to jurisdictions present in both the pre- and post-2021 periods, isolating within-country change from between-country compositional effects. We leave this decomposition for future work but note that the plausibility of the compositional account does not by itself rule out genuine normative stagnation on specific UNESCO components.
+:::
 
-The regression analysis in @sec-unesco-regression provides additional evidence. In Model 1, the post-UNESCO dummy is significant ($\beta = -1.89$, $p = .017$), but the coefficient is small, less than 2 points on a 100-point scale. In Model 2, controlling for capacity and ethics scores, it remains significant but attenuated ($\beta = -1.40$, $p = .043$). The year variable itself is not significant in any model ($p > .30$), confirming that the temporal pattern is a level shift (pre/post) rather than a continuous trend.
+### Regression Perspective and Summary {#sec-unesco-trend-regression}
 
-### Summary {#sec-unesco-dynamics-summary}
+The multivariate regression confirms this temporal pattern. The post-UNESCO dummy is significant but small (β = −1.89, p = .017 in Model 1; β = −1.40, p = .043 in Model 2), while the continuous year variable is not significant in any specification (p > .30) — the temporal pattern is a level shift rather than a continuous trend.
 
-The temporal analysis yields a nuanced message. The UNESCO Recommendation has not produced dramatic upward shift in alignment, but neither has it been irrelevant. Post-2021 policies show clear gains in diversity and fairness coverage—the Recommendation's emphasis on inclusion is diffusing into practice. The declines in technical governance items reflect corpus composition, not normative retreat.
+**Summary.** The temporal analysis yields a nuanced message. The UNESCO Recommendation has not produced dramatic upward shift in alignment, but neither has it been irrelevant. Post-2021 policies show clear gains in diversity and fairness coverage—the Recommendation's emphasis on inclusion is diffusing into practice. The declines in technical governance items reflect corpus composition, not normative retreat.
 
 International normative instruments may be most effective at diffusing broad values while having less influence on technical mechanisms requiring specialized capacity. This points to a complementary role for capacity-building initiatives like UNESCO's Readiness Assessment Methodology—helping translate normative commitments into governance infrastructure.

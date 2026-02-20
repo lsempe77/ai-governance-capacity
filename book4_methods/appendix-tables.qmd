@@ -1,0 +1,45 @@
+---
+title: "Full Regression Tables"
+---
+
+## Detailed Regression Output {#sec-appendix-tables}
+
+This appendix documents the full regression diagnostics and extended specifications for all models across the companion volumes, supporting reproducibility. All models were estimated in R (`lme4` for multilevel, `quantreg` for quantile regression, `VGAM` for Tobit) with HC1 robust standard errors. Replication code is on the project GitHub.
+
+### Implementation Capacity Models: Extended Diagnostics
+
+Four regression specifications test robustness of the income-group gap in capacity scores.
+
+**Ordinary Least Squares with full controls.** The baseline OLS regresses composite capacity on income group, log GDP, policy type, binding nature, text quality, and year fixed effects. R² = 0.436 (adjusted 0.434), N = 1,949 after excluding missing covariates, residual SE = 0.581. Diagnostic plots show no major assumption violations—slight negative skew in residuals, modest heteroskedasticity corrected via HC1, no influential outliers above Cook's D thresholds.
+
+**Multilevel random-intercept model.** Policies (level 1) nest within countries (level 2). The random-intercept model yields ICC = 0.091: ~9% of capacity variance is between countries, 91% within. Between-country variance $\sigma^2_u$ = 0.051; within-country $\sigma^2_\varepsilon$ = 0.510. The likelihood ratio test against OLS is significant ($\chi^2(1)$ = 7.30, p = .007), but the income-group coefficient barely changes—accounting for clustering does not alter the substantive finding.
+
+**Quantile regression: heterogeneous effects across the distribution.** Quantile regression estimates covariate effects at the 10th, 25th, 50th, 75th, and 90th percentiles, relaxing the OLS assumption of constant effects. The income coefficient is stable: $\beta$ = 0.15 at the 10th percentile to 0.22 at the 90th, with overlapping 95% CIs. The small gap is not an artefact of averaging across subpopulations.
+
+Full coefficient tables (bootstrapped SEs, 1,000 iterations) are at `data/analysis/paper1_capacity/extended/quantile_results.json`.
+
+**Tobit model: addressing left-censoring at zero.** 27.6% of policies score exactly 0 on at least one dimension. The Tobit model treats these as censored observations of an underlying latent variable. The Tobit income coefficient is slightly larger than OLS but substantively similar—left-censoring does not distort the income-gap finding. Scale parameter $\sigma$ = 0.742; estimated via `VGAM` with L-BFGS-B. Details at `tobit_results.json`.
+
+### Ethics Operationalisation Models: Parallel Specifications
+
+The ethics analysis uses the same four specifications (OLS, multilevel, quantile, Tobit). Ethics OLS R² = 0.412. Multilevel ICC = 0.125 (country factors explain slightly more ethics variation than capacity variation). The critical difference: the income effect on ethics is near-zero and non-significant across all quantiles, contrasting with the small but consistent capacity effect. See Book 2 for the full ethics determinants analysis.
+
+Detailed output:
+
+- OLS and controls: `data/analysis/paper2_ethics/regression_results.json`
+- Multilevel models: `data/analysis/paper2_ethics/robustness/multilevel_results.json`
+- Quantile regression: `data/analysis/paper2_ethics/extended/quantile_results.json`
+- Tobit models: `data/analysis/paper2_ethics/extended/tobit_results.json`
+
+### Sensitivity Analysis Tables: Robustness Across Specifications
+
+Six alternative specifications test fragility of the main findings: (1) excluding international organisations, (2) ordinal regression, (3) winsorising extremes, (4) alternative income classifications, (5) restricting to high text-quality policies only, (6) pre/post-2020 subsamples.
+
+The capacity income-group gap holds across all specifications *except* text-quality restriction (Specification 5), which eliminates it entirely—this is the headline result. The ethics gap is near-zero across all specifications.
+
+Sensitivity tables:
+
+- Capacity: [sensitivity_table.csv](../data/analysis/paper1_capacity/robustness/sensitivity_table.csv)
+- Ethics: [sensitivity_table.csv](../data/analysis/paper2_ethics/robustness/sensitivity_table.csv)
+
+These tables are designed for direct inclusion in meta-analyses or replication studies and include not only point estimates and standard errors but also sample sizes, $R^2$ values, and specification notes.

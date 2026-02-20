@@ -8,19 +8,13 @@ This appendix provides country-level diagnostics for benchmarking jurisdictions 
 
 The full country dataset—dimension-level scores, policy counts, temporal coverage—is at `data/analysis/shared/master_dataset.csv` and on [GitHub](https://github.com/lsempe77/ai-governance-capacity) (CC BY 4.0).
 
-### Country Rankings by Implementation Capacity
+**Implementation capacity rankings.** Jurisdictions are ranked by mean composite capacity score across the five dimensions (Clarity, Resources, Authority, Accountability, Coherence). Higher scores indicate more operationally detailed policies. As noted in @sec-cap-inequality, within-country variation often exceeds between-country differences—many countries have both strong and weak policies.
 
-Jurisdictions are ranked by mean composite capacity score across the five dimensions (Clarity, Resources, Authority, Accountability, Coherence). Higher scores indicate more operationally detailed policies. As noted in @sec-cap-inequality, within-country variation often exceeds between-country differences—many countries have both strong and weak policies.
+The full ranking (70+ jurisdictions) is at [country_rankings.csv](../data/analysis/paper1_capacity/country_rankings.csv); top performers appear in @sec-cap-rankings. These rankings reflect *policy text content*, not actual implementation quality on the ground (see the discussion of measurement limitations in @sec-discussion).
 
-The full ranking (70+ jurisdictions) is at [country_rankings.csv](../data/analysis/paper1_capacity/country_rankings.csv); top performers appear in @sec-cap-rankings. These rankings reflect *policy text content*, not actual implementation quality on the ground (see @sec-measurement-limitations).
+**Ethics operationalisation rankings.** Jurisdictions are ranked by mean ethics composite score across five dimensions: Framework Depth, Rights Protection, Governance Mechanisms, Operationalisation, and Inclusion. The full ranking is at [country_rankings.csv](../data/analysis/paper2_ethics/country_rankings.csv). As with capacity, these rankings measure *policy content*, not *ethical outcomes*.
 
-### Country Rankings by Ethics Operationalisation
-
-Jurisdictions are ranked by mean ethics composite score across five dimensions: Framework Depth, Rights Protection, Governance Mechanisms, Operationalisation, and Inclusion. The full ranking is at [country_rankings.csv](../data/analysis/paper2_ethics/country_rankings.csv). As with capacity, these rankings measure *policy content*, not *ethical outcomes*.
-
-### Cluster Assignments: Two Governance Regimes
-
-K-means analysis (@sec-cap-dynamics, @sec-eth-dynamics) identifies two governance regimes based on dimension-level scores. The two-cluster solution was chosen via silhouette optimisation.
+**Cluster assignments: two governance regimes.** K-means analysis (@sec-cap-dynamics) identifies two governance regimes based on dimension-level scores. The two-cluster solution was chosen via silhouette optimisation.
 
 **Cluster 1 ("Low Governance")**: Policies scoring in the lower range—aspirational documents with limited operational detail. Membership does not imply failure; many countries are in early stages of AI governance.
 
@@ -28,8 +22,6 @@ K-means analysis (@sec-cap-dynamics, @sec-eth-dynamics) identifies two governanc
 
 Full assignments: [capacity clusters](../data/analysis/paper1_capacity/country_clusters.csv), [ethics clusters](../data/analysis/paper2_ethics/country_clusters.csv). Income composition is nearly identical across clusters (~80% high-income, ~15% developing in both), confirming that cluster membership reflects policy design, not economics.
 
-### Efficiency Frontier Rankings: Governance Performance Relative to GDP
-
-The efficiency frontier (@sec-cap-frontier, @sec-eth-frontier) ranks countries by *performance relative to GDP expectations*—whether they punch above or below their weight. Free Disposal Hull (FDH) analysis identifies the frontier of maximum governance quality at each GDP level. Rwanda, Kenya, Uganda, and Brazil achieve scores 2.3–3.1 times above GDP predictions, while several wealthy nations underperform.
+**Efficiency frontier rankings: governance performance relative to GDP.** The efficiency frontier (@sec-cap-frontier) ranks countries by *performance relative to GDP expectations*—whether they punch above or below their weight. Free Disposal Hull (FDH) analysis identifies the frontier of maximum governance quality at each GDP level. Rwanda, Kenya, Uganda, and Brazil achieve scores 2.3–3.1 times above GDP predictions, while several wealthy nations underperform.
 
 Full rankings: [capacity efficiency](../data/analysis/paper1_capacity/frontier/efficiency_ranking.csv), [ethics efficiency](../data/analysis/paper2_ethics/frontier/efficiency_ranking.csv). Countries with low efficiency scores have institutional headroom to improve without additional fiscal outlays.

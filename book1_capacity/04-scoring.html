@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>LLM Ensemble Scoring and Validation – Global Observatory of AI Governance Capacity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ad92c8f6789d64c8f40a91dd2b038e8c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Global Observatory of AI Governance Capacity</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book1_capacity/_book/index.html"> 
+<span class="menu-text">Book 1 — Capacity</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book2_ethics/_book/index.html"> 
+<span class="menu-text">Book 2 — Ethics</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book3_unesco/_book/index.html"> 
+<span class="menu-text">Book 3 — UNESCO</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../book4_methods/_book/index.html"> 
+<span class="menu-text">Book 4 — Methods</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lsempe77/ai-governance-capacity"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-scoring" id="toc-sec-scoring" class="nav-link active" data-scroll-target="#sec-scoring">Measuring Governance Quality at Scale</a>
+  <ul class="collapse">
+  <li><a href="#sec-framework" id="toc-sec-framework" class="nav-link" data-scroll-target="#sec-framework">Scoring Framework</a></li>
+  <li><a href="#sec-ensemble" id="toc-sec-ensemble" class="nav-link" data-scroll-target="#sec-ensemble">Three-Model Ensemble</a></li>
+  <li><a href="#sec-irr" id="toc-sec-irr" class="nav-link" data-scroll-target="#sec-irr">Inter-Rater Reliability</a></li>
+  <li><a href="#sec-composite-scores" id="toc-sec-composite-scores" class="nav-link" data-scroll-target="#sec-composite-scores">Composite Scores and Validation</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">LLM Ensemble Scoring and Validation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-scoring" class="level2">
+<h2 class="anchored" data-anchor-id="sec-scoring">Measuring Governance Quality at Scale</h2>
+<section id="sec-framework" class="level3">
+<h3 class="anchored" data-anchor-id="sec-framework">Scoring Framework</h3>
+<p>Converting 2,216 policy documents into analyzable data required a framework capable of evaluating implementation readiness across diverse policy types, jurisdictions, and governance traditions. This study employs a 10-dimension assessment organized into two domains: five capacity dimensions (implementation feasibility) and five ethics dimensions (ethical commitment operationalization).</p>
+<p>Each policy is scored 0–4, where 0 means the feature is absent and 4 indicates comprehensive operationalization with concrete mechanisms. The five-point scale balances granularity against reliability. Finer scales would add noise; coarser ones would obscure real differences.</p>
+<p><strong>Capacity dimensions.</strong> Grounded in <span class="citation" data-cites="mazmanian1983">@mazmanian1983</span>, <span class="citation" data-cites="lipsky1980">@lipsky1980</span>, <span class="citation" data-cites="grindle1996">@grindle1996</span>, and <span class="citation" data-cites="fukuyama2013">@fukuyama2013</span>:</p>
+<div id="tbl-cap-dims" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cap-dims-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Capacity scoring dimensions
+</figcaption>
+<div aria-describedby="tbl-cap-dims-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C1</td>
+<td style="text-align: left;">Clarity &amp; Specificity</td>
+<td style="text-align: left;">Clear objectives, measurable targets, defined scope</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C2</td>
+<td style="text-align: left;">Resources &amp; Budget</td>
+<td style="text-align: left;">Dedicated funding, staffing, infrastructure</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C3</td>
+<td style="text-align: left;">Authority &amp; Enforcement</td>
+<td style="text-align: left;">Legal mandate, penalties, compliance mechanisms</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C4</td>
+<td style="text-align: left;">Accountability &amp; M&amp;E</td>
+<td style="text-align: left;">Reporting, evaluation, oversight bodies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C5</td>
+<td style="text-align: left;">Coherence &amp; Coordination</td>
+<td style="text-align: left;">Cross-agency alignment, international coordination</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The mapping is intentional: Clarity tracks Mazmanian and Sabatier’s clear-objectives condition, Resources captures Grindle’s fiscal and technical requirements, Authority reflects legal structuring, Accountability addresses Lipsky’s concern with constraining discretion, and Coherence captures the coordination challenges identified by <span class="citation" data-cites="hjern1982">@hjern1982</span>.</p>
+<p><strong>Ethics dimensions.</strong> Alongside the five capacity dimensions, each policy was also scored on five parallel ethics dimensions (E1 Ethical Framework Depth, E2 Rights Protection, E3 Governance Mechanisms, E4 Operationalisation, E5 Inclusion &amp; Participation), grounded in the AI ethics literature <span class="citation" data-cites="jobin2019 floridi2018 oecd2019 unesco2021 euaiact2024">[@jobin2019; @floridi2018; @oecd2019; @unesco2021; @euaiact2024]</span>. These ethics scores inform cross-domain comparisons within this report and are analysed in depth in the companion study on ethics governance. The full ethics rubric and scoring criteria appear in <strong>?@sec-appendix-rubric</strong>.</p>
+<p>Each dimension employs explicit scoring rubrics with anchored examples (see <strong>?@sec-appendix-rubric</strong>). Composites are unweighted means: <em>Capacity</em> = mean(C1–C5), <em>Ethics</em> = mean(E1–E5), <em>Overall</em> = mean(all 10). Equal weighting reflects theoretical agnosticism regarding dimensional importance, as different governance contexts may prioritize dimensions differently.</p>
+</section>
+<section id="sec-ensemble" class="level3">
+<h3 class="anchored" data-anchor-id="sec-ensemble">Three-Model Ensemble</h3>
+<p>Scoring 2,216 documents requires a method that is analytically sophisticated, scalable, and reliable. Human coding would prove prohibitively slow and expensive; keyword approaches lack interpretive depth. This study employs frontier LLMs as automated policy analysts, combining three models to reduce single-model bias:</p>
+<div id="tbl-ensemble" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ensemble-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: LLM ensemble composition
+</figcaption>
+<div aria-describedby="tbl-ensemble-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Identifier</th>
+<th style="text-align: left;">Role</th>
+<th style="text-align: right;">Entries Scored</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Model A</td>
+<td style="text-align: left;">Claude Sonnet 4</td>
+<td style="text-align: left;">Strictest scorer</td>
+<td style="text-align: right;">2,210 (99.7%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Model B</td>
+<td style="text-align: left;">GPT-4o</td>
+<td style="text-align: left;">Moderate scorer</td>
+<td style="text-align: right;">2,216 (100%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Model C</td>
+<td style="text-align: left;">Gemini Flash 2.0</td>
+<td style="text-align: left;">Moderate scorer</td>
+<td style="text-align: right;">2,215 (100%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Using models from three different organizations (Anthropic, OpenAI, Google) reduces the risk that shared training biases systematically skew results. Each model received identical structured prompts with the full policy text and scoring rubric, and returned JSON-formatted scores with supporting evidence excerpts. The final score per dimension is the <strong>median</strong> of three, which handles calibration differences between models without requiring explicit recalibration.</p>
+<p>The pipeline required <strong>6,641 API calls</strong> (2,216 × 3 models, minus a few JSON failures), with 99.7% of entries successfully scored by all three models.</p>
+</section>
+<section id="sec-irr" class="level3">
+<h3 class="anchored" data-anchor-id="sec-irr">Inter-Rater Reliability</h3>
+<p>Do the three models agree? If not, the ensemble scores are arbitrary. I assess agreement using ICC(2,1) as the primary metric, following <span class="citation" data-cites="shrout1979">@shrout1979</span>, supplemented by pairwise correlations, Fleiss’ kappa, and score spread analysis.</p>
+<div id="tbl-irr-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-irr-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Inter-rater reliability summary
+</figcaption>
+<div aria-describedby="tbl-irr-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ICC(2,1) overall</td>
+<td style="text-align: left;"><strong>0.827</strong></td>
+<td style="text-align: left;">Excellent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ICC(2,1) capacity</td>
+<td style="text-align: left;">0.824</td>
+<td style="text-align: left;">Excellent</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ICC(2,1) ethics</td>
+<td style="text-align: left;">0.791</td>
+<td style="text-align: left;">Excellent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean pairwise Pearson</td>
+<td style="text-align: left;">0.86</td>
+<td style="text-align: left;">Strong</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean pairwise Spearman</td>
+<td style="text-align: left;">0.88</td>
+<td style="text-align: left;">Strong</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean Fleiss’ κ</td>
+<td style="text-align: left;">0.51</td>
+<td style="text-align: left;">Moderate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean overall spread</td>
+<td style="text-align: left;">0.40/4</td>
+<td style="text-align: left;">Low disagreement</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Scores within 1 point</td>
+<td style="text-align: left;">95.4%</td>
+<td style="text-align: left;">High consistency</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>ICC(2,1) = 0.827 is “Excellent” under Cicchetti’s (1994) guidelines (&gt;0.75), meaning ~83% of observed variance reflects real differences between policies rather than model disagreement. This matches or exceeds reliability typically reported in human-coded policy studies. The mean pairwise correlation of 0.86 confirms this from a different angle, and the 95.4% within-1-point agreement rate shows that large divergences are rare. Both subscales hold up independently: ICC = 0.824 for capacity, 0.791 for ethics.</p>
+<p><strong>Dimension-level reliability.</strong> All dimensions reach at least “Good” reliability (&gt;0.60), with six hitting “Excellent” (&gt;0.75).</p>
+<div id="tbl-irr-dims" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-irr-dims-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Dimension-level ICC values
+</figcaption>
+<div aria-describedby="tbl-irr-dims-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">ICC(2,1)</th>
+<th style="text-align: left;">Quality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C1 Clarity</td>
+<td style="text-align: left;">0.720</td>
+<td style="text-align: left;">Good</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C2 Resources</td>
+<td style="text-align: left;">0.735</td>
+<td style="text-align: left;">Good</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C3 Authority</td>
+<td style="text-align: left;">0.751</td>
+<td style="text-align: left;">Excellent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C4 Accountability</td>
+<td style="text-align: left;">0.753</td>
+<td style="text-align: left;">Excellent</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C5 Coherence</td>
+<td style="text-align: left;">0.804</td>
+<td style="text-align: left;">Excellent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">E1 Framework</td>
+<td style="text-align: left;">0.751</td>
+<td style="text-align: left;">Excellent</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E2 Rights</td>
+<td style="text-align: left;">0.785</td>
+<td style="text-align: left;">Excellent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">E3 Governance</td>
+<td style="text-align: left;">0.691</td>
+<td style="text-align: left;">Good</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E4 Operationalisation</td>
+<td style="text-align: left;">0.605</td>
+<td style="text-align: left;">Good</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">E5 Inclusion</td>
+<td style="text-align: left;">0.746</td>
+<td style="text-align: left;">Good</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Agreement is highest on structural features like Coherence (0.804) and Rights Protection (0.785), where textual evidence tends to be concrete. Operationalisation (0.605) and Governance Mechanisms (0.691) show lower, though still acceptable, agreement, probably because distinguishing truly operational requirements from aspirational language requires judgment calls where even sophisticated models may differ.</p>
+<p><strong>Model-specific scoring patterns.</strong> The three models show systematic calibration differences:</p>
+<div id="tbl-model-means" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-model-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Model-level mean scores
+</figcaption>
+<div aria-describedby="tbl-model-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Capacity Mean</th>
+<th style="text-align: right;">Ethics Mean</th>
+<th style="text-align: right;">Overall Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A (Claude)</td>
+<td style="text-align: right;">0.68</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.57</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B (GPT-4o)</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">0.71</td>
+<td style="text-align: right;">0.81</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C (Gemini)</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">0.68</td>
+<td style="text-align: right;">0.81</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Claude (Model A) scores roughly 0.24 points lower than GPT-4o and Gemini across the board. This pattern is consistent across policy types, income groups, and regions. Claude appears to demand stronger textual evidence before assigning higher scores, particularly on ethics dimensions (0.46 vs.&nbsp;0.68–0.71). But the rank ordering is preserved: all three models correlate above r = 0.85. The median aggregation naturally handles this calibration difference without requiring explicit adjustment.</p>
+<p><strong>Agreement by text quality.</strong> Models agree near-perfectly on stubs and converge tightly on thin documents; the higher disagreement on good-quality texts is actually encouraging—it means models are engaging with substantive content.</p>
+<div id="tbl-agreement-quality" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-agreement-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Agreement by text quality
+</figcaption>
+<div aria-describedby="tbl-agreement-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Text Quality</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Mean Spread</th>
+<th style="text-align: right;">Within 1 pt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Good (≥500 words)</td>
+<td style="text-align: right;">942</td>
+<td style="text-align: right;">0.57</td>
+<td style="text-align: right;">90.3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Thin (100–499)</td>
+<td style="text-align: right;">805</td>
+<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">98.9%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stub (&lt;100)</td>
+<td style="text-align: right;">462</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">99.8%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-composite-scores" class="level3">
+<h3 class="anchored" data-anchor-id="sec-composite-scores">Composite Scores and Validation</h3>
+<p>The ensemble produces these distributions:</p>
+<div id="tbl-composites" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-composites-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Composite score distributions
+</figcaption>
+<div aria-describedby="tbl-composites-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Component</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: left;">IQR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Capacity (C1–C5)</td>
+<td style="text-align: right;">0.83</td>
+<td style="text-align: right;">0.77</td>
+<td style="text-align: right;">0.60</td>
+<td style="text-align: left;">0.00–1.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ethics (E1–E5)</td>
+<td style="text-align: right;">0.61</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: left;">0.00–1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Overall (all 10)</td>
+<td style="text-align: right;">0.73</td>
+<td style="text-align: right;">0.66</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: left;">0.10–1.15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Three features of these distributions shape all downstream analysis. First, the <strong>floor effect</strong>: 27.6% of policies score exactly zero on capacity, 36.3% on ethics. These are not missing data; they are substantive findings about the prevalence of aspirational-but-empty documents. This censoring motivates the Tobit models in <strong>?@sec-cap-determinants</strong>. Second, all three distributions are <strong>right-skewed</strong> (medians below means), so focusing on means alone would be misleading. Third, the <strong>capacity-ethics gap</strong> (0.83 vs.&nbsp;0.61) suggests governments more readily specify institutional structures than operationalize ethical principles, a pattern examined through PCA analysis in the correlation sections.</p>
+<p><strong>Validation discussion.</strong> Using LLMs as policy coders is a bet. Recent evidence is encouraging: <span class="citation" data-cites="gilardi2023">@gilardi2023</span> and <span class="citation" data-cites="tornberg2024">@tornberg2024</span> show frontier models can match or exceed trained human coders on complex text annotation. But the approach has real limits <span class="citation" data-cites="pangakis2023">[@pangakis2023]</span>.</p>
+<p>Three design choices mitigate the main risks. The <strong>multi-model ensemble</strong> means no single model’s idiosyncrasies drive results. The <strong>structured evidence requirement</strong> (models must cite supporting text for each score) makes assessments auditable and reduces fabrication. The <strong>median aggregation</strong> handles calibration differences without recalibration.</p>
+<p>Limitations remain. The three models likely share biases from overlapping training data; all were probably trained on prominent AI governance documents like the OECD AI Principles and EU AI Act. The rubric involves subjective judgments about “adequate” clarity or “substantial” resources. And I treat all three models as equally authoritative, which may not be true.</p>
+<p>These concerns motivate the extensive robustness checks in <strong>?@sec-robustness</strong>. The consistency of results across alternative specifications, subsamples, and aggregation methods provides additional confidence, though it cannot fully resolve questions about construct validity that only human coding can address.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

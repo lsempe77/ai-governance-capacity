@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "AI Governance Capacity — Cross-National Analysis"
+  navbar:
+    background: dark
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Book 1 — Capacity"
+        href: book1_capacity/_book/index.html
+      - text: "Book 2 — Ethics"
+        href: book2_ethics/_book/index.html
+      - text: "Book 3 — UNESCO"
+        href: book3_unesco/_book/index.html
+      - text: "Book 4 — Methods"
+        href: book4_methods/_book/index.html
+    right:
+      - icon: github
+        href: https://github.com/lsempe77/ai-governance-capacity
+
+format:
+  html:
+    theme: cosmo
+    toc: true

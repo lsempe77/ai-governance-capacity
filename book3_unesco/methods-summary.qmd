@@ -1,0 +1,38 @@
+---
+title: "Data and Methods"
+---
+
+## Shared Methodology {#sec-methods-summary}
+
+This study analyses 2,216 AI policies from the OECD.AI Policy Observatory, scored by a three-model LLM ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) on 10 governance dimensions. The full methodological details — corpus construction, scoring rubrics, inter-rater reliability, and technical validation — are documented in the companion volume:
+
+> **[Book 4: Data, Methods, and Technical Appendices](../book4_methods/)**
+
+Key parameters for reference:
+
+| Parameter | Value |
+|:---|:---|
+| Corpus size | 2,216 policies, 70+ jurisdictions, 2017–2025 |
+| Document retrieval | 94% coverage (2,085 full texts) |
+| Analysis-ready text | 1,754 documents (79.2%), 11.4 million words |
+| Scoring models | Claude Sonnet 4, GPT-4o, Gemini Flash 2.0 |
+| Inter-rater reliability | ICC(2,1) = 0.827 ("Excellent") |
+| Score agreement | 95.4% of scores within 1 point across models |
+
+: Methodology summary {#tbl-methods-summary}
+
+### Scoring Framework
+
+Each policy was scored on the same 10-dimension capacity-ethics framework used across all three companion studies (see Book 4 for full rubric and validation): five capacity dimensions (C1–C5) and five ethics dimensions (E1–E5), each on a 0–4 scale. Composite scores are unweighted means.
+
+### UNESCO Alignment Scoring {#sec-unesco-scoring}
+
+In addition to the shared 10-dimension framework, this study employs a **UNESCO-specific alignment assessment**. Each policy was scored on **25 UNESCO components** drawn from the Recommendation on the Ethics of Artificial Intelligence: 4 values (human rights & dignity, living in peaceful societies, diversity & inclusiveness, environment & ecosystem flourishing), 10 principles (proportionality, safety & security, fairness, transparency, responsibility, privacy, human oversight, sustainability, awareness & literacy, multi-stakeholder governance), and 11 policy action areas (ethical impact assessment, ethical governance, data policy, development & international cooperation, environment, gender, education & research, health, economy, culture, and communication & information).
+
+For each component, the LLM ensemble assessed two metrics: **coverage** (binary: does the policy mention this component?) and **depth** (1–5 scale: word-level mention, sentence-level engagement, paragraph-level treatment, section-level analysis, or comprehensive integration). The composite UNESCO alignment score (0–100) weights coverage breadth at 60% and normalised depth quality at 40%, capturing both *whether* a policy addresses a component and *how seriously* it engages with it.
+
+::: {.callout-note}
+**Two distinct metrics.** This book uses two UNESCO-related metrics. The **10-dimension capacity/ethics composite** (0–4 scale) measures general governance quality using the C1–C5 and E1–E5 framework shared across all three studies. The **25-item UNESCO alignment score** (0–100 scale) measures specific coverage of and depth on UNESCO's own framework components. Both are valid; they measure different things.
+:::
+
+Code, data, and methods: <https://github.com/lsempe77/ai-governance-capacity>

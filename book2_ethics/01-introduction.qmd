@@ -5,7 +5,7 @@ title: "Introduction"
 ## Measuring Normative Commitments in AI Governance {#sec-intro}
 
 ::: {.callout-note appearance="simple"}
-**Chapter summary.** How deeply do AI policies embed ethical commitments? This chapter introduces the research question, examines gaps in ethics governance measurement, and previews our analytical framework.
+**Section summary.** How deeply do AI policies embed ethical commitments? This section introduces the research question, examines gaps in ethics governance measurement, and previews our analytical framework.
 :::
 
 ### Beyond Principle Proliferation
@@ -14,7 +14,7 @@ The AI ethics landscape shows remarkable normative convergence. @jobin2019 found
 
 But convergence on *principles* doesn't guarantee *governance depth*. Do policies merely list values, or do they specify rights protections, establish participatory mechanisms, operationalize principles, and ensure inclusive engagement?
 
-This book measures ethics governance depth across five dimensions:
+This study measures ethics governance depth across five dimensions:
 
 1. *E1 Framework Depth*: Specificity of ethical principles and value articulation
 2. *E2 Rights Protection*: Safeguards for privacy, fairness, non-discrimination, due process
@@ -22,23 +22,6 @@ This book measures ethics governance depth across five dimensions:
 4. *E4 Operationalization*: Concrete requirements, compliance mechanisms, enforcement
 5. *E5 Inclusion*: Representation of marginalized groups, accessibility, equity considerations
 
-### Key Findings Preview
+Analysis of 2,100+ policies reveals low depth overall (mean 1.39/4.0, with superficial ethical commitments in most policies), narrowing ethics gaps between income groups, extreme within-group inequality (99% of variation within income groups), a documentation confound where the income gap (d = 0.20) reverses (d = −0.09) for well-documented policies, and horizontal diffusion through peer learning rather than top-down transfer.
 
-Analysis of 2,100+ policies reveals:
-
-- Low depth overall: Mean 1.39/4.0, with superficial ethical commitments in most policies
-- Convergence: Ethics gaps narrowing faster than capacity gaps
-- Within-group inequality: 99% of variation occurs within income groups
-- Documentation confound: The income gap (d=0.20) reverses (d=-0.09) for well-documented policies
-- Horizontal diffusion: Regional ethics norms spread through peer learning
-
-### Roadmap
-
-- **Chapter 9**: Global ethics governance landscape
-- **Chapter 10**: Determinants of ethics depth
-- **Chapter 11**: Inequality patterns
-- **Chapter 12**: Temporal dynamics and convergence
-- **Chapter 14**: Robustness checks
-- **Chapters 15-16**: Implications and conclusions
-
-The following chapters show that developing countries increasingly match wealthy-country ethics commitments.
+The book proceeds as follows: @sec-literature reviews theoretical foundations; @sec-methods-summary outlines data and scoring (with full details in the companion *Data, Methods, and Technical Appendices* volume); @sec-eth-landscape maps the global ethics landscape; @sec-eth-determinants examines determinants; @sec-eth-inequality analyses inequality patterns; @sec-eth-dynamics traces temporal dynamics and convergence; @sec-robustness presents robustness checks; and @sec-discussion and @sec-conclusion discuss implications. The following sections demonstrate that developing countries increasingly match or exceed wealthy-country ethics commitments.

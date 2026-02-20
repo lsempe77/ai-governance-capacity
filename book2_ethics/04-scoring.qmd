@@ -5,7 +5,7 @@ title: "LLM Ensemble Scoring & Validation"
 ## Measuring Governance Quality at Scale {#sec-scoring}
 
 ::: {.callout-note appearance="simple"}
-**Chapter summary.** This chapter presents our LLM-based scoring methodology — a three-model ensemble that independently codes each policy on 10 dimensions. We report inter-rater reliability (ICC = 0.827, Excellent) and discuss model-specific scoring patterns.
+**Section summary.** This section presents our LLM-based scoring methodology — a three-model ensemble that independently codes each policy on 10 dimensions. We report inter-rater reliability (ICC = 0.827, Excellent) and discuss model-specific scoring patterns.
 :::
 
 ### Scoring Framework {#sec-framework}
@@ -14,25 +14,9 @@ The framework captures both structural features enabling implementation (capacit
 
 Each policy was scored on a 0–4 scale: 0 = complete absence, 1-2 = minimal to moderate, 3 = substantial readiness, 4 = comprehensive operationalization with concrete mechanisms.
 
-#### Capacity Dimensions {#sec-cap-dims}
+**Capacity Dimensions.** Five parallel capacity dimensions (C1 Clarity & Specificity, C2 Resources & Budget, C3 Authority & Enforcement, C4 Accountability & M&E, C5 Coherence & Coordination), grounded in implementation science [@mazmanian1983; @lipsky1980; @grindle1996; @fukuyama2013], capture whether policies establish the institutional infrastructure needed for execution. These are analysed in depth in the companion study on AI governance capacity.
 
-Grounded in implementation science [@mazmanian1983; @lipsky1980; @grindle1996; @fukuyama2013]:
-
-| Code | Dimension | What It Measures |
-|:---|:---|:---|
-| C1 | Clarity & Specificity | Clear objectives, measurable targets, defined scope |
-| C2 | Resources & Budget | Dedicated funding, staffing, infrastructure |
-| C3 | Authority & Enforcement | Legal mandate, penalties, compliance mechanisms |
-| C4 | Accountability & M&E | Reporting, evaluation, oversight bodies |
-| C5 | Coherence & Coordination | Cross-agency alignment, international coordination |
-
-: Capacity scoring dimensions {#tbl-cap-dims}
-
-These five dimensions operationalize conditions identified by @mazmanian1983 and extended by @grindle1996, @lipsky1980, and @hjern1982.
-
-#### Ethics Dimensions {#sec-eth-dims}
-
-Grounded in AI ethics literature [@jobin2019; @floridi2018; @oecd2019; @unesco2021; @euaiact2024]:
+**Ethics Dimensions.** Grounded in AI ethics literature [@jobin2019; @floridi2018; @oecd2019; @unesco2021; @euaiact2024]:
 
 | Code | Dimension | What It Measures |
 |:---|:---|:---|
@@ -70,8 +54,6 @@ Total effort: **6,641 API calls** with 99.7% completion rate.
 
 Do the three models agree on policy quality? Low agreement would render ensemble scores arbitrary. We assess reliability using ICC(2,1) following @shrout1979, supplemented by pairwise correlations and Fleiss' kappa.
 
-#### Overall Reliability
-
 | Metric | Value | Interpretation |
 |:---|:---|:---|
 | ICC(2,1) overall | **0.827** | Excellent |
@@ -87,7 +69,7 @@ Do the three models agree on policy quality? Low agreement would render ensemble
 
 @tbl-irr-summary shows ICC(2,1) = 0.827 ("Excellent" per @cicchetti1994), meaning 83% of variance reflects true policy differences. This matches or exceeds human-coded studies where ICC 0.70-0.80 indicates strong reliability. Both capacity (0.824) and ethics (0.791) achieve excellent reliability independently.
 
-#### Dimension-Level ICCs
+**Dimension-level reliability.** All dimensions achieve Good (>0.60) or Excellent (>0.75) reliability.
 
 | Dimension | ICC(2,1) | Quality |
 |:---|:---|:---|
@@ -104,11 +86,9 @@ Do the three models agree on policy quality? Low agreement would render ensemble
 
 : Dimension-level ICC values {#tbl-irr-dims}
 
-@tbl-irr-dims shows all dimensions achieve Good (>0.60) or Excellent (>0.75) reliability. Highest agreement appears on structural features (Coherence 0.804, Rights 0.785); lower reliability on Operationalisation (0.605) reflects greater interpretive challenge in distinguishing requirements from aspirations.
+Highest agreement appears on structural features (Coherence 0.804, Rights 0.785); lower reliability on Operationalisation (0.605) reflects greater interpretive challenge in distinguishing requirements from aspirations.
 
-#### Model-Specific Scoring Patterns {#sec-model-bias}
-
-The three models exhibit systematic scoring tendencies:
+**Model-specific scoring patterns.** The three models exhibit systematic scoring tendencies:
 
 | Model | Capacity Mean | Ethics Mean | Overall Mean |
 |:---|---:|---:|---:|
@@ -118,9 +98,9 @@ The three models exhibit systematic scoring tendencies:
 
 : Model-level mean scores {#tbl-model-means}
 
-@tbl-model-means shows Claude Sonnet 4 scores ~0.24 points lower than GPT-4o and Gemini across both dimensions — a consistent pattern across all policy types and regions indicating stricter calibration, not random noise. The high correlation between models (r > 0.85) confirms agreement on rank ordering despite level differences; median aggregation naturally handles this calibration shift.
+Claude Sonnet 4 scores ~0.24 points lower than GPT-4o and Gemini across both dimensions — a consistent pattern across all policy types and regions indicating stricter calibration, not random noise. The high correlation between models (r > 0.85) confirms agreement on rank ordering despite level differences; median aggregation naturally handles this calibration shift.
 
-#### Agreement by Text Quality {#sec-agreement-quality}
+**Agreement by text quality.** Near-perfect agreement on stubs (spread 0.13) and thin documents (spread 0.34) reflects convergent low scores when texts provide little substance. Higher disagreement on good texts (spread 0.57, still 90.3% within 1 point) reflects substantive engagement with genuinely ambiguous cases.
 
 | Text Quality | N | Mean Spread | Within 1 pt |
 |:---|---:|---:|---:|
@@ -130,9 +110,7 @@ The three models exhibit systematic scoring tendencies:
 
 : Agreement by text quality {#tbl-agreement-quality}
 
-@tbl-agreement-quality shows near-perfect agreement on stubs (spread 0.13) and thin documents (spread 0.34), reflecting convergent low scores when texts provide little substance. Higher disagreement on good texts (spread 0.57, still 90.3% within 1 point) reflects substantive engagement with genuinely ambiguous cases where reasonable analysts would differ.
-
-### Composite Scores {#sec-composite-scores}
+### Composite Scores and Validation {#sec-composite-scores}
 
 The resulting ensemble produces composite scores with the following distributions:
 
@@ -146,15 +124,13 @@ The resulting ensemble produces composite scores with the following distribution
 
 @tbl-composites summarizes ensemble scores for subsequent analyses. Key features:
 
-1. *Floor effect*: 27.6% score zero on capacity, 36.3% on ethics—many documents lack operational content. This censoring motivates Tobit models in @sec-cap-determinants.
+1. *Floor effect*: 27.6% score zero on capacity, 36.3% on ethics—many documents lack operational content. This censoring motivates Tobit models in @sec-eth-determinants.
 
 2. *Right skew*: Medians below means indicate most policies cluster low while a smaller set achieves high scores, motivating quantile regression.
 
-3. *Capacity-ethics gap*: Policies average 0.83 on capacity but 0.61 on ethics, suggesting governments more often specify institutional structures than operationalize ethical principles (examined in @sec-pca-nexus).
+3. *Capacity-ethics gap*: Policies average 0.83 on capacity but 0.61 on ethics, suggesting governments more often specify institutional structures than operationalize ethical principles (examined in the correlation analysis in @sec-eth-landscape).
 
-### Validation Discussion {#sec-validation-discussion}
-
-Using LLMs as automated coders builds on evidence that frontier models perform complex annotation at or above human quality [@gilardi2023; @tornberg2024], though with caveats about task variation and potential biases [@pangakis2023].
+**Validation.** Using LLMs as automated coders builds on evidence that frontier models perform complex annotation at or above human quality [@gilardi2023; @tornberg2024], though with caveats about task variation and potential biases [@pangakis2023].
 
 Three design features address validity concerns: (1) multi-model ensemble reduces single-model idiosyncrasies; (2) structured output with evidence enables auditing; (3) median aggregation handles calibration differences without recalibration.
 

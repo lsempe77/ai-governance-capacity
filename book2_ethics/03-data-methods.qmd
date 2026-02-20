@@ -5,14 +5,14 @@ title: "Data & Methods"
 ## The OECD.AI Corpus {#sec-data-methods}
 
 ::: {.callout-note appearance="simple"}
-**Chapter summary.** This chapter describes the data collection pipeline: from the OECD.AI Policy Observatory through document retrieval, text extraction, and quality classification. We detail the construction of a 2,216-policy corpus with 11.4 million words of analysis-ready text across 70+ jurisdictions.
+**Section summary.** This section describes the data collection pipeline: from the OECD.AI Policy Observatory through document retrieval, text extraction, and quality classification. We detail the construction of a 2,216-policy corpus with 11.4 million words of analysis-ready text across 70+ jurisdictions.
 :::
 
-### Data Source {#sec-data-source}
+### Corpus Construction {#sec-data-source}
 
-Our data come from the **OECD.AI Policy Observatory** [@oecdai2024], the most comprehensive international tracker of AI policy initiatives. Established as a collaborative effort among OECD member states and partner countries, the Observatory serves as the global standard for monitoring AI governance activity. It catalogues government actions related to AI — including national strategies, legislation, executive orders, guidelines, and programmes — with structured metadata on jurisdiction, year, policy type, target sectors, and responsible organisations. This structured approach makes the Observatory uniquely suited for systematic cross-national comparison, as each entry follows a consistent documentation schema that enables quantitative analysis at scale.
+The data derive from the **OECD.AI Policy Observatory** [@oecdai2024], the most comprehensive international tracker of AI policy initiatives. Established as a collaborative effort among OECD member states and partner countries, the Observatory serves as the global standard for monitoring AI governance activity. It catalogues government actions related to AI — including national strategies, legislation, executive orders, guidelines, and programmes — with structured metadata on jurisdiction, year, policy type, target sectors, and responsible organisations. This structured approach makes the Observatory uniquely suited for systematic cross-national comparison, as each entry follows a consistent documentation schema that enables quantitative analysis at scale.
 
-We politely scraped the complete Observatory as of January 2026, obtaining **2,216 policy entries** spanning **70+ jurisdictions** and the years **2017–2025**. This snapshot represents the state of global AI governance at a critical juncture, as many jurisdictions transition from voluntary guidelines to binding regulation.
+The complete Observatory was systematically scraped as of January 2026, obtaining **2,216 policy entries** spanning **70+ jurisdictions** and the years **2017–2025**. This snapshot represents the state of global AI governance at a critical juncture, as many jurisdictions transition from voluntary guidelines to binding regulation.
 
 | Metric | Value |
 |:---|---:|
@@ -26,21 +26,19 @@ We politely scraped the complete Observatory as of January 2026, obtaining **2,2
 
 @tbl-corpus-overview shows the breadth of our corpus, which encompasses nearly every documented AI governance initiative globally over the past eight years. The 70+ jurisdictions include not only major economies but also developing countries in Africa, Asia, and Latin America, providing the geographic diversity necessary to examine capacity gaps across income levels.
 
-### Document Retrieval {#sec-retrieval}
+**Document Retrieval.** The Observatory provides brief descriptions and links to source documents but does not host full texts. To enable detailed assessment, a five-strategy cascading retrieval pipeline was constructed:
 
-The OECD.AI Observatory provides brief descriptions (typically <500 words) and links to source documents, but does not host full texts. This design reflects the Observatory's role as a catalog rather than an archive — it points to official documents but leaves them at their original locations. For our analysis, however, we required the complete policy texts to enable detailed assessment of implementation capacity. This necessitated building a retrieval pipeline capable of locating and downloading documents that might have moved, been renamed, or disappeared from their original URLs.
+1. Direct download from `source_url` (~60% success)
+2. Scraping embedded links from each OECD.AI entry page
+3. Internet Archive Wayback Machine for moved/expired URLs
+4. DuckDuckGo search with policy title, jurisdiction, and file type restrictions
+5. Claude API web search for the most difficult cases
 
-Our five-strategy retrieval pipeline operated as a cascading fallback system. First, we attempted direct downloads from the `source_url` field provided in the Observatory metadata, which succeeded for approximately 60% of entries. For documents where direct download failed, we scraped the OECD.AI web page for each policy entry to locate embedded source links that might not appear in the structured metadata. When original URLs had moved or expired — a common occurrence for policy documents published years earlier — we queried the Internet Archive Wayback Machine to retrieve historical snapshots. For documents unavailable through any of these channels, we conducted targeted searches using DuckDuckGo with carefully constructed queries combining the policy title, jurisdiction, and file type restrictions. Finally, for the most difficult cases, we employed the Claude API's web search capability to locate official document URLs through more sophisticated reasoning about likely hosting locations.
+This pipeline achieved ~94% coverage (2,085 documents retrieved). The remaining entries, mostly press releases or brief announcements, were retained as OECD snippets.
 
-This layered approach achieved approximately 94% coverage, successfully retrieving around 2,085 documents to local storage. The remaining entries — primarily press releases, brief announcements, or policies documented only through secondary sources — remained available as OECD snippets, providing at least minimal text for analysis even when full documents proved inaccessible.
+**Text Extraction.** Policy documents arrive in varied formats: text-based or scanned PDFs, web pages with complex navigation, documents ranging from single pages to hundred-page legislative texts. Format-specific extraction tools were employed: PyMuPDF (`fitz`) for PDFs, `trafilatura` for HTML content extraction, and OECD snippet text as a fallback.
 
-### Text Extraction {#sec-extraction}
-
-Retrieving documents was only the first challenge; extracting clean, analysis-ready text from diverse file formats proved equally demanding. Policy documents arrive in varied formats — PDFs may be text-based or scanned images, web pages may embed content within complex navigation structures, and documents may span from single-page executive summaries to hundred-page legislative texts. Each format required specialized handling to extract content accurately while removing headers, footers, page numbers, and other non-substantive elements that would interfere with analysis.
-
-We developed format-specific extraction pipelines matched to document characteristics. For PDF documents — the most common format in our corpus — we employed PyMuPDF (`fitz`), which excels at extracting text from text-based PDFs while preserving document structure. For HTML documents, we used `trafilatura`, a content extraction library specifically designed to identify main textual content while stripping navigation menus, sidebars, and other boilerplate elements typical of government websites. For entries where no downloadable source could be located, we fell back to the OECD snippet text, accepting the limitation of abbreviated content rather than excluding these policies entirely.
-
-Each document was then classified into one of three quality tiers based on extracted word count, providing a systematic approach to assessing text adequacy for detailed analysis:
+Each document was classified into three quality tiers by word count:
 
 | Quality Tier | Word Count | N | % | Description |
 |:---|:---|---:|---:|:---|
@@ -53,17 +51,13 @@ Each document was then classified into one of three quality tiers based on extra
 
 @tbl-text-quality shows ~80% of the corpus (1,754 documents) contains sufficient text for analysis, with 43% "Good" quality (500+ words). The 806 "Thin" documents (100-499 words) support basic scoring but may lack detail. The 462 "Stub" entries (<100 words) contribute little analytically. Total corpus: 11.4 million words; median document length: 1,247 words.
 
-### Enriched Corpus {#sec-enriched-corpus}
+### Sample and Metadata {#sec-enriched-corpus}
 
-The pipeline produced `corpus_enriched.json`, merging OECD metadata with extracted content and quality assessments. Each entry preserves original metadata (title, jurisdiction, year, URL, policy type, sectors) plus extracted text, quality classification, word count, and extraction method.
-
-### Country Metadata {#sec-country-metadata}
+**Enriched Corpus.** The pipeline produced `corpus_enriched.json`, merging OECD metadata with extracted content and quality assessments. Each entry preserves original metadata (title, jurisdiction, year, URL, policy type, sectors) plus extracted text, quality classification, word count, and extraction method.
 
 Jurisdictions were mapped to World Bank classifications: income groups (HI, UMI, LMI, LI) and regions (EAP, ECA, LAC, MENA, NAM, SA, SSA). For North-South analyses, we use a binary HI vs. Developing classification. GDP per capita (current USD, 2023) enables continuous wealth comparisons. International organizations were flagged and excluded from country-level analyses.
 
-### Sample Composition {#sec-sample}
-
-The final analytical sample reflects the OECD.AI Observatory's coverage, which skews toward high-income countries:
+**Sample Composition.** The final analytical sample reflects the OECD.AI Observatory's coverage, which skews toward high-income countries:
 
 | Income Group | N Policies | % | N Countries |
 |:---|---:|---:|---:|
@@ -102,45 +96,41 @@ graph LR
 
 ### Analytical Methods {#sec-analytical-methods}
 
-The statistical analyses in subsequent chapters employ multiple complementary methods to examine governance capacity from different angles. This methodological pluralism enables robust inference: findings that emerge consistently across diverse analytical approaches inspire greater confidence than those dependent on a single modeling choice. Here we overview the core analytical techniques; specific model specifications appear in their respective chapters.
+The statistical analyses in subsequent chapters employ multiple complementary methods. This methodological pluralism enables robust inference: findings that emerge consistently across diverse analytical approaches inspire greater confidence. Here we overview the core techniques; specific model specifications appear in their respective chapters.
 
-#### Text-to-Data Conversion: LLM Ensemble Scoring
+**Text-to-data conversion.** The foundational step is converting unstructured policy documents into structured quantitative scores. Each LLM reads the full policy document, applies the detailed scoring rubric for all 10 dimensions simultaneously, and returns structured JSON-formatted scores with textual evidence. The three-model ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) uses the median score as the final assessment. ICC(2,1) = 0.827 demonstrates excellent inter-rater reliability, comparable to or exceeding typical human coder agreement. Detailed validation appears in @sec-scoring.
 
-The foundational methodological step — and the innovation that enables analysis at this scale — is the conversion of unstructured policy documents into structured quantitative scores. Unlike traditional text analysis approaches that extract word frequencies, topics, or sentiment, our method employs frontier large language models as expert policy analysts. Each LLM reads the full policy document (up to the model's context window, typically 8,000+ words), applies the detailed scoring rubric for all 10 dimensions simultaneously, and returns structured JSON-formatted scores with textual evidence justifying each assessment. This approach preserves the interpretive sophistication of human expert coding — capturing whether a policy merely mentions implementation features or provides concrete operational details — while achieving the scale necessary to analyze 2,216 documents.
+**Descriptive analysis.** Each analytical section begins with descriptive statistics and visual exploration: dimension-specific histograms, ridge plots across groups, radar charts, box-and-violin overlays, and heatmaps.
 
-The three-model ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) functions as a panel of expert raters, with the median score serving as the final assessment. This ensemble design addresses the known variability of individual LLM outputs while leveraging their complementary strengths: Claude's nuanced policy interpretation, GPT-4o's balanced analytical approach, and Gemini's efficient processing. The resulting ICC(2,1) = 0.827 demonstrates excellent inter-rater reliability, comparable to or exceeding typical human coder agreement on complex policy dimensions. Detailed validation of this approach, including comparison with human expert ratings, appears in @sec-scoring. All subsequent statistical analyses operate on these LLM-derived scores rather than on raw text, treating the scoring outputs as the primary data.
+**Regression models.** Chapters examining determinants employ four complementary approaches: standard OLS to establish baseline relationships; multilevel models with random intercepts for countries to account for nested structure; quantile regression to examine heterogeneous effects across the distribution; and Tobit models to address the substantial floor effect (27.6% of policies score exactly zero) through left-censoring.
 
-#### Descriptive Analysis
+**Inequality analysis.** Gini coefficients and Lorenz curves quantify overall inequality. Theil's T index enables exact additive decomposition into between-group and within-group components. Policy portfolio analysis examines breadth versus depth.
 
-Each analytical chapter begins with descriptive statistics and visual exploration. We present dimension-specific distributions using histogaps (histograms with frequency annotations), ridge plots showing density distributions across groups, and radar charts illustrating multidimensional profiles. These visualizations reveal patterns that summary statistics alone might obscure — such as bimodality in score distributions or dimension-specific gaps that disappear in composite scores. Box plots with violin overlays show both central tendency and full distributional shape, while heatmaps reveal clustering patterns in policy portfolios across countries and dimensions.
+**Temporal analysis.** Panel data methods separate within-country trends from between-country differences. First-difference models remove country fixed effects; Cohen's d effect sizes assess substantive significance; convergence analysis tests whether income-group gaps are narrowing, widening, or stable.
 
-#### Regression Models
+**Multivariate methods.** PCA examines latent structure underlying the 10 governance dimensions. Cronbach's alpha assesses internal consistency. K-means clustering identifies natural policy groupings, with optimal k determined through silhouette coefficients and bootstrap stability analysis.
 
-Chapters examining determinants of governance capacity employ four complementary regression approaches. Standard OLS regression establishes baseline relationships between predictors (GDP per capita, policy year, document type, text quality) and capacity scores. Multilevel models with random intercepts for countries account for the nested structure of policies within jurisdictions, correcting for dependency that would otherwise inflate standard errors. Quantile regression examines whether predictors affect low-scoring and high-scoring policies differently, revealing heterogeneous effects across the distribution. Tobit models address the substantial floor effect (27.6% of policies score exactly zero) through left-censoring at zero, correcting the attenuation bias that OLS exhibits when floor effects are present.
+**Hypothesis testing.** Welch's t-tests and Mann-Whitney U tests for group comparisons, chi-square tests for categorical associations, with exact p-values, effect sizes (Cohen's d, Cramér's V), and confidence intervals throughout.
 
-#### Inequality Analysis
+### Limitations and Reproducibility {#sec-corpus-limitations}
 
-The inequality chapters employ decomposition techniques to partition total variance into meaningful components. Gini coefficients and Lorenz curves quantify overall inequality in governance scores and visualize concentration. Theil's T index enables exact additive decomposition of total inequality into between-group (high-income vs. developing) and within-group components, revealing how much of the apparent North–South divide reflects genuine group differences versus within-group heterogeneity. Policy portfolio analysis examines breadth (whether countries address all dimensions) versus depth (score levels within covered dimensions), distinguishing coverage gaps from implementation quality.
+The OECD.AI Observatory, while the most comprehensive international tracker available, introduces several systematic biases.
 
-#### Temporal Analysis
+**English-language dominance.** The Observatory's documentation practices favour English-language sources. Policies originally published in English tend to receive fuller descriptions, more accessible source links, and more detailed metadata. The LLM scoring models, while multilingual, perform best on English text. This creates a measurement pathway from language of publication → text quality → ethics score that may systematically disadvantage non-Anglophone jurisdictions.
 
-Chapters examining governance dynamics over time use panel data methods to separate within-country trends from between-country differences. First-difference models examine year-to-year changes, removing country fixed effects to focus on temporal evolution. We employ Cohen's d effect sizes to assess the substantive significance of changes over time, complementing statistical significance tests that can be misleading with large samples. Convergence analysis tests whether the gap between income groups is narrowing, widening, or remaining stable, using interaction terms between income group and time trends.
+**OECD member-state reporting bias.** OECD member countries have institutional incentives and administrative capacity to report their policy activities. Non-member countries may have governance instruments that do not appear in the database. The 77% high-income composition (@tbl-sample-income) likely reflects this reporting asymmetry as much as the actual distribution of AI governance activity.
 
-#### Multivariate Methods
+**Sub-national exclusion.** The Observatory focuses on national-level policies, largely excluding state, provincial, and municipal AI governance. In federal systems—the United States, India, Brazil, Germany—substantial governance activity occurs at sub-national levels. This exclusion may systematically understate governance capacity in federal countries.
 
-Principal component analysis (PCA) examines the latent structure underlying the 10 governance dimensions, testing whether capacity and ethics represent empirically distinct constructs. We report eigenvalues, scree plots, and component loadings to assess dimensionality, applying the Kaiser criterion (eigenvalues > 1) to determine the number of meaningful components. Cronbach's alpha assesses internal consistency of the capacity and ethics subscales, quantifying whether dimensions within each construct reliably measure a coherent latent variable. K-means clustering identifies natural groupings of policies based on their multidimensional profiles, with optimal k determined through silhouette coefficients and stability analysis across bootstrap samples.
+**Temporal coverage unevenness.** Earlier years (2017–2019) contain fewer entries, particularly from developing countries that adopted AI governance later. Temporal analyses should be interpreted cautiously for this period.
 
-#### Hypothesis Testing
+**Classification quality.** The Observatory's own categorisation of policy types, target sectors, and responsible organisations introduces noise. These classification decisions, made by OECD analysts, propagate through all subsequent analyses.
 
-Throughout the analyses, we employ both parametric and non-parametric hypothesis tests depending on distributional assumptions. Welch's t-tests compare mean scores between income groups, using the Welch correction to avoid assuming equal variances. Mann-Whitney U tests provide non-parametric alternatives when distributions violate normality assumptions. Chi-square tests assess whether categorical outcomes (such as quadrant membership in the capacity–ethics space) differ by income group. For all tests, we report exact p-values, effect sizes (Cohen's d for mean differences, Cramér's V for categorical associations), and confidence intervals where appropriate, following contemporary standards for transparent statistical reporting.
+These limitations counsel caution when interpreting apparent gaps, particularly between high-income and developing nations. The robustness checks in @sec-robustness address the most consequential of these biases directly.
 
-### Reproducibility {#sec-reproducibility}
+**Reproducibility.** All code is available at <https://github.com/lsempe77/ai-governance-capacity>. The pipeline uses deterministic document IDs (`MD5(url)[:12]`) to ensure reproducibility of the corpus-to-analysis link. API calls to LLM providers used fixed model identifiers and structured JSON output schemas.
 
-All code is available at <https://github.com/lsempe77/ai-governance-capacity>. The pipeline uses deterministic document IDs (`MD5(url)[:12]`) to ensure reproducibility of the corpus-to-analysis link. API calls to LLM providers used fixed model identifiers and structured JSON output schemas.
-
-### Use of Large Language Models {#sec-llm-acknowledgment}
-
-This research employs large language models in two distinct capacities, both disclosed here in the interest of methodological transparency.
+**Use of Large Language Models.** This research employs large language models in two distinct capacities, both disclosed here in the interest of methodological transparency.
 
 *For data analysis:* Large language models (Claude Sonnet 4, GPT-4o, and Gemini Flash 2.0) serve as the core analytical instrument, functioning as automated policy coders that convert unstructured policy documents into structured quantitative scores. This use constitutes the research methodology itself and is documented extensively throughout @sec-data-methods and @sec-scoring, including validation against human expert ratings. All LLM-generated scores are preserved in the public repository, enabling verification and replication of our analytical pipeline.
 

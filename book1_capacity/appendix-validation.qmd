@@ -2,13 +2,13 @@
 title: "Validation Protocol"
 ---
 
-## LLM Validation & Inter-Rater Reliability {#sec-appendix-validation}
+## LLM Validation and Inter-Rater Reliability {#sec-appendix-validation}
 
 This appendix documents how I validated the three-model LLM ensemble. Two concerns arise when using LLMs as automated coders: (1) *inter-rater reliability*—do the three models agree enough to justify aggregation? and (2) *construct validity*—do the scores correspond to the governance constructs the rubric targets? Full construct validation requires human coding (planned as follow-up); here I focus on internal reliability.
 
 I use four complementary metrics rather than a single coefficient.
 
-### Validation Design: Four Complementary Approaches
+### Design and Agreement Metrics {#sec-appendix-icc}
 
 The ensemble (Model A = Claude Sonnet 4, Model B = GPT-4o, Model C = Gemini Flash 2.0) was validated using:
 
@@ -17,17 +17,13 @@ The ensemble (Model A = Claude Sonnet 4, Model B = GPT-4o, Model C = Gemini Flas
 3. **Score spread analysis**—the range (max − min) across the three models for each policy-dimension pair, showing how often models agree exactly vs. diverge.
 4. **Text quality stratification**—testing whether agreement varies with document length and detail.
 
-### Intraclass Correlation Coefficient: Dimension-Level Reliability
-
-ICC(2,1) (two-way random effects, single rater) ranges from 0 to 1, with Cicchetti’s (1994) thresholds: <0.40 poor, 0.40–0.59 fair, 0.60–0.74 good, 0.75–1.00 excellent.
+**Intraclass correlation coefficient: dimension-level reliability.** ICC(2,1) (two-way random effects, single rater) ranges from 0 to 1, with Cicchetti’s (1994) thresholds: <0.40 poor, 0.40–0.59 fair, 0.60–0.74 good, 0.75–1.00 excellent.
 
 All ten dimensions achieve "Good" or "Excellent" reliability (@tbl-irr-dims, @sec-irr). The lowest is 0.683 (E4 Operationalisation); the highest 0.891 (E2 Rights Protection). Overall ICC(2,1) is **0.827**—firmly "Excellent" and above many published human coding studies in policy analysis.
 
 This agreement is notable given that the three models were developed independently by Anthropic, OpenAI, and Google. Their convergence suggests the rubric operationalises governance constructs clearly enough that diverse architectures extract similar signals.
 
-### Pairwise Agreement: Identifying Systematic Rater Bias
-
-Weighted Cohen’s kappa (quadratic penalty) gives partial credit for near-misses:
+**Pairwise agreement: identifying systematic rater bias.** Weighted Cohen's kappa (quadratic penalty) gives partial credit for near-misses:
 
 | Pair | Mean κ (Capacity) | Mean κ (Ethics) |
 |:---|---:|---:|
@@ -41,9 +37,7 @@ GPT-4o and Gemini agree most closely (mean κ = 0.68). Claude is systematically 
 
 I chose median-based aggregation (rather than mean) precisely to handle this: the median is robust to one model being consistently stricter or more lenient.
 
-### Fleiss' Kappa: Multi-Rater Agreement Accounting for Chance
-
-Fleiss' kappa extends Cohen's kappa to three+ raters and corrects for chance agreement. It treats scores as categorical (our 0–4 scale), making it more conservative than ICC.
+**Fleiss' kappa: multi-rater agreement accounting for chance.** Fleiss' kappa extends Cohen's kappa to three+ raters and corrects for chance agreement. It treats scores as categorical (our 0–4 scale), making it more conservative than ICC.
 
 | Dimension | Fleiss' κ |
 |:---|---:|
@@ -64,7 +58,7 @@ Mean Fleiss' κ = **0.514** across all dimensions (range: 0.410–0.615), fallin
 
 These values match human coding benchmarks. Neuendorf (2017) found median reported kappa for multi-category coding schemes was 0.52—virtually identical to ours. The ensemble is at least as reliable as trained human coders for this task.
 
-### Score Spread Analysis: Quantifying the Magnitude of Disagreement
+### Disagreement Analysis {#sec-appendix-spread}
 
 The score spread (max − min across three models per policy-dimension pair) shows *how much* models disagree when they do:
 
@@ -87,9 +81,7 @@ Mean spread across all dimensions is **0.40** on the 0–4 scale—typical disag
 
 Dimensions with the highest exact agreement (C4 Accountability 67.6%, E2 Rights 68.2%) have the most concrete, observable indicators. Dimensions with lower exact agreement but high within-1 agreement (C1 Clarity, C2 Resources) require more subjective judgment about "comprehensiveness."
 
-### Text Quality Stratification: Does Agreement Vary with Document Quality?
-
-I stratified the corpus into three tiers by word count and structure (headings, numbered lists, tables): **high** (top tertile, >5,000 words), **medium**, and **low** (bottom tertile, <1,500 words).
+**Text quality stratification: does agreement vary with document quality?** I stratified the corpus into three tiers by word count and structure (headings, numbered lists, tables): **high** (top tertile, >5,000 words), **medium**, and **low** (bottom tertile, <1,500 words).
 
 **Reliability is remarkably stable across tiers**: ICC = 0.841 (high), 0.823 (medium), 0.809 (low)—a difference of only 0.03 across the full range. The models are not substantially less reliable on sparse documents, likely because pre-training on diverse text types enables information extraction even from unstructured inputs.
 

@@ -4,19 +4,17 @@ title: "Robustness Checks"
 
 ## How Robust Are Capacity Findings? {#sec-robustness}
 
-I stress-test capacity findings through text quality restrictions, bootstrap CIs, cluster stability, and sensitivity analyses. The bottom line: the income-group **capacity gap vanishes** when restricted to well-documented policies.
+This section stress-tests capacity findings through text quality restrictions, bootstrap confidence intervals, cluster stability analyses, and sensitivity specifications. The central finding: the income-group **capacity gap vanishes** when analysis is restricted to well-documented policies.
 
 ### The Text Quality Confound {#sec-text-quality}
 
-All capacity findings rest on an underlying assumption: that policy text accurately reflects implementation infrastructure. If text availability varies by income group—with wealthy countries publishing complete PDFs while developing countries' policies appear as summaries—then apparent capacity gaps may reflect **documentation quality** rather than **governance quality**.
+All capacity findings rest on the assumption that policy text accurately reflects implementation infrastructure. If text availability varies systematically by income group—with wealthy countries publishing complete PDFs while developing countries' policies appear as summaries—then apparent capacity gaps may reflect **documentation quality** rather than **governance quality**.
 
 Text quality operates through three mechanisms:
 
 - **Length effects**: Longer documents provide more opportunities to detect capacity features (resources, authorities, accountability mechanisms)
 - **Detail effects**: Detailed descriptions score higher than brief mentions even when infrastructure is equivalent
 - **Extraction effects**: Complete PDFs enable full-text analysis; summaries systematically underrepresent content
-
-#### The Capacity Gap Disappears
 
 | Sample Restriction | N | Capacity $d$ | Interpretation |
 |:---|---:|---:|:---|
@@ -26,9 +24,9 @@ Text quality operates through three mechanisms:
 
 : Income-group capacity effect by text quality {#tbl-capacity-text}
 
-Here is the headline: the capacity gap shrinks by **87%** (from d=0.30 to d=0.04) when restricted to well-documented policies. At d=0.04, income-group distributions overlap by 98.5%—knowing a policy comes from a high-income versus developing country gives essentially **zero information** about capacity scores once text quality is controlled.
+The central finding: the capacity gap shrinks by **87%** (from d=0.30 to d=0.04) when analysis is restricted to well-documented policies. At d=0.04, income-group distributions overlap by 98.5%—knowledge that a policy originates from a high-income versus developing country provides essentially **zero information** about capacity scores once text quality is controlled.
 
-**Mechanistic interpretation**: High-income countries publish complete policy documents (mean 2,847 words); developing countries' policies more often appear as brief summaries (mean 1,456 words). When scoring a 50-word stub, LLMs detect fewer capacity features—not because infrastructure is absent, but because text lacks detail to reveal it.
+**Mechanistic interpretation**: High-income countries publish complete policy documents (mean 2,847 words); developing countries' policies more frequently appear as brief summaries (mean 1,456 words). When scoring abbreviated text, LLMs detect fewer capacity features—not necessarily because infrastructure is absent, but because textual detail insufficient to reveal it.
 
 **Three interpretations**:
 
@@ -36,27 +34,28 @@ Here is the headline: the capacity gap shrinks by **87%** (from d=0.30 to d=0.04
 2. **Selection**: Well-documented developing-country policies represent high-capacity subset
 3. **Hybrid**: Both mechanisms operate
 
-Evidence favors measurement artifacts: the gap doesn't merely shrink—it disappears and approaches zero. Selection would produce reduced but still-significant gaps.
+Evidence favors measurement artifacts: the gap not only shrinks but approaches zero. Selection mechanisms would produce reduced but still-significant gaps.
 
 ::: {.callout-warning}
-**Interpretive caution.** This doesn't prove *no* capacity gap exists—it proves our methodology cannot reliably detect gaps after controlling for documentation quality. The "true" gap likely lies between full-sample (d=0.30) and good-text (d=0.04) estimates.
+**Interpretive caution.** This does not establish that *no* capacity gap exists—it demonstrates that the methodology cannot reliably detect gaps after controlling for documentation quality. The "true" gap likely lies between full-sample (d=0.30) and good-text (d=0.04) estimates.
 :::
 
-### Additional Robustness Checks
+### Additional Robustness Checks and Summary
 
-**Bootstrap CIs** (1,000 resamples): Capacity d = 0.30 [0.19, 0.41]. Narrow intervals indicate low sampling variability, but this precision doesn't address validity—text quality shows the estimate measures documentation, not capacity.
+**Bootstrap confidence intervals** (1,000 resamples): Capacity d = 0.30 [0.19, 0.41]. The narrow interval indicates low sampling variability: the point estimate is precisely estimated. However, precision does not address validity. The text quality analysis above demonstrates that what the estimate captures is documentation quality rather than governance capacity. A precisely estimated biased parameter remains biased.
 
-**Cluster stability**: Two-cluster solution ("Low" vs "Moderate" capacity) is optimal. Silhouette = 0.41 for k=2, declining to 0.33 (k=3), 0.28 (k=4), 0.25 (k=5). The binary typology holds up.
+**Cluster stability**: The two-cluster solution ("Low" vs "Moderate" capacity) is optimal. Silhouette scores decline monotonically: 0.41 for k=2, 0.33 (k=3), 0.28 (k=4), 0.25 (k=5). The binary typology is not an artefact of the clustering algorithm; it reflects a genuine bimodal structure in the data. This binary pattern—a large mass of low-scoring policies and a smaller cluster of moderate-scoring policies, with very few high-scoring policies—is consistent with the descriptive finding that 96% of policies fall below the scale midpoint.
 
-**Sensitivity tests** (full details in @sec-appendix-robustness):
-- Excluding international organizations: Results unchanged
-- Ordinal regression: Rank ordering preserved
-- Winsorizing extremes: Coefficients stable within 10%
-- Alternative income classifications: Conclusions robust across 2/3/4-group models
-- Text quality thresholds (300-1000 words): Gaps shrink monotonically with increasing thresholds
-- Temporal subsamples: Patterns persist 2017-2020 and 2021-2025
+**Sensitivity tests** (full details in the *Robustness Appendix* of the companion Methods volume):
 
-### Summary
+- *Excluding international organisations*: Removing the 119 policies from the EU, OECD, UN, and multilateral bodies leaves results unchanged, confirming that the findings reflect national governance patterns rather than the influence of international frameworks with different institutional logics.
+- *Ordinal regression*: Treating capacity scores as ordered categories rather than continuous variables preserves the rank ordering of all predictors, indicating that findings do not depend on the interval-scale assumption.
+- *Winsorizing extremes*: Trimming the top and bottom 5% of scores produces coefficients within 10% of baseline estimates, ruling out the possibility that a few outlier policies drive the results.
+- *Alternative income classifications*: Conclusions hold across two-group (HI vs developing), three-group (HI/UMI/LMI+LI), and four-group (World Bank tiers) specifications. The modest income-group effect is not an artefact of how the binary divide is drawn.
+- *Text quality thresholds (300–1,000 words)*: The income-group gap shrinks monotonically as the minimum word-count threshold increases—from d = 0.30 (no threshold) through d = 0.15 (300 words) to d = 0.04 (500 words) and d = −0.02 (1,000 words). This dose-response pattern strongly supports the measurement-artefact interpretation: the "gap" is a function of how much text is available, not of underlying governance quality.
+- *Temporal subsamples*: Splitting the corpus at 2020 yields consistent patterns in both halves (2017–2020 and 2021–2025), confirming that findings are not driven by a particular policy era or by the rapid expansion of AI governance activity after 2020.
+
+**Summary.** 
 
 | Finding | Robust? | Caveat |
 |:---|:---|:---|

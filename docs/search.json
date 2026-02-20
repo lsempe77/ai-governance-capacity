@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AI Governance Capacity",
+    "section": "",
+    "text": "This project analyses 2,216 AI policy documents from 193 countries, drawn from the OECD.AI Policy Observatory, to answer a straightforward question:\n\nDo countries have the capacity to implement their AI policies, and how does this vary between high-income and developing countries?\n\nThree complementary lenses — implementation capacity, ethics governance depth, and UNESCO alignment — are used to trace how AI governance performs from the abstract (values) to the concrete (policy actions). The central finding is that ethical principles are widely endorsed but rarely operationalised: accountability mechanisms are the most systematically omitted governance feature worldwide.\nAll work is in progress. Comments and feedback are welcome."
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Global Observatory of AI Governance Capacity",
+    "section": "",
+    "text": "This research infrastructure systematically measures and compares AI governance capacity across 2,200+ jurisdictions worldwide, using the OECD.AI Policy Observatory corpus. The project addresses a central question:\n\nDo countries have the capacity to implement their AI policies, and how does this vary between high-income and developing countries?\n\nThe analysis employs three complementary lenses — implementation capacity, ethics governance depth, and UNESCO alignment — to map the global landscape of AI governance from the abstract (values) to the concrete (policy actions). The findings reveal a consistent pattern: ethical principles are widely endorsed but rarely operationalised, with accountability mechanisms the most systematically omitted governance feature worldwide."
+  },
+  {
+    "objectID": "index.html#research-volumes",
+    "href": "index.html#research-volumes",
+    "title": "AI Governance Capacity",
+    "section": "Research volumes",
+    "text": "Research volumes\nThe analysis is presented in four companion volumes:\n\n\n📘 Book 1 — AI Governance Implementation Capacity\nA cross-national analysis of five implementation capacity dimensions (C1–C5) — clarity, resources, enforcement, accountability, and coordination — across 193 countries.\nRead online\n\n\n📗 Book 2 — AI Ethics Governance Depth\nA systematic analysis of ethics governance depth through five dimensions (E1–E5) — framework depth, rights protection, governance mechanisms, operationalisation, and inclusion.\nRead online\n\n\n📕 Book 3 — UNESCO AI Ethics Recommendation Alignment\nAn assessment of how national AI policies align with the UNESCO Recommendation on the Ethics of AI — 4 values, 10 principles, and 11 policy action areas.\nRead online\n\n\n📙 Book 4 — Shared Methodology\nThe common analytical framework, data sources, scoring methodology, and robustness checks underpinning all three substantive volumes.\nRead online"
+  },
+  {
+    "objectID": "index.html#policy-documents",
+    "href": "index.html#policy-documents",
+    "title": "Global Observatory of AI Governance Capacity",
+    "section": "Policy Documents",
+    "text": "Policy Documents\nDrawing on the empirical findings, two policy-facing documents translate the research into operational guidance for development research:\n\n\n\n\n\n\nEthical Guidance for the Use of AI in RCC-Funded Research\n\n\n\nPractical, stage-by-stage standards, decision prompts, checklists, and templates for research teams using AI tools — structured around the four stages of the project cycle.\nDownload PDF\n\n\n\n\n\n\n\n\nOperationalising the Ethical Use of AI in Development Research\n\n\n\nA concise evidence brief presenting the research evidence and analytical framework underpinning the ethical guidance — establishing why ethical operationalisation is needed.\nDownload PDF"
+  },
+  {
+    "objectID": "index.html#data-code",
+    "href": "index.html#data-code",
+    "title": "AI Governance Capacity",
+    "section": "Data & code",
+    "text": "Data & code\nAnalysis code, data processing pipelines, and scoring methodology are available in the repository:\n\nRepository: github.com/lsempe77/ai-governance-capacity\nData source: OECD.AI Policy Observatory — 2,216 documents across 193 countries\nScoring: Three-model LLM ensemble with inter-rater reliability checks"
+  },
+  {
+    "objectID": "index.html#author",
+    "href": "index.html#author",
+    "title": "Global Observatory of AI Governance Capacity",
+    "section": "Author",
+    "text": "Author\nLucas Sempé 3ie — International Initiative for Impact Evaluation"
+  },
+  {
+    "objectID": "index.html#about-this-project",
+    "href": "index.html#about-this-project",
+    "title": "AI Governance Capacity",
+    "section": "",
+    "text": "This project analyses 2,216 AI policy documents from 193 countries, drawn from the OECD.AI Policy Observatory, to answer a straightforward question:\n\nDo countries have the capacity to implement their AI policies, and how does this vary between high-income and developing countries?\n\nThree complementary lenses — implementation capacity, ethics governance depth, and UNESCO alignment — are used to trace how AI governance performs from the abstract (values) to the concrete (policy actions). The central finding is that ethical principles are widely endorsed but rarely operationalised: accountability mechanisms are the most systematically omitted governance feature worldwide.\nAll work is in progress. Comments and feedback are welcome."
+  },
+  {
+    "objectID": "index.html#policy-documents-draft",
+    "href": "index.html#policy-documents-draft",
+    "title": "AI Governance Capacity",
+    "section": "Policy documents (draft)",
+    "text": "Policy documents (draft)\nTwo working documents translate the empirical findings into operational guidance for development research. These are draft versions circulated for review and comment.\n\n\n\n\n\n\nEthical Guidance for the Use of AI in RCC-Funded Research — Draft\n\n\n\nStage-by-stage standards, decision prompts, checklists, and templates for research teams using AI tools, structured around the project cycle.\nDownload PDF\n\n\n\n\n\n\n\n\nOperationalising the Ethical Use of AI in Development Research — Draft\n\n\n\nAn evidence brief presenting the research findings and analytical framework underpinning the guidance.\nDownload PDF"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "AI Governance Capacity",
+    "section": "Contact",
+    "text": "Contact\nLucas Sempé\n3ie — International Initiative for Impact Evaluation\nlsempe@3ieimpact.org"
+  }
+]

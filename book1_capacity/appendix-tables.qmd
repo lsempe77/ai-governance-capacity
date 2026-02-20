@@ -4,33 +4,25 @@ title: "Full Regression Tables"
 
 ## Detailed Regression Output {#sec-appendix-tables}
 
-This appendix documents the full regression diagnostics and extended specifications for all models in the book, supporting reproducibility. All models were estimated in R (`lme4` for multilevel, `quantreg` for quantile regression, `VGAM` for Tobit) with HC1 robust standard errors. Replication code is on the project GitHub.
+This appendix documents the full regression diagnostics and extended specifications for all models in the report, supporting reproducibility. All models were estimated in R (`lme4` for multilevel, `quantreg` for quantile regression, `VGAM` for Tobit) with HC1 robust standard errors. Replication code is on the project GitHub.
 
 ### Implementation Capacity Models: Extended Diagnostics
 
 Four regression specifications test robustness of the income-group gap.
 
-#### Ordinary Least Squares with Full Controls
+**Ordinary Least Squares with full controls.** The baseline OLS (Model 2, @tbl-cap-ols) regresses composite capacity on income group, log GDP, policy type, binding nature, text quality, and year fixed effects. R² = 0.436 (adjusted 0.434), N = 1,949 after excluding missing covariates, residual SE = 0.581. Diagnostic plots show no major assumption violations—slight negative skew in residuals, modest heteroskedasticity corrected via HC1, no influential outliers above Cook’s D thresholds.
 
-The baseline OLS (Model 2, @tbl-cap-ols) regresses composite capacity on income group, log GDP, policy type, binding nature, text quality, and year fixed effects. R² = 0.436 (adjusted 0.434), N = 1,949 after excluding missing covariates, residual SE = 0.581. Diagnostic plots show no major assumption violations—slight negative skew in residuals, modest heteroskedasticity corrected via HC1, no influential outliers above Cook’s D thresholds.
+**Multilevel random-intercept model.** Policies (level 1) nest within countries (level 2). The random-intercept model yields ICC = 0.091: ~9% of capacity variance is between countries, 91% within. Between-country variance $\sigma^2_u$ = 0.051; within-country $\sigma^2_\varepsilon$ = 0.510. The likelihood ratio test against OLS is significant ($\chi^2(1)$ = 7.30, p = .007), but the income-group coefficient barely changes—accounting for clustering does not alter the substantive finding.
 
-#### Multilevel Random-Intercept Model
-
-Policies (level 1) nest within countries (level 2). The random-intercept model yields ICC = 0.091: ~9% of capacity variance is between countries, 91% within. Between-country variance $\sigma^2_u$ = 0.051; within-country $\sigma^2_\varepsilon$ = 0.510. The likelihood ratio test against OLS is significant ($\chi^2(1)$ = 7.30, p = .007), but the income-group coefficient barely changes—accounting for clustering does not alter the substantive finding.
-
-#### Quantile Regression: Heterogeneous Effects Across the Distribution
-
-Quantile regression estimates covariate effects at the 10th, 25th, 50th, 75th, and 90th percentiles, relaxing the OLS assumption of constant effects. The income coefficient is stable: $\beta$ = 0.15 at the 10th percentile to 0.22 at the 90th, with overlapping 95% CIs. The small gap is not an artefact of averaging across subpopulations.
+**Quantile regression: heterogeneous effects across the distribution.** Quantile regression estimates covariate effects at the 10th, 25th, 50th, 75th, and 90th percentiles, relaxing the OLS assumption of constant effects. The income coefficient is stable: $\beta$ = 0.15 at the 10th percentile to 0.22 at the 90th, with overlapping 95% CIs. The small gap is not an artefact of averaging across subpopulations.
 
 Full coefficient tables (bootstrapped SEs, 1,000 iterations) are at `data/analysis/paper1_capacity/extended/quantile_results.json`.
 
-#### Tobit Model: Addressing Left-Censoring at Zero
-
-27.6% of policies score exactly 0 on at least one dimension. The Tobit model treats these as censored observations of an underlying latent variable. The Tobit income coefficient is slightly larger than OLS but substantively similar—left-censoring does not distort the income-gap finding. Scale parameter $\sigma$ = 0.742; estimated via `VGAM` with L-BFGS-B. Details at `tobit_results.json`.
+**Tobit model: addressing left-censoring at zero.** 27.6% of policies score exactly 0 on at least one dimension. The Tobit model treats these as censored observations of an underlying latent variable. The Tobit income coefficient is slightly larger than OLS but substantively similar—left-censoring does not distort the income-gap finding. Scale parameter $\sigma$ = 0.742; estimated via `VGAM` with L-BFGS-B. Details at `tobit_results.json`.
 
 ### Ethics Operationalisation Models: Parallel Specifications
 
-The ethics analysis uses the same four specifications (OLS, multilevel, quantile, Tobit). Ethics OLS R² = 0.412. Multilevel ICC = 0.125 (country factors explain slightly more ethics variation than capacity variation). The critical difference: the income effect on ethics is near-zero and non-significant across all quantiles, contrasting with the small but consistent capacity effect. See @sec-eth-determinants.
+The ethics analysis uses the same four specifications (OLS, multilevel, quantile, Tobit). Ethics OLS R² = 0.412. Multilevel ICC = 0.125 (country factors explain slightly more ethics variation than capacity variation). The critical difference: the income effect on ethics is near-zero and non-significant across all quantiles, contrasting with the small but consistent capacity effect. See the ethics determinants analysis.
 
 Detailed output:
 

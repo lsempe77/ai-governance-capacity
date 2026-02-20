@@ -1,0 +1,40 @@
+---
+title: "Data and Methods"
+---
+
+## Shared Methodology {#sec-methods-summary}
+
+This study analyses 2,216 AI policies from the OECD.AI Policy Observatory, scored by a three-model LLM ensemble (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) on 10 governance dimensions. The full methodological details — corpus construction, scoring rubrics, inter-rater reliability, and technical validation — are documented in the companion volume:
+
+> **[Book 4: Data, Methods, and Technical Appendices](../book4_methods/)**
+
+Key parameters for reference:
+
+| Parameter | Value |
+|:---|:---|
+| Corpus size | 2,216 policies, 70+ jurisdictions, 2017–2025 |
+| Document retrieval | 94% coverage (2,085 full texts) |
+| Analysis-ready text | 1,754 documents (79.2%), 11.4 million words |
+| Scoring models | Claude Sonnet 4, GPT-4o, Gemini Flash 2.0 |
+| Inter-rater reliability | ICC(2,1) = 0.827 ("Excellent") |
+| Score agreement | 95.4% of scores within 1 point across models |
+
+: Methodology summary {#tbl-methods-summary}
+
+### Capacity Scoring Framework
+
+Each policy was scored 0–4 on five **implementation capacity** dimensions grounded in implementation science [@mazmanian1983; @lipsky1980; @grindle1996; @fukuyama2013]:
+
+| Code | Dimension | What It Measures |
+|:---|:---|:---|
+| C1 | Clarity & Specificity | Clear objectives, measurable targets, defined scope |
+| C2 | Resources & Budget | Dedicated funding, staffing, infrastructure |
+| C3 | Authority & Enforcement | Legal mandate, penalties, compliance mechanisms |
+| C4 | Accountability & M&E | Reporting, evaluation, oversight bodies |
+| C5 | Coherence & Coordination | Cross-agency alignment, international coordination |
+
+: Capacity scoring dimensions {#tbl-cap-dims}
+
+Alongside the five capacity dimensions, each policy was also scored on five parallel **ethics dimensions** (E1 Ethical Framework Depth, E2 Rights Protection, E3 Governance Mechanisms, E4 Operationalisation, E5 Inclusion & Participation). The ethics scores inform cross-domain comparisons within this report and are analysed in depth in Book 2. Composite scores are unweighted means: *Capacity* = mean(C1–C5), *Ethics* = mean(E1–E5). The full scoring rubric, validation protocol, and robustness checks appear in Book 4.
+
+Code, data, and methods: <https://github.com/lsempe77/ai-governance-capacity>

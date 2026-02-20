@@ -2,29 +2,35 @@
 title: "Conclusion"
 ---
 
-## Toward Operationalized Ethics Governance {#sec-conclusion}
+## Toward Operationalised Ethics Governance {#sec-conclusion}
 
-*How deeply do AI policies embed ethical commitments?* The evidence suggests: not very deeply. The modal policy scores below 2/4 on operationalization, invoking principles without governance depth.
+*How deeply do AI policies embed ethical commitments?* The evidence indicates: not very deeply. The modal policy scores below 2/4 on operationalisation, invoking principles without governance depth. Over 36% of all policies contain zero ethics content, and 97% fall below the scale midpoint.
 
-Yet the distribution offers grounds for optimism. Ethics gaps are converging as developing countries match wealthy-country commitments. GDP shows no relationship with ethics quality at any quantile examined. Nearly all variation (99%) occurs within income groups, with Tunisia, Brazil, and Canada achieving high scores regardless of wealth. And when documentation quality is comparable, the income gap disappears entirely—even reversing sign.
+Yet the distributional patterns offer grounds for cautious optimism.
 
-These findings carry several implications for policy and research.
+### Main Findings
 
-First, normative governance is not contingent on economic development. Countries at any income level can embed rights protections, establish participatory mechanisms, and operationalize ethical principles.
+**Ethics governance is not contingent on economic development.** GDP shows no effect on ethics scores at any quantile. Countries at any income level can embed rights protections, establish participatory mechanisms, and operationalise ethical principles. Kenya, Brazil, Colombia, Rwanda, Iceland, and Nigeria all demonstrate this, achieving ethics scores that exceed GDP predictions. This contradicts the "luxury good" narrative that treats ethical governance as a post-development achievement.
 
-Second, gaps are narrowing. Developing countries have increasingly avoided the principle-heavy, implementation-light approach that characterized early high-income frameworks.
+**Gaps are narrowing, through an unexpected mechanism.** Developing countries have not caught up to high-income standards; rather, high-income countries have declined as governance shifts from aspirational frameworks to technical regulation. If trends continue, the gap closes entirely by 2030. Whether this convergence is encouraging (maturation) or concerning (erosion of normative foundations) depends on whether later technical policies successfully operationalise the principles that earlier frameworks articulated.
 
-Third, operationalization remains the binding constraint. Convergence on principles means little without compliance mechanisms and enforcement capacity.
+**Within-group inequality dominates.** Approximately 99.5% of ethics variation occurs within income groups—even more extreme than capacity's 98.8%. The conventional framing of a global North-South ethics divide obscures the reality that political will, democratic traditions, and civil society strength—not national wealth—drive ethics governance depth.
 
-Fourth, documentation quality confounds cross-national comparison. Developing countries' true commitments likely exceed what available texts suggest.
+**Operationalisation remains the binding constraint.** Convergence on principle *mention* means little without compliance mechanisms and enforcement capacity. E4 Operationalisation scores lowest among dimensions, and the gap between articulating principles and implementing them characterises global AI governance regardless of income level.
 
-Finally, political will—not economic resources—drives variation. Countries at similar GDP levels show vastly different ethics depth, suggesting governance quality reflects domestic political choices.
+**Documentation quality confounds cross-national comparison.** The income-group gap (d = 0.20) reverses sign (d = −0.09) for well-documented policies. Developing countries' true ethics commitments likely exceed what available texts suggest. This finding carries methodological implications for any text-based governance comparison.
 
-### The Observatory Vision
+### Future Research and the Observatory Vision
 
-This research points toward a living observatory for ethics governance—one that continuously tracks operationalization depth, enables country-level scorecards, and supports benchmarking.
+Several directions warrant investigation. **First**, validating LLM ethics scores against human expert coding would test whether automated scoring captures the nuances of ethical governance that rubric-based assessment intends to measure. **Second**, tracking the same jurisdictions over time would enable within-country panel analysis, testing whether specific policy interventions produce measurable improvements. **Third**, linking policy text scores to implementation outcomes would address the fundamental question this study cannot: do policies that score high on ethics governance actually produce better outcomes for affected populations? **Fourth**, extending analysis to sector-specific policies would test whether ethics governance varies across application domains. **Fifth**, the convergence-through-decline finding motivates research on normative sustainability: do countries that shift from aspirational to technical governance successfully embed ethical principles in implementation?
 
-Code, data, and methods are available at <https://github.com/lsempe77/ai-governance-capacity>.
+The findings presented here are descriptive and correlational. The non-effect of GDP on ethics could reflect reverse causation, omitted variables (democratic maturity driving both), or genuine causal independence. Establishing causal relationships would require quasi-experimental designs exploiting exogenous shocks to governance or instrumental variable approaches.
+
+**The Observatory Vision.** The research infrastructure developed here—the scraping pipeline, text extraction tools, LLM scoring framework, and analytical code—supports a living observatory of AI ethics governance. Practical applications include annual scoring rounds tracking how ethics governance evolves as countries revise policies and adopt new instruments; country-level ethics scorecards providing dimension-specific benchmarks against regional and income-group peers; operationalisation toolkits translating abstract principle scores into concrete improvement recommendations; and open-source benchmarking tools enabling governments, civil society organisations, and international bodies to assess their own policies against the global distribution.
+
+The observatory model is particularly valuable for tracking whether the convergence trend continues—and whether it ultimately reflects governance maturation or normative erosion.
+
+Code, data, and methods: <https://github.com/lsempe77/ai-governance-capacity>
 
 ---
 

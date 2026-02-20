@@ -1,0 +1,26 @@
+---
+title: "AI Governance Observatory"
+subtitle: "Data, Methods, and Technical Appendices"
+---
+
+# Preface {.unnumbered}
+
+This volume documents the shared data infrastructure, scoring methodology, and technical validation underpinning three companion studies in the AI Governance Observatory:
+
+1. **Book 1: AI Governance Implementation Capacity** — a cross-national analysis of whether AI policies contain the institutional infrastructure needed for execution
+2. **Book 2: AI Ethics Governance Depth** — a cross-national analysis of how deeply policies operationalise ethical commitments
+3. **Book 3: UNESCO AI Ethics Recommendation** — an assessment of how closely the global policy landscape aligns with UNESCO's 2021 framework
+
+All three studies draw on the same corpus of **2,216 AI policies** from the OECD.AI Policy Observatory, scored by the same **three-model LLM ensemble** (Claude Sonnet 4, GPT-4o, Gemini Flash 2.0) using a shared 10-dimension rubric. Rather than repeat this shared methodology in each volume, we present it once here.
+
+### What this book contains
+
+- **Data and Corpus Construction** (@sec-data-methods): How 2,216 policy entries were scraped, retrieved, and converted into 11.4 million words of analysis-ready text across 70+ jurisdictions
+- **LLM Ensemble Scoring** (@sec-scoring): The three-model scoring framework, inter-rater reliability (ICC = 0.827, "Excellent"), and composite score construction — including the UNESCO-specific alignment assessment
+- **Technical Appendices**: The full scoring rubric (C1–C5, E1–E5), inter-rater validation protocol, comprehensive robustness checks, full regression tables, and country-level scorecards
+
+### What the companion books contain
+
+Each results volume retains its own introduction, literature review, core analytical chapters, domain-specific robustness findings, discussion, and conclusion. Those volumes refer readers here for data and scoring details, keeping their focus on substantive findings.
+
+Code, data, and methods: <https://github.com/lsempe77/ai-governance-capacity>

@@ -5,53 +5,49 @@ title: "Literature Review"
 ## Theoretical Foundations {#sec-literature}
 
 ::: {.callout-note appearance="simple"}
-**Chapter summary.** We situate ethics governance measurement within three literatures: AI ethics principles mapping, normative governance frameworks, and the gap between principles and practice.
+**Section summary.** We situate ethics governance measurement within three literatures: AI ethics principles mapping, normative governance frameworks, and the gap between principles and practice.
 :::
 
 ### The AI Ethics Mapping Wave {#sec-lit-ethics}
 
 @jobin2019 analyzed 84 AI guidelines, finding convergence around transparency, fairness, non-maleficence, responsibility, and privacy. @floridi2018 proposed AI4People, adding beneficence and autonomy. @fjeld2020 extended mapping to 36 frameworks.
 
-These studies established *what principles appear* but not *how deeply policies operationalize them*. As @hagendorff2020 observed, the gap between principles and practice remains a pressing challenge for the field.
+These studies established *what principles appear* but not *how deeply policies operationalize them*. As @hagendorff2020 observed, the gap between principles and practice remains a pressing challenge for the field. This limitation reflects a methodological constraint: principle-mapping studies typically use binary coding (present/absent) that cannot distinguish superficial mention from substantive operationalization. Moreover, by focusing on high-profile frameworks from major jurisdictions, these studies may overstate global convergence—excluded policies from smaller or developing countries might show different principle priorities.
 
-#### From Principles to Governance
+A second limitation concerns causality: principle convergence might reflect genuine normative consensus, or simply that similar policy communities borrow language without commitment. The temporal pattern matters—did convergence emerge organically from distributed deliberation, or did early frameworks establish templates that subsequent policies copied? Existing studies provide snapshots rather than longitudinal analysis.
 
-@mittelstadt2019 distinguished *principle-based* from *practice-based* AI ethics. Principles articulate values (fairness, transparency); practice requires translating values into actionable requirements, compliance mechanisms, and enforcement procedures. Most policies remain principle-based.
+**From Principles to Governance.** @mittelstadt2019 distinguished *principle-based* from *practice-based* AI ethics. Principles articulate values (fairness, transparency); practice requires translating values into actionable requirements, compliance mechanisms, and enforcement procedures. Most policies remain principle-based.
 
-@rességuier2020 proposed measuring ethics "embeddedness"—the degree to which principles become operationalized through concrete requirements. The framework developed here measures this embeddedness across five dimensions.
+This distinction is conceptually useful but empirically challenging: what counts as "practice-based" governance? A policy requiring algorithmic impact assessments appears more practice-oriented than one merely endorsing transparency, yet without enforcement mechanisms, compliance monitoring, or sanctions for non-compliance, the requirement may remain aspirational. The principle/practice binary may thus obscure a continuum of operationalization depth.
+
+@resseguier2020 proposed measuring ethics "embeddedness"—the degree to which principles become operationalized through concrete requirements. The framework developed here measures this embeddedness across five dimensions. However, Rességuier and Rodrigues developed their framework through qualitative case analysis of 11 European policies, leaving uncertain whether the same embeddedness dimensions apply globally.
 
 ### Normative Frameworks
 
-#### Rights-Based Approaches
+**Rights-based approaches.** @hildebrandt2019 grounds AI ethics in fundamental rights, arguing that algorithmic systems threaten privacy, equality, and due process. The E2 Rights Protection dimension captures whether policies establish specific safeguards. However, rights traditions vary—European frameworks emphasize data protection, Asian frameworks emphasize collective welfare, African frameworks increasingly emphasize digital sovereignty—raising questions about whether universal rights metrics can capture regional variation. @yeung2018 shows rights-based governance requires translating abstract rights into technical specifications—a challenging task most policies avoid, which helps account for the low E2 scores documented in @sec-eth-landscape.
 
-@hildebrandt2019 grounds AI ethics in fundamental rights, arguing that algorithmic systems threaten privacy, equality, and due process. The E2 Rights Protection dimension captures whether policies establish specific safeguards for these rights.
+**Participatory governance.** @rahwan2018 argues that AI governance requires democratic participation since algorithmic systems encode societal values. @stilgoe2020 demonstrates that meaningful participation demands structured processes rather than token consultation. The E3 Participatory Governance dimension measures whether policies establish multi-stakeholder processes, public consultation mechanisms, and transparency requirements. Yet measuring participation structures differs from measuring participation quality—who participates, whose input influences decisions, whether consultations genuinely shape policy.
 
-@yeung2018 shows rights-based governance requires translating abstract rights into technical specifications—a challenging task most policies avoid, which helps account for the low E2 scores documented in @sec-ethics-landscape.
-
-#### Participatory Governance
-
-@rahwan2018 argues that AI governance requires democratic participation since algorithmic systems encode societal values. @stilgoe2020 demonstrates that meaningful participation demands structured processes rather than token consultation.
-
-The E3 Participatory Governance dimension measures whether policies establish multi-stakeholder processes, public consultation mechanisms, and transparency requirements that enable democratic oversight.
-
-#### Operationalization Challenges
-
-@selbst2019 documents "fairness gerrymandering"—policies proclaiming commitment to fairness without specifying operational definitions or compliance methods. @whittaker2018 shows this pattern extends to transparency, accountability, and ethics principles broadly.
-
-The E4 Operationalization dimension distinguishes policies that merely mention principles from those specifying concrete requirements, compliance procedures, and enforcement mechanisms.
+**Operationalisation challenges.** @selbst2019 documents "fairness gerrymandering"—policies proclaiming commitment to fairness without specifying operational definitions or compliance methods. @whittaker2018 shows this pattern extends to transparency, accountability, and ethics principles broadly. The E4 Operationalisation dimension distinguishes policies that merely mention principles from those specifying concrete requirements, compliance procedures, and enforcement mechanisms.
 
 ### The Governance Gap
 
-Multiple studies document gaps between commitment and implementation: @mittelstadt2019, @hagendorff2020, and @jobin2019 all find principles fail to translate into tangible governance. We score not what policies say but what they establish.
+Multiple studies document gaps between commitment and implementation: @mittelstadt2019, @hagendorff2020, and @jobin2019 all identify failures to translate principles into tangible governance. This study scores not what policies state but what institutional mechanisms they establish.
+
+Yet these diagnoses rest on small samples and qualitative methods, leaving uncertain how widespread governance gaps are, whether some jurisdictions or policy types perform better, and whether gaps are narrowing over time. Moreover, the literature risks selection bias: researchers naturally examine high-profile frameworks (EU AI Act, Beijing AI Principles, OECD Guidelines) where rhetoric-reality gaps are most visible, potentially overlooking policies from smaller jurisdictions that may operationalize principles more directly precisely because they face less international scrutiny and reputational pressure. The systematic measurement approach developed here addresses these limitations by scoring all available policies rather than curated samples.
 
 ### Ethics and Development
 
 @lee2018 argues developing countries face ethical "catch-up" challenges. @gwagwa2020 shows African countries increasingly develop indigenous frameworks rather than importing Western principles. @muller2021 documents how UNESCO's AI Ethics Recommendation (2021) creates opportunity for convergence — which our temporal analysis examines.
 
-### Measurement Challenges
+However, the "catch-up" framing assumes normative convergence toward Western ethical frameworks as the development endpoint—an assumption that recent scholarship increasingly contests. Gwagwa and colleagues' documentation of indigenous African frameworks suggests plural pathways rather than linear convergence. Moreover, the development literature focuses on whether developing countries *have* ethics frameworks while neglecting whether high-income countries *implement* them—a gap this study addresses by measuring operationalization depth across all income groups. The findings challenge catch-up narratives: developing countries score only marginally lower on ethics depth (Cohen's d = 0.20), and income explains minimal variance once text quality controls are applied.
 
-Existing assessments use binary presence/absence [@fjeld2020] or qualitative evaluation [@mittelstadt2019]. Neither scales to comprehensive global measurement. Our LLM-based scoring enables assessment across 2,100+ policies.
+### Measurement Challenges and Contribution
 
-### Contribution
+Existing assessments use binary presence/absence [@fjeld2020] or qualitative evaluation [@mittelstadt2019]. Neither scales to comprehensive global measurement. Binary coding loses information about operationalization depth—a policy mentioning "transparency" scores identically to one establishing mandatory algorithmic impact assessments, external audits, and public reporting. Qualitative evaluation captures depth but requires human expertise that does not scale beyond small samples, typically covering 10-50 policies.
 
-This book provides: (1) an operationalized five-dimension framework, (2) validated methodology (ICC = 0.827), (3) first comprehensive global ethics measurement, and (4) convergence analysis testing whether gaps narrow. The following chapters show ethics varies more within income groups than between them.
+The LLM-based scoring developed here attempts to bridge this trade-off, enabling assessment across 2,100+ policies while preserving depth through multi-level scoring (0-4 scales capturing absence, mention, description, operationalization, comprehensiveness). However, this approach introduces validity concerns: can language models reliably interpret complex institutional arrangements, distinguish meaningful from symbolic commitments, and maintain consistency across diverse legal and policy traditions? The inter-rater reliability analysis (ICC = 0.827) provides empirical reassurance but cannot fully resolve interpretive challenges inherent in cross-national governance measurement.
+
+**Contribution.** This study addresses four gaps in the existing literature. **First**, principle-mapping studies establish *what* ethics principles appear in AI frameworks but not *how deeply* they are operationalized—this study scores operationalization depth across five dimensions, distinguishing rhetoric from institutional commitment. **Second**, governance gap diagnoses rest on small qualitative samples—this study systematically measures gaps across 2,100+ policies, enabling distributional analysis and statistical testing of determinants. **Third**, the development literature assumes high-income countries lead in ethics governance sophistication—this study tests that assumption empirically, finding minimal income effects once policy characteristics are controlled. **Fourth**, existing studies provide snapshots while governance evolution remains unexplored—this study examines temporal dynamics, testing whether ethics depth increases over time and whether convergence is occurring.
+
+The findings challenge several conventional assumptions: ethics governance depth varies more within income groups than between them; policies converge on principle *mention* but diverge on *operationalization*; and recent policies show limited improvement over earlier frameworks, suggesting governance stagnation despite proliferating ethics discourse.

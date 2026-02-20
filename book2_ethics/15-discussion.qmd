@@ -4,40 +4,36 @@ title: "Discussion"
 
 ## Implications for Ethics Governance {#sec-discussion}
 
-::: {.callout-note appearance="simple"}
-**Chapter summary.** This chapter examines implications of the ethics findings, focusing on the relationship between wealth and normative governance, convergence patterns, and the operationalization challenge.
-:::
+The empirical analysis has established four central findings: ethics governance is weak globally, GDP does not predict ethics depth, nearly all variation occurs within rather than between income groups, and the ethics gap is narrowing over time. The robustness checks confirmed that the apparent income-group gap largely reflects documentation quality rather than genuine governance differences. This section draws out the implications of these findings for theory, policy, and research practice.
 
-### Ethics and Economic Development
+### Ethics Without Wealth
 
-GDP shows no effect on ethics scores at any quantile. Unlike implementation capacity (where GDP matters modestly), ethics governance requires political commitment rather than fiscal resources.
+GDP shows no effect on ethics scores at any quantile—a finding that holds across OLS, quantile, multilevel, and Tobit specifications. This contradicts the implicit assumption in much of the AI governance literature that ethical sophistication follows economic development. @lee2018's framing of developing countries facing ethical "catch-up" challenges implies a sequence—build economic capacity, then layer ethics on top—that the data do not support. Kenya's AI and Data Protection regulations, Brazil's AI Ethics Framework, Colombia's AI strategy, and Rwanda's governance instruments all demonstrate high ethics scores despite modest GDP levels.
 
-Nearly 97% of policies score below 2.0 on operationalization. This deficit affects high-income and developing countries alike—a universal weakness rather than a development-stage phenomenon.
+The mechanism is interpretable: unlike implementation capacity, which requires fiscal resources, ethical governance requires political will, democratic traditions, and civil society strength—factors that operate independently of GDP. @gwagwa2020's documentation of indigenous African ethics frameworks and @muller2021's analysis of the UNESCO AI Ethics Recommendation suggest that normative pathways are plural rather than sequential. Approximately 97% of policies score below 2.0 on operationalisation, a deficit affecting high-income and developing countries alike.
 
-Countries at any income level can strengthen ethics governance immediately. Economic development is not a prerequisite.
+The documentation confound reinforces this conclusion. The income gap (d = 0.20) reverses direction for well-documented policies (d = −0.09, n.s.)—when documentation quality is comparable, developing countries slightly outperform wealthy countries on ethics governance. Any study using policy text as data risks confounding documentation practices with substantive governance. Researchers should routinely stratify by text quality and report results separately.
 
-### Convergence Over Time
+### The Regulation-Replacing-Aspiration Paradox
 
-Ethics gaps are narrowing, in contrast to the stable capacity gaps documented earlier. High-income scores dropped from 1.58 (2017-2020) to 1.34 (2021-2025), while developing-country scores remained stable.
+Ethics gaps are narrowing between income groups—but through an unexpected mechanism. High-income countries are *declining* (−0.023/yr, p = .001) while developing countries remain roughly stable (+0.016/yr, n.s.). Is this convergence good news or bad news?
 
-Wealthy countries' early ethics frameworks tended toward aspiration over implementation. Developing countries, learning from these experiences, have emphasized operationalization from the outset—avoiding the principle-heavy, implementation-light approach that characterized first-generation frameworks.
+The optimistic interpretation: convergence reflects governance maturation. Early high-income frameworks (Canada's Pan-Canadian AI Strategy, France's Villani Report, Germany's AI Strategy) were deliberative documents that naturally scored high on ethical articulation because that was their primary purpose. Later instruments (the EU AI Act, sector-specific regulations, procurement standards) assume those ethical foundations and focus on compliance infrastructure. The decline in ethics scores reflects a shift from *articulating* principles to *implementing* them—precisely the transition that @hagendorff2020 and @selbst2019 called for.
 
-### The Operationalization Challenge
+The pessimistic interpretation: convergence through decline means the global stock of ethical guidance is thinning. If later policies assume ethical foundations without restating or updating them, those foundations may erode as institutional memory fades, staff turn over, and political priorities shift. The founding frameworks become legacy documents that subsequent implementers may never read. What @whittaker2018 called the gap between commitment and practice may widen even as the gap between countries narrows.
 
-E4 Operationalization scores lowest among ethics dimensions (mean 0.91). Policies invoke principles without specifying compliance requirements, enforcement procedures, or technical standards. What @selbst2019 termed "fairness gerrymandering"—proclaiming commitments without operational definitions—characterizes much of global ethics governance.
+The truth likely lies between these interpretations. The pattern calls for layered governance architectures: aspirational frameworks that establish and periodically refresh ethical foundations, complemented by binding regulations that operationalise principles into enforceable requirements. Countries that allow aspirational frameworks to atrophy while producing only technical regulations risk losing the normative anchors that give technical governance its purpose.
 
-Addressing this gap requires specifying operational definitions (what does fairness mean in public procurement?), establishing compliance procedures, creating enforcement mechanisms, and providing technical guidance.
+### Operationalisation and International Organisations
 
-### Documentation Quality as Confounder
+E4 Operationalisation scores lowest among ethics dimensions. Policies invoke principles without specifying compliance requirements, enforcement procedures, or technical standards. What @selbst2019 termed "fairness gerrymandering"—proclaiming commitments without operational definitions—characterises much of global ethics governance. @fjeld2020's binary coding approach would miss this pattern entirely: a policy mentioning "transparency" and one establishing mandatory algorithmic impact assessments would both score as present.
 
-The income gap (d=0.20) reverses direction for well-documented policies (d=-0.09, n.s.). When documentation quality is comparable, developing countries slightly outperform wealthy countries.
+Addressing this gap requires four concrete steps: specifying operational definitions (what does fairness mean in public procurement versus criminal justice?), establishing compliance procedures (who certifies compliance and how?), creating enforcement mechanisms (what sanctions apply for non-compliance?), and providing technical guidance (what audit methodologies satisfy transparency requirements?). International organisations can play a catalytic role by developing operational toolkits—impact assessment templates, audit standards, compliance checklists—that translate principles into implementable requirements.
 
-The apparent gap in the full sample reflects measurement artifacts rather than genuine differences in normative governance. Future ethics research should control for documentation quality to avoid similar confounds.
+**Implications for International Organisations.** These findings speak directly to the work of UNESCO, the OECD, and regional bodies. The UNESCO AI Ethics Recommendation (2021), adopted by 193 member states, provides a shared normative framework—but this study shows that framework articulation is precisely where countries already perform best. What countries need is operationalisation support: practical guidance on translating UNESCO's principles into national legislation, compliance mechanisms, and enforcement procedures. The OECD's ongoing governance monitoring likewise captures policy adoption but not operationalisation depth; supplementing adoption tracking with the kind of dimensional scoring used here would provide more actionable intelligence.
 
-### Within-Group Variation
+Regional bodies (the African Union, ASEAN, the Red Iberoamericana de Inteligencia Artificial) are well positioned to facilitate the horizontal diffusion that the data show dominates ethics governance. Rather than top-down technical assistance from wealthy-country frameworks, South-South peer learning—connecting Kenya with Nigeria, Brazil with Colombia, Rwanda with Uganda—appears more consequential for ethics governance development.
 
-Nearly all ethics variation (99%) occurs within income groups rather than between them. Countries at similar GDP levels show vastly different ethics depth—political choices, not economic constraints, drive the distribution.
+### Limitations
 
-Tunisia, Brazil, and Canada anchor the ethics efficiency frontier, while several wealthy countries underperform relative to their economic resources.
-
-These patterns suggest ethics governance is actionable at any income level. Countries can strengthen commitments through legislative specificity, rights codification, participatory mechanisms, and inclusion mandates.
+Five limitations qualify these findings. **First**, the study measures ethics governance as expressed in policy text, not as experienced by affected populations. A policy scoring 4/4 on rights protection may fail to protect rights in practice; a policy scoring 0 may operate within a legal tradition that provides rights protections through other instruments. **Second**, LLM-based scoring may carry systematic biases. All three models were trained on corpora overrepresenting English-language, Western governance documents; they may interpret non-Western governance traditions through Western normative frameworks, potentially underscoring indigenous approaches that achieve ethical governance through unfamiliar institutional forms. **Third**, the OECD.AI Observatory’s coverage skews toward OECD member states and their partners, likely understating governance activity in countries with limited international reporting capacity. **Fourth**, the cross-sectional design cannot establish causal relationships—GDP's non-effect on ethics could reflect reverse causation (countries with strong ethics traditions invest differently in economic development) or omitted variables (democratic traditions driving both). **Fifth**, the 77% high-income composition of the corpus may underpower developing-country analyses; the non-significant reversal (d = −0.09) for well-documented policies might reach significance with a larger developing-country sample.

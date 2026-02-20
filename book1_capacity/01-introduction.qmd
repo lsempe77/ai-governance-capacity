@@ -6,15 +6,15 @@ title: "Introduction"
 
 ### The Implementation Gap
 
-Between 2017 and 2025, governments worldwide produced over 2,200 AI policy initiatives catalogued in the OECD.AI Policy Observatory. That number sounds impressive. But it sidesteps a question that governance research has largely neglected:
+Between 2017 and 2025, governments worldwide produced over 2,200 AI policy initiatives catalogued in the OECD.AI Policy Observatory. While impressive in quantity, this proliferation sidesteps a question that governance research has largely neglected:
 
 > **Can governments actually implement their AI policies?**
 
-Implementation capacity, defined as the institutional infrastructure enabling policy execution, remains unmeasured in AI governance. We know what policies say. We do not know whether governments have the clarity, resources, authority, accountability structures, or coordination mechanisms to translate those commitments into action.
+Implementation capacity, defined as the institutional infrastructure enabling policy execution, remains unmeasured in AI governance. While existing research documents policy content, the presence of clarity, resources, authority, accountability structures, and coordination mechanisms necessary to translate commitments into action remains unexamined.
 
 ### What We Measure
 
-I assess each policy along five capacity dimensions:
+This study assesses each policy along five capacity dimensions:
 
 1. **C1 Clarity**: How specific are the objectives and implementation plans?
 2. **C2 Resources**: Are budgets, staffing, and technical infrastructure identified?
@@ -24,19 +24,7 @@ I assess each policy along five capacity dimensions:
 
 Scores range from 0 to 4, anchored in detailed rubrics drawn from implementation science [@mazmanian1983; @pressman1973].
 
-### What I Found
+Most AI policies lack robust implementation infrastructure. The average capacity score across 2,100+ policies is 0.83 out of 4.0, well below the scale midpoint. However, the distributional patterns prove more revealing than aggregate statistics. The modest income-group gap effectively vanishes when the sample is restricted to well-documented policies, suggesting that apparent capacity differences may primarily reflect variation in documentation practices rather than genuine governance gaps. Within-group variation accounts for nearly all total inequality, dwarfing the between-group gap. Several developing countries—including Brazil, Kenya, and Rwanda—consistently exceed predictions based on GDP levels, while policy diffusion operates horizontally across income peers rather than through vertical transfer from wealthy nations.
 
-Most AI policies lack robust implementation infrastructure. The average score across 2,100+ policies is just 1.38 out of 4.0.
+The book proceeds as follows: @sec-literature reviews the theoretical foundations; @sec-methods-summary outlines data and scoring (with full details in the companion *Data, Methods, and Technical Appendices* volume); @sec-cap-landscape maps the global landscape; @sec-cap-determinants examines determinants; @sec-cap-inequality analyses inequality patterns; @sec-cap-dynamics traces temporal trends and diffusion; @sec-robustness presents robustness checks; and @sec-discussion and @sec-conclusion discuss implications.
 
-But the more interesting story is distributional. The raw income-group gap (d = 0.30) vanishes (d = 0.04) once I restrict the sample to well-documented policies, suggesting that what looks like a capacity divide may actually reflect differences in how countries *document* their policies. Within-group variation accounts for 98% of total inequality, dwarfing the between-group gap. Several developing countries (Brazil, Kenya, Rwanda, Tunisia) consistently outperform their GDP predictions, while policy diffusion runs horizontally across income peers rather than trickling down from wealthy nations.
-
-### Roadmap
-
-- **Chapter 5** maps the global landscape of governance capacity
-- **Chapter 6** examines socioeconomic and institutional determinants
-- **Chapter 7** analyzes inequality patterns
-- **Chapter 8** traces temporal dynamics and policy diffusion
-- **Chapter 14** presents robustness checks, especially the text quality confound
-- **Chapters 15-16** discuss implications and conclusions
-
-The reality is more complicated, and more encouraging, than a simple North-South divide.

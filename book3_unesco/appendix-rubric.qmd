@@ -6,13 +6,11 @@ title: "Scoring Rubric"
 
 This appendix presents the complete scoring rubric used by the three-model LLM ensemble. Each dimension is scored 0–4, where 0 indicates complete absence and 4 indicates comprehensive, operationally detailed articulation. The rubric prioritises inter-rater reliability while preserving substantive distinctions.
 
-The rubric was developed iteratively: (1) literature review of implementation theory and AI governance frameworks, (2) manual coding of a pilot sample, (3) refinement based on ensemble reliability diagnostics, and (4) validation against the scoring distributions in @sec-cap-landscape and @sec-eth-landscape. For methodological details on prompt design and aggregation rules, see @sec-scoring-methodology and @sec-appendix-validation.
+The rubric was developed iteratively: (1) literature review of implementation theory and AI governance frameworks, (2) manual coding of a pilot sample, (3) refinement based on ensemble reliability diagnostics, and (4) validation against the scoring distributions. For methodological details on prompt design and aggregation rules, see @sec-scoring and @sec-appendix-validation.
 
 ### Capacity Dimensions (0–4 Scale)
 
-#### C1: Clarity & Specificity
-
-*The degree to which policy objectives, targets, scope, and definitions are precisely specified.*
+**C1: Clarity and Specificity.** *The degree to which policy objectives, targets, scope, and definitions are precisely specified.*
 
 | Score | Criteria | Example Indicators |
 |:---|:---|:---|
@@ -22,9 +20,7 @@ The rubric was developed iteratively: (1) literature review of implementation th
 | 3 | Measurable targets for some objectives | "Train 10,000 AI specialists by 2025" |
 | 4 | Comprehensive targets with timelines | Multiple quantified goals with dates |
 
-#### C2: Resources & Budget
-
-*The degree to which financial, human, and technical resources are specified.*
+**C2: Resources and Budget.** *The degree to which financial, human, and technical resources are specified.*
 
 | Score | Criteria | Example Indicators |
 |:---|:---|:---|
@@ -34,9 +30,7 @@ The rubric was developed iteratively: (1) literature review of implementation th
 | 3 | Specific amounts for some resource types | "€50M allocated for AI research" |
 | 4 | Comprehensive allocation with funding sources | Multi-year budget, staff numbers, infrastructure |
 
-#### C3: Authority & Enforcement
-
-*The degree to which legal mandate, enforcement powers, and responsibilities are specified.*
+**C3: Authority and Enforcement.** *The degree to which legal mandate, enforcement powers, and responsibilities are specified.*
 
 | Score | Criteria | Example Indicators |
 |:---|:---|:---|
@@ -46,9 +40,7 @@ The rubric was developed iteratively: (1) literature review of implementation th
 | 3 | Named agency with some defined powers | "Agency may issue guidance and conduct reviews" |
 | 4 | Clear authority with enforcement and sanctions | Named body + investigation powers + penalties |
 
-#### C4: Accountability & M&E
-
-*The degree to which monitoring, evaluation, and reporting mechanisms are specified.*
+**C4: Accountability and ME.** *The degree to which monitoring, evaluation, and reporting mechanisms are specified.*
 
 | Score | Criteria | Example Indicators |
 |:---|:---|:---|
@@ -58,9 +50,7 @@ The rubric was developed iteratively: (1) literature review of implementation th
 | 3 | Specific monitoring with some reporting | "Annual report to Parliament" |
 | 4 | Comprehensive M&E framework | KPIs + review cycles + evaluation methodology |
 
-#### C5: Coherence & Coordination
-
-*The degree to which the policy is internally consistent and aligned with other policies.*
+**C5: Coherence and Coordination.** *The degree to which the policy is internally consistent and aligned with other policies.*
 
 | Score | Criteria | Example Indicators |
 |:---|:---|:---|
@@ -72,9 +62,7 @@ The rubric was developed iteratively: (1) literature review of implementation th
 
 ### Ethics Dimensions (0–4 Scale)
 
-#### E1: Ethical Framework Depth
-
-*Grounding in ethical principles and coherence of ethical vision.*
+**E1: Ethical Framework Depth.** *Grounding in ethical principles and coherence of ethical vision.*
 
 | Score | Criteria |
 |:---|:---|
@@ -84,9 +72,7 @@ The rubric was developed iteratively: (1) literature review of implementation th
 | 3 | Articulates coherent ethical vision with multiple principles |
 | 4 | Comprehensive ethical framework with theoretical grounding |
 
-#### E2: Rights Protection
-
-*Coverage of privacy, non-discrimination, human oversight, and transparency.*
+**E2: Rights Protection.** *Coverage of privacy, non-discrimination, human oversight, and transparency.*
 
 | Score | Criteria |
 |:---|:---|
@@ -96,9 +82,7 @@ The rubric was developed iteratively: (1) literature review of implementation th
 | 3 | Comprehensive rights framework with mechanisms |
 | 4 | Full rights catalogue with enforcement provisions |
 
-#### E3: Governance Mechanisms
-
-*Ethics boards, impact assessments, auditing requirements.*
+**E3: Governance Mechanisms.** *Ethics boards, impact assessments, auditing requirements.*
 
 | Score | Criteria |
 |:---|:---|
@@ -108,9 +92,7 @@ The rubric was developed iteratively: (1) literature review of implementation th
 | 3 | Multiple mechanisms with institutional support |
 | 4 | Comprehensive governance architecture |
 
-#### E4: Operationalisation
-
-*Concrete requirements, standards, certification processes.*
+**E4: Operationalisation.** *Concrete requirements, standards, certification processes.*
 
 | Score | Criteria |
 |:---|:---|
@@ -120,9 +102,7 @@ The rubric was developed iteratively: (1) literature review of implementation th
 | 3 | Detailed standards or certification processes |
 | 4 | Comprehensive operationalisation with compliance mechanisms |
 
-#### E5: Inclusion & Participation
-
-*Stakeholder processes, marginalised group representation.*
+**E5: Inclusion and Participation.** *Stakeholder processes, marginalised group representation.*
 
 | Score | Criteria |
 |:---|:---|

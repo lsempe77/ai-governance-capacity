@@ -5,12 +5,12 @@ title: "Ethics Determinants"
 ## GDP and Ethics Governance {#sec-eth-determinants}
 
 ::: {.callout-note appearance="simple"}
-**Chapter summary.** This chapter examines a key asymmetry between capacity and ethics: while GDP has a modest positive effect on capacity, it shows no effect on ethics scores at any quantile. The OLS significance is entirely driven by the extensive margin (whether any policy exists).
+**Section summary.** This section examines a key asymmetry between capacity and ethics: while GDP has a modest positive effect on capacity, it shows no effect on ethics scores at any quantile. The OLS significance is entirely driven by the extensive margin (whether any policy exists).
 :::
 
-### OLS Regression {#sec-eth-ols}
+The landscape analysis documented low ethics scores overall, with over a third of policies scoring zero. This section asks what drives variation in ethics governance depth. A common assumption treats ethical governance as a luxury—something only wealthy nations can afford after meeting basic institutional needs. The regression analysis that follows tests this assumption through OLS, quantile, and Tobit specifications. The results reveal a striking asymmetry with the capacity domain: whereas GDP exerts a modest effect on implementation capacity, it shows virtually no effect on ethics governance at any point in the distribution.
 
-Capacity analysis showed GDP exerts a modest effect on implementation readiness. The ethics domain may differ. Common narratives position ethics as a "luxury good"—achievable only after economic security. But if ethics depends on political will rather than fiscal resources, GDP should be irrelevant.
+### OLS Regression {#sec-eth-ols}
 
 ![Scatter plot of ethics scores against log GDP per capita.](../data/analysis/paper2_ethics/fig_gdp_scatter.png){#fig-eth-gdp-scatter}
 
@@ -23,11 +23,11 @@ Capacity analysis showed GDP exerts a modest effect on implementation readiness.
 
 : OLS regression for ethics (selected coefficients) {#tbl-eth-ols}
 
-@tbl-eth-ols shows β = 0.061 (p = .002), apparently supporting the "luxury good" hypothesis. But as quantile regression reveals below, this significance is a statistical artifact.
+@tbl-eth-ols shows β = 0.061 (p = .002), apparently supporting the "luxury good" hypothesis. However, as quantile regression reveals below, this significance represents a statistical artifact.
 
-Text quality dominates (β = 1.014, p < .001): well-documented policies score a full point higher than poorly documented ones. This matters more than GDP.
+Text quality dominates (β = 1.014, p < .001): well-documented policies score a full point higher than poorly documented ones. This effect exceeds that of GDP.
 
-The problem: OLS assumes GDP's effect is constant across the distribution. But with 36.3% of policies scoring exactly zero, GDP may operate through the *extensive margin* (whether any ethics content exists) rather than the *intensive margin* (how sophisticated it becomes).
+The methodological issue: OLS assumes GDP's effect remains constant across the distribution. However, with 36.3% of policies scoring exactly zero, GDP may operate through the *extensive margin* (whether any ethics content exists) rather than the *intensive margin* (sophistication level among policies with ethics content).
 
 ### Quantile Regression: The Zero-Effect Finding {#sec-eth-quantile}
 
@@ -46,13 +46,13 @@ Quantile regression estimates GDP's effect at different distribution points. If 
 
 GDP shows no effect at any quantile examined. The OLS significance arises entirely from the extensive margin—wealthier countries produce more policies overall, mechanically increasing the probability that at least one contains ethics content. Conditional on having a non-zero ethics score, GDP contributes nothing.
 
-This contradicts the "luxury good" hypothesis. Countries at any income level produce policies with sophisticated ethics frameworks. Kenya's AI and Data Protection regulations, Brazil's AI Ethics Framework, and Colombia's AI strategy all demonstrate high ethics scores despite modest GDP. Conversely, wealthy countries often produce ethics-light policies focusing on technical compliance.
+This contradicts the "luxury good" hypothesis. Countries at any income level produce policies with sophisticated ethics frameworks. Kenya's AI and Data Protection regulations, Brazil's AI Ethics Framework, and Colombia's AI strategy all demonstrate high ethics scores despite modest GDP levels. Conversely, wealthy countries often produce ethics-light policies focusing on technical compliance.
 
 The asymmetry with capacity is interpretable: capacity requires fiscal resources and infrastructure; ethical commitment requires political will and stakeholder engagement—factors unrelated to GDP.
 
 For development interventions, these findings suggest that promoting ethical AI governance need not wait for economic growth. Supporting political processes that enable ethical deliberation, strengthening civil society organizations advocating for rights, and providing operationalization assistance can proceed regardless of income level.
 
-### Multilevel Model {#sec-eth-multilevel}
+### Multilevel and Tobit Models {#sec-eth-multilevel}
 
 Quantile regression treated policies as independent. Multilevel modeling accounts for nesting within countries, correcting for dependency that inflates standard errors. The key parameter is the Intraclass Correlation Coefficient (ICC)—the proportion of variation occurring between vs. within countries.
 
@@ -72,9 +72,7 @@ Two findings from @tbl-eth-multilevel: (1) The GDP coefficient collapses from β
 
 The random effects identify consistent over-performers (Iceland, Rwanda, Nigeria) — countries where political commitment to ethics exceeds GDP predictions.
 
-### Tobit Regression {#sec-eth-tobit}
-
-With 36.3% zero-score rates (exceeding capacity's 27.6%), OLS and quantile regression may be biased. Zero-scoring policies represent complete absence of ethics, not "minimal ethics." Tobit regression models this censoring.
+**Tobit Regression.** With 36.3% zero-score rates (exceeding capacity's 27.6%), OLS and quantile regression may be biased. Zero-scoring policies represent complete absence of ethics, not "minimal ethics." Tobit regression models this censoring.
 
 ![Comparison of OLS and Tobit coefficients for the ethics model.](../data/analysis/paper2_ethics/extended/fig_tobit_comparison.png){#fig-eth-tobit}
 
@@ -90,12 +88,6 @@ With 36.3% zero-score rates (exceeding capacity's 27.6%), OLS and quantile regre
 
 Censoring correction increases the GDP coefficient from β = 0.061 (OLS) to β = 0.100 (Tobit). But interpreted alongside the quantile finding: this effect operates entirely through the extensive margin (reducing probability of zeros) rather than improving positive scores. Wealthy countries are more likely to produce *some* ethics content, but conditional on having content, GDP contributes nothing to quality.
 
-### Synthesis {#sec-eth-determinants-synthesis}
+**Synthesis.** GDP does not predict ethics governance quality. OLS shows nominal significance (β = 0.061, p = .002), but this proves artifactual: quantile regression reveals no effect at any quantile, and multilevel modeling eliminates significance entirely (β = 0.029, p = .38). The Tobit model confirms that GDP operates only through the extensive margin—wealthier countries are more likely to produce *some* ethics content, but conditional on having content, GDP contributes nothing to quality.
 
-The core finding: GDP does not predict ethics governance quality. This holds across all modeling approaches. OLS shows nominal significance (β = 0.061, p = .002), but quantile regression reveals no effect at any quantile, multilevel modeling eliminates significance when accounting for country clustering (β = 0.029, p = .38), and Tobit confirms the effect operates only through the extensive margin.
-
-Why does GDP matter for capacity but not ethics? Implementation requires resources—budgets, agencies, monitoring technology—that wealth provides. Ethical governance requires political will, democratic traditions, and civil society strength. These factors are independent of GDP.
-
-These patterns contradict the "luxury good" narrative. Kenya, Colombia, Brazil, and Rwanda all produce sophisticated ethics frameworks despite modest GDP. Kazakhstan's resource wealth fails to generate ethics governance. Several wealthy Asian countries emphasize competitiveness over ethics.
-
-For development policy, the implications are clear: promoting ethical AI governance can proceed immediately. Supporting political processes that enable ethical deliberation, strengthening civil society, and providing operationalization assistance are achievable at any income level.
+The asymmetry with capacity is interpretable: implementation requires resources that wealth provides, whereas ethical governance requires political will, democratic traditions, and civil society strength—factors independent of GDP. Kenya, Colombia, Brazil, and Rwanda demonstrate sophisticated ethics frameworks despite modest GDP. Kazakhstan's resource wealth fails to generate ethics governance. Promoting ethical AI governance need not wait for economic growth.

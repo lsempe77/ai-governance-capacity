@@ -4,25 +4,29 @@ title: "Conclusion"
 
 ## Toward Implementation-Ready Governance {#sec-conclusion}
 
-This study asked: *Do countries have capacity to implement AI policies?* The answer is sobering: the global modal AI policy scores below 2/4 on implementation readiness.
+This study examined the question: *Do countries possess the capacity to implement their AI policies?* The findings prove sobering: the global modal AI policy scores below 2/4 on implementation readiness. Over 96% of policies worldwide fall short of the scale midpoint, and more than a quarter score exactly zero on the capacity composite.
 
-But distribution matters more than the average. The capacity gap between income groups is small (d = 0.30) and fragile, vanishing for well-documented policies. Within-group inequality dominates, accounting for 98% of total variance. Rwanda, Kenya, and Brazil outperform wealthier nations. GDP explains just 3.5% of variation. Policy diffusion operates horizontally within income groups rather than cascading from wealthy nations.
+However, distributional patterns prove more informative than central tendency. The capacity gap between income groups is modest (d = 0.30) and fragile, vanishing when analysis is restricted to well-documented policies. Within-group inequality dominates, accounting for 98% of total variance. Rwanda, Kenya, and Brazil exceed the performance of wealthier nations. GDP explains only 3.5% of variation. Policy diffusion operates horizontally within income groups rather than cascading from wealthy nations.
 
 ### Main Findings
 
-The capacity gap is universal. Every country needs stronger implementation infrastructure, particularly in Accountability and Resources.
+**The capacity deficit is universal.** All countries require stronger implementation infrastructure, particularly in Accountability (C4: 0.48/4.0) and Resources (C2: 0.68/4.0). This is not a developing-country problem; it is a structural feature of AI governance globally, consistent with the implementation science prediction that policies routinely lack the institutional infrastructure needed for execution [@pressman1973].
 
-National wealth plays a limited role. Capacity emerges from institutional design choices, not economic endowments. Rwanda and Kenya demonstrate that sophisticated governance frameworks can precede high per-capita income.
+**National wealth plays a limited role.** Capacity emerges from institutional design choices rather than economic endowments. Rwanda and Kenya demonstrate that sophisticated governance frameworks can precede high per-capita income. This supports @fukuyama2013's argument that governance quality is conceptually distinct from economic development, and @andrews2017's warning against assuming wealthy-country models are universally applicable.
 
-Text quality confounds measurement. Researchers using document-based analysis should stratify by text quality or risk mistaking documentation gaps for governance gaps.
+**Text quality confounds measurement.** The apparent North–South divide largely reflects documentation quality rather than genuine governance differences. Researchers employing document-based analysis should stratify by text quality to avoid conflating documentation gaps with governance gaps. This finding carries implications well beyond AI governance, cautioning against text-based comparative analysis that does not account for systematic variation in documentation practices.
 
-Horizontal diffusion dominates. Countries learn from peers at similar income levels, which favors South-South cooperation over top-down technical assistance.
+**Horizontal diffusion dominates.** Countries learn from peers at similar income levels, favouring South-South cooperation over top-down technical assistance models. This challenges the Brussels Effect hypothesis [@bradford2020] as applied to AI governance and supports peer learning approaches emphasised in the policy diffusion literature [@simmons2006].
 
-The framework enables targeted intervention. By identifying dimension-specific weaknesses, the five-dimensional approach provides actionable guidance: specify objectives (C1), allocate resources (C2), designate authorities (C3), establish monitoring (C4), ensure coordination (C5).
+**The framework enables targeted intervention.** By identifying dimension-specific weaknesses, the five-dimensional approach provides actionable guidance: specify objectives (C1), allocate resources (C2), designate authorities (C3), establish monitoring (C4), ensure coordination (C5). Countries can prioritise the dimensions where they score weakest rather than pursuing comprehensive reform simultaneously.
 
-### The Observatory Vision
+### Future Research and the Observatory Vision {#sec-future}
 
-I envision a living observatory: continuously updated capacity tracking enabling annual scoring rounds, country-level scorecards, benchmarking tools, and research infrastructure.
+This study opens several research directions. **First**, validating LLM scores against human expert coding would strengthen construct validity. A targeted validation exercise—human coding of 100–200 policies stratified by income group, policy type, and text quality—would test whether the automated scores capture the governance constructs that the rubric intends to measure. **Second**, longitudinal tracking of the same jurisdictions over time would enable within-country panel analysis, testing whether policy revisions produce measurable capacity improvements. The current cross-sectional design cannot distinguish between countries improving over time and compositional effects (newer policies differing from older ones). **Third**, the relationship between policy design quality (as measured here) and implementation outcomes (actual governance performance) remains untested. Pairing text-based capacity scores with implementation indicators—enforcement actions taken, budgets actually disbursed, monitoring reports published—would bridge the gap between policy architecture and policy impact. **Fourth**, extending the analysis to sub-national policies (state, provincial, and municipal AI governance) would capture a growing segment of governance activity that national-level analysis misses, particularly in federal systems like the United States, India, Brazil, and Nigeria. **Fifth**, the finding that text quality confounds measurement motivates methodological research on standardising document-based governance analysis across contexts with unequal documentation practices.
+
+**The observatory vision.** The research infrastructure developed for this study—the scraping pipeline, text extraction tools, LLM scoring framework, and analytical code—supports a living observatory of AI governance capacity. Practical applications include annual scoring rounds that track how countries' governance capacity evolves as they revise policies and adopt new instruments; country-level scorecards providing dimension-specific benchmarks against regional and income-group peers; and open-source benchmarking tools enabling governments, civil society organisations, and international bodies to assess their own policies against the global distribution.
+
+The observatory model would also enable early identification of governance gaps as new AI applications emerge. As countries develop policies for generative AI, autonomous systems, or AI in critical infrastructure, the scoring framework can assess whether these policies incorporate the implementation capacity that earlier-generation policies largely lacked.
 
 Code, data, and methods: <https://github.com/lsempe77/ai-governance-capacity>
 

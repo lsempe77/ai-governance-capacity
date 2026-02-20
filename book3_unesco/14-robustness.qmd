@@ -4,11 +4,11 @@ title: "Robustness Checks"
 
 ## How Robust Are UNESCO Findings? {#sec-robustness}
 
-Our main findings survive stress-testing: the post-2021 alignment increase holds up, the two-cluster typology is stable, and text quality confounds are limited. Here's the evidence.
+The main findings survive stress-testing: the post-2021 alignment increase is robust, the two-cluster typology is stable, and text quality confounds are limited.
 
 ### Post-2021 Adoption Effect {#sec-post-unesco}
 
-The UNESCO Recommendation was adopted in November 2021. Do policies created after adoption show stronger alignment?
+The UNESCO Recommendation was adopted in November 2021. The analysis examines whether policies created after adoption demonstrate stronger alignment.
 
 | Period | N | Mean UNESCO Score | Interpretation |
 |:---|---:|---:|:---|
@@ -18,13 +18,11 @@ The UNESCO Recommendation was adopted in November 2021. Do policies created afte
 
 : UNESCO alignment before and after Recommendation {#tbl-unesco-temporal}
 
-Yes, substantially. The +0.32 point gain (21% from baseline) is statistically significant and substantively meaningful. The Recommendation influenced national policy development.
+Policies demonstrate substantially stronger alignment. The +0.32 point gain (21% from baseline) is statistically significant and substantively meaningful. The Recommendation influenced national policy development.
 
-But let's not overstate this. Even post-2021 policies score only 1.84—somewhere between "mentioned" and "described," well short of "operationalized." UNESCO changed what policies *talk about* more than what they *do*.
+However, even post-2021 policies score only 1.84—between “mentioned” and “described,” well short of “operationalized.” UNESCO changed what policies *discuss* more than what they *implement*.
 
-#### Component-Level Analysis
-
-Which components drove the increase?
+**Component-level analysis.** Which components drove the increase?
 
 The gains concentrate in core governance: human rights (+18%), transparency (+15%), accountability (+16%), governance mechanisms (+18%), regulation (+17%), ethical impact assessment (+23%).
 
@@ -45,7 +43,7 @@ The two-cluster solution ("Comprehensive Alignment" 28% vs "Selective Adoption" 
 
 Silhouette scores peak at k=2 and decline monotonically, confirming the binary typology. Even within the "Comprehensive Alignment" cluster, the mean score (2.34/4.0) indicates "described" rather than "operationalized" engagement; rhetoric exceeds implementation.
 
-### Text Quality Effects on UNESCO
+### Text Quality Effects on UNESCO {#sec-text-quality}
 
 Does the text quality confound affect UNESCO alignment?
 
@@ -60,11 +58,19 @@ UNESCO alignment shows modest sensitivity to text quality (+11% for well-documen
 
 On income-group UNESCO gaps: full sample d = +0.18***; good-text d = +0.11 ($p$ = .06). Unlike capacity/ethics (where gaps vanish), the UNESCO gap merely shrinks, remaining marginally significant. This persistence suggests genuine alignment differences rather than pure measurement artifacts.
 
-### Sensitivity Analyses
+### Sensitivity Analyses and Summary
 
-Regional robustness: the post-2021 increases are consistent across regions (Africa +23%, Europe +19%, Americas +21%, Asia +18%). Component robustness: all 21 UNESCO components show positive post-2021 trends, though magnitudes range from 3% to 23%. Temporal specification: results hold across alternative period definitions (pre/post November 2021, calendar years, announcement vs. adoption dates).
+**Regional robustness**: The post-2021 alignment increases are consistent across all regions (Africa +23%, Europe +19%, Americas +21%, Asia +18%), confirming that the temporal pattern is not driven by any single geographic bloc. African countries show the largest gains, consistent with the finding that UNESCO serves as a governance template in regions building AI frameworks from scratch.
 
-### Summary
+**Component robustness**: All 21 UNESCO components show positive post-2021 trends, though magnitudes range from +3% (environment, gender) to +23% (ethical impact assessment). The concentration of gains in core governance components, with cross-cutting themes lagging, is consistent across all analytical specifications.
+
+**Temporal specification**: Results hold across alternative period definitions: pre/post November 2021 (the formal adoption date), calendar year splits (pre/post January 2022), and announcement versus adoption date distinctions. The +21% gain is not sensitive to exactly where the temporal boundary is drawn.
+
+::: {.callout-note}
+**A note on metrics.** This book uses two distinct UNESCO-related metrics. The **10-dimension capacity/ethics composite** (0–4 scale) measures general governance quality using the C1–C5 and E1–E5 framework shared across all three companion studies; on this metric, post-2021 policies score higher (1.52 → 1.84, +21%). The **25-item UNESCO alignment score** (0–100 scale) measures specific coverage of and depth on UNESCO’s own framework; on this metric, mean alignment is slightly *lower* post-2021 (54.6 → 53.0). The discrepancy is interpretable: post-2021 policies engage more deeply with core governance principles (captured by the C+E composite) while the expanding policy corpus includes narrower instruments that address fewer of UNESCO’s 25 specific items (captured by the alignment score). Both metrics are valid; they measure different things.
+:::
+
+**Summary.** @tbl-unesco-robustness consolidates the robustness findings.
 
 | Finding | Robust? | Evidence |
 |:---|:---|:---|

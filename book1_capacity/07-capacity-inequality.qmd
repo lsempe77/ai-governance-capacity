@@ -1,12 +1,14 @@
 ---
-title: "Capacity Inequality & Clusters"
+title: "Capacity Inequality and Clusters"
 ---
 
 ## Within vs. Between: Decomposing the Governance Gap {#sec-cap-inequality}
 
+The regression analysis established that GDP explains remarkably little variance in governance capacity. This section examines the structural distribution of that variation: does the governance gap primarily separate income groups, or does most inequality reside within them? Using Gini coefficients, Lorenz curves, and Theil decomposition, the analysis reveals that nearly all variation in capacity scores occurs within income groups rather than between them—a finding that fundamentally reframes the conventional narrative of a global governance divide.
+
 ### Inequality Decomposition {#sec-cap-gini}
 
-The regression analysis showed GDP explaining remarkably little. But *how* is inequality structured? Two scenarios are consistent with weak GDP effects. In one, the income-group gap is small but stable, with most variation occurring within countries. In the other, the gap is substantial but drowned out by enormous within-group heterogeneity. Distinguishing these requires formal inequality decomposition.
+Two scenarios are consistent with weak GDP effects: (1) a small but stable income-group gap with most variation within countries, or (2) a substantial gap obscured by enormous within-group heterogeneity. Distinguishing these requires formal inequality decomposition.
 
 ![Lorenz curves for capacity scores, by income group and overall. Both groups exhibit substantial inequality, with developing countries showing slightly more concentration.](../data/analysis/paper1_capacity/extended/fig_lorenz.png){#fig-cap-lorenz}
 
@@ -21,19 +23,17 @@ The regression analysis showed GDP explaining remarkably little. But *how* is in
 
 : Gini coefficients for capacity scores {#tbl-cap-gini}
 
-The overall Gini of **0.518** indicates substantial inequality, comparable to income inequality in a moderately unequal country. The surprise is where it concentrates: **developing countries have higher within-group inequality (0.593) than high-income countries (0.499)**. The spread among developing countries, from Brazil and Colombia at one end to countries with minimal AI governance at the other, exceeds the spread among wealthy nations.
+The overall Gini of **0.518** indicates substantial inequality, comparable to income inequality in moderately unequal societies. The pattern of concentration proves noteworthy: **developing countries exhibit higher within-group inequality (0.593) than high-income countries (0.499)**. The range among developing countries, from high-capacity implementations in Brazil and Colombia to minimal AI governance frameworks elsewhere, exceeds the range observed among wealthy nations.
 
-If developing countries were uniformly weak, their within-group Gini would be low. Instead, 0.593 signals enormous heterogeneity. The "developing country" label obscures more than it reveals, conflating high-performers with countries barely on the AI governance map.
+If developing countries demonstrated uniformly weak capacity, their within-group Gini would be low. Instead, the coefficient of 0.593 indicates substantial heterogeneity. The aggregate label "developing country" therefore obscures more variation than it reveals, conflating high-performing jurisdictions with countries exhibiting minimal AI governance infrastructure.
 
 The country-means Gini (0.235) is less than half the overall (0.518), confirming that aggregating to the country level eliminates much variation. Most inequality lives at the policy level within countries.
 
-#### Theil Decomposition
-
-The Gini suggested within-group inequality dominates, but cannot quantify exactly how much. Theil's T index can: it decomposes perfectly into between-group and within-group components.
+**Theil decomposition.** While the Gini coefficients suggest within-group inequality dominates, precise quantification requires decomposition. Theil's T index permits exact partitioning into between-group and within-group components.
 
 ![Theil decomposition of capacity inequality: 98.8% within groups, only 1.2% between income groups.](../data/analysis/paper1_capacity/extended/fig_theil_decomposition.png){#fig-cap-theil}
 
-@fig-cap-theil visualizes the decomposition. The formal results are even starker than the Gini coefficients suggested:
+@fig-cap-theil visualizes the decomposition. The formal results prove more pronounced than Gini coefficients suggested:
 
 | Component | Share |
 |:---|---:|
@@ -42,13 +42,13 @@ The Gini suggested within-group inequality dominates, but cannot quantify exactl
 
 : Theil decomposition of capacity inequality {#tbl-cap-theil}
 
-The numbers are stark: **the income-group label explains 1.2% of total capacity inequality**. The remaining **98.8% sits within income groups**. Knowing whether a country is "high-income" or "developing" tells you almost nothing about its governance capacity.
+The decomposition reveals that **income-group classification explains 1.2% of total capacity inequality**. The remaining **98.8% resides within income groups**. Knowledge of whether a country is classified as "high-income" or "developing" provides minimal information about its governance capacity.
 
-To put this in perspective: the variation between Luxembourg's sophisticated framework and a smaller European country's minimal AI governance dwarfs the average gap between high-income and developing groups. Afghanistan and Brazil are both "developing," yet their governance capacity differs more than the average cross-group difference.
+To contextualize this finding: variation between Luxembourg's sophisticated framework and less developed European governance systems exceeds the average gap between income groups. Afghanistan and Brazil both carry the "developing" classification, yet their governance capacity differs by more than the average cross-group difference.
 
 The same pattern appeared in the multilevel analysis (91% within-country variance; @sec-cap-determinants), but the concentration here is even more extreme. The policy implication is direct: development interventions targeting "developing countries" as a category will misallocate resources, assisting Brazil and Colombia (which have already achieved strong capacity) while potentially neglecting wealthy countries with weak frameworks.
 
-### Policy Portfolio Breadth {#sec-cap-portfolio}
+### Policy Portfolios and Governance Typologies {#sec-cap-portfolio}
 
 Is the capacity gap about *breadth* (developing countries missing entire dimensions) or *depth* (covering the same dimensions but with less detail)? The distinction matters: if countries miss dimensions, interventions should ensure comprehensive frameworks; if they cover all dimensions shallowly, the focus should be on strengthening existing areas.
 
@@ -72,9 +72,7 @@ The breadth gap is **not statistically significant** (p = .137). High-income cou
 
 So the capacity gap is **about depth, not breadth**. Developing countries recognize the same governance requirements; they just provide less implementation detail within each dimension.
 
-### K-Means Clustering {#sec-cap-clusters}
-
-Do distinct governance *typologies* exist, recognizable archetypes with characteristic dimensional profiles? I use K-means clustering to find out, with optimal k determined by silhouette analysis.
+**K-means clustering.** Do distinct governance *typologies* exist, recognizable archetypes with characteristic dimensional profiles? I use K-means clustering to find out, with optimal k determined by silhouette analysis.
 
 ![Radar chart of capacity dimension profiles for the two identified clusters. Cluster 1 ("Low Capacity") shows uniformly low scores; Cluster 2 ("Moderate Capacity") shows elevation across all dimensions.](../data/analysis/paper1_capacity/fig_cluster_radar.png){#fig-cap-cluster-radar}
 
